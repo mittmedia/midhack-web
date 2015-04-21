@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Humen</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Email</th>
+      <th>Knowledge</th>
+      <th>Social</th>
+      <th>News</th>
+      <th>Phoneos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @humen.each do |human| %>
+      <tr>
+        <td><%= human.name %></td>
+        <td><%= human.occupation %></td>
+        <td><%= human.email %></td>
+        <td><%= human.knowledge %></td>
+        <td><%= human.social %></td>
+        <td><%= human.news %></td>
+        <td><%= human.phoneos %></td>
+        <td><%= link_to 'Show', human %></td>
+        <td><%= link_to 'Edit', edit_human_path(human) %></td>
+        <td><%= link_to 'Destroy', human, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Human', new_human_path %>

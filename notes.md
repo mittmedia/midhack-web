@@ -1,0 +1,32 @@
+- Studerar: Institution, Linje, År
+- Studerar inte: Mittmedia/fritext
+- Alla: Mailadress(verifierad),
+- Kunskaper:
+    - Programmering
+      - Språk
+      - Databaser
+      - Backend/Frontend/FullStack
+    - Grafik
+    - Foto
+    - PR
+    - Journalistik
+- Vilka sociala nätverk använder du?
+  - Twitter
+  - Facebook
+  - Tumblr
+  - Instagram
+  - Snapchat
+  - Kik
+  - LinkedIn
+  - Flickr
+  - annat
+
+- Vilka nyhetstjänster använder du?
+  - Aftonbladet
+  - Omni
+  - st.nu
+  - HackerNews
+  - Politism
+  - annat..
+- Samla in: TelefonOS
+

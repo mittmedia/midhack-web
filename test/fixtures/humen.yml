@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: humen
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  occupation :string
+#  email      :string
+#  knowledge  :string
+#  social     :string
+#  news       :string
+#  phoneos    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  uuid       :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  occupation: MyString
+  email: MyString
+  knowledge: MyString
+  social: MyString
+  news: MyString
+  phoneos: MyString
+
+two:
+  name: MyString
+  occupation: MyString
+  email: MyString
+  knowledge: MyString
+  social: MyString
+  news: MyString
+  phoneos: MyString

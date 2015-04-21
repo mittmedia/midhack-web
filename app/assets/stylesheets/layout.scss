@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+	font-family: 'pt_sansregular';
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Duplex Sans Web';
+}
+
+body {
+	color: #333;
+	font-size: 16px;
+	line-height: 1.45em;
+}
+header {
+	background-color: #1D9CD8;
+	padding: 0.3em;
+	color: white;
+}
+
+section {
+	margin: 0 1em;
+}
+
+.button_to input {
+	width: 100%;
+	line-height: 2.5em;
+	background: transparent;
+	border: 2px solid grey;
+	text-align: center;
+	color: grey;
+	-webkit-appearance: none;
+	margin: 0.5em 0;
+}
+
+
