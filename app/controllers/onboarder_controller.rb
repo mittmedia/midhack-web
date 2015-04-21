@@ -5,12 +5,12 @@ class OnboarderController < ApplicationController
   def tour
     @uuid = cookies[:uuid]
     if @uuid.blank?
-      @human = Human.new()
-      @human.save!
-      cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
+      new_human
     else
       @human = Human.find_by(uuid: @uuid)
     end
+    new_human if @human.nil?
+
     @studies = Human.possible_studies
   end
 
@@ -22,4 +22,18 @@ class OnboarderController < ApplicationController
 	puts file_path
 	  send_file file_path, type: 'text/calendar'
   end
+
+  def set_occupation
+    #working/student
+    # Student: #institution, course, year
+    # Working: #Programmer/Entrepenour/Journalist/Other
+  end
+
+  private
+    def new_human
+      @human = Human.new()
+      @human.save!
+      cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
+    end
+
 end
