@@ -1,19 +1,8 @@
-<% @studies.each do |institution| %>
-  <%
-    code = institution[0]
-    name = institution[1][:name]
-    courses = institution[1][:courses]
-  %>
-
-  <p><%= pp code %> = <%= pp name %></p>
-  <ul>
-    <% courses.each do |course| %>
-      <li><%= course[0] %>: <%= course[1] %></li>
-    <% end %>
-  </ul>
-
+<% @institutions.each do |institution| %>
+  <%= button_to institution[:code].upcase, tour_path(step: @step+1) %>
+  <code><%= pp institution %></code>
+  <p><%= institution[:code] %> <%= institution[:name] %></p>
 <% end %>
-
-<script>
-  var studies = <%= j @studies.to_json.html_safe %>;
-</script>
+<!-- <script>
+  var studies = <%# j @studies.to_json.html_safe %>;
+</script> -->

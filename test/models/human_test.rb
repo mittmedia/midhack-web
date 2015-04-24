@@ -13,6 +13,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  uuid       :string
+#  step       :integer
 #
 
 require 'test_helper'
