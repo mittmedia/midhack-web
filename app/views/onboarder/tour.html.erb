@@ -1,8 +1,0 @@
-<% @institutions.each do |institution| %>
-  <%= button_to institution[:code].upcase, tour_path(step: @step+1) %>
-  <code><%= pp institution %></code>
-  <p><%= institution[:code] %> <%= institution[:name] %></p>
-<% end %>
-<!-- <script>
-  var studies = <%# j @studies.to_json.html_safe %>;
-</script> -->

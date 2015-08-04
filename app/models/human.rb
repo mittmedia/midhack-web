@@ -14,6 +14,11 @@
 #  updated_at :datetime         not null
 #  uuid       :string
 #  step       :integer
+#  team_id    :integer
+#
+# Indexes
+#
+#  index_humen_on_team_id  (team_id)
 #
 
 require 'attribute_defaults'

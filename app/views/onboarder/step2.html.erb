@@ -1,0 +1,8 @@
+<% @institutions.each do |institution| %>
+  <%= link_to tour_path(step: @step+1, institution: institution[:code]), class: 'btn' do %>
+    <div>
+      <%= institution[:code].upcase %>
+    </div>
+  <% end %>
+<% end %>
+<%= link_to "Tillbaka", root_path, class: 'btn warning' %>
