@@ -128,7 +128,11 @@ class OnboarderController < ApplicationController
   # IF student, choose instituion.
   def step2
     return false unless valid_param_occupation
-    @institutions = Occupation.possible_institutions
+    if @occupation == :working
+      @jump_to = 6
+    else
+      @institutions = Occupation.possible_institutions
+    end
     true
   end
 
