@@ -18,12 +18,12 @@ RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=3
 END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
-ORGANIZER;CN=Stefan Wallin:MAILTO:Stefan.Wallin@mittmedia.se
-ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Stefan Wal
- lin:MAILTO:me@stefan-wallin.se
+ORGANIZER;CN=Mittmedia DMU:MAILTO:dmu@mittmedia.se
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Mittmedia
+DMU:MAILTO:dmu@mittmedia.se
 DESCRIPTION;LANGUAGE=sv-SE:När: den 13 november 2015\, 18:00 till den 15 n
  ovember 2015\, 14:00. (GMT+01:00) Amsterdam\, Berlin\, Bern\, Rom\, Stockh
- olm\, Wien\nVar: MIUN\n\n*~*~*~*~*~*~*~*~*~*\n\n\nFör schema & anmälan: 
+ olm\, Wien\nVar: MIUN\n\n*~*~*~*~*~*~*~*~*~*\n\n\nFör schema & anmälan:
  https://curate.se\nFor time table & registration: https://en.curate.se\n\n
 SUMMARY;LANGUAGE=sv-SE:Curate.se
 DTSTART;TZID=W. Europe Standard Time:20151113T180000

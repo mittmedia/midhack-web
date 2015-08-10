@@ -1,9 +1,0 @@
-<h2>Vad gör du om dagarna?</h2>
-<% @occupations.each do |occupation| %>
-  <%= link_to tour_path(step: @step+1, occupation: occupation[:code]), class: 'btn' do %>
-    <div>
-      <%= occupation[:name] %>
-    </div>
-  <% end %>
-<% end %>
-<%= link_to "Tillbaka", root_path, class: 'btn warning' %>
