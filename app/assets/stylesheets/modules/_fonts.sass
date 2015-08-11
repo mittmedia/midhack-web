@@ -1,0 +1,66 @@
+// font-families
+@mixin bold_base_font()
+  font-family: 'Duplex Sans Web Bold'
+  font-weight: 700
+
+@mixin semibold_base_font()
+  font-family: 'Duplex Sans Web'
+  font-weight: 600
+
+@mixin regular_base_font()
+  font-family: 'Duplex Sans Web Regular'
+  font-weight: 300
+
+
+// base rules
+html, body
+  @include regular_base_font()
+  line-height: 150%
+  font-size: rem-calc(32/2)
+  text-rendering: optimizeLegibility !important
+  -webkit-font-smoothing: antialiased !important
+  color: $text_black
+
+
+h1
+  @include semibold_base_font()
+  font-size: rem-calc(54/2)
+  color: $green
+
+h2
+  @include regular_base_font()
+  font-size: rem-calc(50/2)
+  color: $green
+
+
+a
+  color: $green
+  @include transition()
+  text-decoration: none
+  &:hover
+    color: $light_green
+  &.circle
+    line-height: 90px
+    width: 90px
+    text-align: center
+    color: $white
+    @include border_radius()
+
+  &.button
+    @include border_radius()
+    line-height: 90px
+    padding: 10px
+    border: 1px $green solid
+    &:hover
+      border: 1px $light_green solid
+      color: $text_black
+    &:active
+      background-color: $green
+      border: none
+      color: $white
+.button.inactive
+  @include transition()
+  text-decoration: none
+  background-color: $white
+  color: $gray_inactive
+

@@ -1,3 +1,4 @@
+// Rem
 $rem-base: 16px !default;
 
 // STRIP UNIT
@@ -23,4 +24,14 @@ $rem-base: 16px !default;
     $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
   }
   @return $remValues;
+}
+
+
+@mixin transition() {
+  transition: all 0.2s ease;
+}
+
+@mixin border_radius() {
+  -webkit-border-radius: 45px;
+  border-radius: 45px;
 }
