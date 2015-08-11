@@ -23,10 +23,20 @@ class OnboarderController < ApplicationController
   def choose_team
     human_saved = save_education
     if human_saved
+      @all_teams = Team.all
       @available_teams = Team.get_teams(@human.course.competence)
       render
     else
       redirect_to 'signup'
+    end
+  end
+
+  def fill_email
+    human_saved = save_team
+    if human_saved
+      render
+    else
+      redirect_to 'choose_team'
     end
   end
 
@@ -36,9 +46,16 @@ class OnboarderController < ApplicationController
     valid_education = Course.valid_education?(institution_param,
                                                   course_param,
                                                   year_param)
-    return redirect_to 'signup' unless valid_education
+    return false unless valid_education
     @human.course = Course.find_by(code: course_param)
     @human.study_year = year_param
+    @human.save
+  end
+
+  def save_team
+    valid_team = Team.available_team?(team_param, @human.course.competence)
+    return false unless valid_team
+    @human.team_id = team_param
     @human.save
   end
 
@@ -68,5 +85,9 @@ class OnboarderController < ApplicationController
 
   def year_param
     params.permit("year")["year"].to_i
+  end
+
+  def team_param
+    params.permit("team")["team"].to_i
   end
 end

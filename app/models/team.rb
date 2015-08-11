@@ -24,11 +24,17 @@ class Team < ActiveRecord::Base
     return nil if teams.blank?
     teams.select do |team|
       members = team.humen.select do |human|
-        human.course.competence == competence
+        human.course.competence == competence && !human.email.blank?
       end
       members.length < MAXMEMBERS[competence.to_sym]
     end
   end
 
+  def self.available_team?(team_id, competence)
+    available_teams = Team.get_teams(competence)
+    chosen_team = Team.find_by(id: team_id)
+    return false if available_teams.blank? || chosen_team.blank?
+    available_teams.include?(chosen_team)
+  end
 end
 

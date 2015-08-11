@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #3
   post 'onboarder/choose_team', as: 'choose_team'
 
+  #4
+  post 'onboarder/fill_email', as: 'fill_email'
 
   get 'onboarder/why', as: 'why'
   get 'onboarder/ical', as: 'ical'

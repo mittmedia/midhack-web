@@ -1,4 +1,8 @@
-<%= @available_teams %>
-<% @available_teams.each do |team| %>
-<p><%= team.name %></p>
+<% @all_teams.each do |team| %>
+  <% if @available_teams.include?(team) %>
+      <p><%= team.name %></p>
+      <%= button_to "Välj", fill_email_path(team: team.id), method: :post %>
+  <% else %>
+    <p><%= team.name %> - Full</p>
+  <% end %>
 <% end %>
