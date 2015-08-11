@@ -16,3 +16,90 @@ Team.create([
   { name: 'Aspartam', color: '#bdc3c7' },
   { name: 'Azur', color: '#2980b9' }
 ])
+
+
+iks = Institution.create({
+  code: :iks,
+  name: 'Information- och kommunikationssystem'
+})
+mkv = Institution.create({
+  code: :mkv,
+  name: 'Medie- och kommunikationsvetenskap'
+})
+dsv = Institution.create({
+  code: :dsv,
+  name: 'Data- och systemvetenskap'
+})
+
+Course.create({
+  code: 'tdtea',
+  points: 300,
+  name: 'Civ.ing. datateknik',
+  competence: 'it',
+  institution: iks
+})
+Course.create({
+  code: 'tinda',
+  points: 300,
+  name: 'Civ.ing. industriell ekonomi',
+  competence: 'economics',
+  institution: iks
+})
+Course.create({
+  code: 'tdatg',
+  points: 180,
+  name: 'Datateknik',
+  competence: 'it',
+  institution: iks
+})
+Course.create({
+  code: 'tandg',
+  points: 120,
+  name: 'Mobila applikationer och nätverkstjänster för Android',
+  competence: 'it',
+  institution: iks
+})
+
+Course.create({
+  code: 'sinpg',
+  points: 180,
+  name: 'Informations- och PR-programmet',
+  competence: 'journalism',
+  institution: mkv
+})
+Course.create({
+  code: 'sjoug',
+  points: 180,
+  name: 'Journalistprogrammet',
+  competence: 'journalism',
+  institution: mkv
+})
+Course.create({
+  code: 'tgdkg',
+  points: 180,
+  name: 'Grafisk design och kommunikation',
+  competence: 'gd',
+  institution: mkv
+})
+Course.create({
+  code: 'tgdog',
+  points: 180,
+  name: 'Grafisk design och kommunikation',
+  competence: 'gd',
+  institution: mkv
+})
+
+Course.create({
+  code: 'tnätg',
+  points: 120,
+  name: 'Nätverksdrift',
+  competence: 'it',
+  institution: dsv
+})
+Course.create({
+  code: 'tweug',
+  points: 120,
+  name: 'Webbutveckling',
+  competence: 'it',
+  institution: dsv
+})

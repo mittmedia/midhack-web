@@ -1,14 +1,14 @@
 <h2>Vad pluggar du?</h2>
-<% @studies.each do |institution| %>
-  <h3><%= institution[:name] %></h3>
-  <% institution[:courses].each do |course| %>
+<% @institutions.each do |institution| %>
+  <h3><%= institution.name %></h3>
+  <% institution.courses.each do |course| %>
     <fieldset>
       <button class="btn">
-        <%= course[:name] %> <br> <%= course[:code].upcase %>
+        <%= course.name %> <br> <%= course.code.upcase %>
       </button>
-      <% years = course[:points]/60 %>
+      <% years = course.points/60 %>
       <% years.times do |year| %>
-        <%= button_to "År #{year+1}", choose_team_path(institution: institution[:code], course: course[:code], year: year+1), method: :post %>
+        <%= button_to "År #{year+1}", choose_team_path(institution: institution.code, course: course.code, year: year+1), method: :post %>
       <% end %>
     </fieldset>
   <% end %>

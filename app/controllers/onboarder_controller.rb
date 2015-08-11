@@ -17,13 +17,31 @@ class OnboarderController < ApplicationController
   end
 
   def signup
-    @studies = Occupation.possible_studies
+    @institutions = Institution.all
   end
 
   def choose_team
+    human_saved = save_education
+    if human_saved
+      @available_teams = Team.get_teams(@human.course.competence)
+      render
+    else
+      redirect_to 'signup'
+    end
   end
 
   private
+
+  def save_education
+    valid_education = Course.valid_education?(institution_param,
+                                                  course_param,
+                                                  year_param)
+    return redirect_to 'signup' unless valid_education
+    @human.course = Course.find_by(code: course_param)
+    @human.study_year = year_param
+    @human.save
+  end
+
   def set_human
     @uuid = cookies[:uuid]
     if @uuid.blank?
@@ -40,5 +58,15 @@ class OnboarderController < ApplicationController
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
+  def institution_param
+    params.permit("institution")["institution"]
+  end
 
+  def course_param
+    params.permit("course")["course"]
+  end
+
+  def year_param
+    params.permit("year")["year"].to_i
+  end
 end

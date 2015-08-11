@@ -11,27 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804093350) do
+ActiveRecord::Schema.define(version: 20150810141325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "courses", force: :cascade do |t|
+    t.string   "code"
+    t.integer  "points"
+    t.string   "name"
+    t.string   "competence"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "courses", ["code"], name: "index_courses_on_code", unique: true, using: :btree
+  add_index "courses", ["institution_id"], name: "index_courses_on_institution_id", using: :btree
+
   create_table "humen", force: :cascade do |t|
     t.string   "name"
-    t.string   "occupation"
     t.string   "email"
-    t.string   "knowledge"
-    t.string   "social"
-    t.string   "news"
-    t.string   "phoneos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "uuid"
-    t.integer  "step"
     t.integer  "team_id"
+    t.integer  "study_year"
+    t.integer  "course_id"
   end
 
+  add_index "humen", ["course_id"], name: "index_humen_on_course_id", using: :btree
   add_index "humen", ["team_id"], name: "index_humen_on_team_id", using: :btree
+
+  create_table "institutions", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "institutions", ["code"], name: "index_institutions_on_code", unique: true, using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
@@ -40,5 +59,7 @@ ActiveRecord::Schema.define(version: 20150804093350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "courses", "institutions"
+  add_foreign_key "humen", "courses"
   add_foreign_key "humen", "teams"
 end

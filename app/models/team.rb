@@ -10,9 +10,25 @@
 #
 
 class Team < ActiveRecord::Base
-  def missing_competence?(competence)
-    true
+  has_many :humen
+
+  MAXMEMBERS = {
+    economics: 2,
+    gd: 2,
+    it: 4,
+    journalism: 2
+  }
+
+  def self.get_teams(competence)
+    teams = Team.all
+    return nil if teams.blank?
+    teams.select do |team|
+      members = team.humen.select do |human|
+        human.course.competence == competence
+      end
+      members.length < MAXMEMBERS[competence.to_sym]
+    end
   end
 
-
 end
+
