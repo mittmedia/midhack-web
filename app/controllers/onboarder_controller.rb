@@ -25,6 +25,7 @@ class OnboarderController < ApplicationController
     if human_saved
       @all_teams = Team.all
       @available_teams = Team.get_teams(@human.course.competence)
+      @competence = Team.get_title(@human.course.competence)
       render
     else
       redirect_to 'signup'
@@ -37,6 +38,16 @@ class OnboarderController < ApplicationController
       render
     else
       redirect_to 'choose_team'
+    end
+  end
+
+  def confirmation
+    email_saved = save_email
+    if email_saved
+      @team_name = @human.team.name
+      render
+    else
+      redirect_to 'fill_email'
     end
   end
 
@@ -56,6 +67,11 @@ class OnboarderController < ApplicationController
     valid_team = Team.available_team?(team_param, @human.course.competence)
     return false unless valid_team
     @human.team_id = team_param
+    @human.save
+  end
+
+  def save_email
+    @human.email = email_param
     @human.save
   end
 
@@ -89,5 +105,9 @@ class OnboarderController < ApplicationController
 
   def team_param
     params.permit("team")["team"].to_i
+  end
+
+  def email_param
+    params.permit("email")["email"]
   end
 end

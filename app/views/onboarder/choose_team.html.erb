@@ -1,3 +1,4 @@
+<h2>Coolt! Vi behöver <%= @competence %> i dessa lag:</h2>
 <% @all_teams.each do |team| %>
   <% if @available_teams.include?(team) %>
       <p><%= team.name %></p>
