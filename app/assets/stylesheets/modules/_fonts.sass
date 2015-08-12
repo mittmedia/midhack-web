@@ -40,13 +40,15 @@ a
   &:hover
     color: $light_green
   &.circle
-    line-height: 90px
-    width: 90px
+    display: inline-block
+    line-height: 30px
+    width: 30px
     text-align: center
     color: $green
     @include border_radius()
     border: 1px $green solid
     padding: 10px
+    overflow: hidden
     &:hover
       background-color: $green
       border:none

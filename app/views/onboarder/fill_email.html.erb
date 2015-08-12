@@ -1,8 +1,8 @@
 <div id="email" class="container">
-<%= form_tag(confirmation_path) do %>
-  <%= label_tag(:email, 'Nästan klar! Nu behövs bara din mail.') %>
-  <%= label_tag(:email, '(No spam, promise)') %>
-  <%= email_field_tag(:email, '', placeholder: 'Skriv din e-postadress') %>
-  <%= submit_tag('Skicka anmälan') %>
-<% end %>
+  <%= form_tag(confirmation_path) do %>
+    <%= label_tag(:email, 'Nästan klar! Nu behövs bara din mail.') %>
+    <%= label_tag(:email, '(No spam, promise)') %>
+    <%= email_field_tag(:email, '', placeholder: 'Skriv din e-postadress') %>
+    <%= submit_tag('Skicka anmälan') %>
+  <% end %>
 </div>
