@@ -1,11 +1,21 @@
-<h2>Vad är Midhack?</h2>
+<% container_color('white')%>
+<div id="what" class="container">
+  <h1>Vad är Midhack?</h1>
 
-<p>
-  Mittmedia och MIUN Innovation anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingenjörer.
-</p>
-<p>
-  Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens digitala journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på Mittmedia. Är du sugen?
-</p>
+  <div class="text">
+    <p>
+      Mittmedia och MIUN Innovation anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingenjörer.
+    </p>
+    <p>
+      Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens digitala journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på Mittmedia.
+    </p>
+    <p>
+      Är du sugen?
+    </p>
+  </div>
+    <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'button button_big' %>
+    <br>
+    <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small' %>
 
-<%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'btn' %>
-<%= link_to "Jag vill läsa mer", why_path, class: 'btn btn-small' %>
+
+</div>
