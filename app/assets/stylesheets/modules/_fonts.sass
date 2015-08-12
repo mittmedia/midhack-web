@@ -43,8 +43,14 @@ a
     line-height: 90px
     width: 90px
     text-align: center
-    color: $white
+    color: $green
     @include border_radius()
+    border: 1px $green solid
+    padding: 10px
+    &:hover
+      background-color: $green
+      border:none
+      color: $white
 
   &.button
     @include border_radius()
@@ -59,9 +65,10 @@ a
       color: $white
 
 
+
 .button.inactive
   @include transition()
   text-decoration: none
   background-color: $white
   color: $gray_inactive
-
+  border: 1px solid $gray_inactive

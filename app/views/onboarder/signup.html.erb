@@ -1,16 +1,27 @@
-<h2>Vad pluggar du?</h2>
-<% @institutions.each do |institution| %>
-  <h3><%= institution.name %></h3>
-  <% institution.courses.each do |course| %>
-    <fieldset>
-      <button class="btn">
-        <%= course.name %> <br> <%= course.code.upcase %>
-      </button>
-      <% years = course.points/60 %>
-      <% years.times do |year| %>
-        <%= button_to "År #{year+1}", choose_team_path(institution: institution.code, course: course.code, year: year+1), method: :post %>
+<% container_color('white')%>
+<div id="signup" class="container">
+  <h2>Vad pluggar du?</h2>
+  <% @institutions.each do |institution| %>
+    <div class="button" data-institution="<%= institution.id %>">
+      <%= institution.name %>
+    </div>
+
+    <div class="courses" id="institutioncourses<%= institution.id %>">
+      <% institution.courses.each do |course| %>
+        <div class="button small_button">
+          <%= course.name %> <br> <span><%= course.code.upcase %></span>
+        </div>
+        <div class="year">
+          <% course.max_years.times do |year| %>
+              <%= link_to "År #{year+1}", choose_team_path(institution: institution.code, course: course.code, year: year+1), method: :post, class: 'circle' %>
+          <% end %>
+        </div>
       <% end %>
-    </fieldset>
+    </div>
   <% end %>
-<% end %>
-<%= link_to "Tillbaka", root_path, class: 'btn warning' %>
+  <!-- TODO Remove this later -->
+  <%= link_to "Tillbaka", root_path, class: 'btn warning' %>
+</div>
+
+
+

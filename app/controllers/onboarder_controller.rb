@@ -17,7 +17,7 @@ class OnboarderController < ApplicationController
   end
 
   def signup
-    @institutions = Institution.all
+    @institutions = Institution.includes(:courses).all
   end
 
   def choose_team
