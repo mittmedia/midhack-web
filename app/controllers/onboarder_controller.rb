@@ -19,12 +19,11 @@ class OnboarderController < ApplicationController
 
   def signup
     new_human if force_param
-    @institutions = Institution.includes(:courses).all
+    @courses = Course.all
   end
 
   def choose_team
-    human_saved = save_education
-    if human_saved
+    if save_education
       @all_teams = Team.all
       @available_teams = Team.get_teams(@human.course.competence)
       @competence = Team.get_title(@human.course.competence)
