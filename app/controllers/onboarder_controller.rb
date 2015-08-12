@@ -28,7 +28,7 @@ class OnboarderController < ApplicationController
       @competence = Team.get_title(@human.course.competence)
       render
     else
-      redirect_to 'signup'
+      redirect_to :signup
     end
   end
 
@@ -37,22 +37,35 @@ class OnboarderController < ApplicationController
     if human_saved
       render
     else
-      redirect_to 'choose_team'
+      redirect_to :choose_team
     end
   end
 
   def confirmation
     email_saved = save_email
     if email_saved
-      @team_name = @human.team.name
       ConfirmationMailer.confirmation_email(@human).deliver_now
+      redirect_to :receipt
+    else
+      redirect_to :fill_email
+    end
+  end
+
+  def receipt
+    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
+    if signed_up?
+      @team_name = @human.team.name
       render
     else
-      redirect_to 'fill_email'
+      redirect_to root_path
     end
   end
 
   private
+
+  def signed_up?
+    !@human.course.blank? && !@human.team.blank? && !@human.email.blank?
+  end
 
   def save_education
     valid_education = Course.valid_education?(institution_param,
@@ -110,5 +123,9 @@ class OnboarderController < ApplicationController
 
   def email_param
     params.permit("email")["email"]
+  end
+
+  def uuid_param
+    params.permit("uuid")["uuid"]
   end
 end

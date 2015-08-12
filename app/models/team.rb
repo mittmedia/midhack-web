@@ -46,5 +46,9 @@ class Team < ActiveRecord::Base
     return false if available_teams.blank? || chosen_team.blank?
     available_teams.include?(chosen_team)
   end
+
+  def self.rank_team(competence)
+
+  end
 end
 

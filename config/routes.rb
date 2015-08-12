@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   post 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
   #5
   post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
-
+  #6
+  get 'receipt(/:uuid)', to: 'onboarder#receipt', as: 'receipt'
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'
