@@ -45,6 +45,7 @@ class OnboarderController < ApplicationController
     email_saved = save_email
     if email_saved
       @team_name = @human.team.name
+      ConfirmationMailer.confirmation_email(@human).deliver_now
       render
     else
       redirect_to 'fill_email'
