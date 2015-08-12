@@ -19,6 +19,7 @@
 
 class Course < ActiveRecord::Base
   belongs_to :institution
+  default_scope { order("#{table_name}.name ASC") }
 
   def self.valid_education? (institution_code, course_code, year)
     course = Course.find_by(code: course_code)
