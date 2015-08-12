@@ -26,11 +26,29 @@ $rem-base: 16px !default;
   @return $remValues;
 }
 
-
+// transition
 @mixin transition() {
   transition: all 0.2s ease;
 }
 
+
+// Bootstrap mixins
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin bs_transition($transition) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+
+// border radius
 @mixin border_radius() {
   -webkit-border-radius: 45px;
   border-radius: 45px;
