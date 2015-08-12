@@ -3,7 +3,7 @@
   $swing: 150%;
 
   .container {
-    @include transform(translate3d($swing, 0, 0));
+    @include transform(translate3d(0, 0, 0));
 
     .loaded & {
       @include transform(none);
@@ -11,7 +11,7 @@
     }
 
     .loading & {
-      @include transform(translate3d(-#{ $swing }, 0, 0));
+      @include transform(translate3d(-150%, 0, 0));
       @include bs_transition(transform $duration ease-in-out);
 
       &:before {
