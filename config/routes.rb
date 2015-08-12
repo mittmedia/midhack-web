@@ -5,19 +5,20 @@ Rails.application.routes.draw do
   root 'onboarder#index'
 
   #1
-  get 'onboarder/what', as: 'what'
+  get 'what', to: 'onboarder#what', as: 'what'
   #2
-  get 'onboarder/signup', as: 'signup'
+  get 'signup', to: 'onboarder#signup', as: 'signup'
   #3
-  post 'onboarder/choose_team', as: 'choose_team'
-
+  post 'choose_team', to: 'onboarder#choose_team', as: 'choose_team'
   #4
-  post 'onboarder/fill_email', as: 'fill_email'
+  post 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
+  #5
+  post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
 
-  post 'onboarder/confirmation', as: 'confirmation'
 
-  get 'onboarder/why', as: 'why'
-  get 'onboarder/ical', as: 'ical'
+  get 'why', to: 'onboarder#why', as: 'why'
+  get 'ical', to: 'onboarder#ical', as: 'ical'
+
 
 
 end
