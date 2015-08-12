@@ -25,10 +25,14 @@ class Course < ActiveRecord::Base
     return false if course.blank?
     return false unless course.institution.code == institution_code
 
-    max_years = course.points/60
-    if 1 <= year && year <= max_years
+    # max_years = course.points/60
+    if 1 <= year && year <= course.max_years()
       return true
     end
     false
+  end
+
+  def max_years
+    points/60
   end
 end
