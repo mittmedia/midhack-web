@@ -19,15 +19,21 @@
     -ms-box-sizing: border-box
     -webkit-box-sizing: border-box
     -khtml-box-sizing: border-box
+    @include transition()
   input[type= "text"], input[type= "email"]
     border-bottom: 2px solid $green
+    text-align: center
+    &:focus
+      border-bottom: 2px solid $light_green
+      text-align: left
   input[type= "submit"]
-    background: $green
-    color: $white
+    background: none
+    color: $green
+    border: 1px solid $green
     padding: 0 30px
     @include border_radius()
     &:hover
-      background: $light_green
+      background: $green
       color: $white
   .no_spam
     color: $gray_inactive
