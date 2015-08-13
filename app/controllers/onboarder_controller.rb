@@ -19,6 +19,7 @@ class OnboarderController < ApplicationController
 
   def signup
     new_human if force_param
+    @institutions = Institution.all
     @courses = Course.all
   end
 
@@ -45,7 +46,7 @@ class OnboarderController < ApplicationController
   def confirmation
     email_saved = save_email
     if email_saved
-      ConfirmationMailer.confirmation_email(@human).deliver_now
+      ConfirmationMailer.confirmation_email(@human).deliver_later
       redirect_to :receipt
     else
       redirect_to :fill_email
