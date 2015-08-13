@@ -26,8 +26,10 @@ class OnboarderController < ApplicationController
   def choose_team
     if save_education
       @all_teams = Team.all
-      @available_teams = Team.get_teams(@human.course.competence)
-      @competence = Team.get_title(@human.course.competence)
+      @competence = @human.course.competence
+      @available_teams = Team.get_teams(@competence)
+      @title = Team.get_title(@competence)
+      @study_year = @human.study_year
       render
     else
       redirect_to :signup

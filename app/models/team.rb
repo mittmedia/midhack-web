@@ -19,6 +19,13 @@ class Team < ActiveRecord::Base
     journalism: 2
   }
 
+  OPTIMAL_MEMBERS = {
+    economics: 1,
+    gd: 1,
+    it: 3,
+    journalism: 2
+  }
+
   def self.get_title(competence)
     titles = {
       economics: 'ekonomer',
@@ -47,8 +54,43 @@ class Team < ActiveRecord::Base
     available_teams.include?(chosen_team)
   end
 
-  def self.rank_team(competence)
+  def rank_team(competence, study_year)
+    members = humen
+    total_years = 0
+    num_members = members.length
+    competences = { economics: 0, gd: 0, it: 0, journalism: 0 }
 
+    members.each do |member|
+      total_years += member.study_year
+      competences[member.course.competence.to_sym] += 1
+    end
+
+    competence_distance = 1 - competences[:economics]
+    competence_distance += 1 - competences[:gd]
+    competence_distance += 3 - competences[:it]
+    competence_distance += 2 - competences[:journalism]
+    member_distance = (7 - num_members)
+
+    if num_members == 0
+      average_study_years = 0
+    else
+      average_study_years = (total_years / num_members)
+    end
+
+    result_1 = competence_distance + member_distance - average_study_years
+
+    competences[competence.to_sym] += 1
+    num_members += 1
+    total_years += study_year
+    competence_distance = 1 - competences[:economics]
+    competence_distance += 1 - competences[:gd]
+    competence_distance += 3 - competences[:it]
+    competence_distance += 2 - competences[:journalism]
+    member_distance = (7 - num_members)
+    average_study_years = (total_years / num_members)
+
+    result_2 = competence_distance + member_distance - average_study_years
+
+    result_2 - result_1
   end
 end
-

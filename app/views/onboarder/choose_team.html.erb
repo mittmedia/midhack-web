@@ -1,5 +1,5 @@
 <div id="chooseteam" class="container">
-  <h2>Coolt! Vi behöver <%= @competence %> i dessa lag:</h2>
+  <h2>Coolt! Vi behöver <%= @title %> i dessa lag:</h2>
   <% @all_teams.each do |team| %>
     <% if @available_teams.include?(team) %>
         <p><%= team.name %></p>
@@ -7,5 +7,6 @@
     <% else %>
       <p><%= team.name %> - Full</p>
     <% end %>
+    <%= team.rank_team(@competence, @study_year) %>
   <% end %>
 </div>
