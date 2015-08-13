@@ -5,6 +5,7 @@ class OnboarderController < ApplicationController
   end
 
   def what
+    @is_signed_up = signed_up?
   end
 
   def why
@@ -17,6 +18,7 @@ class OnboarderController < ApplicationController
   end
 
   def signup
+    new_human if force_param
     @institutions = Institution.includes(:courses).all
   end
 
@@ -127,5 +129,11 @@ class OnboarderController < ApplicationController
 
   def uuid_param
     params.permit("uuid")["uuid"]
+  end
+
+  def force_param
+    force = params.permit("force")["force"]
+    return false if force.blank?
+    force.upcase == 'TRUE'
   end
 end

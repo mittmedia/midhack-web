@@ -13,7 +13,12 @@
       Är du sugen?
     </p>
   </div>
-    <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'button button_big' %>
+    <% if @is_signed_up %>
+      <%= link_to "Min anmälan", receipt_path, class: 'button button_big' %>
+      <%= link_to "Ny anmälan", signup_path(force: true), class: 'button button_big' %>
+    <% else %>
+      <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'button button_big' %>
+    <% end %>
     <br>
     <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small' %>
 
