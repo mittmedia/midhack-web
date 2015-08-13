@@ -1,24 +1,16 @@
 <% container_color('white')%>
 <div id="signup" class="container">
   <h2>Vad pluggar du?</h2>
-  <% @institutions.each do |institution| %>
-    <div class="button" data-institution="<%= institution.id %>">
-      <%= institution.name %>
-    </div>
-
-    <div class="courses" id="institutioncourses<%= institution.id %>">
-      <% institution.courses.each do |course| %>
-        <div class="button small_button">
+      <% @courses.each do |course| %>
+        <div class="course_button button small_button" data-id="<%= course.id %>" >
           <%= course.name %> <br> <span><%= course.code.upcase %></span>
         </div>
-        <div class="year">
+        <div class="year" id="course_years<%= course.id %>">
           <% course.max_years.times do |year| %>
-              <%= link_to "År #{year+1}", choose_team_path(institution: institution.code, course: course.code, year: year+1), method: :post, class: 'circle' %>
+              <%= link_to "År #{year+1}", choose_team_path(course: course.code, year: year+1), method: :post, class: 'circle' %>
           <% end %>
         </div>
       <% end %>
-    </div>
-  <% end %>
   <!-- TODO Remove this later -->
   <%= link_to "Tillbaka", root_path, class: 'btn warning' %>
 </div>

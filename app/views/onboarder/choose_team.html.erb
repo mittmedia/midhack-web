@@ -1,9 +1,11 @@
-<h2>Coolt! Vi behöver <%= @competence %> i dessa lag:</h2>
-<% @all_teams.each do |team| %>
-  <% if @available_teams.include?(team) %>
-      <p><%= team.name %></p>
-      <%= button_to "Välj", fill_email_path(team: team.id), method: :post %>
-  <% else %>
-    <p><%= team.name %> - Full</p>
+<div id="chooseteam" class="container">
+  <h2>Coolt! Vi behöver <%= @competence %> i dessa lag:</h2>
+  <% @all_teams.each do |team| %>
+    <% if @available_teams.include?(team) %>
+        <p><%= team.name %></p>
+        <%= button_to "Välj", fill_email_path(team: team.id), method: :post %>
+    <% else %>
+      <p><%= team.name %> - Full</p>
+    <% end %>
   <% end %>
-<% end %>
+</div>

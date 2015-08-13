@@ -4,6 +4,7 @@
     padding: 10px 20px
     border: 1px $green solid
     text-align: center
+    @include transition()
     &:hover
       border: 1px $light_green solid
       color: $text_black
@@ -11,7 +12,7 @@
       background: $green
       color: $white
   .small_button
-    margin: 10px 30px 0
+    margin: 10px 0
     font-size: rem-calc(28/2)
     text-align: center
     font-weight: 600
@@ -20,7 +21,14 @@
       font-size: rem-calc(22/2)
       font-weight: normal
   .year
-    margin: 10px 30px 0
+    margin: 0 30px
+    max-height: 0
     text-align: center
-
-
+    overflow: hidden
+    @include transition()
+  .year_active
+    margin: 10px 30px 0
+    max-height: 150px
+  .course_active
+    background: $green
+    border: 0

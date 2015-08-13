@@ -3,3 +3,4 @@
 //= require turbolinks
 //= require_tree .
 //= require modules/page-transition.coffee
+//= require pages/signup.coffee
