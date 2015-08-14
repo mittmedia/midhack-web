@@ -7,7 +7,8 @@
     <% if @available_teams.include?(team) %>
       <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
         <span class="button_filler_opaque" style="width: <%= team.filled_spots_percentage(@competence) %>%"></span>
-        <span class="button_filler_transparent" style="width: <%= 100 - team.filled_spots_percentage(@competence) %>%"></span>
+        <%# 101 to fix css rounding errors and make the button_filler_opaque and transparent overlap %>
+        <span class="button_filler_transparent" style="width: <%= 101 - team.filled_spots_percentage(@competence) %>%"></span>
         <span class="button_filler_text"><%= team.name %></span>
       <% end %>
       <p class="uppercase"><%= team.competence_spots_left(@competence) %> <%= @title[:singular] %>platser kvar</p>
