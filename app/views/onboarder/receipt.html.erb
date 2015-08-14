@@ -1,4 +1,4 @@
-<% container_color('black')%>
+<% container_color('footer_black')%>
 <div id="receipt" class="container">
   <h2>Suveränt! Nu har vi allt vi behöver.</h2>
   <p>Du är anmäld till Midhack 14-15 november på Mittuniversitetet i lag:</p>
@@ -9,5 +9,6 @@
     <li>Dela på google+</li>
     <li>Dela på linkedin</li>
   </ul>
-  <%= link_to 'Lägg till i kalender', ical_path %>
+  <%= link_to 'Lägg till i kalender', ical_path, class: 'button' %>
+  <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>
 </div>
