@@ -1,0 +1,41 @@
+#chooseteam
+  text-align: center
+  .button_choose_team
+    display: inline-block
+    font-size: rem-calc(40/2)
+  .button_filler
+    position: relative
+    height: rem-calc(60)
+  .button_filler_opaque
+    @include border_radius_left()
+    background-color: $white
+    left: 0
+  .button_filler_transparent
+    @include border_radius_right()
+    background-color: rgba(255, 255, 255, 0.6)
+    right: 0
+  .button_full
+    @include border_radius()
+    padding: rem-calc(20) rem-calc(40)
+    background-color: rgba(6, 148, 176, 1)
+    color: $green
+  .button_filler_opaque,
+  .button_filler_transparent
+    display: block
+    position: absolute
+    top: 0
+    height: rem-calc(60)
+    z-index: 0
+  .button_filler_text
+    padding: rem-calc(20) rem-calc(40)
+    position: relative
+    top: rem-calc(20)
+    z-index: 1
+
+  h2,
+  p
+    color: $white
+  a
+    color: $green
+    &:hover
+      color: $green

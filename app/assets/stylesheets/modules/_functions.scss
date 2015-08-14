@@ -50,6 +50,19 @@ $rem-base: 16px !default;
 
 // border radius
 @mixin border_radius() {
-  -webkit-border-radius: 45px;
-  border-radius: 45px;
+  -webkit-border-radius: rem-calc(45);
+  border-radius: rem-calc(45);
 }
+
+@mixin border_radius_left() {
+  /* top-left | top-right | bottom-right | bottom-left */
+  -webkit-border-radius: rem-calc(45) 0 0 rem-calc(45);
+  border-radius: rem-calc(45) 0 0 rem-calc(45);
+}
+
+@mixin border_radius_right() {
+  /* top-left | top-right | bottom-right | bottom-left */
+  -webkit-border-radius: 0 rem-calc(45) rem-calc(45) 0;
+  border-radius: 0 rem-calc(45) rem-calc(45) 0;
+}
+

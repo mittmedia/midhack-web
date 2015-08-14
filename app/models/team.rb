@@ -28,10 +28,10 @@ class Team < ActiveRecord::Base
 
   def self.get_title(competence)
     titles = {
-      economics: 'ekonomer',
-      gd: 'designers',
-      it: 'hackers',
-      journalism: 'journalister'
+      economics: { plural: 'ekonomer', singular: 'ekonom' },
+      gd: { plural: 'designers', singular: 'designer' },
+      it: { plural: 'hackers', singular: 'hacker' },
+      journalism: { plural: 'journalister', singular: 'journalist' }
     }
     titles[competence.to_sym]
   end
@@ -54,7 +54,35 @@ class Team < ActiveRecord::Base
     available_teams.include?(chosen_team)
   end
 
-  def rank_team(competence, study_year)
+  def spots_left
+    max_spots - humen.length
+  end
+
+  def max_spots
+    maxspots = 0
+    MAXMEMBERS.each do |_competence, spots|
+      maxspots += spots
+    end
+    maxspots
+  end
+
+  def competence_spots_left(incoming_competence)
+    counter = 0
+    humen.each do |member|
+      competence = member.course.competence
+      counter += 1 if competence == incoming_competence
+    end
+    MAXMEMBERS[incoming_competence.to_sym] - counter - 1
+  end
+
+  # Filled spots of the specific competence
+  def filled_spots_percentage(incoming_competence)
+    spots_left = competence_spots_left(incoming_competence)
+    maxmembers = MAXMEMBERS[incoming_competence.to_sym]
+    ((spots_left.to_f/maxmembers.to_f)*100).to_i
+  end
+
+  def rank(competence, study_year)
     members = humen
     total_years = 0
     num_members = members.length

@@ -79,8 +79,8 @@ class OnboarderController < ApplicationController
 
   def save_education
     valid_education = Course.valid_education?(institution_param,
-                                                  course_param,
-                                                  year_param)
+                                              course_param,
+                                              year_param)
     return false unless valid_education
     @human.course = Course.find_by(code: course_param)
     @human.study_year = year_param
