@@ -14,13 +14,13 @@
     </p>
   </div>
     <% if @is_signed_up %>
-      <%= link_to "Min anmälan", receipt_path, class: 'button button_big' %>
-      <%= link_to "Ny anmälan", signup_path(force: true), class: 'button button_big' %>
+      <%= link_to "Min anmälan", receipt_path, class: 'button button_big', id:'signed_up_button' %>
+      <%= link_to "Ny anmälan", signup_path(force: true), class: 'button button_big', id:'new_signup_button' %>
     <% else %>
-      <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'button button_big' %>
+      <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'button button_big', id:'signup_button' %>
     <% end %>
     <br>
-    <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small' %>
+    <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>
 
 
 </div>
