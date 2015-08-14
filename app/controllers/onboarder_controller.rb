@@ -25,11 +25,11 @@ class OnboarderController < ApplicationController
 
   def choose_team
     if save_education
-      @all_teams = Team.all
       @competence = @human.course.competence
       @available_teams = Team.get_teams(@competence)
       @title = Team.get_title(@competence)
       @study_year = @human.study_year
+      @all_teams = sort_teams(@competence, @study_year)
       render
     else
       redirect_to :signup
@@ -69,6 +69,12 @@ class OnboarderController < ApplicationController
 
   def signed_up?
     !@human.course.blank? && !@human.team.blank? && !@human.email.blank?
+  end
+
+  def sort_teams(competence, study_year)
+    Team.includes(:humen).sort do |x, y|
+      x.rank(competence, study_year) <=> y.rank(competence, study_year)
+    end
   end
 
   def save_education

@@ -19,6 +19,7 @@
 
 class Course < ActiveRecord::Base
   belongs_to :institution
+  has_many :humen
   default_scope { order("#{table_name}.name ASC") }
 
   def self.valid_education? (institution_code, course_code, year)
