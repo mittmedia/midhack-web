@@ -49,4 +49,20 @@ describe 'the signup process', type: :feature, js: true do
       expect(page).to have_text 'Vad pluggar du?'
     end
   end
+
+  describe 'The visitor picks competence and study year' do
+    it 'has more than one course button' do
+      visit signup_path
+      expect(page).to have_css('.course_button')
+      expect(page).to have_css('div.year', count: 31)
+    end
+  end
+
+  describe 'The visitor picks a team' do
+    it 'has a name' do
+      visit signup_path
+      expect(page.all('div.chooseteam').count).to eq(8)
+      expect(page).to have_text 'Coolt! Vi behöver hackers i dessa lag:'
+    end
+  end
 end

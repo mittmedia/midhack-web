@@ -63,6 +63,10 @@ guard :rspec, cmd: "bin/rspec" do
     ]
   end
 
+  watch(%r{^spec/factories/(.+)\.rb$}) do
+    rspec.spec_dir
+  end
+
   # Rails config changes
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
