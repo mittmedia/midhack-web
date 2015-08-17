@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'the signup process', type: :feature, js: true do
+describe 'the signup process', type: :feature do
   before(:each) do
     @team = FactoryGirl.create(:team)
     @institution = FactoryGirl.create(:institution)
@@ -53,16 +53,32 @@ describe 'the signup process', type: :feature, js: true do
   describe 'The visitor picks competence and study year' do
     it 'has more than one course button' do
       visit signup_path
-      expect(page).to have_css('.course_button')
-      expect(page).to have_css('div.year', count: 31)
+      expect(page).to have_css('div.course_button')
+      expect(page).to have_css('div.year', count: 1)
     end
   end
 
-  describe 'The visitor picks a team' do
+  describe 'Teams are displayed' do
     it 'has a name' do
       visit signup_path
-      expect(page.all('div.chooseteam').count).to eq(8)
+      click_link('År 1')
+      expect(page).to have_css('#chooseteam')
       expect(page).to have_text 'Coolt! Vi behöver hackers i dessa lag:'
+    end
+  end
+
+  describe 'Visitor picks a team' do
+    it 'teams are available' do
+      visit signup_path
+      click_link('År 1')
+      click_link('testteam')
+      expect(page).to have_css('#email')
+      expect(page).to have_text 'Nästan klar! Nu behövs bara din mail.'
+      # find_field('email').value.should eq 'Skriv din e-postadress'
+      fill_in 'email', with: 'hej@example.com'
+      # click_link('Skicka anmälan')
+      click_button 'submit_button'
+      expect(page).to have_text 'Suveränt! Nu har vi allt vi behöver.'
     end
   end
 end

@@ -3,6 +3,6 @@
    <h2><%= label_tag(:email, 'Nästan klar! Nu behövs bara din mail.') %></h2>
     <%= label_tag(:email, '(No spam, promise)', class: 'no_spam') %>
     <%= email_field_tag(:email, '', placeholder: 'Skriv din e-postadress') %>
-    <%= submit_tag('Skicka anmälan') %>
+    <%= submit_tag 'Skicka anmälan', id:'submit_button' %>
   <% end %>
 </div>

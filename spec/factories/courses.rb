@@ -24,5 +24,4 @@ FactoryGirl.define do
     name 'Civ.ing. datateknik'
     competence 'it'
   end
-
 end

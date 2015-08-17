@@ -5,7 +5,7 @@
   <p>Coolt! Vi behöver <%= @title[:plural] %> i dessa lag:</p>
   <% @all_teams.each do |team| %>
     <% if @available_teams.include?(team) %>
-      <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
+      <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team', id: 'team_button' do %>
         <span class="button_filler_opaque" style="width: <%= team.filled_spots_percentage(@competence) %>%"></span>
         <%# 101 to fix css rounding errors and make the button_filler_opaque and transparent overlap %>
         <span class="button_filler_transparent" style="width: <%= 101 - team.filled_spots_percentage(@competence) %>%"></span>
