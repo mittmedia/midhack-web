@@ -4,7 +4,12 @@
   <p>Du är anmäld till Midhack 14-15 november på Mittuniversitetet i lag:</p>
   <h3><%= @team_name %></h3>
   <ul>
-    <li>Dela på facebook</li>
+    <li>
+      <%= link_to_facebook do %>
+        <div class="icon"></div>
+        <span class="social_share_label">Dela på facebook</span>
+      <% end %>
+    </li>
     <li>Dela på twitter</li>
     <li>Dela på google+</li>
     <li>Dela på linkedin</li>
@@ -12,3 +17,5 @@
   <%= link_to 'Lägg till i kalender', ical_path, class: 'button' %>
   <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>
 </div>
+
+
