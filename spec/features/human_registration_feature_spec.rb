@@ -3,8 +3,7 @@ require 'rails_helper'
 describe 'the signup process', type: :feature do
   before(:each) do
     @team = FactoryGirl.create(:team)
-    @institution = FactoryGirl.create(:institution)
-    @course = FactoryGirl.create(:course, institution: @institution)
+    @course = FactoryGirl.create(:course)
   end
 
   describe 'The visitor visits the rooth path' do

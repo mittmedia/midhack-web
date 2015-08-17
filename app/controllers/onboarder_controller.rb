@@ -19,7 +19,6 @@ class OnboarderController < ApplicationController
 
   def signup
     new_human if force_param
-    @institutions = Institution.all
     @courses = Course.all
   end
 
@@ -78,8 +77,7 @@ class OnboarderController < ApplicationController
   end
 
   def save_education
-    valid_education = Course.valid_education?(institution_param,
-                                              course_param,
+    valid_education = Course.valid_education?(course_param,
                                               year_param)
     return false unless valid_education
     @human.course = Course.find_by(code: course_param)
@@ -113,10 +111,6 @@ class OnboarderController < ApplicationController
     @human = Human.new
     @human.save!
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
-  end
-
-  def institution_param
-    params.permit("institution")["institution"]
   end
 
   def course_param
