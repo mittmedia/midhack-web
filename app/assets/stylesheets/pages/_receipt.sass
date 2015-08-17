@@ -13,14 +13,50 @@
       line-height: 45px
 
   .share
-  .social_share_label
+    .icon
+      @include border_radius(100%)
+      border: 1px $white solid
+      text-align: center
+      display: inline-block
+      background-repeat: no-repeat
+      background-position: center
+      height: 50px
+      width: 50px
+      float: left
+      margin-bottom: 9px
+  a:link,
+  a:hover,
+  a:active,
+  a:visited
+    .social_share_label
+      display: block
+      font-size: rem-calc(22/2)
+      font-weight: bold
+      width: 50px
+      line-height: 110%
   .facebook
     .icon
+      background-image: image-url('facebook_logo.svg')
+      background-size: 80%
   .twitter
+    .icon
+      background-image: image-url('twitter_logo.svg')
+      background-size: 70%
   .googleplus
+    .icon
+      background-image: image-url('google_logo.svg')
+      background-size: 70%
   .linkedin
+    .icon
+      background-image: image-url('linkedin_logo.svg')
+      background-size: 80%
 
   h3
     text-decoration: underline
     -moz-text-decoration-color: $green
     text-decoration-color: $green
+
+  ul
+    list-style-type: none
+  li
+    width: 150px

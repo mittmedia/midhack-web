@@ -49,9 +49,9 @@ $rem-base: 16px !default;
 
 
 // border radius
-@mixin border_radius() {
-  -webkit-border-radius: rem-calc(45);
-  border-radius: rem-calc(45);
+@mixin border_radius($roundness: rem-calc(45)) {
+  -webkit-border-radius: $roundness;
+  border-radius: $roundness;
 }
 
 @mixin border_radius_left() {
