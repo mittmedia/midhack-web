@@ -74,9 +74,7 @@ describe 'the signup process', type: :feature do
       click_link('testteam')
       expect(page).to have_css('#email')
       expect(page).to have_text 'Nästan klar! Nu behövs bara din mail.'
-      # find_field('email').value.should eq 'Skriv din e-postadress'
       fill_in 'email', with: 'hej@example.com'
-      # click_link('Skicka anmälan')
       click_button 'submit_button'
       expect(page).to have_text 'Suveränt! Nu har vi allt vi behöver.'
     end
