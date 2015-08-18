@@ -22,8 +22,17 @@ class OnboarderController < ApplicationController
     @courses = Course.all
   end
 
-  def choose_team
+  def choose_competence
     if save_education
+      @competences = Competence.all
+      render
+    else
+      redirect_to :signup
+    end
+  end
+
+  def choose_team
+    if save_competence
       @competence = @human.course.competence
       @available_teams = Team.get_teams(@competence)
       @title = Team.get_title(@competence)
@@ -74,6 +83,10 @@ class OnboarderController < ApplicationController
     Team.includes(:humen).sort do |x, y|
       x.rank(competence, study_year) <=> y.rank(competence, study_year)
     end
+  end
+
+  def save_competence
+
   end
 
   def save_education

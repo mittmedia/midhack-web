@@ -26,16 +26,6 @@ class Team < ActiveRecord::Base
     journalism: 2
   }
 
-  def self.get_title(competence)
-    titles = {
-      economics: { plural: 'ekonomer', singular: 'ekonom' },
-      gd: { plural: 'designers', singular: 'designer' },
-      it: { plural: 'hackers', singular: 'hacker' },
-      journalism: { plural: 'journalister', singular: 'journalist' }
-    }
-    titles[competence.to_sym]
-  end
-
   def self.get_teams(competence)
     teams = Team.all
     return nil if teams.blank?

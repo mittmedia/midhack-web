@@ -7,7 +7,7 @@
         </div>
         <div class="year" id="course_years<%= course.id %>">
           <% course.max_years.times do |year| %>
-              <%= link_to "År #{year+1}", choose_team_path(course: course.code, year: year+1), method: :post, class: 'circle' %>
+              <%= link_to "År #{year+1}", choose_competence_path(course: course.code, year: year+1), method: :post, class: 'circle' %>
           <% end %>
         </div>
       <% end %>

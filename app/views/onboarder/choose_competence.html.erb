@@ -1,0 +1,7 @@
+<% container_color('white')%>
+<div id="choosecompetence" class="container">
+  <h2>Vilken kompetens vill du bidra med?</h2>
+  <% @competences.each do |competence| %>
+    <%= link_to competence.field, choose_team_path(competence: competence), method: :post, class: 'button' %>
+  <% end %>
+</div>
