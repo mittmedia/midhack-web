@@ -33,9 +33,7 @@ class OnboarderController < ApplicationController
 
   def choose_team
     if save_competence
-      @competence = @human.course.competence
-      @available_teams = Team.get_teams(@competence)
-      @title = Team.get_title(@competence)
+      @available_teams = Team.get_teams(@competence.name)
       @study_year = @human.study_year
       @all_teams = sort_teams(@competence, @study_year)
       render
@@ -86,7 +84,10 @@ class OnboarderController < ApplicationController
   end
 
   def save_competence
-
+    @competence = Competence.find(params[:competence])
+    return false if @competence.blank?
+    @human.competence = @competence
+    @human.save
   end
 
   def save_education
@@ -99,7 +100,7 @@ class OnboarderController < ApplicationController
   end
 
   def save_team
-    valid_team = Team.available_team?(team_param, @human.course.competence)
+    valid_team = Team.available_team?(team_param, @human.competence)
     return false unless valid_team
     @human.team_id = team_param
     @human.save
@@ -132,6 +133,10 @@ class OnboarderController < ApplicationController
 
   def year_param
     params.permit("year")["year"].to_i
+  end
+
+  def competence_param
+    params.permit("competence")["competence"].to_i
   end
 
   def team_param

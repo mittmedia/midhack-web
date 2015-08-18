@@ -9,6 +9,7 @@
 #
 
 class Competence < ActiveRecord::Base
+  has_many :humen
   def singular
     titles[name.to_sym][:singular]
   end

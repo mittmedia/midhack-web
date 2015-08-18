@@ -31,14 +31,14 @@ class Team < ActiveRecord::Base
     return nil if teams.blank?
     teams.select do |team|
       members = team.humen.select do |human|
-        human.course.competence == competence && !human.email.blank?
+        human.competence.name == competence && !human.email.blank?
       end
       members.length < MAXMEMBERS[competence.to_sym]
     end
   end
 
   def self.available_team?(team_id, competence)
-    available_teams = Team.get_teams(competence)
+    available_teams = Team.get_teams(competence.name)
     chosen_team = Team.find_by(id: team_id)
     return false if available_teams.blank? || chosen_team.blank?
     available_teams.include?(chosen_team)
@@ -59,16 +59,16 @@ class Team < ActiveRecord::Base
   def competence_spots_left(incoming_competence)
     counter = 0
     humen.each do |member|
-      competence = member.course.competence
+      competence = member.competence
       counter += 1 if competence == incoming_competence
     end
-    MAXMEMBERS[incoming_competence.to_sym] - counter - 1
+    MAXMEMBERS[incoming_competence.name.to_sym] - counter - 1
   end
 
   # Filled spots of the specific competence
   def filled_spots_percentage(incoming_competence)
     spots_left = competence_spots_left(incoming_competence)
-    maxmembers = MAXMEMBERS[incoming_competence.to_sym]
+    maxmembers = MAXMEMBERS[incoming_competence.name.to_sym]
     ((spots_left.to_f/maxmembers.to_f)*100).to_i
   end
 
@@ -80,7 +80,7 @@ class Team < ActiveRecord::Base
 
     members.each do |member|
       total_years += member.study_year
-      competences[member.course.competence.to_sym] += 1
+      competences[member.competence.name.to_sym] += 1
     end
 
     competence_distance = 1 - competences[:economics]
@@ -97,7 +97,7 @@ class Team < ActiveRecord::Base
 
     result_1 = competence_distance + member_distance - average_study_years
 
-    competences[competence.to_sym] += 1
+    competences[competence.name.to_sym] += 1
     num_members += 1
     total_years += study_year
     competence_distance = 1 - competences[:economics]

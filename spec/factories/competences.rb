@@ -10,7 +10,6 @@
 
 FactoryGirl.define do
   factory :competence do
-    name "MyString"
+    name 'it'
   end
-
 end

@@ -6,7 +6,6 @@
 #  code       :string
 #  points     :integer
 #  name       :string
-#  competence :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -20,6 +19,5 @@ FactoryGirl.define do
     code 'tdtea'
     points 300
     name 'Civ.ing. datateknik'
-    competence 'it'
   end
 end
