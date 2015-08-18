@@ -33,9 +33,8 @@ class OnboarderController < ApplicationController
 
   def choose_team
     if save_competence
-      @available_teams = Team.get_teams(@competence.name)
       @study_year = @human.study_year
-      @all_teams = sort_teams(@competence, @study_year)
+      @sorted_teams = Team.sorted_teams(@competence, @study_year)
       render
     else
       redirect_to :signup
@@ -73,11 +72,11 @@ class OnboarderController < ApplicationController
 
   private
 
-  def sort_teams(competence, study_year)
-    Team.includes(:humen).sort do |x, y|
-      x.rank(competence, study_year) <=> y.rank(competence, study_year)
-    end
-  end
+  # def sort_teams(competence, study_year)
+  #   Team.includes(:humen).sort do |x, y|
+  #     x.rank(competence, study_year) <=> y.rank(competence, study_year)
+  #   end
+  # end
 
   def save_competence
     @competence = Competence.find(params[:competence])
@@ -96,7 +95,7 @@ class OnboarderController < ApplicationController
   end
 
   def save_team
-    valid_team = Team.available_team?(team_param, @human.competence)
+    valid_team = Team.find(team_param).available_team?(@human.competence)
     return false unless valid_team
     @human.team_id = team_param
     @human.save

@@ -26,6 +26,8 @@ class Team < ActiveRecord::Base
     journalism: 2
   }
 
+  MAX_NUM_MEMBERS = 8
+
   def self.get_teams(competence)
     teams = Team.all
     return nil if teams.blank?
@@ -37,23 +39,47 @@ class Team < ActiveRecord::Base
     end
   end
 
-  def self.available_team?(team_id, competence)
-    available_teams = Team.get_teams(competence.name)
-    chosen_team = Team.find_by(id: team_id)
-    return false if available_teams.blank? || chosen_team.blank?
-    available_teams.include?(chosen_team)
+  def self.sorted_teams(competence, study_year)
+    all_teams = Team.all.includes(:humen)
+    all_teams = all_teams.sort do |x, y|
+      x.rank(competence, study_year) <=> y.rank(competence, study_year)
+    end
+    {
+      available_teams: Team.available_teams(competence, all_teams),
+      competence_filled_teams: Team.competence_filled_teams(competence, all_teams),
+      full_teams: Team.full_teams(all_teams)
+    }
+  end
+
+  def self.available_teams(competence, sorted_teams)
+    sorted_teams.select do |team|
+      team.available_team?(competence) && !team.full_team?
+    end
+  end
+
+  def self.competence_filled_teams(competence, sorted_teams)
+    sorted_teams.select do |team|
+      !team.available_team?(competence) && !team.full_team?
+    end
+  end
+
+  def self.full_teams(sorted_teams)
+    sorted_teams.select(&:full_team?)
+  end
+
+  def full_team?
+    humen.length > MAX_NUM_MEMBERS
+  end
+
+  def available_team?(competence)
+    members = humen.select do |human|
+      human.competence == competence && !human.email.blank?
+    end
+    members.length < MAXMEMBERS[competence.name.to_sym]
   end
 
   def spots_left
-    max_spots - humen.length
-  end
-
-  def max_spots
-    maxspots = 0
-    MAXMEMBERS.each do |_competence, spots|
-      maxspots += spots
-    end
-    maxspots
+    MAX_NUM_MEMBERS - humen.length
   end
 
   def competence_spots_left(incoming_competence)
@@ -62,14 +88,12 @@ class Team < ActiveRecord::Base
       competence = member.competence
       counter += 1 if competence == incoming_competence
     end
-    MAXMEMBERS[incoming_competence.name.to_sym] - counter - 1
+    MAXMEMBERS[incoming_competence.name.to_sym] - counter
   end
 
   # Filled spots of the specific competence
-  def filled_spots_percentage(incoming_competence)
-    spots_left = competence_spots_left(incoming_competence)
-    maxmembers = MAXMEMBERS[incoming_competence.name.to_sym]
-    ((spots_left.to_f/maxmembers.to_f)*100).to_i
+  def filled_spots_percentage
+    ((spots_left.to_f/MAX_NUM_MEMBERS.to_f)*100).to_i
   end
 
   def rank(competence, study_year)
