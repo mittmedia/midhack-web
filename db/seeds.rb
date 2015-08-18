@@ -22,62 +22,65 @@ Team.create([
 Course.create({
   code: 'tdtea',
   points: 300,
-  name: 'Civ.ing. datateknik',
-  competence: 'it'
+  name: 'Civ.ing. datateknik'
 })
 Course.create({
   code: 'tinda',
   points: 300,
-  name: 'Civ.ing. industriell ekonomi',
-  competence: 'economics'
+  name: 'Civ.ing. industriell ekonomi'
 })
 Course.create({
   code: 'tdatg',
   points: 180,
-  name: 'Datateknik',
-  competence: 'it'
+  name: 'Datateknik'
 })
 Course.create({
   code: 'tandg',
   points: 120,
-  name: 'Mobila applikationer och nätverkstjänster för Android',
-  competence: 'it'
+  name: 'Mobila applikationer och nätverkstjänster för Android'
 })
 
 Course.create({
   code: 'sinpg',
   points: 180,
-  name: 'Informations- och PR-programmet',
-  competence: 'journalism'
+  name: 'Informations- och PR-programmet'
 })
 Course.create({
   code: 'sjoug',
   points: 180,
-  name: 'Journalistprogrammet',
-  competence: 'journalism'
+  name: 'Journalistprogrammet'
 })
 Course.create({
   code: 'tgdkg',
   points: 180,
-  name: 'Grafisk design och kommunikation',
-  competence: 'gd'
+  name: 'Grafisk design och kommunikation'
 })
 Course.create({
   code: 'tgdog',
   points: 180,
-  name: 'Grafisk design och kommunikation',
-  competence: 'gd'
+  name: 'Grafisk design och kommunikation'
 })
 
 Course.create({
   code: 'tnätg',
   points: 120,
-  name: 'Nätverksdrift',
-  competence: 'it'
+  name: 'Nätverksdrift'
 })
 Course.create({
   code: 'tweug',
   points: 120,
-  name: 'Webbutveckling',
-  competence: 'it'
+  name: 'Webbutveckling'
+})
+
+Competence.create({
+  name: "it"
+})
+Competence.create({
+  name: "gd"
+})
+Competence.create({
+  name: "economics"
+})
+Competence.create({
+  name: "journalism"
 })
