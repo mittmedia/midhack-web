@@ -5,7 +5,7 @@ class OnboarderController < ApplicationController
   end
 
   def what
-    @is_signed_up = signed_up?
+    @is_signed_up = @human.signed_up?
   end
 
   def why
@@ -63,7 +63,7 @@ class OnboarderController < ApplicationController
 
   def receipt
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    if signed_up?
+    if @human.signed_up?
       @team_name = @human.team.name
       render
     else
@@ -72,10 +72,6 @@ class OnboarderController < ApplicationController
   end
 
   private
-
-  def signed_up?
-    !@human.course.blank? && !@human.team.blank? && !@human.email.blank?
-  end
 
   def sort_teams(competence, study_year)
     Team.includes(:humen).sort do |x, y|
