@@ -1,5 +1,13 @@
 #chooseteam
   text-align: center
+  .button
+    border: 1px $white solid
+    color: $white
+    padding: 10px 40px
+    &:hover
+      background-color: $white
+      color: $green
+
   .button_choose_team
     display: inline-block
     font-size: rem-calc(40/2)
@@ -17,7 +25,7 @@
   .button_full
     @include border_radius()
     padding: rem-calc(20) rem-calc(40)
-    background-color: rgba(6, 148, 176, 1)
+    background-color: $white
     color: $green
   .button_filler_opaque,
   .button_filler_transparent

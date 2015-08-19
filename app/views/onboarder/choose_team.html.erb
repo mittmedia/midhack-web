@@ -3,6 +3,9 @@
 <div id="chooseteam" class="container">
 <h2>Välj ett team</h2>
   <p>Coolt! Vi behöver <%= @competence.plural %> i dessa lag:</p>
+  <%= link_to "Välj ett lag åt mig", choose_team_path, class: 'button' %>
+  <br>
+  <br>
   <% @sorted_teams[:available_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
       <span class="button_filler_opaque" style="width: <%= 99 - team.filled_spots_percentage %>%"></span>
@@ -14,7 +17,7 @@
     <p><%= team.filled_spots_percentage %></p>
   <% end %>
 
-  <hr>
+  <p>Övriga lag</p>
 
   <% @sorted_teams[:competence_filled_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
@@ -26,9 +29,10 @@
     <p><%= team.spots_left %> platser kvar</p>
   <% end %>
 
-  <hr>
-
   <% @sorted_teams[:full_teams].each do |team| %>
-    <p class='button_full button_choose_team'><%= team.name %> - Full</p>
+    <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_full button_choose_team' do -%>
+      <span><%= team.name %></span>
+    <% end %>
+    <p><%= team.name %> - Full</p>
   <% end %>
 </div>
