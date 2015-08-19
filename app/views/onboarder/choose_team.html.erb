@@ -2,10 +2,14 @@
 <div id="signup" class="container">
 <div id="chooseteam" class="container">
 <h2>Välj ett team</h2>
-  <p>Coolt! Vi behöver <%= @competence.plural %> i dessa lag:</p>
-  <%= link_to "Välj ett lag åt mig", choose_team_path, class: 'button' %>
-  <br>
-  <br>
+
+  <p>Vi kan välja ett team åt dig</p>
+
+    <%= link_to "Välj lag åt mig", choose_team_path, class: 'button button_choose_team' %>
+
+  <p>Eller så kan du välja ett lag själv.
+  Vi behöver <%= @competence.plural %> i dessa lag:</p>
+
   <% @sorted_teams[:available_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
       <span class="button_filler_opaque" style="width: <%= 99 - team.filled_spots_percentage %>%"></span>
@@ -13,11 +17,11 @@
       <span class="button_filler_transparent" style="width: <%= 2 + team.filled_spots_percentage %>%"></span>
       <span class="button_filler_text"><%= team.name %></span>
     <% end %>
-    <p><%= team.spots_left %> platser kvar</p>
-    <p><%= team.filled_spots_percentage %></p>
+    <p class="spots_left"><%= team.spots_left %> platser kvar</p>
+    <p><%# team.filled_spots_percentage %></p>
   <% end %>
 
-  <p>Övriga lag</p>
+  <p class="semibold" >Övriga lag</p>
 
   <% @sorted_teams[:competence_filled_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_filler button_choose_team' do %>
@@ -26,13 +30,13 @@
       <span class="button_filler_transparent" style="width: <%= 2 + team.filled_spots_percentage %>%"></span>
       <span class="button_filler_text"><%= team.name %></span>
     <% end %>
-    <p><%= team.spots_left %> platser kvar</p>
+    <p class="spots_left"><%= team.spots_left %> platser kvar</p>
   <% end %>
 
   <% @sorted_teams[:full_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_full button_choose_team' do -%>
       <span><%= team.name %></span>
     <% end %>
-    <p><%= team.name %> - Full</p>
+    <p class="spots_left"> Fullt! </p>
   <% end %>
 </div>
