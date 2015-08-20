@@ -36,14 +36,22 @@ button {
     padding: rem-calc(15px) rem-calc(20px);
     line-height: 1.25rem;
   }
-  &.btn_cancel{
+  &.btn_cancel,
+  &.btn_cancel:link,
+  &.btn_cancel:visited {
     @include btn;
     padding: rem-calc(15px) rem-calc(30px);
     line-height: 1.25em;
     font-size: 1.15rem;
-    background: $cancel;
+    font-weight: bold;
+    background-color: $cancel;
     color: $white;
     border-color: $cancel;
+  }
+  &.btn_cancel:hover,
+  &.btn_cancel:active {
+    background-color: desaturate(darken($cancel, 10%), 13%);
+    border-color: desaturate(darken($cancel, 10%), 13%);
   }
 }
 .primary {
@@ -279,73 +287,90 @@ button {
 }
 
 .black {
-  .btn_filler{
-    border-color: $white;
+  .btn_filler {
+    border-color: transparent;
   }
-  .btn_filler--selected{
-    border-color: $white;
+  .btn_filler--selected {
+    border-color: transparent;
   }
   .btn_filler__opaque {
     background-color: $white;
   }
   .btn_filler__transparent {
-    background-color: none;
+    background-color: $white;
+    opacity: 0.45;
   }
   .btn_filler__text {
-    color: #555;
+    color: black;
   }
 }
 
 .btn_circular,
-.btn_circular--selected{
+.btn_circular:link,
+.btn_circular:visited,
+.btn_circular:active,
+.btn_circular:hover,
+.btn_circular--selected {
   @include btn;
   @include border_radius(100%);
   width: 60px;
   height: 60px;
   line-height: 60px;
+  margin: 0 rem-calc(9px);
+  display: inline-block;
+  text-align: center;
 }
 
-.primary{
-  .btn_circular--selected{
-    background-color: $white;
-    color: $primary;
-  }
-}
-
-.white{
-  .btn_circular--selected{
+.primary {
+  .btn_circular,
+  .btn_circular:link,
+  .btn_circular:visited,
+  .btn_circular--selected:hover {
+    color: $white;
+    border-color: $white;
     background-color: $primary;
-    color: $white;
   }
-}
-
-.black{
-  .btn_circular{
-    color: $white;
-  }
-  .btn_circular--selected{
+  .btn_circular:hover,
+  .btn_circular:active,
+  .btn_circular--selected {
+    color: $primary;
+    border-color: $white;
     background-color: $white;
-    color: $black
   }
 }
 
-// &.button
-//     @include border_radius();
-//     padding: 10px 20px;
-//     border: 1px $primary solid;
-//     &:hover
-//       background-color: $primary;
-//       color: $white;
-//     &:active
-//       background-color: $primary;
-//       color: $white;
+.white {
+  .btn_circular,
+  .btn_circular:link,
+  .btn_circular:visited,
+  .btn_circular--selected:hover {
+    color: $primary;
+    border-color: $primary;
+    background-color: $white;
+  }
+  .btn_circular:hover,
+  .btn_circular:active,
+  .btn_circular--selected {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+  }
+}
 
-// .button.inactive
-//   @include transition();
-//   text-decoration: none;
-//   background-color: $white;
-//   color: $gray_inactive;
-//   border-color: $gray_inactive;
-
-
-// komponentens_namn__element--modifier
+.black {
+  .btn_circular,
+  .btn_circular:link,
+  .btn_circular:visited,
+  .btn_circular--selected:hover {
+    color: $white;
+    border-color: $white;
+    background-color: $black;
+  }
+  .btn_circular:hover,
+  .btn_circular:active,
+  .btn_circular--selected {
+    color: $black;
+    border-color: $white;
+    background-color: $white;
+  }
+}

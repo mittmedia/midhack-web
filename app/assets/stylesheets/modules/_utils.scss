@@ -9,3 +9,10 @@
 .semibold {
   @include semibold_base_font();
 }
+
+
+.f_left {
+  float: left;
+  clear: none;
+  overflow: hidden;
+}
