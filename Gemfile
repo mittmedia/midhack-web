@@ -40,10 +40,6 @@ gem 'autoprefixer-rails'
 gem 'attribute-defaults'
 gem 'rails_12factor'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-normalize.css'
-end
-
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.3.3'

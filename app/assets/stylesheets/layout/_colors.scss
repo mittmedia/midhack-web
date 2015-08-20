@@ -1,0 +1,57 @@
+.primary {
+  color: $white;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+  }
+
+  a{
+    color: $white;
+    &:hover {
+      color: $light_primary;
+    }
+  }
+}
+.black {
+  color: $white;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $primary;
+  }
+
+  a{
+    color: $primary;
+    &:hover {
+      color: $light_primary;
+    }
+  }
+
+}
+.white {
+  color: $text_black;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $primary;
+  }
+
+  a{
+    color: $primary;
+    &:hover {
+      color: $light_primary;
+    }
+  }
+}
+
+

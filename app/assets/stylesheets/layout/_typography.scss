@@ -1,0 +1,26 @@
+// base rules
+html,
+body {
+  @include regular_base_font();
+  line-height: 150%;
+  font-size: rem-calc(32/2);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+h1 {
+  @include semibold_base_font();
+  font-size: rem-calc(54/2);
+}
+
+h2 {
+  @include regular_base_font();
+  font-size: rem-calc(50/2);
+  line-height: 130%;
+  margin: 0;
+}
+
+a{
+  @include transition();
+  text-decoration: none;
+}

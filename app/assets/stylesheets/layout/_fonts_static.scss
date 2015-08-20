@@ -49,3 +49,19 @@
   font-style: normal;
   font-stretch: normal;
 }
+
+
+// font-families
+@mixin bold_base_font() {
+  font-family: 'Duplex Sans Web Bold';
+  font-weight: 700;
+}
+
+@mixin semibold_base_font(){
+  font-family: 'Duplex Sans Web';
+  font-weight: 600;
+}
+
+@mixin regular_base_font() {
+  font-family: 'pt_sansregular';
+}

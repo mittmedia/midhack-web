@@ -1,0 +1,30 @@
+//normalize
+
+// resources - does not generate output
+@import 'resources/variables';
+@import 'resources/functions';
+
+// basic layout styles
+@import 'layout/normalize';
+@import 'layout/fonts_static';
+@import 'layout/typography';
+@import 'layout/colors';
+@import 'layout/layout';
+
+// modules
+@import 'modules/buttons';
+@import 'modules/forms';
+@import 'modules/utils';
+
+
+// pages
+@import 'pages/index';
+// @import 'pages/what';
+// @import 'pages/signup';
+// @import 'pages/choosecompetence';
+// @import 'pages/chooseteam';
+// @import 'pages/fillemail';
+// @import 'pages/receipt';
+
+// overriding modules
+@import 'modules/page_transition';

@@ -11,9 +11,11 @@
  	  <%= csrf_meta_tags %>
     <%= render 'shared/favicon' %>
 </head>
-<body class="<%= yield :container_color %>">
-<div class="main_container">
-  <%= yield %>
+<body class="">
+<div id="<%= yield :container_id %>" class="main_container <%= yield :container_color %>">
+  <div class="container">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>

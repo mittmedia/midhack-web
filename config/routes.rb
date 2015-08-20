@@ -24,4 +24,9 @@ Rails.application.routes.draw do
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'
+
+  if ENV['RAILS_ENV'] == 'development'
+    get 'admin', to: 'admin#index', as: 'admin'
+    get 'styles', to: 'admin#styles', as: 'styles'
+  end
 end

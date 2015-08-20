@@ -1,0 +1,11 @@
+.full_width {
+  width: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.semibold {
+  @include semibold_base_font();
+}
