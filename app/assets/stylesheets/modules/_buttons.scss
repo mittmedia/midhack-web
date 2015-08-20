@@ -36,6 +36,15 @@ button {
     padding: rem-calc(15px) rem-calc(20px);
     line-height: 1.25rem;
   }
+  &.btn_cancel{
+    @include btn;
+    padding: rem-calc(15px) rem-calc(30px);
+    line-height: 1.25em;
+    font-size: 1.15rem;
+    background: $cancel;
+    color: $white;
+    border-color: $cancel;
+  }
 }
 .primary {
   a,
@@ -256,9 +265,68 @@ button {
     color: $primary;
   }
 }
+.white {
+  .btn_filler__opaque {
+    background-color: $primary;
+  }
+  .btn_filler__transparent {
+    background-color: $primary;
+    opacity: 0.6;
+  }
+  .btn_filler__text {
+    color: $white;
+  }
+}
 
-.btn_circular {
+.black {
+  .btn_filler{
+    border-color: $white;
+  }
+  .btn_filler--selected{
+    border-color: $white;
+  }
+  .btn_filler__opaque {
+    background-color: $white;
+  }
+  .btn_filler__transparent {
+    background-color: none;
+  }
+  .btn_filler__text {
+    color: #555;
+  }
+}
 
+.btn_circular,
+.btn_circular--selected{
+  @include btn;
+  @include border_radius(100%);
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.primary{
+  .btn_circular--selected{
+    background-color: $white;
+    color: $primary;
+  }
+}
+
+.white{
+  .btn_circular--selected{
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.black{
+  .btn_circular{
+    color: $white;
+  }
+  .btn_circular--selected{
+    background-color: $white;
+    color: $black
+  }
 }
 
 // &.button
