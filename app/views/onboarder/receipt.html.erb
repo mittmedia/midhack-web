@@ -1,15 +1,33 @@
 <% container_color('black')%>
 <% container_id('receipt')%>
 <h2 class="center_text">
-  Suveränt! Nu har vi allt vi behöver.
+  Du är anmäld till Midhack i lag
+  <span class="center_text underline">
+     <%= @team_name %>
+  </span>
 </h2>
+<br>
+<br>
 <p class="center_text">
-  Du är anmäld till Midhack 14-15 november på Mittuniversitetet i lag:
+  Välkommen till Midhack den 14-15 november på Mittuniversitetet.
+  Kontakta gärna ditt lag och spåna idéer inför eventet.
 </p>
-<h3 class="center_text">
-  Team <%= @team_name %>
-</h3>
-<p></p>
+<ul class="list_of_team_members">
+  <li>
+    <a href="mailto:Bosse@example.com" class="email">Bosse@example.com</a>
+    <p class="uppercase competence">Designer</p>
+  </li>
+   <li>
+    <a href="mailto:Pia@example.com" class="email">Pia@example.com</a>
+    <p class="uppercase competence">Programmerare</p>
+  </li>
+   <li>
+    <a href="mailto:Frans-Hanna@example.com" class="email">Frans-Hanna@example.com</a>
+    <p class="uppercase competence">Journalist</p>
+  </li>
+</ul>
+
+<p>Psst! Glöm inte tipsa dina vänner om att gå med i lag <%= @team_name %>.</p>
 <ul class="list_of_sharables">
   <li>
     <%= link_to_facebook do %>
@@ -36,5 +54,23 @@
     <% end %>
   </li>
 </ul>
-<%= link_to 'Lägg till i kalender', ical_path, class: 'button' %>
-<%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>
+<br>
+<%= link_to 'Lägg till i kalender', ical_path, class: 'btn_secondary' %>
+<%= link_to "Jag vill läsa mer", why_path, class: 'btn_supplementary', id:'why_button' %>
+<br>
+<p>Fått förhinder och måste avanmäla dig?</p>
+<%= link_to 'Klicka här för att avanmäla', why_path %>
+<ul class="list_of_logos">
+  <li>
+    <a href="http://www.mittmedia.se/" class="mittmedia">
+      <div class="mittmedia"></div>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun">
+      <div class="miun"></div>
+    </a>
+
+  </li>
+</ul>
+
