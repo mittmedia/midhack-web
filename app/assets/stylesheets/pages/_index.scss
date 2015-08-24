@@ -1,0 +1,14 @@
+#index {
+  text-align: center;
+  .logo {
+    background: image-url('midhacklogo.svg');
+    width: 100%;
+    max-width: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    padding: 0;
+    padding-bottom: calc(40% * 1.4882352941);
+  }
+}

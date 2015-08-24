@@ -1,8 +1,11 @@
 // base rules
+* {
+  line-height: 150%;
+}
+
 html,
 body {
   @include regular_base_font();
-  line-height: 150%;
   font-size: rem-calc(32/2);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -10,6 +13,7 @@ body {
 
 h1 {
   @include semibold_base_font();
+  line-height: 130%;
   font-size: rem-calc(54/2);
 }
 
@@ -20,7 +24,18 @@ h2 {
   margin: 0;
 }
 
-a{
+a {
   @include transition();
   text-decoration: none;
+}
+
+.leadin {
+  padding: 50px 0 50px 0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.reallysmall {
+  color: $gray_inactive;
+  font-size: rem-calc(28/2);
 }

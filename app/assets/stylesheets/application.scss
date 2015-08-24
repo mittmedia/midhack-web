@@ -19,12 +19,11 @@
 
 // pages
 @import 'pages/index';
-// @import 'pages/what';
-// @import 'pages/signup';
-// @import 'pages/choosecompetence';
-// @import 'pages/chooseteam';
-// @import 'pages/fillemail';
-// @import 'pages/receipt';
+@import 'pages/signup';
+@import 'pages/choose_competence';
+@import 'pages/choose_team';
+@import 'pages/fill_email';
+@import 'pages/receipt';
 
 // overriding modules
 @import 'modules/page_transition';

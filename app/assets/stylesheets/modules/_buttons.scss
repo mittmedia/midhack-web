@@ -10,8 +10,16 @@
 }
 
 a,
-button {
+button,
+  input {
   &.btn_primary {
+    @include btn;
+    padding: rem-calc(15px) rem-calc(30px);
+    line-height: 1.25em;
+    font-size: 1.15rem;
+  }
+
+  &.btn_secondary {
     @include btn;
     padding: rem-calc(15px) rem-calc(30px);
     line-height: 1.25em;
@@ -33,6 +41,7 @@ button {
   &.btn_selectable:active {
     @include btn;
     @include border_radius();
+    outline: none;
     padding: rem-calc(15px) rem-calc(20px);
     line-height: 1.25rem;
   }
@@ -56,17 +65,34 @@ button {
 }
 .primary {
   a,
-  button {
+  button,
+  input {
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
+      color: $primary;
       border-color: $white;
-      background-color: $primary;
+      background-color: $white;
     }
     &.btn_primary:hover,
     &.btn_primary:active {
-      color: $primary;
-      background-color: $white;
+      color: $white;
+      border-color: $white;
+      background-color: $primary;
+    }
+
+    &.btn_secondary,
+    &.btn_secondary:link,
+    &.btn_secondary:visited {
+      color: $white;
+      border-color: $white;
+      background-color: $primary;
+    }
+    &.btn_secondary:hover,
+    &.btn_secondary:active {
+        color: $primary;
+        border-color: $white;
+        background-color: $white;
     }
 
     &.btn_supplementary,
@@ -83,44 +109,59 @@ button {
 
     &.btn_selectable,
     &.btn_selectable:link,
-    &.btn_selectable:visited {
+    &.btn_selectable:visited,
+    &.btn_selectable:hover,
+    &.btn_selectable:active {
       border-color: $white;
       background-color: $primary;
     }
+
     &.btn_selectable:hover,
-    &.btn_selectable:active {
-      color: $primary;
-      background-color: $white;
+    &.btn_selectable:active,
+    &.btn_selectable--selected:hover,
+    &.btn_selectable--selected:active {
+      opacity: 0.85;
     }
 
     &.btn_selectable--selected,
     &.btn_selectable--selected:link,
-    &.btn_selectable--selected:visited  {
+    &.btn_selectable--selected:visited,
+    &.btn_selectable--selected:hover,
+    &.btn_selectable--selected:active {
       background: white;
       color: $primary;
       border-color: $white;
-    }
-    &.btn_selectable--selected:hover,
-    &.btn_selectable--selected:active {
-      border-color: $white;
-      color: $white;
-      background-color: $primary;
     }
   }
 }
 
 .white {
   a,
-  button {
+  button,
+  input {
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
+    }
+    &.btn_primary:hover,
+    &.btn_primary:active {
+      color: $text_black;
+      border-color: $primary;
+      background-color: $white;
+    }
+
+    &.btn_secondary,
+    &.btn_secondary:link,
+    &.btn_secondary:visited {
       border-color: $primary;
       color: $text_black;
       background-color: $white;
     }
-    &.btn_primary:hover,
-    &.btn_primary:active {
+    &.btn_secondary:hover,
+    &.btn_secondary:active {
       color: $white;
       background-color: $primary;
     }
@@ -140,43 +181,43 @@ button {
 
     &.btn_selectable,
     &.btn_selectable:link,
-    &.btn_selectable:visited {
+    &.btn_selectable:visited,
+    &.btn_selectable:hover,
+    &.btn_selectable:active  {
       background-color: $white;
       border-color: $primary;
       color: $text_black;
-    }
-    &.btn_selectable:hover,
-    &.btn_selectable:active {
-      border-color: $white;
-      color: $white;
-      background-color: $primary;
     }
 
     &.btn_selectable--selected,
     &.btn_selectable--selected:link,
-    &.btn_selectable--selected:visited {
+    &.btn_selectable--selected:visited,
+    &.btn_selectable--selected:hover,
+    &.btn_selectable--selected:active {
       background: $primary;
       color: $white;
       border-color: $primary;
     }
+
+    &.btn_selectable:hover,
+    &.btn_selectable:active,
     &.btn_selectable--selected:hover,
     &.btn_selectable--selected:active {
-      border-color: $primary;
-      color: $text_black;
-      background-color: $white;
+      opacity: 0.85;
     }
   }
 }
 
 .black {
   a,
-  button {
+  button,
+  input {
 
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
-      background-color: $black;
-      border-color: $white;
+      background-color: $primary;
+      border-color: $primary;
       color: $white;
     }
     &.btn_primary:hover,
@@ -184,6 +225,19 @@ button {
       border-color: $white;
       background-color: $white;
       color: $text_black;
+    }
+
+    &.btn_secondary,
+    &.btn_secondary:link,
+    &.btn_secondary:visited {
+      color: $white;
+      border-color: $white;
+      background-color: $black;
+    }
+    &.btn_secondary:hover,
+    &.btn_secondary:active {
+      color: $text_black;
+      background-color: $white;
     }
 
     &.btn_supplementary,
@@ -201,30 +255,28 @@ button {
 
     &.btn_selectable,
     &.btn_selectable:link,
-    &.btn_selectable:visited {
+    &.btn_selectable:visited,
+    &.btn_selectable:hover,
+    &.btn_selectable:active {
       background-color: $black;
       border-color: $white;
       color: $white;
-    }
-    &.btn_selectable:hover,
-    &.btn_selectable:active {
-      border-color: $white;
-      background-color: $white;
-      color: $text_black;
     }
 
     &.btn_selectable--selected,
     &.btn_selectable--selected:link,
-    &.btn_selectable--selected:visited {
+    &.btn_selectable--selected:visited,
+    &.btn_selectable--selected:hover,
+    &.btn_selectable--selected:active {
       border-color: $white;
       background-color: $white;
       color: $text_black;
     }
+    &.btn_selectable:hover,
+    &.btn_selectable:active,
     &.btn_selectable--selected:hover,
     &.btn_selectable--selected:active {
-      border-color: $white;
-      background-color: $black;
-      color: $white;
+      opacity: 0.85;
     }
   }
 }

@@ -1,5 +1,6 @@
 module ShareHelper
-  def link_to_facebook
+  def link_to_facebook(options = {class: ''})
+
     @title = 'Jag har anmält mig till Midhack, gör det du med!'
     @url = 'http://mm-midhack-stage.herokuapp.com'
     @long_description = 'Midhack är ett innovationsevent på MIUN arrangerat i
@@ -21,7 +22,7 @@ module ShareHelper
     html_attrs = {
       title: "#{@action_prefix} Facebook",
       rel: 'external',
-      class: 'share facebook',
+      class: options[:class] + ' share facebook',
       target: '_blank'
     }
 
@@ -30,14 +31,15 @@ module ShareHelper
     end
   end
 
-  def link_to_twitter
+  def link_to_twitter(options = {class: ''})
+
     @tweet = 'Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du
               också! http://www.midhack.se #Midhack #hackaton #MIUN #MittMedia'
     @URI = "https://twitter.com/intent/tweet?text=#{URI.escape(@tweet)}"
     html_attrs = {
       title: "#{@action_prefix} Twitter",
       rel: 'external',
-      class: 'share twitter',
+      class: options[:class] + ' share twitter',
       target: '_blank'
     }
     link_to @URI, html_attrs do
@@ -45,13 +47,14 @@ module ShareHelper
     end
   end
 
-  def link_to_googleplus
+  def link_to_googleplus(options = {class: ''})
+
     @url = 'http://mm-midhack-stage.herokuapp.com'
     @uri = "https://plus.google.com/u/0/share?url=#{URI.escape(@url)}"
     html_attrs = {
       title: "#{@action_prefix} Google+",
       rel: 'external',
-      class: 'share googleplus',
+      class: options[:class] + ' share googleplus',
       target: '_blank'
     }
     link_to @uri, html_attrs do
@@ -59,7 +62,8 @@ module ShareHelper
     end
   end
 
-  def link_to_linkedin
+  def link_to_linkedin(options = {class: ''})
+
     @url = 'http://mm-midhack-stage.herokuapp.com'
     @title = 'Jag har anmält mig till Midhack, gör det du med!'
     @long_description = 'Midhack är ett innovationsevent på MIUN arrangerat i
@@ -79,7 +83,7 @@ module ShareHelper
     html_attrs = {
       title: "#{@action_prefix} LinkedIn",
       rel: 'external',
-      class: 'share linkedin',
+      class: options[:class] + ' share linkedin',
       target: '_blank'
     }
     link_to "https://www.linkedin.com/shareArticle?#{query}", html_attrs do

@@ -1,37 +1,40 @@
-<% container_color('footer_black')%>
-<div id="receipt" class="container">
-  <h2>Suveränt! Nu har vi allt vi behöver.</h2>
-  <p>Du är anmäld till Midhack 14-15 november på Mittuniversitetet i lag:</p>
-  <h3>Team <%= @team_name %></h3>
-  <p></p>
-  <ul>
-    <li>
-      <%= link_to_facebook do %>
-        <div class="icon"></div>
-        <span class="social_share_label uppercase">Dela på facebook</span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to_twitter do %>
-        <div class="icon"></div>
-        <div class="social_share_label uppercase">Dela på twitter</div>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to_googleplus do %>
-        <div class="icon"></div>
-        <div class="social_share_label uppercase">Dela på google+</div>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to_linkedin do %>
-        <div class="icon"></div>
-        <div class="social_share_label uppercase">Dela på linkedin</div>
-      <% end %>
-    </li>
-  </ul>
-  <%= link_to 'Lägg till i kalender', ical_path, class: 'button' %>
-  <%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>
-</div>
-
-
+<% container_color('black')%>
+<% container_id('receipt')%>
+<h2 class="center_text">
+  Suveränt! Nu har vi allt vi behöver.
+</h2>
+<p class="center_text">
+  Du är anmäld till Midhack 14-15 november på Mittuniversitetet i lag:
+</p>
+<h3 class="center_text">
+  Team <%= @team_name %>
+</h3>
+<p></p>
+<ul class="list_of_sharables">
+  <li>
+    <%= link_to_facebook do %>
+      <div class="icon"></div>
+      <div class="social_share_label uppercase">Dela på facebook</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_twitter do %>
+      <div class="icon"></div>
+      <div class="social_share_label uppercase">Dela på twitter</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_googleplus do %>
+      <div class="icon"></div>
+      <div class="social_share_label uppercase">Dela på google+</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_linkedin do %>
+      <div class="icon"></div>
+      <div class="social_share_label uppercase">Dela på linkedin</div>
+    <% end %>
+  </li>
+</ul>
+<%= link_to 'Lägg till i kalender', ical_path, class: 'button' %>
+<%= link_to "Jag vill läsa mer", why_path, class: 'button button_small', id:'why_button' %>

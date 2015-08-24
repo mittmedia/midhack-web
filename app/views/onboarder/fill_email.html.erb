@@ -1,13 +1,18 @@
-<div id="email" class="container formpage">
+<%= container_color('primary') %>
+<%= container_id('fill_email') %>
   <%= form_tag(confirmation_path) do %>
-   <h2><%= label_tag(:email, 'Nästan klar! Nu behövs bara din mail.') %></h2>
-    <%= label_tag(:email, '(No spam, promise)', class: 'no_spam') %>
+    <h1 class="center_text">
+      <%= label_tag(:email, 'Nästan klar! Nu behövs bara din mail.') %>
+    </h1>
+    <%= label_tag(:email, '(No spam, promise)', class: 'no_spam center_text') %>
     <% if !:email.blank? %>
-    <% flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-    <%= email_field_tag(:email, '', placeholder: 'Skriv din e-postadress') %>
-    <%= submit_tag 'Skicka anmälan', id:'submit_button' %>
+      <% flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
     <% end %>
-
+    <div class="labeled_input">
+      <%= label_tag(:email, 'Skriv in din e-postadress', class: 'labeled_input__label') %>
+      <%= email_field_tag(:email, '', placeholder: 'username@miun.se', class: 'labeled_input__input') %>
+    </div>
+    <%= submit_tag 'Skicka anmälan', id:'submit_button', class: 'btn_primary' %>
+  <% end %>
 </div>

@@ -1,5 +1,9 @@
 * {
 	box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // -ms-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  // -khtml-box-sizing: border-box;
 	font-family: 'pt_sansregular';
 }
 
@@ -9,22 +13,31 @@ body {
 	min-height: 100%;
 }
 
-
 .main_container {
   width: 100%;
   min-height: 100%;
+
   &.primary {
       background: $primary;
 	}
+
   &.black {
     background: $black;
     color: $white;
 	}
+
   &.white {
     background: $white;
 	}
 }
+
 .container {
+  padding: 50px 20px;
   margin: 0 auto;
   max-width: 500px;
 }
+
+@media (min-width: 520px) {
+  padding: 60px 0;
+}
+

@@ -1,19 +1,15 @@
 <% container_color('white')%>
-<div id="signup" class="container">
-  <h2>Vad pluggar du?</h2>
-      <% @courses.each do |course| %>
-        <div class="course_button button small_button" data-id="<%= course.id %>" >
-          <%= course.name %> <br> <span><%= course.code.upcase %></span>
-        </div>
-        <div class="year" id="course_years<%= course.id %>">
-          <% course.max_years.times do |year| %>
-              <%= link_to "År #{year+1}", choose_competence_path(course: course.code, year: year+1), method: :post, class: 'circle' %>
-          <% end %>
-        </div>
-      <% end %>
-  <!-- TODO Remove this later -->
-  <%= link_to "Tillbaka", what_path, class: 'btn warning' %>
-</div>
-
-
-
+<% container_id('signup')%>
+<h1 class="center_text">Vad pluggar du?</h1>
+<% @courses.each do |course| %>
+  <button class="course btn_selectable full_width" data-id="<%= course.id %>" >
+    <span class="course__heading"><%= course.name %></span> <br> <small class="uppercase"><%= course.code %></small>
+  </button>
+  <div class="year hidden" id="course_years<%= course.id %>">
+    <% course.max_years.times do |year| %>
+        <%= link_to "År #{year+1}", choose_competence_path(course: course.code, year: year+1), method: :post, class: 'btn_circular' %>
+    <% end %>
+  </div>
+<% end %>
+<!-- TODO Remove this later -->
+<%= link_to "Tillbaka", root_path, class: 'btn_supplementary' %>

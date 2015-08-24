@@ -2,5 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require modules/page-transition.coffee
+//= require modules/page-transition.js
+//= require modules/labeled_input.js
+//= require modules/btn_selectable.js
 //= require pages/signup.coffee
