@@ -62,12 +62,13 @@ class OnboarderController < ApplicationController
   end
 
   def confirmation
-    email_saved = save_email
+    email_saved = save_email unless email_param.blank?
     if email_saved
       ConfirmationMailer.confirmation_email(@human).deliver_later
       redirect_to :receipt
     else
-      redirect_to :fill_email
+      flash[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
+      render :fill_email
     end
   end
 
