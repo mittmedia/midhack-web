@@ -39,3 +39,32 @@ a {
   color: $gray_inactive;
   font-size: rem-calc(28/2);
 }
+
+.underline{
+  @extend h2;
+  display: inline-block;
+  border-bottom: 1px solid;
+}
+
+.primary{
+  .underline{
+    color: $white !important;
+    border-bottom-color: $white;
+
+  }
+}
+
+.white{
+  .underline{
+    color: $text_black !important;
+    border-bottom-color: $primary;
+  }
+}
+
+.black{
+  .underline{
+    color: $white !important;
+    border-bottom-color: $primary;
+  }
+}
+
