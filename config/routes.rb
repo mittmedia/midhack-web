@@ -10,18 +10,18 @@ Rails.application.routes.draw do
   get 'signup', to: 'onboarder#signup', as: 'signup'
   #3
   post 'choose_competence', to: 'onboarder#choose_competence', as: 'choose_competence'
+  get 'choose_competence', to: 'onboarder#choose_competence', as: 'get_choose_competence'
   #4
   post 'choose_team', to: 'onboarder#choose_team', as: 'choose_team'
   #5
-  post 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
+  post 'automatic_selection', to: 'onboarder#automatic_selection', as: 'automatic_selection'
   #6
-  post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
+  post 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
   #7
+  post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
+  #8
   get 'receipt(/:uuid)', to: 'onboarder#receipt', as: 'receipt'
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'
-
-
-
 end

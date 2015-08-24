@@ -23,8 +23,8 @@ class OnboarderController < ApplicationController
   end
 
   def choose_competence
+    @competences = Competence.all
     if save_education
-      @competences = Competence.all
       render
     else
       redirect_to :signup
@@ -40,6 +40,17 @@ class OnboarderController < ApplicationController
       redirect_to :signup
     end
   end
+
+  def automatic_selection
+    @study_year = @human.study_year
+    @competence = @human.competence
+    @sorted_teams = Team.sorted_teams(@competence, @study_year)
+    matched_team = Team.available_teams(@competence, @sorted_teams.select.first.second)
+    @human.team_id = matched_team.first.id
+    @human.save
+    render :fill_email
+  end
+
 
   def fill_email
     human_saved = save_team

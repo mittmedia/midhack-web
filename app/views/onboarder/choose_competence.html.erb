@@ -1,6 +1,9 @@
 <% container_color('white')%>
 <div id="choosecompetence" class="container">
   <h2>Vilken kompetens vill du bidra med?</h2>
+  <%# flash.each do |key, value| %>
+    <%# content_tag :div, value, class: "alert alert-info" %>
+  <%# end %>
   <% @competences.each do |competence| %>
     <div> <%= link_to competence.field, choose_team_path(competence: competence), method: :post, class: 'button', id: "competence_button#{competence.id}" %></div>
   <% end %>

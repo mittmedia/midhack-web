@@ -4,10 +4,9 @@
 <h2>Välj ett team</h2>
 
   <p>Vi kan välja ett team åt dig</p>
+  <%= link_to "Välj lag åt mig", automatic_selection_path, class: 'button', method: :post %>
 
-    <%= link_to "Välj lag åt mig", choose_team_path, class: 'button' %>
-
-  <p>Eller så kan du välja ett lag själv.
+  <p>Eller så kan du välja ett lag själv
   Vi behöver <%= @competence.plural %> i dessa lag:</p>
 
   <% @sorted_teams[:available_teams].each do |team| %>
