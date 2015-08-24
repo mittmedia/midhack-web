@@ -2,7 +2,7 @@
 <% container_id('choose_team') %>
 <h1 class="center_text">Välj ett team</h1>
 <p class="center_text">Vi kan välja ett team åt dig</p>
-<%= link_to "Välj lag åt mig", automatic_selection_path, class: 'btn_supplementary', method: :post %>
+<%= button_to "Välj lag åt mig", automatic_selection_path, class: 'btn_supplementary', method: :post %>
 <p class="center_text">
   Eller så kan du välja ett lag själv. Vi behöver <%= @competence.plural %> i
   dessa lag:
@@ -39,6 +39,6 @@
     <p class="spots_left center_text"> Fullt! </p>
   <% end %>
 
+<%= button_to "Tillbaka", choose_competence_path, class: 'btn_supplementary' %>
 </div>
-<%= link_to "Tillbaka", choose_competence_path, class: 'btn_supplementary' %>
 
