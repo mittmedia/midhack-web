@@ -53,6 +53,7 @@ class OnboarderController < ApplicationController
 
 
   def fill_email
+    present_email
     human_saved = save_team
     if human_saved
       render
@@ -61,9 +62,13 @@ class OnboarderController < ApplicationController
     end
   end
 
-  def confirmation
+  def present_email
     email_saved = save_email unless email_param.blank?
-    if email_saved
+  end
+
+  def confirmation
+
+    if present_email == true
       ConfirmationMailer.confirmation_email(@human).deliver_later
       redirect_to :receipt
     else

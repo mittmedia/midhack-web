@@ -7,4 +7,5 @@
   <% @competences.each do |competence| %>
     <div> <%= link_to competence.field, choose_team_path(competence: competence), method: :post, class: 'button', id: "competence_button#{competence.id}" %></div>
   <% end %>
+  <%= link_to "Tillbaka", signup_path, class: 'btn positive' %>
 </div>
