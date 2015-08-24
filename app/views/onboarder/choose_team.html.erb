@@ -32,8 +32,9 @@
   <% end %>
 
   <% @sorted_teams[:full_teams].each do |team| %>
-    <%= link_to fill_email_path(team: team.id), method: :post, class: 'button_full' do -%>
-      <span><%= team.name %></span>
+    <%= link_to fill_email_path(team: team.id), method: :post, class: 'btn_filler' do -%>
+      <span class="btn_filler__opaque" style="width: 100%"></span>
+      <span class="btn_filler__text"><%= team.name %></span>
     <% end %>
     <p class="spots_left center_text"> Fullt! </p>
   <% end %>
