@@ -66,8 +66,22 @@
   pointer-events: none;
 }
 
-.labeled_input__label--on {
-  color: white;
+.primary{
+  .labeled_input__label--on {
+    color: $white;
+  }
+}
+
+.white{
+  .labeled_input__label--on {
+    color: $primary;
+  }
+}
+
+.black{
+  .labeled_input__label--on {
+    color: $text_black;
+  }
 }
 
 .labeled_input__label--show {
@@ -89,22 +103,26 @@
   }
 }
 .white {
-  &[type="text"],
-  &[type="email"],
-  &[type="password"] {
-    border-bottom-color: $white;
-    &:focus {
-      border-bottom-color: $white;
+  .labeled_input__input {
+    &[type="text"],
+    &[type="email"],
+    &[type="password"] {
+      border-bottom-color: $primary;
+      &:focus {
+        border-bottom-color: $primary;
+      }
     }
   }
 }
 .black {
-  &[type="text"],
-  &[type="email"],
-  &[type="password"] {
-    border-bottom-color: $white;
-    &:focus {
+  .labeled_input__input {
+    &[type="text"],
+    &[type="email"],
+    &[type="password"] {
       border-bottom-color: $white;
+      &:focus {
+        border-bottom-color: $white;
+      }
     }
   }
 }

@@ -23,7 +23,7 @@ button,
     @include btn;
     padding: rem-calc(15px) rem-calc(30px);
     line-height: 1.25em;
-    font-size: rem-calc(20px);
+    font-size: 1.15em;
   }
 
   &.btn_supplementary {
@@ -70,15 +70,15 @@ button,
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
-      color: $primary;
-      border-color: $white;
-      background-color: $white;
-    }
-    &.btn_primary:hover,
-    &.btn_primary:active {
       color: $white;
       border-color: $white;
       background-color: $primary;
+    }
+    &.btn_primary:hover,
+    &.btn_primary:active {
+      color: $primary;
+      border-color: $white;
+      background-color: $white;
     }
 
     &.btn_secondary,
@@ -142,15 +142,15 @@ button,
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
-      color: $white;
-      border-color: $primary;
-      background-color: $primary;
-    }
-    &.btn_primary:hover,
-    &.btn_primary:active {
       color: $text_black;
       border-color: $primary;
       background-color: $white;
+    }
+    &.btn_primary:hover,
+    &.btn_primary:active {
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
     }
 
     &.btn_secondary,
@@ -216,7 +216,7 @@ button,
     &.btn_primary,
     &.btn_primary:link,
     &.btn_primary:visited {
-      background-color: $primary;
+      background-color: $black;
       border-color: $primary;
       color: $white;
     }
