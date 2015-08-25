@@ -68,7 +68,7 @@ class Team < ActiveRecord::Base
   end
 
   def full_team?
-    humen.length > MAX_NUM_MEMBERS
+    humen.length >= MAX_NUM_MEMBERS
   end
 
   def available_team?(competence)
