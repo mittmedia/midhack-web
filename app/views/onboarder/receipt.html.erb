@@ -13,18 +13,12 @@
   Kontakta gärna ditt lag och spåna idéer inför eventet.
 </p>
 <ul class="list_of_team_members">
-  <li>
-    <a href="mailto:Bosse@example.com" class="email">Bosse@example.com</a>
-    <p class="uppercase competence">Designer</p>
-  </li>
-   <li>
-    <a href="mailto:Pia@example.com" class="email">Pia@example.com</a>
-    <p class="uppercase competence">Programmerare</p>
-  </li>
-   <li>
-    <a href="mailto:Frans-Hanna@example.com" class="email">Frans-Hanna@example.com</a>
-    <p class="uppercase competence">Journalist</p>
-  </li>
+  <% @list_of_emailadresses_and_competences.each do |teammate| %>
+    <li>
+      <a href="mailto:<%= teammate.first %>" class="email"><%= teammate.first %></a>
+      <p class="uppercase competence"><%= teammate.second %></p>
+    </li>
+  <% end %>
 </ul>
 
 <p>Psst! Glöm inte tipsa dina vänner om att gå med i lag <%= @team_name %>.</p>
