@@ -63,7 +63,7 @@ class OnboarderController < ApplicationController
   end
 
   def present_email
-    email_saved = save_email unless email_param.blank?
+    save_email unless email_param.blank?
   end
 
   def confirmation
@@ -75,7 +75,7 @@ class OnboarderController < ApplicationController
       flash.now[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
       render :fill_email
     end
-end
+  end
 
 def receipt
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
@@ -86,7 +86,7 @@ def receipt
     else
       redirect_to root_path
     end
-  end
+end
 
   def get_email
     @list_of_emailaddresses_and_competences = []
@@ -165,8 +165,6 @@ def save_competence
     humen.each do |human|
       if human.team_id == team.id
         @list_of_emailaddresses = @human.email
-        require('pry')
-        binding.pry
     NewTeamMember.new_member_email(@human).deliver_later
         end
       end
