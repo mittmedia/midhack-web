@@ -27,7 +27,7 @@ class Human < ActiveRecord::Base
     SecureRandom.uuid
   end
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,63})\z/i
-  validates :email, format: { with: email_regex }, allow_blank: true
+  validates :email, format: { with: email_regex }, allow_blank: true, uniqueness: true
   belongs_to :course
   belongs_to :team
   belongs_to :competence

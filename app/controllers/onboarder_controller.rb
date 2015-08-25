@@ -67,15 +67,14 @@ class OnboarderController < ApplicationController
   end
 
   def confirmation
-
     if present_email == true
       ConfirmationMailer.confirmation_email(@human).deliver_later
       redirect_to :receipt
     else
-      flash[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
-      render :fill_email
+      flash.now[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
+      render 'fill_email'
     end
-  end
+end
 
   def receipt
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
