@@ -68,6 +68,7 @@ class OnboarderController < ApplicationController
 
   def confirmation
     if present_email == true
+      send_members
       ConfirmationMailer.confirmation_email(@human).deliver_later
       redirect_to :receipt
     else
@@ -76,8 +77,9 @@ class OnboarderController < ApplicationController
     end
 end
 
-  def receipt
+def receipt
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
+    get_email
     if @human.signed_up?
       @team_name = @human.team.name
       render
@@ -98,15 +100,21 @@ end
     end
   end
 
-  private
+  def get_email
+    @list_of_emailaddresses_and_competences = []
+    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
+    team = @human.team
+    humen = team.humen
+    humen.each do |human|
+      if human.team_id == team.id
+        @list_of_emailaddresses_and_competences.push([human.email, human.competence.singular])
+      end
+    end
+  end
 
-  # def sort_teams(competence, study_year)
-  #   Team.includes(:humen).sort do |x, y|
-  #     x.rank(competence, study_year) <=> y.rank(competence, study_year)
-  #   end
-  # end
+private
 
-  def save_competence
+def save_competence
     @competence = Competence.find(params[:competence])
     return false if @competence.blank?
     @human.competence = @competence
@@ -149,6 +157,20 @@ end
     @human.save!
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
+
+  def send_members
+    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
+    team = @human.team
+    humen = team.humen
+    humen.each do |human|
+      if human.team_id == team.id
+        @list_of_emailaddresses = @human.email
+        require('pry')
+        binding.pry
+    NewTeamMember.new_member_email(@human).deliver_later
+        end
+      end
+    end
 
   def course_param
     params.permit("course")["course"]
