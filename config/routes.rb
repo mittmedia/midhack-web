@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'onboarder#signup', as: 'signup'
   #3
   post 'choose_competence', to: 'onboarder#choose_competence', as: 'choose_competence'
-  get 'choose_competence', to: 'onboarder#choose_competence', as: 'get_choose_competence'
   #4
   post 'choose_team', to: 'onboarder#choose_team', as: 'choose_team'
   #5
