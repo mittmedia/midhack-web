@@ -72,13 +72,12 @@ class OnboarderController < ApplicationController
       redirect_to :receipt
     else
       flash.now[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
-      render 'fill_email'
+      render :fill_email
     end
 end
 
   def receipt
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    get_email
     if @human.signed_up?
       @team_name = @human.team.name
       render

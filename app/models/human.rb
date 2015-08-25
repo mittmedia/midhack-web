@@ -28,6 +28,7 @@ class Human < ActiveRecord::Base
   end
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,63})\z/i
   validates :email, format: { with: email_regex }, allow_blank: true, uniqueness: true
+  validates_format_of :email, :without => /example\.com|example\.org/, :message => "Ogiltig e-postadress"
   belongs_to :course
   belongs_to :team
   belongs_to :competence
