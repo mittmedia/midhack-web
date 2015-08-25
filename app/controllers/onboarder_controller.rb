@@ -88,13 +88,13 @@ end
   end
 
   def get_email
-    @list_of_emailadresses_and_competences = []
+    @list_of_emailaddresses_and_competences = []
     @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
     team = @human.team
     humen = team.humen
     humen.each do |human|
       if human.team_id == team.id
-        @list_of_emailadresses_and_competences.push([human.email, human.competence.singular])
+        @list_of_emailaddresses_and_competences.push([human.email, human.competence.singular])
       end
     end
   end
