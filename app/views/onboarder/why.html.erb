@@ -1,6 +1,43 @@
-<h1>Vad är det här?</h1>
-<p>Mittmedia och MIUN Innovation anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingengörer.</p>
+<% container_color('black')%>
+<% container_id('why')%>
+<h1 class="center_text">Mer info om Midhack</h1>
+<p>Mittmedia och MIUN Innovation vill inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.</p>
 
 Vi vill inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter och allmänbilda medborgarna i vårt avlånga land.</p>
-<%= link_to "Anmäl ditt intresse idag!", signup_path, class: 'btn positive', id:'signup_button' %><br>
-<%# button_to "Tillbaka", what_path, class: 'btn_supplementary' %>
+
+<ul class="list_with_info">
+  <li>
+    <div class="icon"></div>
+    <div class="text"></div>
+  </li>
+  <li>
+    <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun">
+      <div class="miun"></div>
+    </a>
+  </li>
+</ul>
+
+<br>
+<br>
+
+Vad ni skapar i ditt team är inte på förhand bestämt. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app. Tillsammans med studenter med olika inriktningar skapar ni ett starkt team där alla bidrar med sina delar.
+
+<br>
+<br>
+
+Under Midhack kommer det att finnas möjlighet att träffa utvecklare från Mittmedia DMU och MIUN innovation kommer att finnas på plats och hjälpa till med CV-gransking.
+
+<br>
+<br>
+
+Ta med din egen laptop eller sitt i en av Mittuniversitetets datorsalar.
+
+<br>
+<br>
+
+Är du sugen på att delta?
+</p>
+<%= link_to "Anmäl dig till Midhack", signup_path, class: 'btn_primary', id:'signup_button' %><br>
+<center>
+  <%= link_to "Tillbaka", what_path, class: 'btn_supplementary inline-block' %>
+</center>
