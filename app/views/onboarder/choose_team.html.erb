@@ -2,7 +2,7 @@
 <% container_id('choose_team') %>
 <h1 class="center_text">Välj ett team</h1>
 <p class="center_text">Vi kan välja ett team åt dig</p>
-<%= button_to "Välj lag åt mig", automatic_selection_path, class: 'btn_supplementary', method: :post %>
+<%= link_to "Välj lag åt mig", automatic_selection_path, class: 'btn_secondary', method: :post %>
 <p class="center_text">
   Eller så kan du välja ett lag själv. Vi behöver <%= @competence.plural %> i
   dessa lag:
@@ -11,7 +11,6 @@
   <% @sorted_teams[:available_teams].each do |team| %>
     <%= link_to fill_email_path(team: team.id), method: :post, class: 'btn_filler' do %>
       <span class="btn_filler__opaque" style="width: <%= 100 - team.filled_spots_percentage %>%"></span>
-      <%# 101 to fix css rounding errors and make the button_filler_opaque and transparent overlap %>
       <span class="btn_filler__transparent" style="width: <%= team.filled_spots_percentage %>%"></span>
       <span class="btn_filler__text"><%= team.name %></span>
     <% end %>

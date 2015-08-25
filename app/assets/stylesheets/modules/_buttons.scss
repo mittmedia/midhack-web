@@ -23,7 +23,7 @@ button,
     @include btn;
     padding: rem-calc(15px) rem-calc(30px);
     line-height: 1.25em;
-    font-size: 1.15rem;
+    font-size: rem-calc(20px);
   }
 
   &.btn_supplementary {
@@ -309,7 +309,7 @@ button,
   display: block;
   padding: rem-calc(15px) rem-calc(30px);
   line-height: 1.25em;
-  font-size: 1.2rem;
+  font-size: rem-calc(20px);
   position: relative;
   z-index: 2;
 
