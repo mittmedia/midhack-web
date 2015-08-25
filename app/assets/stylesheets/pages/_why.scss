@@ -3,13 +3,52 @@
     padding: 0px;
     list-style-type: none;
     text-align: center;
-    .icon {
+    li{
+      text-align: center;
+      margin-top: 20px;
+    }
+    .place {
       width: 30px;
       min-height: 30px;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: 60%;
+      background-image: image-url('place.svg');
+
+    }
+    .price {
+      width: 30px;
+      min-height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 90%;
+      background-image: image-url('coins.svg');
+
+    }
+    .date {
+      width: 30px;
+      min-height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
       background-image: image-url('calendar.svg');
-      background-size: 100%;
+
+    }
+    .spots_left {
+      width: 30px;
+      min-height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 75%;
+      background-image: image-url('person.svg');
+
+    }
+
+    .info_text{
+      @include regular_base_font();
+      font-size: rem-calc(20);
+      margin: 0px;
+      color: $primary;
     }
   }
 }
