@@ -26,7 +26,7 @@ class Competence < ActiveRecord::Base
     {
       economics: { plural: 'ekonomer', singular: 'ekonom', field: 'Affärsutveckling' },
       gd: { plural: 'designers', singular: 'designer', field: 'Design/Kommunikation' },
-      it: { plural: 'hackers', singular: 'hacker', field: 'Programmering' },
+      it: { plural: 'programmerare', singular: 'programmerare', field: 'Programmering' },
       journalism: { plural: 'journalister', singular: 'journalist', field: 'Journalistik' }
     }
   end
