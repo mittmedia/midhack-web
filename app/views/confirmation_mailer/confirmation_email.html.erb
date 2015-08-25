@@ -4,16 +4,29 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Tja,</h1>
-    <h2>nu är du anmäld till Midhack i lag <%= @team_name %></h2>
-     <p><%= link_to 'Kolla din anmälan', @url %> så kan du se vilka som är med i ditt lag.</p>
-    <p>
-      Vi syns på Midhack den 14-15 november på MIUNs campus.
-    </p>
-    <p>
-      Glöm inte att lägga in i kalendern och säga åt dina vänner att gå med i ditt lag.
-    </p>
-    <p>Vi ser fram emot eran kreation.</p>
-    <p>Midhack Crew</p>
+    <center style="width: 300px; margin: 0 auto; display: block;">
+      <img src="http://localhost:3000/mailresources/logo.png"
+        width="300" height="157" alt="Midhack 2015" title="Midhack 2015" />
+      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Hi! You are accepted to Midhack in team
+        <span style="border-bottom: 1px solid #00A6CC;"><%= @team_name %></span>
+      </h1>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Welcome to Midhack at Mittuniversitetet in Sundsvall during 14th and
+        15th of november. The exact place and other information will be sent
+        continuously to your e-mail adress. See you!
+        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>
+      </p>
+      <a href="<%= @url %>" style="display: block; margin: 1.2em 0;">
+        <img src="http://localhost:3000/mailresources/checkteam_en.png"
+          width="240" height="54" alt="Check out your team"
+          title="Check out your team" />
+
+      </a>
+      <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Got something coming up? <br/>
+        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unsubscribe from Midhack</a>
+      </p>
+    </center>
   </body>
 </html>
