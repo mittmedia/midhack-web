@@ -36,4 +36,5 @@ class Human < ActiveRecord::Base
   def signed_up?
     !course.blank? && !team.blank? && !competence.blank? && !email.blank?
   end
+
 end

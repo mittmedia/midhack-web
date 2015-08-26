@@ -136,6 +136,13 @@ class OnboarderController < ApplicationController
     redirect_to :fill_email
   end
 
+  def new_waitlist_member
+    render :competence_spots_filled
+    @waitlist.human_id = @human
+    @waitlist.team_id = team_param
+    waitlist.competence = @competence
+  end
+
   #################################
   ### SIGNUP CONFIRMATION ENDPOINTS
   #################################
