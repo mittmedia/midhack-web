@@ -40,6 +40,8 @@ gem 'autoprefixer-rails'
 gem 'attribute-defaults'
 gem 'rails_12factor'
 
+gem 'page_title_helper'
+
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.3.3'

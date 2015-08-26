@@ -1,27 +1,20 @@
 <% container_color('white')%>
 <% container_id('what')%>
-<h1 class="center_text">Vad är Midhack?</h1>
+<h1 class="center_text"><%= t('.heading') %></h1>
 
 <div class="text">
-  <p>
-    Mittmedia och MIUN Innovation anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingenjörer.
-  </p>
-  <p>
-    Vi vill inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter och allmänbilda medborgarna i vårt avlånga land.
-    Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens digitala journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på Mittmedia.
-  </p>
-  <p>
-    <p>Är du sugen?</p>
-  </p>
+  <p><%= t('.text_1') %></p>
+  <p><%= t('.text_2') %></p>
+  <p><%= t('.tease') %></p>
 </div>
 
 <% if @is_signed_up %>
-  <%= link_to "Min anmälan", receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-  <%= link_to "Ny anmälan", signup_path(force: true), class: 'btn_secondary', id:'new_signup_button' %>
+  <%= link_to t('.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
+  <%= link_to t('.signup_friend'), signup_path(force: true), class: 'btn_secondary', id:'new_signup_button' %>
 <% else %>
-  <%= link_to "Ja, anmäl mig till Midhack", signup_path, class: 'btn_primary', id:'signup_button' %>
+  <%= link_to t('.primary_action'), signup_path, class: 'btn_primary', id:'signup_button' %>
 <% end %>
 <br>
 <center>
-    <%= link_to "Jag vill läsa mer", why_path, class: 'btn_supplementary inline-block', id:'why_button' %>
+  <%= link_to t('.secondary_action'), why_path, class: 'btn_supplementary inline-block', id:'why_button' %>
 </center>

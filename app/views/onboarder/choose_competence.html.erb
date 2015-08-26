@@ -1,7 +1,6 @@
 <% container_color('white')%>
 <% container_id('choose_competence') %>
-<h1 class="center_text">Vilken kompetens vill du bidra med?</h1>
+<h1 class="center_text"><%= t('.heading') %></h1>
 <% @competences.each do |competence| %>
-  <%= link_to competence.field, choose_team_path(competence: competence), method: :post, class: 'btn_secondary competence', id: "competence_button#{competence.id}" %>
+  <%= link_to t(".competences.#{competence.name}"), choose_team_path(competence: competence), method: :post, class: 'btn_secondary competence', id: "competence_button#{competence.id}" %>
 <% end %>
-<%# button_to "Tillbaka", signup_path, class: 'btn_supplementary' %>
