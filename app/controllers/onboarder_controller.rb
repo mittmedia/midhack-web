@@ -1,11 +1,34 @@
 class OnboarderController < ApplicationController
   before_action :set_human
+  before_action :valid_education, only: [
+    :choose_competence,
+    :choose_team,
+    :automatic_selection,
+    :fill_email,
+    :present_email,
+    :confirmation,
+    :receipt
+  ]
+  before_action :valid_competence, only: [
+    :choose_team,
+    :automatic_selection,
+    :fill_email,
+    :present_email,
+    :confirmation,
+    :receipt
+  ]
+  before_action :valid_team, only: [:fill_email, :confirmation, :receipt]
+  before_action :valid_signup, only: [:confirmation, :receipt]
+
+  #####################
+  ### GENERIC ENDPOINTS
+  #####################
 
   def index
   end
 
   def what
-    @is_signed_up = @human.signed_up?
+    @signed_up = @human.signed_up?
   end
 
   def why
@@ -13,133 +36,125 @@ class OnboarderController < ApplicationController
 
   def ical
     file_path = Rails.root.join('public', 'downloads', 'invite.ics')
-    puts file_path
     send_file file_path, type: 'text/x-vCalendar', filename: 'invite.ics'
   end
 
-  def signup
+  #######################
+  ### EDUCATION ENDPOINTS
+  #######################
+
+  def choose_education
     new_human if force_param
     @courses = Course.all
   end
 
+  def save_education
+    if course_param.blank? || year_param.blank?
+      return redirect_to :choose_education
+    end
+    valid_edu = Course.valid_education?(course_param, year_param)
+    @human.course = Course.find_by(code: course_param)
+    @human.study_year = year_param
+    return redirect_to :choose_education if !valid_edu || !@human.save
+    redirect_to :choose_competence
+  end
+
+  ########################
+  ### COMPETENCE ENDPOINTS
+  ########################
+
   def choose_competence
     @competences = Competence.all
-    if save_education
-      render
+    render
+  end
+
+  def save_competence
+    competence = Competence.find(competence_param)
+    return redirect_to :choose_competence if competence.blank?
+    if @human.update(competence: competence)
+      redirect_to :choose_team
     else
-      redirect_to :signup
+      redirect_to :choose_competence
     end
   end
 
+  #########################
+  ### TEAM CHOICE ENDPOINTS
+  #########################
+
   def choose_team
-    if save_competence
-      @study_year = @human.study_year
-      @sorted_teams = Team.sorted_teams(@competence, @study_year)
-      render
-    else
-      redirect_to :signup
-    end
+    @sorted_teams = Team.sorted_teams(@human.competence, @human.study_year)
+    render
   end
 
   def automatic_selection
-    @study_year = @human.study_year
-    @competence = @human.competence
-    @sorted_teams = Team.sorted_teams(@competence, @study_year)
-    matched_team = Team.available_teams(@competence, @sorted_teams.select.first.second)
-    @human.team_id = matched_team.first.id
-    @human.save
-    render :fill_email
-  end
-
-
-  def fill_email
-    present_email
-    human_saved = save_team
-    if human_saved
-      render
+    @sorted_teams = Team.sorted_teams(@human.competence, @human.study_year)
+    matched_team = @sorted_teams[:available_teams].first
+    return redirect_to :waitinglist if matched_team.blank?
+    if @human.update(team: matched_team)
+      redirect_to :fill_email
     else
       redirect_to :choose_team
     end
   end
 
-  def present_email
-    save_email unless email_param.blank?
+  def save_team
+    team = Team.find(team_param)
+    unless team.available_team? @human.competence
+      return redirect_to :choose_team
+    end
+    if @human.update(team: team)
+      redirect_to :fill_email
+    else
+      redirect_to :choose_team
+    end
   end
+
+  ##############################
+  ### EMAIL COLLECTION ENDPOINTS
+  ##############################
+
+  def fill_email
+  end
+
+  def save_email
+    already_signed_up = @human.signed_up?
+    if @human.update(email: email_param)
+      if already_signed_up
+        return redirect_to :receipt
+      else
+        return confirmation
+      end
+    end
+    flash.now[:notice] = t('malformed_email')
+    redirect_to :fill_email
+  end
+
+  #################################
+  ### SIGNUP CONFIRMATION ENDPOINTS
+  #################################
 
   def confirmation
-    if present_email == true
-      send_members
-      ConfirmationMailer.confirmation_email(@human).deliver_later
-      redirect_to :receipt
-    else
-      flash.now[:notice] = "Hoppsan! E-postadressen är inte riktigt rätt. Kolla igenom den en gång till."
-      render :fill_email
-    end
+    inform_other_members
+    ConfirmationMailer.confirmation_email(@human).deliver_later
+    redirect_to :receipt
   end
 
-def receipt
-    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    get_email
-    if @human.signed_up?
-      @team_name = @human.team.name
-      render
-    else
-      redirect_to root_path
-    end
-end
-
-  def get_email
-    @list_of_emailaddresses_and_competences = []
-    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    team = @human.team
-    humen = team.humen
-    humen.each do |human|
-      if human.team_id == team.id
-        @list_of_emailaddresses_and_competences.push([human.email, human.competence.singular])
-      end
-    end
-  end
-
-  def get_email
-    @list_of_emailaddresses_and_competences = []
-    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    team = @human.team
-    humen = team.humen
-    humen.each do |human|
-      if human.team_id == team.id
-        @list_of_emailaddresses_and_competences.push([human.email, human.competence.singular])
-      end
-    end
+  def receipt
+    humen = @human.team.humen.select(&:signed_up?)
+    @team_member_details = team_member_details(humen)
+    @team_name = @human.team.name
+    render
   end
 
 private
 
-def save_competence
-    @competence = Competence.find(params[:competence])
-    return false if @competence.blank?
-    @human.competence = @competence
-    @human.save
-  end
-
-  def save_education
-    valid_education = Course.valid_education?(course_param,
-                                              year_param)
-    return false unless valid_education
-    @human.course = Course.find_by(code: course_param)
-    @human.study_year = year_param
-    @human.save
-  end
-
-  def save_team
-    valid_team = Team.find(team_param).available_team?(@human.competence)
-    return false unless valid_team
-    @human.team_id = team_param
-    @human.save
-  end
-
-  def save_email
-    @human.email = email_param
-    @human.save
+  def team_member_details(humen)
+    list = []
+    humen.each do |human|
+      list.push([human.email, human.competence.name])
+    end
+    list
   end
 
   def set_human
@@ -158,17 +173,32 @@ def save_competence
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
-  def send_members
-    @human = Human.find_by(uuid: uuid_param) if !uuid_param.blank?
-    team = @human.team
-    humen = team.humen
+  def inform_other_members
+    humen = @human.team.humen.select(&:signed_up?)
+    humen.delete(@human) # no need to inform self
+    tmd = team_member_details(humen)
     humen.each do |human|
-      if human.team_id == team.id
-        @list_of_emailaddresses = @human.email
-    NewTeamMember.new_member_email(@human).deliver_later
-        end
-      end
+      NewTeamMember.new_member_email(human, tmd).deliver_later
     end
+
+  end
+
+  def valid_education
+    b = Course.valid_education? @human.course.code, @human.study_year
+    redirect_to :choose_education unless b
+  end
+
+  def valid_competence
+    redirect_to :choose_competence if @human.competence.blank?
+  end
+
+  def valid_team
+    redirect_to :choose_team if @human.team.blank?
+  end
+
+  def valid_signup
+    redirect_to :fill_email unless @human.signed_up?
+  end
 
   def course_param
     params.permit("course")["course"]

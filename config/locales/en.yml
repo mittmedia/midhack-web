@@ -37,7 +37,7 @@ en:
       secondary_action: 'I want to read more'
       my_receipt: 'View my team'
       signup_friend: 'Sign up a friend'
-    signup:
+    choose_education:
       title: 'Education'
       heading: 'What do you study?'
       studies:

@@ -22,7 +22,7 @@ describe 'the signup process', type: :feature do
   describe 'The visitor visits the what_path' do
     it 'has a signup link' do
       visit what_path
-      expect(page).to have_link('signup_button', href: signup_path)
+      expect(page).to have_link('signup_button', href: choose_education_path)
     end
 
     it 'has a read more link' do
@@ -43,7 +43,7 @@ describe 'the signup process', type: :feature do
       expect(page).to have_link('signup_button')
     end
 
-    scenario 'The visitor visits the signup_path from the what_path' do
+    scenario 'The visitor visits the choose_education_path from the what_path' do
       visit why_path
       click_link 'signup_button'
       expect(page).to have_text 'Vad pluggar du?'
@@ -54,7 +54,7 @@ describe 'the signup process', type: :feature do
     it 'has more than one course button' do
   describe 'The visitor starts signing up for the event' do
     it 'picks a course and study year' do
-      visit signup_path
+      visit choose_education_path
       expect(page).to have_css('div.course_button')
       expect(page).to have_css('div.year', count: 1)
     end
@@ -62,7 +62,7 @@ describe 'the signup process', type: :feature do
 
   describe 'The visitor continuies to sign up' do
     it 'is presented teams' do
-      visit signup_path
+      visit choose_education_path
       click_link('År 1')
       expect(page).to have_css('#chooseteam')
       expect(page).to have_text 'Coolt! Vi behöver hackers i dessa lag:'
@@ -71,7 +71,7 @@ describe 'the signup process', type: :feature do
 
   describe 'The visitor finalises the sign up process' do
     it 'picks a team and provides an email address' do
-      visit signup_path
+      visit choose_education_path
       click_link('År 1')
       click_link('Programmering')
       click_link('testteam')

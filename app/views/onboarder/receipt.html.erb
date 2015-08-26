@@ -13,7 +13,7 @@
   Kontakta gärna ditt lag och spåna idéer inför eventet.
 </p>
 <ul class="list_of_team_members">
-  <% @list_of_emailaddresses_and_competences.each do |teammate| %>
+  <% @team_member_details.each do |teammate| %>
     <li>
       <a href="mailto:<%= teammate.first %>" class="email"><%= teammate.first %></a>
       <p class="uppercase competence"><%= teammate.second %></p>

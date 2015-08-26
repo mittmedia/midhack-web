@@ -7,19 +7,23 @@ Rails.application.routes.draw do
   #1
   get 'what', to: 'onboarder#what', as: 'what'
   #2
-  get 'signup', to: 'onboarder#signup', as: 'signup'
+  get 'choose_education', to: 'onboarder#choose_education', as: 'choose_education'
+  post 'save_education', to: 'onboarder#save_education', as: 'save_education'
   #3
-  post 'choose_competence', to: 'onboarder#choose_competence', as: 'choose_competence'
+  get 'choose_competence', to: 'onboarder#choose_competence', as: 'choose_competence'
+  post 'save_competence', to: 'onboarder#save_competence', as: 'save_competence'
   #4
-  post 'choose_team', to: 'onboarder#choose_team', as: 'choose_team'
-  #5
+  get 'choose_team', to: 'onboarder#choose_team', as: 'choose_team'
   post 'automatic_selection', to: 'onboarder#automatic_selection', as: 'automatic_selection'
+  post 'save_team', to: 'onboarder#save_team', as: 'save_team'
+  #5
+  get 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
+  post 'save_email', to: 'onboarder#save_email', as: 'save_email'
   #6
-  post 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
-  #7
   post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
-  #8
+  #7
   get 'receipt(/:uuid)', to: 'onboarder#receipt', as: 'receipt'
+
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'

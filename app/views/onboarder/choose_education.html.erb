@@ -1,5 +1,5 @@
 <% container_color('primary')%>
-<% container_id('signup')%>
+<% container_id('choose_education')%>
 <h1 class="center_text"><%= t('.heading') %></h1>
 <% @courses.each do |course| %>
   <button class="course btn_selectable full_width" data-id="<%= course.id %>" >
@@ -7,7 +7,7 @@
   </button>
   <div class="year hidden" id="course_years<%= course.id %>">
     <% course.max_years.times do |year| %>
-        <%= link_to t('.year', year: year+1), choose_competence_path(course: course.code, year: year+1), method: :post, class: 'btn_circular' %>
+        <%= link_to t('.year', year: year+1), save_education_path(course: course.code, year: year+1), method: :post, class: 'btn_circular' %>
     <% end %>
   </div>
 <% end %>
