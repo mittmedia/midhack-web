@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825071541) do
+ActiveRecord::Schema.define(version: 20150826123751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,23 @@ ActiveRecord::Schema.define(version: 20150825071541) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "waitlists", force: :cascade do |t|
+    t.integer  "human_id"
+    t.datetime "spot_offered"
+    t.integer  "team_id"
+    t.integer  "competence_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "waitlists", ["competence_id"], name: "index_waitlists_on_competence_id", using: :btree
+  add_index "waitlists", ["human_id"], name: "index_waitlists_on_human_id", using: :btree
+  add_index "waitlists", ["team_id"], name: "index_waitlists_on_team_id", using: :btree
+
   add_foreign_key "humen", "competences"
   add_foreign_key "humen", "courses"
   add_foreign_key "humen", "teams"
+  add_foreign_key "waitlists", "competences"
+  add_foreign_key "waitlists", "humen"
+  add_foreign_key "waitlists", "teams"
 end
