@@ -1,8 +1,17 @@
 #why {
+  text-align: justify;
+  .text_primary_color{
+    @include regular_base_font();
+    font-size: rem-calc(20);
+    margin: 0px;
+    color: $primary;
+  }
+
   .list_with_info {
     padding: 0px;
     list-style-type: none;
     text-align: center;
+    margin-top: 50px;
     li{
       text-align: center;
       margin-top: 20px;
@@ -43,12 +52,61 @@
       background-image: image-url('person.svg');
 
     }
+  }
 
-    .info_text{
-      @include regular_base_font();
-      font-size: rem-calc(20);
-      margin: 0px;
-      color: $primary;
+  .programme_container{
+    width: 280px;
+    margin: 50px auto;
+    padding: 0px 0px;
+    .programme {
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0px;
+      left: -50%;
+      position: relative;
+      li{
+        width:280px;
+      }
+      .left {
+        padding-right: 129px;
+        text-align: right;
+      }
+      .right {
+        padding-left: 130px;
+        text-align: left;
+      }
+      .description{
+        margin: 0px;
+        font-size: rem-calc(24/2);
+      }
+    }
+    .border {
+      border-left: 1px solid $white;
+      height: 100%;
+      position: relative;
+      left: 50%;
+    }
+    .right_dot:before {
+      margin-left: -3px;
+      border-radius: 100%;
+      border: 5px solid $black;
+      height: 15.55px;
+      width: 15px;
+      background-color: $white;
+      display: block;
+      float: left;
+      content: " ";
+    }
+    .left_dot:after{
+      margin-left: -3px;
+      border-radius: 100%;
+      border: 5px solid $black;
+      height: 15.55px;
+      width: 15px;
+      background-color: $white;
+      display: block;
+      float: right;
+      content: " ";
     }
   }
 }

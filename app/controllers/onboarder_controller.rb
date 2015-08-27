@@ -32,6 +32,12 @@ class OnboarderController < ApplicationController
   end
 
   def why
+    @nr_spots_left = total_nr_of_spots_left
+  end
+
+  def total_nr_of_spots_left
+    spots_taken = Human.all.select(&:signed_up?).count
+    Rails.configuration.midhack_total_nr_spots - spots_taken
   end
 
   def ical
@@ -180,7 +186,6 @@ private
     humen.each do |human|
       NewTeamMember.new_member_email(human, tmd).deliver_later
     end
-
   end
 
   def valid_education
