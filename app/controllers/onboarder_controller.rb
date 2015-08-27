@@ -2,22 +2,31 @@ class OnboarderController < ApplicationController
   before_action :set_human
   before_action :valid_education, only: [
     :choose_competence,
+    :save_competence,
     :choose_team,
     :automatic_selection,
+    :save_team,
     :fill_email,
-    :present_email,
+    :save_email,
     :confirmation,
     :receipt
   ]
   before_action :valid_competence, only: [
     :choose_team,
     :automatic_selection,
+    :save_team,
     :fill_email,
+    :save_email,
     :present_email,
     :confirmation,
     :receipt
   ]
-  before_action :valid_team, only: [:fill_email, :confirmation, :receipt]
+  before_action :valid_team, only: [
+    :fill_email,
+    :save_email,
+    :confirmation,
+    :receipt
+  ]
   before_action :valid_signup, only: [:confirmation, :receipt]
 
   #####################
@@ -124,15 +133,22 @@ class OnboarderController < ApplicationController
   end
 
   def save_email
-    already_signed_up = @human.signed_up?
-    if !email_param.blank? && @human.update(email: email_param)
-      if already_signed_up
-        return redirect_to :receipt
-      else
-        return confirmation
+    begin
+      already_signed_up = @human.signed_up?
+      if !email_param.blank? && @human.update!(email: email_param)
+        if already_signed_up
+          return redirect_to :receipt
+        else
+          return confirmation
+        end
       end
+    rescue => exception
+      message = ''
+      exception.record.errors.messages.first.second.each do |m|
+        message = message  + "#{m}\n"
+      end
+      flash[:notice] = message
     end
-    flash.now[:notice] = t('malformed_email')
     redirect_to :fill_email
   end
 
@@ -219,19 +235,23 @@ private
 
   def valid_education
     b = Course.valid_education? @human.course.code, @human.study_year
-    redirect_to :choose_education unless b
+    return redirect_to :choose_education unless b
+    true
   end
 
   def valid_competence
-    redirect_to :choose_competence if @human.competence.blank?
+    return redirect_to :choose_competence if @human.competence.blank?
+    true
   end
 
   def valid_team
-    redirect_to :choose_team if @human.team.blank?
+    return redirect_to :choose_team if @human.team.blank?
+    true
   end
 
   def valid_signup
-    redirect_to :fill_email unless @human.signed_up?
+    return redirect_to :fill_email unless @human.signed_up?
+    true
   end
 
   def course_param

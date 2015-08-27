@@ -20,8 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  malformed_email: 'Oops! Your email adress is not valid, please check it again.'
-  duplicate_email: "You've already signed up. Please use another email when signing up a friend."
+  validation:
+    invalid_email: 'Oops! Your email adress is not valid, please check it again.'
+    unique_email: "You've already signed up. Please use another email when signing up a friend."
+    blacklisted_domain: "That email adress is not allowed, it's on a blacklisted domain."
   onboarder:
     index:
       title: 'Welcome'

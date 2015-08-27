@@ -27,8 +27,10 @@ class Human < ActiveRecord::Base
     SecureRandom.uuid
   end
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,63})\z/i
-  validates :email, format: { with: email_regex }, allow_blank: true, uniqueness: true
-  validates_format_of :email, :without => /example\.com|example\.org/, :message => "Ogiltig e-postadress"
+  blacklisted_domains = /example\.com|example\.org/
+  validates_uniqueness_of :email, allow_blank: true, message: I18n.t('validation.unique_email')
+  validates_format_of :email, allow_blank: true, with: email_regex, message: I18n.t('validation.invalid_email')
+  validates_format_of :email, allow_blank: true, without: blacklisted_domains, message: I18n.t('validation.blacklisted_domain')
   belongs_to :course
   belongs_to :team
   belongs_to :competence
