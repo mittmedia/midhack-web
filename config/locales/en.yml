@@ -94,6 +94,18 @@ en:
       title: 'Confirmation'
     receipt:
       title: 'Confirmation'
+      heading: 'You are admitted to team'
+      gather_team: 'Contact your team and conjure up ideas for Midhack'
+      tip_friends: 'Hey! Don’t forget to tell your friends to join team %{team}.'
+      add_to_calendar: 'Add this event to your calendar'
+      read_more: 'More information about the event'
+      drop_out_question: 'Got something coming up?'
+      drop_out_action: 'Drop out from Midhack'
+      competences:
+        it: 'Programmer'
+        gd: 'Designer / Communicator'
+        economics: 'Business developer'
+        journalism: 'Journalist'
     why:
       title: 'Explained'
   admin:

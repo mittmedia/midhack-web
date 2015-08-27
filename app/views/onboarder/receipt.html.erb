@@ -1,7 +1,7 @@
 <% container_color('black')%>
 <% container_id('receipt')%>
 <h2 class="center_text">
-  Du är anmäld till Midhack i lag
+  <%= t('.heading') %>
   <span class="center_text underline">
      <%= @team_name %>
   </span>
@@ -9,19 +9,18 @@
 <br>
 <br>
 <p class="center_text">
-  Välkommen till Midhack den 14-15 november på Mittuniversitetet.
-  Kontakta gärna ditt lag och spåna idéer inför eventet.
+  <%= t('.gather_team') %>
 </p>
 <ul class="list_of_team_members">
   <% @team_member_details.each do |teammate| %>
     <li>
       <a href="mailto:<%= teammate.first %>" class="email"><%= teammate.first %></a>
-      <p class="uppercase competence"><%= teammate.second %></p>
+      <p class="uppercase competence"><%= t(".competences.#{teammate.second}") %></p>
     </li>
   <% end %>
 </ul>
 
-<p>Psst! Glöm inte tipsa dina vänner om att gå med i lag <%= @team_name %>.</p>
+<p><%= t('.tip_friends', team: @team_name) %></p>
 <ul class="list_of_sharables">
   <li>
     <%= link_to_facebook do %>
@@ -45,11 +44,11 @@
   </li>
 </ul>
 <br>
-<%= link_to 'Lägg till i kalender', ical_path, class: 'btn_secondary' %>
-<%= link_to "Jag vill läsa mer", why_path, class: 'btn_supplementary inline-block', id:'why_button' %>
+<%= link_to t('.add_to_calendar'), ical_path, class: 'btn_secondary' %>
+<%= link_to t('.read_more'), why_path, class: 'btn_supplementary inline-block', id:'why_button' %>
 <br>
-<p>Fått förhinder och måste avanmäla dig?</p>
-<%= link_to 'Klicka här för att avanmäla', why_path %>
+<p><%= t('.drop_out_question') %></p>
+<%= link_to t('.drop_out_action'), why_path %>
 <ul class="list_of_logos">
   <li>
     <a href="http://www.mittmedia.se/" class="mittmedia">
