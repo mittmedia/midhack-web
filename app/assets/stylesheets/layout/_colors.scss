@@ -1,11 +1,7 @@
 .primary {
   color: $white;
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     color: $white;
   }
 
@@ -15,15 +11,19 @@
       color: $text_black;
     }
   }
+  h3 {
+    color: $black;
+  }
+  .underline{
+    color: $white;
+    border-bottom-color: $black;
+  }
 }
+
 .black {
   color: $white;
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     color: $primary;
   }
 
@@ -33,25 +33,32 @@
       color: $white;
     }
   }
-
+  h3 {
+    color: $white;
+  }
+  .underline{
+    color: $white;
+    border-bottom-color: $primary;
+  }
 }
+
 .white {
   color: $text_black;
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     color: $primary;
   }
-
   a{
     color: $primary;
     &:hover {
       color: $text_black;
     }
   }
+  h3 {
+    color: $black;
+  }
+  .underline{
+    color: $text_black;
+    border-bottom-color: $primary;
+  }
 }
-
-

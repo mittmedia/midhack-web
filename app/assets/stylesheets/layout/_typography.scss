@@ -35,22 +35,6 @@ a {
   text-decoration: none;
 }
 
-.black{
-  h3 {
-    color: $white !important;
-  }
-}
-.white{
-  h3 {
-    color: $black !important;
-  }
-}
-.primary{
-  h3 {
-    color: $black !important;
-  }
-}
-
 .leadin {
   padding: 50px 0 50px 0;
   text-align: center;
@@ -66,27 +50,5 @@ a {
   @extend h2;
   display: inline-block;
   border-bottom: 1px solid;
-}
-
-.primary{
-  .underline{
-    color: $white !important;
-    border-bottom-color: $white;
-
-  }
-}
-
-.white{
-  .underline{
-    color: $text_black !important;
-    border-bottom-color: $primary;
-  }
-}
-
-.black{
-  .underline{
-    color: $white !important;
-    border-bottom-color: $primary;
-  }
 }
 
