@@ -24,9 +24,31 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  @include regular_base_font();
+  font-size: rem-calc(20);
+  text-align: center;
+}
+
 a {
   @include transition();
   text-decoration: none;
+}
+
+.black{
+  h3 {
+    color: $white !important;
+  }
+}
+.white{
+  h3 {
+    color: $black !important;
+  }
+}
+.primary{
+  h3 {
+    color: $black !important;
+  }
 }
 
 .leadin {
