@@ -107,7 +107,7 @@ class OnboarderController < ApplicationController
   def save_team
     team = Team.find(team_param)
     unless team.available_team? @human.competence
-      return redirect_to :choose_team
+      return redirect_to :reserve_fill_email
     end
     if @human.update(team: team)
       redirect_to :fill_email
@@ -136,11 +136,28 @@ class OnboarderController < ApplicationController
     redirect_to :fill_email
   end
 
-  def new_waitlist_member
-    render :competence_spots_filled
-    @waitlist.human_id = @human
-    @waitlist.team_id = team_param
-    waitlist.competence = @competence
+  def reserve_team_spot
+   team = Team.find(team_param)
+   @human = Human.find_by(uuid: @uuid)
+   human= @human
+    if Waitlist.create(team: team) && Waitlist.create(human: human)
+      redirect_to :reserve_fill_email
+    else
+      redirect_to :choose_team
+  end
+end
+
+  def save_reservation_email
+    already_signed_up = @human.signed_up?
+    if @human.update(email: email_param)
+      if already_signed_up
+        return redirect_to :reservation_receipt
+      else
+        return confirm_reservation
+      end
+    end
+    flash.now[:notice] = t('malformed_email')
+    redirect_to :reserve_fill_email
   end
 
   #################################
@@ -151,6 +168,11 @@ class OnboarderController < ApplicationController
     inform_other_members
     ConfirmationMailer.confirmation_email(@human).deliver_later
     redirect_to :receipt
+  end
+
+  def confirm_reservation
+    ConfirmationMailer.waitlist_confirmation_email(@human).deliver_later
+    redirect_to :reservation_receipt
   end
 
   def receipt

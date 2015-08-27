@@ -22,7 +22,7 @@
   <% end %>
 
     <% @sorted_teams[:competence_filled_teams].each do |team| %>
-      <%= link_to save_team_path(team: team.id), method: :post, class: 'btn_filler' do %>
+      <%= link_to reserve_team_spot_path(team: team.id), method: :post, class: 'btn_filler' do %>
         <span class="btn_filler__opaque" style="width: <%= 100 - team.filled_spots_percentage %>%"></span>
         <span class="btn_filler__transparent" style="width: <%= team.filled_spots_percentage %>%"></span>
         <span class="btn_filler__text"><%= team.name %></span>
@@ -31,7 +31,7 @@
     <% end %>
 
   <% @sorted_teams[:full_teams].each do |team| %>
-    <%= link_to save_team_path(team: team.id), method: :post, class: 'btn_filler' do -%>
+    <%= link_to reserve_team_spot_path(team: team.id), method: :post, class: 'btn_filler' do -%>
       <span class="btn_filler__opaque" style="width: 100%"></span>
       <span class="btn_filler__text"><%= team.name %></span>
     <% end %>

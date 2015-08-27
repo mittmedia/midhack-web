@@ -17,13 +17,18 @@ Rails.application.routes.draw do
   post 'automatic_selection', to: 'onboarder#automatic_selection', as: 'automatic_selection'
   post 'save_team', to: 'onboarder#save_team', as: 'save_team'
   #5
-  get 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
-  post 'save_email', to: 'onboarder#save_email', as: 'save_email'
+  post 'reserve_team_spot', to: 'onboarder#reserve_team_spot', as: 'reserve_team_spot'
+  get 'reserve_fill_email', to: 'onboarder#reserve_fill_email', as: 'reserve_fill_email'
+  get 'reservation_receipt', to: 'onboarder#reservation_receipt', as: 'reservation_receipt'
   #6
   post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
   #7
   get 'receipt(/:uuid)', to: 'onboarder#receipt', as: 'receipt'
 
+  get 'fill_email', to: 'onboarder#fill_email', as: 'fill_email'
+  post 'save_email', to: 'onboarder#save_email', as: 'save_email'
+
+  post 'save_reservation_email', to: 'onboarder#save_reservation_email', as: 'save_reservation_email'
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'
