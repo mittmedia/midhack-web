@@ -125,7 +125,7 @@ class OnboarderController < ApplicationController
 
   def save_email
     already_signed_up = @human.signed_up?
-    if @human.update(email: email_param)
+    if !email_param.blank? && @human.update(email: email_param)
       if already_signed_up
         return redirect_to :receipt
       else
