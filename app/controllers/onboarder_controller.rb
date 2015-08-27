@@ -42,6 +42,7 @@ class OnboarderController < ApplicationController
 
   def why
     @nr_spots_left = total_nr_of_spots_left
+    @signed_up = @human.signed_up?
   end
 
   def total_nr_of_spots_left

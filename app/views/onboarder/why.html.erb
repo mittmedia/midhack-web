@@ -34,7 +34,7 @@
 <p>Programmet för helgen kommer att publiceras här inom kort.</p>
 <br>
 <br>
-<% if @signed_up %>
+<% if !@signed_up %>
   <p>Är du sugen på att delta?</p>
   <%= link_to "Anmäl dig till Midhack", choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
 <% end %>
