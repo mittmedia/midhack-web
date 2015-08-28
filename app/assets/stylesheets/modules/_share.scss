@@ -1,0 +1,73 @@
+.list_of_sharables {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+  li {
+    display: inline-block;
+    width: $share_diameter;
+    margin: 10px;
+  }
+}
+
+.share,
+  .share:hover,
+  .share:active,
+  .share:link,
+  .share:visited {
+    .icon {
+      @include btn;
+      @include border_radius(100%);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+      width: $share_diameter;
+      height: $share_diameter;
+      line-height: $share_diameter;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+  .facebook {
+    .icon {
+      background-image: image-url('facebook_logo_primary.svg');
+      background-size: 80%;
+    }
+    &:hover .icon,
+    &:active .icon {
+      background-image: image-url('facebook_logo.svg');
+      background-size: 80%;
+    }
+  }
+  .twitter {
+    .icon {
+      background-image: image-url('twitter_logo_primary.svg');
+      background-size: 70%;
+    }
+    &:hover .icon,
+    &:active .icon {
+      background-image: image-url('twitter_logo.svg');
+      background-size: 70%;
+    }
+  }
+  .googleplus {
+    .icon {
+      background-image: image-url('google_logo_primary.svg');
+      background-size: 70%;
+    }
+    &:hover .icon,
+    &:active .icon {
+      background-image: image-url('google_logo.svg');
+      background-size: 70%;
+    }
+  }
+  .linkedin {
+    .icon {
+      background-image: image-url('linkedin_logo_primary.svg');
+      background-size: 80%;
+    }
+    &:hover .icon,
+    &:active .icon {
+      background-image: image-url('linkedin_logo.svg');
+      background-size: 80%;
+    }
+  }
