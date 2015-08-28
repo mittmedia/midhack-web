@@ -19,6 +19,11 @@ guard 'livereload' do
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(sass|css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
 end
 
+guard 'rails', CLI: 'bin/rails server -b 0.0.0.0' do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+  watch(%r{app/models/.*})
+end
 
 guard 'pow' do
   watch('.powrc')
