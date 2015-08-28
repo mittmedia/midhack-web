@@ -76,7 +76,7 @@
       background-image: image-url('facebook_logo_primary.svg');
       background-size: 80%;
     }
-    .icon:hover {
+    &:hover .icon {
       background-image: image-url('facebook_logo.svg');
       background-size: 80%;
     }
@@ -86,7 +86,7 @@
       background-image: image-url('twitter_logo_primary.svg');
       background-size: 70%;
     }
-    .icon:hover {
+    &:hover .icon {
       background-image: image-url('twitter_logo.svg');
       background-size: 70%;
     }
@@ -96,7 +96,7 @@
       background-image: image-url('google_logo_primary.svg');
       background-size: 70%;
     }
-    .icon:hover {
+    &:hover .icon {
       background-image: image-url('google_logo.svg');
       background-size: 70%;
     }
@@ -106,7 +106,7 @@
       background-image: image-url('linkedin_logo_primary.svg');
       background-size: 80%;
     }
-    .icon:hover {
+    &:hover .icon {
       background-image: image-url('linkedin_logo.svg');
       background-size: 80%;
     }
