@@ -108,5 +108,8 @@ en:
         journalism: 'Journalist'
     why:
       title: 'Explained'
+    unregistered:
+      title: 'Deregistration completed'
+      tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
   admin:
     styles: 'Style guide'

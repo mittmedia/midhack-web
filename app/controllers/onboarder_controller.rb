@@ -199,6 +199,26 @@ end
     render
   end
 
+  ############################
+  ### DEREGISTRATION ENDPOINTS
+  ############################
+
+  def quit
+    # require 'pry'
+    # binding.pry
+    redirect_to root_path unless @human.signed_up?
+  end
+
+  def quitting
+    @human.team = nil
+    return redirect_to :unregistered if @human.save
+    redirect_to :back
+  end
+
+  def unregistered
+  end
+
+
 private
 
   def team_member_details(humen)

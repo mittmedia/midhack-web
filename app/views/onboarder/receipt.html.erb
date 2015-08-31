@@ -1,3 +1,4 @@
+
 <% container_color('black')%>
 <% container_id('receipt')%>
 <h2 class="center_text">
@@ -48,7 +49,7 @@
 <%= link_to t('.read_more'), why_path, class: 'btn_supplementary inline-block', id:'why_button' %>
 <br>
 <p><%= t('.drop_out_question') %></p>
-<%= link_to t('.drop_out_action'), why_path %>
+<%= link_to t('.drop_out_action'), quit_path(uuid: @human.uuid), id: 'drop_out_action' %>
 <ul class="list_of_logos">
   <li>
     <a href="http://www.mittmedia.se/" class="mittmedia">
