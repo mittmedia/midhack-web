@@ -6,6 +6,22 @@
 	<title><%= page_title %></title>
     <meta name="description" content="">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport"/>
+
+    <!-- Facebook -->
+    <meta content="website" property="og:type"/>
+    <meta content="<%= @title %>" property="og:title"/>
+    <meta content="<%= @long_description %>" property="og:description"/>
+    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-fb.jpg'}" %>" property="og:image"/>
+    <meta content="<%= root_url %>" property="og:url"/>
+    <meta content="Midhack 2015" property="og:site_name"/>
+    <!-- Twitter cards-->
+    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-tweet.jpg'}" %>" name="twitter:card"/>
+    <meta content="@midhack2015" name="twitter:site"/>
+    <meta content="@midhack2015" name="twitter:creator"/>
+    <meta content="<%= @title %>" name="twitter:title"/>
+    <meta content="<%= @tweet %>" name="twitter:description"/>
+    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-tweet.jpg'}" %>" name="twitter:image"/>
+
  	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
  	  <%= csrf_meta_tags %>
