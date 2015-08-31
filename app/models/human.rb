@@ -31,8 +31,9 @@ class Human < ActiveRecord::Base
   validates_uniqueness_of :email, allow_blank: true, message: I18n.t('validation.unique_email')
   validates_format_of :email, allow_blank: true, with: email_regex, message: I18n.t('validation.invalid_email')
   validates_format_of :email, allow_blank: true, without: blacklisted_domains, message: I18n.t('validation.blacklisted_domain')
+  has_many :waitlists, dependent: :delete_all
   belongs_to :course
-  belongs_to :team
+  belongs_to :teamm
   belongs_to :competence
 
   def signed_up?
