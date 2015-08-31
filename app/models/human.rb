@@ -33,7 +33,7 @@ class Human < ActiveRecord::Base
   validates_format_of :email, allow_blank: true, without: blacklisted_domains, message: I18n.t('validation.blacklisted_domain')
   has_many :waitlists, dependent: :delete_all
   belongs_to :course
-  belongs_to :teamm
+  belongs_to :team
   belongs_to :competence
 
   def signed_up?
