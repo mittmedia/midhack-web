@@ -1,0 +1,42 @@
+<% container_color('black')%>
+<% container_id('unregistered') %>
+
+<h2 class="center_text">
+  Avanmälan genomförd
+</h2>
+<p class="center_text">
+  Vi hoppas att du kan hacka med oss någon annan gång!
+</p>
+<br>
+<br>
+<%= link_to "Gör en ny anmälan", signup_path, class: 'btn_secondary' %>
+<br>
+<br>
+<small class="center_text">
+
+</small>
+<p class="center_text"><small>
+  Psst! Glöm inte att tipsa dina vänner om Midhack.
+</small></p>
+<ul class="list_of_sharables">
+  <li>
+    <%= link_to_facebook do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_twitter do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_googleplus do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_linkedin do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+</ul>

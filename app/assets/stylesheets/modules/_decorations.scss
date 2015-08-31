@@ -1,0 +1,24 @@
+hr {
+  border: none;
+  height: 1px;
+  .small_divisor {
+    width: 50%;
+  }
+
+}
+
+.primary {
+  hr {
+    background-color: $white
+  }
+}
+.black {
+  hr {
+    background-color: $white
+  }
+}
+.white {
+  hr {
+    background-color: $primary
+  }
+}

@@ -89,7 +89,7 @@ en:
       no_spam: '(No spam, promise)'
       type_email: 'Type your e-mail adress'
       send_application: 'Send application'
-      placeholder: 'username@miun.se'
+      placeholder: 'username@student.miun.se'
     confirmation:
       title: 'Confirmation'
     receipt:
@@ -108,5 +108,8 @@ en:
         journalism: 'Journalist'
     why:
       title: 'Explained'
+    unregistered:
+      title: 'Deregistration completed'
+      tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
   admin:
     styles: 'Style guide'
