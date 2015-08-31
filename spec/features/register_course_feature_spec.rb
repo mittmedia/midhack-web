@@ -11,7 +11,7 @@ describe 'the signup process - course -', type: :feature do
       expect(page).to have_css('.course')
       expect(page).to have_css('div.year', count: 1)
     end
-    it 'and have to choose competence after picking a course and study year' do
+    it 'and has to choose competence after picking a course and study year' do
       visit choose_education_path
       click_link('Year 1')
       expect(current_path).to eq(choose_competence_path)

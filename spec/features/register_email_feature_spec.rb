@@ -20,3 +20,20 @@ describe 'the signup process - email -', type: :feature do
     end
   end
 end
+describe 'The visitor visits the fill_email_path without education' do
+    it 'is redirected to the first page' do
+      visit choose_competence_path
+      expect(page).to have_css('#choose_education')
+    end
+end
+describe 'The visitor is going to provide the email address' do
+  it 'leaves the field blank' do
+    @human = FactoryGirl.create(:competent_educated_member)
+    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
+    visit fill_email_path
+    fill_in 'email', with: ' '
+    click_button 'submit_button'
+    expect(page).to have_text 'Woops you forgot your email address'
+  end
+end
+
