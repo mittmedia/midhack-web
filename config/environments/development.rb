@@ -17,8 +17,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { :host => "midhack-web.dev" }
-  config.action_controller.asset_host = 'http://localhost:3000'
-  config.action_mailer.asset_host = config.action_controller.asset_host
+  config.action_mailer.asset_host = 'midhack-web.dev'
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
