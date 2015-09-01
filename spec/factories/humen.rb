@@ -37,8 +37,13 @@ FactoryGirl.define do
       association :team, factory: :team, strategy: :build
     end
 
+    trait :email do
+      email 'dmu@mittmedia.se'
+    end
+
     factory :educated_human, traits: [:educated]
     factory :competent_educated_human, traits: [:competent, :educated]
-    factory :competent_educated_member, traits: [:competent, :educated, :member]
+    factory :unregistered_competent_educated_member, traits: [:competent, :educated, :member]
+    factory :member, traits: [:competent, :educated, :member, :email]
   end
 end

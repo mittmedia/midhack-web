@@ -16,6 +16,7 @@
 @import 'modules/forms';
 @import 'modules/utils';
 @import 'modules/share';
+@import 'modules/decorations';
 
 
 // pages
@@ -26,6 +27,8 @@
 @import 'pages/fill_email';
 @import 'pages/receipt';
 @import 'pages/why';
+@import 'pages/quit';
+@import 'pages/unregistered';
 
 // overriding modules
 @import 'modules/page_transition';

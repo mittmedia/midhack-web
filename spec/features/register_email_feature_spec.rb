@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'the signup process - email -', type: :feature do
   before(:each) do
-    @human = FactoryGirl.create(:competent_educated_member)
+    @human = FactoryGirl.create(:unregistered_competent_educated_member)
     page.driver.browser.set_cookie("uuid=#{@human.uuid}")
   end
 
