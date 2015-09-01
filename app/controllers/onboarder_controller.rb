@@ -29,6 +29,15 @@ class OnboarderController < ApplicationController
   ]
   before_action :valid_signup, only: [:confirmation, :receipt]
 
+  before_action :available_spots, only: [
+    :choose_team,
+    :automatic_selection,
+    :save_team,
+    :fill_email,
+    :save_email,
+    :present_email,
+  ]
+
   #####################
   ### GENERIC ENDPOINTS
   #####################
@@ -162,8 +171,8 @@ class OnboarderController < ApplicationController
       redirect_to :reserve_fill_email
     else
       redirect_to :choose_team
+    end
   end
-end
 
   def save_reservation_email
     already_signed_up = @human.signed_up?
@@ -205,8 +214,6 @@ end
   ############################
 
   def quit
-    # require 'pry'
-    # binding.pry
     redirect_to root_path unless @human.signed_up?
   end
 
@@ -219,6 +226,9 @@ end
   def unregistered
   end
 
+  def event_is_full
+    Human.all.select(&:signed_up?).count >= 51
+  end
 
 private
 
@@ -276,6 +286,12 @@ private
   def valid_signup
     return redirect_to :fill_email unless @human.signed_up?
     true
+  end
+
+   def available_spots
+    if event_is_full
+      redirect_to reserve_team_spot_path
+    end
   end
 
   def course_param
