@@ -226,7 +226,7 @@ class OnboarderController < ApplicationController
   def unregistered
   end
 
-  def self.event_is_full
+  def event_is_full
     Human.all.select(&:signed_up?).count >= 51
   end
 
