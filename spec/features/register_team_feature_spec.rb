@@ -3,8 +3,6 @@ require 'rails_helper'
 describe 'the signup process - team -', type: :feature do
   before(:each) do
     @human = FactoryGirl.create(:competent_educated_human)
-    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
-    @team = FactoryGirl.create(:team)
   end
 
   describe 'The visitor visits the choose_team_path' do
