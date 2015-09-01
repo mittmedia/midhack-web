@@ -2,7 +2,7 @@ module ShareHelper
   def link_to_facebook(options = {class: ''})
 
     @title = 'Jag har anmält mig till Midhack, gör det du med!'
-    @url = 'http://mm-midhack-stage.herokuapp.com'
+    @url = root_url
     @long_description = 'Midhack är ett innovationsevent på MIUN arrangerat i
                         sammarbete med MittMedia. Här möts journalister,
                         ekonomer, designers och utvecklare och skapar
