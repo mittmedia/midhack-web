@@ -169,6 +169,7 @@ class OnboarderController < ApplicationController
 
   def save_reservation_email
     already_signed_up = @human.signed_up?
+    return email_not_present unless email_param.present?
     if @human.update(email: email_param)
       if already_signed_up
         return redirect_to :reservation_receipt
