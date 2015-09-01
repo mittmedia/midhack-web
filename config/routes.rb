@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #0
   root 'onboarder#index'
 
+  get 'signup', to: redirect('/choose_education')
+
   #1
   get 'what', to: 'onboarder#what', as: 'what'
   #2
@@ -29,6 +31,12 @@ Rails.application.routes.draw do
   post 'save_email', to: 'onboarder#save_email', as: 'save_email'
 
   post 'save_reservation_email', to: 'onboarder#save_reservation_email', as: 'save_reservation_email'
+
+
+  #Unregister, quit => quitting => unregistered
+  get 'quit(/:uuid)', to: 'onboarder#quit', as: 'quit'
+  post 'quitting(/:uuid)', to: 'onboarder#quitting', as: 'quitting'
+  get 'unregistered', to: 'onboarder#unregistered', as: 'unregistered'
 
   get 'why', to: 'onboarder#why', as: 'why'
   get 'ical', to: 'onboarder#ical', as: 'ical'

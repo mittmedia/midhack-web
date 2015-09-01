@@ -20,3 +20,17 @@ describe 'the signup process - competence -', type: :feature do
     end
   end
 end
+
+describe 'the signup process failures - competence -', type: :feature do
+  before(:each) do
+    @human = FactoryGirl.create(:human)
+    @competence = FactoryGirl.create(:competence)
+  end
+
+  describe 'The visitor visits the choose_competence_path without education' do
+    it 'is redirected to the first page' do
+      visit choose_competence_path
+      expect(page).to have_css('#choose_education')
+    end
+  end
+end

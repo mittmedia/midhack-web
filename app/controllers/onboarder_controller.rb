@@ -136,7 +136,7 @@ class OnboarderController < ApplicationController
   def save_email
     begin
       already_signed_up = @human.signed_up?
-      if !email_param.blank? && @human.update!(email: email_param)
+      if email_param.present? && @human.update!(email: email_param)
         if already_signed_up
           return redirect_to :receipt
         else
@@ -150,7 +150,8 @@ class OnboarderController < ApplicationController
       end
       flash[:notice] = message
     end
-    redirect_to :fill_email
+    flash.now[:notice] = I18n.t('validation.forgot_email')
+    render 'fill_email'
   end
 
   def reserve_team_spot
@@ -199,6 +200,26 @@ end
     render
   end
 
+  ############################
+  ### DEREGISTRATION ENDPOINTS
+  ############################
+
+  def quit
+    # require 'pry'
+    # binding.pry
+    redirect_to root_path unless @human.signed_up?
+  end
+
+  def quitting
+    @human.team = nil
+    return redirect_to :unregistered if @human.save
+    redirect_to :back
+  end
+
+  def unregistered
+  end
+
+
 private
 
   def team_member_details(humen)
@@ -235,6 +256,8 @@ private
   end
 
   def valid_education
+    return redirect_to choose_education_path unless
+      @human.present? && @human.course.present?
     b = Course.valid_education? @human.course.code, @human.study_year
     return redirect_to :choose_education unless b
     true
@@ -272,7 +295,7 @@ private
   end
 
   def email_param
-    params.permit("email")["email"]
+    params[:email]
   end
 
   def uuid_param
