@@ -22,9 +22,14 @@
     <meta content="Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! http://www.midhack.se #Midhack2015 #Midhack #hackaton #MIUN #MittMedia" name="twitter:description"/>
     <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" name="twitter:image"/>
 
- 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
- 	  <%= csrf_meta_tags %>
+    <!--[if IE]>
+        <style>
+            .labeled_input__input {padding: 10px 10px;}
+        </style>
+    <![endif]-->
+ 	<%= csrf_meta_tags %>
     <%= render 'shared/favicon' %>
 </head>
 <body class="">

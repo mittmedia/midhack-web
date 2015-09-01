@@ -29,6 +29,12 @@
   text-align: center;
 }
 
+_:-ms-lang(x),
+_:-ms-fullscreen,
+.labeled_input__input {
+  padding: 10px 10px;
+}
+
 .labeled_input__label {
   position: absolute;
   display: block;
