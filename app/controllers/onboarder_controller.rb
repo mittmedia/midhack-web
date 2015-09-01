@@ -143,23 +143,16 @@ class OnboarderController < ApplicationController
   end
 
   def save_email
-    begin
-      already_signed_up = @human.signed_up?
-      if email_param.present? && @human.update!(email: email_param)
-        if already_signed_up
-          return redirect_to :receipt
-        else
-          return confirmation
-        end
+    already_signed_up = @human.signed_up?
+    return email_not_present unless email_param.present?
+    if @human.update!(email: email_param)
+      if already_signed_up
+        return redirect_to :receipt
+      else
+        return confirmation
       end
-    rescue => exception
-      message = ''
-      exception.record.errors.messages.first.second.each do |m|
-        message = message  + "#{m}\n"
-      end
-      flash[:notice] = message
     end
-    flash.now[:notice] = I18n.t('validation.forgot_email')
+    flash.now[:notice] = I18n.t('validation.check_fields')
     render 'fill_email'
   end
 
@@ -286,6 +279,11 @@ private
   def valid_signup
     return redirect_to :fill_email unless @human.signed_up?
     true
+  end
+
+  def email_not_present
+    flash.now[:notice] = I18n.t('validation.forgot_email')
+    render 'fill_email'
   end
 
    def available_spots
