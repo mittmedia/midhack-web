@@ -34,8 +34,15 @@ class OnboarderController < ApplicationController
     :automatic_selection,
     :save_team,
     :fill_email,
-    :save_email,
-    :present_email,
+    :save_email
+  ]
+
+  before_action :available_competence, only:[
+  :choose_team,
+  :automatic_selection,
+  :save_team,
+  :fill_email,
+  :save_email
   ]
 
   #####################
@@ -238,6 +245,10 @@ class OnboarderController < ApplicationController
     Human.all.select(&:signed_up?).count >= 51
   end
 
+  def competence_is_full
+    Team.competence_spots_left(incoming_competence) == 0
+  end
+
 private
 
   def team_member_details(humen)
@@ -303,8 +314,14 @@ private
     false
   end
 
-   def available_spots
+  def available_spots
     if event_is_full
+      redirect_to reserve_team_spot_path
+    end
+  end
+
+  def available_competence
+    if competence_is_full
       redirect_to reserve_team_spot_path
     end
   end
