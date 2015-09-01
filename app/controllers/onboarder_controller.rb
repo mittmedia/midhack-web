@@ -264,15 +264,11 @@ private
   end
 
   def valid_competence
-    return redirect_to choose_education_path unless
-    @human.present? && @human.course.present?
     return redirect_to :choose_competence if @human.competence.blank?
     true
   end
 
   def valid_team
-    return redirect_to choose_education_path unless
-    @human.present? && @human.course.present?
     return redirect_to :choose_team if @human.team.blank?
     true
   end
