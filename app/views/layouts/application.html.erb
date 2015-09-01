@@ -9,18 +9,18 @@
 
     <!-- Facebook -->
     <meta content="website" property="og:type"/>
-    <meta content="<%= @title %>" property="og:title"/>
-    <meta content="<%= @long_description %>" property="og:description"/>
-    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-fb.jpg'}" %>" property="og:image"/>
+    <meta content="Jag har anmält mig till Midhack, gör det du med!" property="og:title"/>
+    <meta content="Midhack är ett innovationsevent på MIUN arrangerat i sammarbete med MittMedia. Här möts journalister, ekonomer, designers och utvecklare och skapar morgondagens nyhetsupplevelse." property="og:description"/>
+    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" property="og:image"/>
     <meta content="<%= root_url %>" property="og:url"/>
     <meta content="Midhack 2015" property="og:site_name"/>
     <!-- Twitter cards-->
-    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-tweet.jpg'}" %>" name="twitter:card"/>
+    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" name="twitter:card"/>
     <meta content="@midhack2015" name="twitter:site"/>
     <meta content="@midhack2015" name="twitter:creator"/>
-    <meta content="<%= @title %>" name="twitter:title"/>
-    <meta content="<%= @tweet %>" name="twitter:description"/>
-    <meta content="<%= "#{root_url[0...-1]}#{asset_path 'social/midhack-tweet.jpg'}" %>" name="twitter:image"/>
+    <meta content="Jag har anmält mig till Midhack, gör det du med!" name="twitter:title"/>
+    <meta content="Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! http://www.midhack.se #Midhack2015 #Midhack #hackaton #MIUN #MittMedia" name="twitter:description"/>
+    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" name="twitter:image"/>
 
  	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
