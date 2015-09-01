@@ -27,6 +27,7 @@ en:
     unique_email: "You've already signed up. Please use another email when signing up a friend."
     blacklisted_domain: "That email adress is not allowed, it's on a blacklisted domain."
     forgot_email: 'Woops you forgot your email address'
+    check_fields: 'Something went wrong!'
   onboarder:
     index:
       title: 'Welcome'

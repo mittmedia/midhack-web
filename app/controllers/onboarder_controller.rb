@@ -144,13 +144,22 @@ class OnboarderController < ApplicationController
 
   def save_email
     already_signed_up = @human.signed_up?
-    return email_not_present unless email_param.present?
-    if @human.update!(email: email_param)
-      if already_signed_up
-        return redirect_to :receipt
-      else
-        return confirmation
+    return email_not_present('save') unless email_param.present?
+    begin
+      if @human.update!(email: email_param)
+        if already_signed_up
+          return redirect_to :receipt
+        else
+          return confirmation
+        end
       end
+    rescue ActiveRecord::RecordInvalid => invalid
+      message = ''
+      invalid.record.errors.messages.first.second.each do |m|
+        message = message  + "#{m}\n"
+      end
+      flash.now[:notice] = message
+      return render 'fill_email'
     end
     flash.now[:notice] = I18n.t('validation.check_fields')
     render 'fill_email'
@@ -169,7 +178,8 @@ class OnboarderController < ApplicationController
 
   def save_reservation_email
     already_signed_up = @human.signed_up?
-    return email_not_present unless email_param.present?
+    return email_not_present('reserve') unless email_param.present?
+    puts @human.update(email: email_param)
     if @human.update(email: email_param)
       if already_signed_up
         return redirect_to :reservation_receipt
@@ -177,8 +187,12 @@ class OnboarderController < ApplicationController
         return confirm_reservation
       end
     end
-    flash.now[:notice] = t('malformed_email')
-    redirect_to :reserve_fill_email
+    message = ''
+    @human.errors.messages.first.second.each do |m|
+      message = message  + "#{m}\n"
+    end
+    flash.now[:notice] = message
+    return render 'reserve_fill_email'
   end
 
   #################################
@@ -282,9 +296,11 @@ private
     true
   end
 
-  def email_not_present
+  def email_not_present(save_or_reserve)
     flash.now[:notice] = I18n.t('validation.forgot_email')
-    render 'fill_email'
+    return render 'fill_email' if save_or_reserve == 'save'
+    render 'reserve_fill_email'
+    false
   end
 
    def available_spots
