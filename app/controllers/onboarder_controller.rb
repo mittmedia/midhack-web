@@ -120,6 +120,7 @@ class OnboarderController < ApplicationController
   end
 
   def automatic_selection
+    session[:automatic_selection] = true
     @sorted_teams = Team.sorted_teams(@human.competence, @human.study_year)
     matched_team = @sorted_teams[:available_teams].first
     return redirect_to :waitinglist if matched_team.blank?
