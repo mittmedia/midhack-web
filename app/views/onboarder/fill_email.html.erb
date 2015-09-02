@@ -5,13 +5,13 @@
       <%= label_tag(:email, t('.heading')) %>
     </h1>
     <%= label_tag(:email, t('.no_spam'), class: 'no_spam center_text') %>
-    <p>
+    <p><strong class="notice center_text">
       <%= t('.your_team') %>
       <%= @human.team.name %>
-    </p>
+    </strong></p>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
-      <strong class="notice center_text"><%= flash[:notice] %></strong>
+      <div class="notice"><%= flash[:notice] %></div>
     <% end %>
     <div class="labeled_input">
       <%= label_tag(:email, t('.type_email'), class: 'labeled_input__label') %>
