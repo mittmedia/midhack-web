@@ -8,7 +8,11 @@
         <%= image_tag 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
         <!-- <img src="http://localhost:3000/mailresources/logo.png"
           width="300" height="157" alt="Midhack 2015" title="Midhack 2015" /> -->
-      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">Tja, du har fått en ny lagkompis i ditt Midhack lag <%= @team_name %></h1>
+      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;"> <span style="color: #00a6cc;"><%= @human.email %> </span> har anmält sig till lag <%= @human.team.name %></h1>
+
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Ditt lag består nu av:
+      </p>
 
       <ul style="list-style-type: none; margin: 30px 0px; padding: 0px; font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         <% @team_member_details.each do |teammate| %>
@@ -24,11 +28,11 @@
         <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>
       </p>
       <a href="<%= @url %>" style="display: block; margin: 1.2em 0;">
-        <%= image_tag 'mailresources/checkteam_en.png', width: '240', height: '54', alt: 'Check out your team', title: 'check out your team' %>
+        <%= image_tag 'mailresources/moreinfo_en.png', width: '240', height: '54', alt: 'Mer info', title: 'Mer info' %>
       </a>
       <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Got something coming up? <br/>
-        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unsubscribe from Midhack</a>
+        Fått andra planer? <br/>
+        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unregister from Midhack</a>
       </p>
     </center>
   </body>
