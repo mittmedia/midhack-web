@@ -233,8 +233,13 @@ class OnboarderController < ApplicationController
   end
 
   def quitting
-    @human.team = nil
-    return redirect_to :unregistered if @human.save
+    if @human.team.present?
+      if @human.update team: nil
+        mail = ConfirmationMailer.deregistration_confirmation_email @human
+        mail.deliver_later
+        return redirect_to :unregistered if @human.save
+      end
+    end
     redirect_to :back
   end
 
