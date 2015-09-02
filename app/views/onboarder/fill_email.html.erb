@@ -1,16 +1,21 @@
 <%= container_color('white') %>
 <%= container_id('fill_email') %>
   <%= form_tag(save_email_path) do %>
-    <h1 class="center_text">
+
+    <h1 class="center_text semibold_pt">
+      <%= t('.your_team') %>
+      <%= @human.team.name %>.
+      <br>
       <%= label_tag(:email, t('.heading')) %>
     </h1>
     <%= label_tag(:email, t('.no_spam'), class: 'no_spam center_text') %>
 
+
     <% if session[:automatic_selection] == true %>
-    <p><strong class="notice center_text">
-      <%= t('.your_team') %>
-      <%= @human.team.name %>
-    </strong></p>
+      <p>
+          <%= t('.your_team') %>
+          <%= @human.team.name %>
+      </p>
     <% end %>
 
     <% if flash[:notice].present? %>
@@ -24,4 +29,5 @@
     </div>
     <%= submit_tag t('.send_application'), id:'submit_button', class: 'btn_primary' %>
   <% end %>
+  <p class="center_text pul"><%= t(".pul") %></p>
 </div>

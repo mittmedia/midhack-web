@@ -10,6 +10,10 @@
   @include semibold_base_font();
 }
 
+.semibold_pt{
+  @include semibold_pt_sansregular;
+}
+
 .inline-block {
   display: inline-block !important;
 }

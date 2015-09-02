@@ -96,6 +96,7 @@ sv:
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
+      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     confirmation:
       title: 'Bekräftelse'
     receipt:
@@ -148,6 +149,7 @@ sv:
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
+      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     unregistered:
       title: 'Bekräftelse avanmälan'
       heading: 'Avanmälan genomförd'

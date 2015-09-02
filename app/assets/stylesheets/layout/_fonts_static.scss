@@ -65,3 +65,8 @@
 @mixin regular_base_font() {
   font-family: 'pt_sansregular';
 }
+
+@mixin semibold_pt_sansregular{
+  font-family: 'pt_sansregular';
+  font-weight: 600;
+}

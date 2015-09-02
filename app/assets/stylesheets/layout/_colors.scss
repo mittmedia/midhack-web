@@ -18,6 +18,9 @@
     color: $white;
     border-bottom-color: $black;
   }
+  .pul {
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .black {
@@ -60,5 +63,8 @@
   .underline{
     color: $text_black;
     border-bottom-color: $primary;
+  }
+  .pul {
+    color: rgba(80, 80, 80, 0.6);
   }
 }
