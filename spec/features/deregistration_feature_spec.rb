@@ -3,8 +3,7 @@ require 'rails_helper'
 describe 'the deregistration process', type: :feature do
   before :each do
     DatabaseCleaner.clean_with(:truncation)
-    @human = FactoryGirl.create :member
-    page.driver.browser.set_cookie "uuid=#{@human.uuid}"
+    @human = create_human :member
   end
 
   describe 'The visitor visits the receipt_path' do
@@ -21,7 +20,7 @@ describe 'the deregistration process', type: :feature do
 
   describe 'The visitor visits the quit_path' do
     it 'without uuid included and get redirected to root_path' do
-      page.driver.browser.set_cookie "uuid=nil"
+      clear_human
       visit quit_path
       expect(current_path).to eq root_path
     end

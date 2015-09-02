@@ -3,8 +3,7 @@ require 'rails_helper'
 describe 'the signup process - team -', type: :feature do
   before(:each) do
     DatabaseCleaner.clean_with(:truncation)
-    @human = FactoryGirl.create(:competent_educated_human)
-    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
+    @human = create_human :competent_educated_human
     @team = FactoryGirl.create(:team)
   end
 
