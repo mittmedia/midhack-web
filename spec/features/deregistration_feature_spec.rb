@@ -30,7 +30,7 @@ describe 'the deregistration process', type: :feature do
     end
     it 'clicks the quit_btn and deregisters' do
       visit quit_path uuid: @human.uuid
-      click_link 'quit_btn'
+      expect { click_link 'quit_btn' }.to change { ActionMailer::Base.deliveries.count }.by(1)
       expect(current_path).to eq unregistered_path
     end
   end

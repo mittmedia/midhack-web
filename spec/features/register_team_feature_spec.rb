@@ -20,9 +20,10 @@ describe 'the signup process - team -', type: :feature do
     end
   end
 end
+
 describe 'The visitor visits the choose_team_path without education' do
-    it 'is redirected to the first page' do
-      visit choose_team_path
-      expect(page).to have_css('#choose_education')
-    end
+  it 'is redirected to the first page' do
+    visit choose_team_path
+    expect(page).to have_css('#choose_education')
   end
+end
