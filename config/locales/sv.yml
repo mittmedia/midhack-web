@@ -92,7 +92,7 @@ sv:
       title: 'E-postadress'
       heading: 'Nästan klar! Nu behövs bara din e-postadress.'
       no_spam: '(Inget spam, vi lovar)'
-      your_team: 'Du är nu med i lag'
+      your_team: 'Du är med i lag %{team}! Nu behövs bara din e-postadress.'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'

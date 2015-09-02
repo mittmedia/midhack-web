@@ -90,9 +90,9 @@ en:
       title: 'E-mail address'
     fill_email:
       title: 'E-mail address'
-      heading: 'Almost done! All we need now is your e-mail address'
+      heading: 'Almost done! All we need now is your e-mail address.'
       no_spam: '(No spam, promise)'
-      your_team: 'You are now assigned to team '
+      your_team: 'You are assigned to team %{team}! All we need now is your e-mail address.'
       type_email: 'Type your e-mail address'
       send_application: 'Send application'
       placeholder: 'username@student.miun.se'
