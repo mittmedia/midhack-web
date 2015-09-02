@@ -300,7 +300,7 @@ private
     humen.delete(@human) # no need to inform self
     return if humen.blank?
     humen.each do |human|
-      TeamMailer.new_member_email(human, tmd).deliver_later
+      TeamMailer.new_member_email(@human, tmd).deliver_later
     end
   end
 
