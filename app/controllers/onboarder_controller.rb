@@ -256,7 +256,7 @@ class OnboarderController < ApplicationController
   ### FIllED SPOTS ENDPOINTS
   ##########################
   def event_is_full
-    Human.all.select(&:signed_up?).count >= 51
+    Human.all.select(&:signed_up?).count >= 1
   end
 
   def competence_is_full

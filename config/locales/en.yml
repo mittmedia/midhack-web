@@ -144,7 +144,8 @@ en:
     reserve_fill_email:
       title: 'E-mail address'
       heading: 'Unfortunately there are currently no free spots in this team.'
-      text_waitinglist: 'Sign up to the waiting list, and we will be in touch if there is a vacancy.'
+      text_waitinglist: 'Sign up to the waiting list, and we will be in touch if there is a vacancy or'
+      go_back: 'go back and pick another competence'
       no_spam: '(No spam, promise)'
       type_email: 'Type your e-mail address'
       send_application: 'Send application'
