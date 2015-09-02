@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   #0
   root 'onboarder#index'
-
   get 'signup', to: redirect('/choose_education')
 
   #1

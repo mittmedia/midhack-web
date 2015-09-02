@@ -6,6 +6,7 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  max_count  :integer          default("0")
 #
 
 class Competence < ActiveRecord::Base
@@ -13,11 +14,17 @@ class Competence < ActiveRecord::Base
   def singular
     titles[name.to_sym][:singular]
   end
+
   def plural
     titles[name.to_sym][:plural]
   end
+
   def field
     titles[name.to_sym][:field]
+  end
+
+  def count
+    humen.count
   end
 
   private

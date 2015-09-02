@@ -92,10 +92,11 @@ sv:
       title: 'E-postadress'
       heading: 'Nästan klar! Nu behövs bara din e-postadress.'
       no_spam: '(Inget spam, vi lovar)'
-      your_team: 'Du är nu med i lag'
+      your_team: 'Du är med i lag %{team}! Nu behövs bara din e-postadress.'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
+      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     confirmation:
       title: 'Bekräftelse'
     receipt:
@@ -143,17 +144,28 @@ sv:
     reserve_fill_email:
       title: 'E-postadress'
       heading: 'Tyvärr finns det inga platser kvar i det här laget just nu.'
-      text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig.'
+      text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig eller'
+      go_back: 'gå tillbaka till välj kompetens'
       no_spam: '(Inget spam, vi lovar)'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
+      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     unregistered:
       title: 'Bekräftelse avanmälan'
       heading: 'Avanmälan genomförd'
       text: 'Vi hoppas att du kan hacka med oss någon annan gång!'
       new_registration: 'Gör en ny anmälan'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+    reservation_receipt:
+      title: 'Väntelista'
+      heading: 'Du är uppskriven på väntelistan'
+      contact: 'Vi kontaktar dig på följande adress:'
+      when: 'när det öppnas upp en plats'
+      tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+      drop_out_question: 'Fått förhinder?'
+      drop_out_action: 'Avanmäl dig från Midhack'
+
   admin:
     styles: 'Style guide'
   new_member_email:

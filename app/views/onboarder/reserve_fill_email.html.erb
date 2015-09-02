@@ -4,7 +4,7 @@
     <h1 class="center_text">
       <%= label_tag(:email, t(".heading")) %>
     </h1>
-    <p><%= t(".text_waitinglist") %></p>
+    <p><%= t(".text_waitinglist") %> <%= link_to t(".go_back"), choose_competence_path, class: 'with_underline' %>.</p>
     <%= label_tag(:email, t(".no_spam"), class: 'no_spam center_text') %>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
@@ -16,5 +16,6 @@
     </div>
     <%= submit_tag t(".send_application"), id:'submit_button', class: 'btn_primary' %>
   <% end %>
+  <p class="center_text pul"><%= t(".pul") %></p>
   <%# link_to "Tillbaka", choose_competence_path, class: 'btn positive' %>
 </div>

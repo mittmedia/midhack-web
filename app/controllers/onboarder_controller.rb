@@ -132,6 +132,7 @@ class OnboarderController < ApplicationController
   end
 
   def save_team
+    session[:automatic_selection] = false
     team = Team.find(team_param)
     unless team.available_team? @human.competence
       return redirect_to :reserve_fill_email
@@ -218,6 +219,10 @@ class OnboarderController < ApplicationController
     redirect_to :reservation_receipt
   end
 
+  def reservation_receipt
+
+  end
+
   def receipt
     humen = @human.team.humen.select(&:signed_up?)
     @team_member_details = team_member_details(humen)
@@ -296,7 +301,7 @@ private
     humen.delete(@human) # no need to inform self
     return if humen.blank?
     humen.each do |human|
-      TeamMailer.new_member_email(human, tmd).deliver_later
+      TeamMailer.new_member_email(@human, tmd).deliver_later
     end
   end
 
@@ -341,13 +346,13 @@ private
 
   def available_spots
     if event_is_full
-      redirect_to reserve_team_spot_path
+      redirect_to reserve_fill_email_path
     end
   end
 
   def available_competence
     if competence_is_full
-      redirect_to reserve_team_spot_path
+      redirect_to reserve_fill_email_path
     end
   end
 

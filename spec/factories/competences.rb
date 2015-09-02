@@ -6,6 +6,7 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  max_count  :integer          default("0")
 #
 
 FactoryGirl.define do

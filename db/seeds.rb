@@ -81,14 +81,18 @@ Course.create({
 })
 
 Competence.create({
-  name: "it"
+  name: "it",
+  max_count: 4
 })
 Competence.create({
-  name: "gd"
+  name: "gd",
+  max_count: 2
 })
 Competence.create({
-  name: "economics"
+  name: "economics",
+  max_count: 2
 })
 Competence.create({
-  name: "journalism"
+  name: "journalism",
+  max_count: 2
 })
