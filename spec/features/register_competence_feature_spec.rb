@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'the signup process - competence -', type: :feature do
   before(:each) do
+    DatabaseCleaner.clean_with(:truncation)
     @human = FactoryGirl.create(:educated_human)
     page.driver.browser.set_cookie("uuid=#{@human.uuid}")
     @competence = FactoryGirl.create(:competence)

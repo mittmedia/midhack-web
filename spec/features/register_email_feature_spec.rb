@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'the signup process - email -', type: :feature do
   before(:each) do
+    DatabaseCleaner.clean_with(:truncation)
     @human = FactoryGirl.create(:unregistered_competent_educated_member)
     page.driver.browser.set_cookie("uuid=#{@human.uuid}")
   end

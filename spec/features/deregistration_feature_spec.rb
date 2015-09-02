@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'the deregistration process', type: :feature do
   before :each do
+    DatabaseCleaner.clean_with(:truncation)
     @human = FactoryGirl.create :member
     page.driver.browser.set_cookie "uuid=#{@human.uuid}"
   end
