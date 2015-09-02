@@ -1,4 +1,5 @@
 class OnboarderController < ApplicationController
+  before_action :set_locale
   before_action :set_human
   before_action :valid_education, only: [
     :choose_competence,
@@ -245,7 +246,9 @@ class OnboarderController < ApplicationController
 
   def unregistered
   end
-
+  ##########################
+  ### FIllED SPOTS ENDPOINTS
+  ##########################
   def event_is_full
     Human.all.select(&:signed_up?).count >= 51
   end
@@ -253,6 +256,17 @@ class OnboarderController < ApplicationController
   def competence_is_full
     competence_count = @human.competence(&:signed_up?)
     competence_count == 0
+  end
+  ############################
+  ### LOCALE ENDPOINTS
+  ############################
+  def set_locale
+    I18n.locale = extract_locale_from_tld || I18n.default_locale
+  end
+
+  def extract_locale_from_tld
+    parsed_locale = request.host.split('.').last
+    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
   end
 
 private
