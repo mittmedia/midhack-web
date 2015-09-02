@@ -11,7 +11,7 @@
     </p>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
+      <strong class="notice center_text"><%= flash[:notice] %></strong>
     <% end %>
     <div class="labeled_input">
       <%= label_tag(:email, t('.type_email'), class: 'labeled_input__label') %>
