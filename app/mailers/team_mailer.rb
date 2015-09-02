@@ -1,4 +1,4 @@
-class NewTeamMember < ApplicationMailer
+class TeamMailer < ApplicationMailer
   def new_member_email(human, team_member_details)
     @human = human
     @team_member_details = team_member_details

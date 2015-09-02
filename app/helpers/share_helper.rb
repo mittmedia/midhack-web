@@ -1,3 +1,4 @@
+require 'uri'
 module ShareHelper
   def link_to_facebook(options = {class: ''})
 
@@ -32,9 +33,7 @@ module ShareHelper
   end
 
   def link_to_twitter(options = {class: ''})
-
-    @tweet = 'Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du
-              också! http://www.midhack.se #Midhack2015 #Midhack #hackaton #MIUN #MittMedia'
+    @tweet = 'Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! http://www.midhack.se #Midhack #hackaton #MIUN #MittMedia'
     @URI = "https://twitter.com/intent/tweet?text=#{URI.escape(@tweet)}"
     html_attrs = {
       title: "#{@action_prefix} Twitter",

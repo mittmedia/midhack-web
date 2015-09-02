@@ -286,7 +286,7 @@ private
     humen.delete(@human) # no need to inform self
     tmd = team_member_details(humen)
     humen.each do |human|
-      NewTeamMember.new_member_email(human, tmd).deliver_later
+      TeamMailer.new_member_email(human, tmd).deliver_later
     end
   end
 
