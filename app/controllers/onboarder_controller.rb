@@ -218,6 +218,10 @@ class OnboarderController < ApplicationController
     redirect_to :reservation_receipt
   end
 
+  def reservation_receipt
+
+  end
+
   def receipt
     humen = @human.team.humen.select(&:signed_up?)
     @team_member_details = team_member_details(humen)

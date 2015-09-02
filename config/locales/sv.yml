@@ -154,6 +154,15 @@ sv:
       text: 'Vi hoppas att du kan hacka med oss någon annan gång!'
       new_registration: 'Gör en ny anmälan'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+    reservation_receipt:
+      title: 'Väntelista'
+      heading: 'Du är uppskriven på väntelistan'
+      contact: 'Vi kontaktar dig på följande adress:'
+      when: 'när det öppnas upp en plats'
+      tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+      drop_out_question: 'Fått förhinder?'
+      drop_out_action: 'Avanmäl dig från Midhack'
+
   admin:
     styles: 'Style guide'
   new_member_email:

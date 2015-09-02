@@ -1,1 +1,54 @@
-<p>Du har nu reserverat en plats i kön!</p>
+<% container_color('black')%>
+<% container_id('reservation_receipt')%>
+<h2 class="center_text">
+  <%= t('.heading') %>
+  <span class="center_text underline">
+     <%= @team_name %>
+  </span>
+</h2>
+<br>
+<p class="center_text">
+  <%= t('.contact') %>
+</p>
+<div class="center_text">
+  <h3 style="display: inline; border-bottom: 1px solid #00A6CC;"><%= @human.email %></h3>
+</div>
+<p class="center_text">
+  <%= t('.when') %>
+</p>
+<br>
+<br>
+<p class="center_text"><%= t('.tip_friends', team: @team_name) %></p>
+<ul class="list_of_sharables">
+  <li>
+    <%= link_to_facebook do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_twitter do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_googleplus do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to_linkedin do %>
+      <div class="icon"></div>
+    <% end %>
+  </li>
+</ul>
+<br>
+<p class="center_text">
+  <%= t('.drop_out_question') %>
+</p>
+<p class="center_text">
+  <%= link_to t('.drop_out_action'),
+              quit_path(uuid: @human.uuid),
+              id: 'drop_out_action'
+  %>
+</p>
+
