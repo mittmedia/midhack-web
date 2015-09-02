@@ -37,13 +37,13 @@ class OnboarderController < ApplicationController
     :save_email
   ]
 
-  #before_action :available_competence, only:[
-  #:choose_team,
-  #:automatic_selection,
-  #:save_team,
-  #:fill_email,
-  #:save_email
-  #]
+  before_action :available_competence, only:[
+  :choose_team,
+  :automatic_selection,
+  :save_team,
+  :fill_email,
+  :save_email
+  ]
 
   #####################
   ### GENERIC ENDPOINTS
@@ -245,11 +245,10 @@ class OnboarderController < ApplicationController
     Human.all.select(&:signed_up?).count >= 51
   end
 
-  #def competence_is_full
-   # competence_number = @competence_spots_left.all
-    #@competence_spots_left = Team.sorted_teams(@human.competence)
-    #Team.competence_spots_left
-  #end
+  def competence_is_full
+    competence_count = @human.competence(&:signed_up?)
+    competence_count == 0
+  end
 
 private
 

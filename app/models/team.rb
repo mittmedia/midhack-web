@@ -81,7 +81,7 @@ class Team < ActiveRecord::Base
     MAX_NUM_MEMBERS - humen.length
   end
 
-  def competence_spots_left(incoming_competence)
+  def self.competence_spots_left(incoming_competence)
     counter = 0
     humen.select(&:signed_up?).each do |member|
       competence = member.competence
