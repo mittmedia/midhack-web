@@ -207,7 +207,7 @@ class OnboarderController < ApplicationController
   #################################
 
   def confirmation
-    inform_other_members
+    inform_other_members_of_new_team_mate
     ConfirmationMailer.confirmation_email(@human).deliver_later
     redirect_to :receipt
   end
@@ -233,8 +233,10 @@ class OnboarderController < ApplicationController
   end
 
   def quitting
-    if @human.team.present?
+    team = @human.team
+    if team.present?
       if @human.update team: nil
+        inform_other_members_of_lost_team_mate(team)
         mail = ConfirmationMailer.deregistration_confirmation_email @human
         mail.deliver_later
         return redirect_to :unregistered if @human.save
@@ -283,12 +285,26 @@ private
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
-  def inform_other_members
+  def other_members
+    humen
+  end
+
+  def inform_other_members_of_new_team_mate
     humen = @human.team.humen.select(&:signed_up?)
+    tmd = team_member_details(humen)
     humen.delete(@human) # no need to inform self
+    return if humen.blank?
+    humen.each do |human|
+      TeamMailer.new_member_email(human, tmd).deliver_now
+    end
+  end
+
+  def inform_other_members_of_lost_team_mate(team)
+    humen = team.humen.select(&:signed_up?)
+    return if humen.blank?
     tmd = team_member_details(humen)
     humen.each do |human|
-      TeamMailer.new_member_email(human, tmd).deliver_later
+      TeamMailer.lost_member_email(human, tmd).deliver_later
     end
   end
 

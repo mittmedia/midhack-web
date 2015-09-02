@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <center style="width: 300px; margin: 0 auto; display: block;">
+        <%= image_tag 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+        <!-- <img src="http://localhost:3000/mailresources/logo.png"
+          width="300" height="157" alt="Midhack 2015" title="Midhack 2015" /> -->
+      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;"> <span style="color: #00a6cc;"><%= @lost_member.email %> </span>  har tyvärr valt att gå ur lag  <%= @lost_member.team.name %></h1>
+
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif;">
+        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>
+      </p>
+
+      <a href="<%= @url %>" style="display: block; margin: 1.2em 0;">
+        <%= image_tag 'mailresources/checkteam_sv.png', width: '240', height: '54', alt: 'Se ditt team', title: 'Se ditt team' %>
+      </a>
+      <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Fått förhinder? <br/>
+        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Avanmäl dig från Midhack</a>
+      </p>
+    </center>
+  </body>
+</html>

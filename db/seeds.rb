@@ -54,6 +54,11 @@ Course.create({
   name: 'Journalistprogrammet'
 })
 Course.create({
+  code: 'sbjug',
+  points: 180,
+  name: 'Bildjournalistprogrammet'
+})
+Course.create({
   code: 'tgdkg',
   points: 180,
   name: 'Grafisk design och kommunikation'
