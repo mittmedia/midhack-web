@@ -341,7 +341,7 @@ private
 
   def available_spots
     if event_is_full
-      redirect_to reserve_team_spot_path
+      redirect_to reserve_fill_email_path
     end
   end
 
