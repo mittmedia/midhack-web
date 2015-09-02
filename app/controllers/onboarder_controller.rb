@@ -132,6 +132,7 @@ class OnboarderController < ApplicationController
   end
 
   def save_team
+    session[:automatic_selection] = false
     team = Team.find(team_param)
     unless team.available_team? @human.competence
       return redirect_to :reserve_fill_email
