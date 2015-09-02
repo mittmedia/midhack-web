@@ -23,9 +23,9 @@ en:
   app:
     name: Midhack
   validation:
-    invalid_email: 'Oops! Your email adress is not valid, please check it again.'
+    invalid_email: 'Oops! Your email address is not valid, please check it again.'
     unique_email: "You've already signed up. Please use another email when signing up a friend."
-    blacklisted_domain: "That email adress is not allowed, it's on a blacklisted domain."
+    blacklisted_domain: "That email address is not allowed, it's on a blacklisted domain."
     forgot_email: 'Woops you forgot your email address'
     check_fields: 'Something went wrong!'
   onboarder:
@@ -36,7 +36,7 @@ en:
     what:
       title: 'What is Midhack?'
       heading: 'What is Midhack?'
-      text_1: 'Mittmedia together with MIUN Innovation are hosting a 24 hour hackathon on november 14th - 15th for journalists, graphic artists, computer scientists and engineers.'
+      text_1: 'Mittmedia together with Mid Sweden University are hosting a 24 hour hackathon on november 14th - 15th for journalists, graphic artists, computer scientists and engineers.'
       text_2: 'You and your team are competing to develop the best new solutions for the future of journalism. In the price pool is 10 000 kronor and a chance to do diploma work for Mittmedia.'
       tease: 'Are you up for it?'
       primary_action: 'Yes, sign me up for Midhack'
@@ -86,12 +86,12 @@ en:
       switch_expertise: 'Switch expertise'
       pick_another_team: 'Pick another team for me'
     automatic_selection:
-      title: 'E-mail adress'
+      title: 'E-mail address'
     fill_email:
-      title: 'E-mail adress'
-      heading: 'Almost done! All we need now is your e-mail adress'
+      title: 'E-mail address'
+      heading: 'Almost done! All we need now is your e-mail address'
       no_spam: '(No spam, promise)'
-      type_email: 'Type your e-mail adress'
+      type_email: 'Type your e-mail address'
       send_application: 'Send application'
       placeholder: 'username@student.miun.se'
     confirmation:
@@ -111,9 +111,46 @@ en:
         economics: 'Business developer'
         journalism: 'Journalist'
     why:
-      title: 'Explained'
+      title: 'Information'
+      heading: 'More info about Midhack'
+      text_1: 'Midhack anordnas av MittMedia och MIUN Innovation, i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
+      text_2: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på Mittmedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
+      subtitle_1: 'Bra att veta'
+      text_3: 'Ni får tillgång till hela MittMedias artikeldatabas samt har möjlighet att använda API:er från opendata.se. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
+      title_place: 'plats'
+      place: 'MittUniversitetet, Sundsvall'
+      title_price: 'prispengar'
+      price: '10 000 kr'
+      title_date: 'datum'
+      date: '14 - 15 November'
+      title_spots_left: 'platser kvar'
+      subtitle_2: 'Program'
+      text_4: 'Programmet för helgen kommer att publiceras här inom kort.'
+      tease: 'Är du sugen på att delta?'
+      primary_action: 'Anmäl dig till Midhack'
+      secondary_action: 'Tillbaka'
     unregistered:
       title: 'Deregistration completed'
+      tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
+    quit:
+      title: 'Unregister'
+      heading: 'Are you sure you want to unregister from Midhack?'
+      text_1: 'If you unregister you will lose your spot in the team and it will instead be offered to the person next in line on our waiting list. There is no way to regret this action once you have pressed the "unregister" button, you will lose your spot and will have to register again if you change your mind.'
+      drop_out_action: 'Unregister'
+      text_2: 'Note, you have not unregistered before pressing the button above. If you do not wish to unregister you can just close this webpage.'
+    reserve_fill_email:
+      title: 'E-mail address'
+      heading: 'Unfortunately there are currently no free spots in this team.'
+      text_waitinglist: 'Sign up to the waiting list, and we will be in touch if there is a vacancy.'
+      no_spam: '(No spam, promise)'
+      type_email: 'Type your e-mail address'
+      send_application: 'Send application'
+      placeholder: 'username@student.miun.se'
+    unregistered:
+      title: 'Confirmation unregistration'
+      heading: 'Unregistration completed'
+      text: 'We hope you will come hack with us another time instead!'
+      new_registration: 'New registration'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
   admin:
     styles: 'Style guide'

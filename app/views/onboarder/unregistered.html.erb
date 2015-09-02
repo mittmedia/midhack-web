@@ -2,21 +2,21 @@
 <% container_id('unregistered') %>
 
 <h2 class="center_text">
-  Avanmälan genomförd
+  <%= t(".heading") %>
 </h2>
 <p class="center_text">
-  Vi hoppas att du kan hacka med oss någon annan gång!
+  <%= t(".text") %>
 </p>
 <br>
 <br>
-<%= link_to "Gör en ny anmälan", signup_path, class: 'btn_secondary' %>
+<%= link_to t(".new_registration"), signup_path, class: 'btn_secondary' %>
 <br>
 <br>
 <small class="center_text">
 
 </small>
 <p class="center_text"><small>
-  Psst! Glöm inte att tipsa dina vänner om Midhack.
+  <%= t(".tip_friends") %>
 </small></p>
 <ul class="list_of_sharables">
   <li>
