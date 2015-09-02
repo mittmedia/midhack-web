@@ -7,19 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Team.create([
-  { name: 'The Bulletin', color: '#e74c3c' },
-  { name: 'The Courier', color: '#f39c12' },
-  { name: 'The Gazette', color: '#d35400' },
-  { name: 'The Journal', color: '#34495e' },
-  { name: 'The Post', color: '#bdc3c7' },
-  { name: 'The Mirror', color: '#2980b9' },
-  { name: 'The Star', color: '#2980b9' },
-  { name: 'The Tribune', color: '#2980b9' }
+  { name: 'The Bulletin' },
+  { name: 'The Courier' },
+  { name: 'The Gazette' },
+  { name: 'The Journal' },
+  { name: 'The Post' },
+  { name: 'The Mirror' },
+  { name: 'The Star' },
+  { name: 'The Tribune' }
 ])
 
 # Team.create([
-#   { name: 'The Comet', color: '#9b59b6' },
-#   { name: 'The Globe', color: '#7f8c8d' }
+#   { name: 'The Comet' },
+#   { name: 'The Globe' }
 # ])
 
 Course.create({
