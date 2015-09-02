@@ -7,17 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Team.create([
-  { name: 'Alisarin', color: '#e74c3c' },
-  { name: 'Ametist', color: '#9b59b6' },
-  { name: 'Apelsin', color: '#f39c12' },
-  { name: 'Aprikos', color: '#d35400' },
-  { name: 'Asbest', color: '#7f8c8d' },
-  { name: 'Asfalt', color: '#34495e' },
-  { name: 'Aspartam', color: '#bdc3c7' },
-  { name: 'Azur', color: '#2980b9' }
+  { name: 'The Bulletin', color: '#e74c3c' },
+  { name: 'The Courier', color: '#f39c12' },
+  { name: 'The Gazette', color: '#d35400' },
+  { name: 'The Journal', color: '#34495e' },
+  { name: 'The Post', color: '#bdc3c7' },
+  { name: 'The Mirror', color: '#2980b9' },
+  { name: 'The Star', color: '#2980b9' },
+  { name: 'The Tribune', color: '#2980b9' }
 ])
 
-
+# Team.create([
+#   { name: 'The Comet', color: '#9b59b6' },
+#   { name: 'The Globe', color: '#7f8c8d' }
+# ])
 
 Course.create({
   code: 'tdtea',
