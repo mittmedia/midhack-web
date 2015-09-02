@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'the signup process - team -', type: :feature do
   before(:each) do
-    @human = FactoryGirl.create(:competent_educated_human)
-    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
+    DatabaseCleaner.clean_with(:truncation)
+    @human = create_human :competent_educated_human
     @team = FactoryGirl.create(:team)
   end
 
@@ -22,8 +22,8 @@ describe 'the signup process - team -', type: :feature do
 end
 
 describe 'The visitor visits the choose_team_path without education' do
-    it 'is redirected to the first page' do
-      visit choose_team_path
-      expect(page).to have_css('#choose_education')
-    end
+  it 'is redirected to the first page' do
+    visit choose_team_path
+    expect(page).to have_css('#choose_education')
   end
+end

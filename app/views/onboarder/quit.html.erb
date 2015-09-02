@@ -2,18 +2,18 @@
 <% container_id('quit') %>
 
 <h2 class="center_text">
-  Är du säker på att du vill avanmäla dig från Midhack?
+  <%= t('.heading') %>
 </h2>
 <hr class="small_divisor"></hr>
 
 <p class="center_text">
-  Om du avanmäler dig mister du din plats i laget och det tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får isåfall göra en ny anmälan.
+  <%= t('.text_1') %>
 </p>
 <br>
-<%= link_to "Avanmäl mig", quitting_path, class: 'btn_cancel', method: :post, id: 'quit_btn' %>
+<%= link_to t('.drop_out_action'), quitting_path, class: 'btn_cancel', method: :post, id: 'quit_btn' %>
 <br>
 <p class="center_text">
   <small>
-    Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.
+    <%= t('.text_2') %>
   </small>
 </p>

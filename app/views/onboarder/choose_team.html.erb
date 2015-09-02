@@ -14,7 +14,6 @@
     <p class="spots_left center_text"><%= t('.spots_left', count: team.spots_left) %></p>
   <% end %>
 
-
   <% if @sorted_teams[:competence_filled_teams].length > 0 ||
         @sorted_teams[:full_teams].length > 0   %>
     <%# Only display other teams headline if there are other teams %>
@@ -38,8 +37,8 @@
     <p class="spots_left center_text"><%= t('.spots_left', count: 0) %> </p>
   <% end %>
 
-<p><%= t('.switch_expertise') %></p>
-<p><%= t('.pick_another_team') %></p>
+<p><%# t('.switch_expertise') %></p>
+<p><%# t('.pick_another_team') %></p>
 </div>
 
 

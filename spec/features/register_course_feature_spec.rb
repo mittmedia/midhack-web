@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'the signup process - course -', type: :feature do
   before(:each) do
+    DatabaseCleaner.clean_with(:truncation)
     @course = FactoryGirl.create(:course)
   end
 

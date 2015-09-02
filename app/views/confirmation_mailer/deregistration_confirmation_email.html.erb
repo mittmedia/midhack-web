@@ -5,12 +5,14 @@
   </head>
   <body>
     <center style="width: 300px; margin: 0 auto; display: block;">
-      <%= image_tag asset_path 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+    <%= image_tag 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+      <!-- <img src="http://localhost:3000/mailresources/logo.png"
+        width="300" height="157" alt="Midhack 2015" title="Midhack 2015" /> -->
       <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Tack för att du anmält dig till väntelistan för Midhack
+        Tja, nu är du avanmäld från Midhack
       </h1>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Du står med på väntelistan till lag <%= @team_name %>. Vi hör av oss om det blir en plats ledig.
+        Även om du inte ska hacka, vore det kul om du dök upp på prisutdelningen och demonstrationen den 15e november. Vi skickar in en inbjudan dit när vi närmar oss datumet med mer information.
       </p>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif;">
         <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>

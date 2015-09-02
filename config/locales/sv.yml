@@ -1,0 +1,162 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+sv:
+  app:
+    name: Midhack
+  validation:
+    invalid_email: 'Hoppsan! Du har skrivit in en ogiltig e-postadress, försök igen.'
+    unique_email: "Du är redan anmäld. Använd en annan e-postadress om du försöker anmäla en vän."
+    blacklisted_domain: "Denna e-postadress är inte godkänd, den tillhör en svartlistad domän."
+    forgot_email: 'Hoppsan, du missade att fylla i din e-postadress'
+    check_fields: 'Något gick fel!'
+  onboarder:
+    index:
+      title: 'Välkommen'
+      leadin: 'Tillsammans utvecklar vi framtidens journalistik baserat på öppen data'
+      action: 'Vad är Midhack?'
+    what:
+      title: 'Vad är Midhack?'
+      heading: 'Vad är Midhack?'
+      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingenjörer. '
+      text_2: 'Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på MittMedia.'
+      tease: 'Är du sugen?'
+      primary_action: 'Ja, anmäl mig till Midhack'
+      secondary_action: 'Jag vill läsa mer'
+      my_receipt: 'Se mitt team'
+      signup_friend: 'Anmäl en vän'
+    choose_education:
+      title: 'Utbildning'
+      heading: 'Vad pluggar du?'
+      studies:
+        tdtea: 'Civ.ing. datateknik'
+        tinda: 'Civ.ing. industriell ekonomi'
+        tdatg: 'Datateknik'
+        tgdkg: 'Grafisk design och kommunikation'
+        tgdog: 'Grafisk design och kommunikation'
+        sinpg: 'Informations- och PR- programmet '
+        sjoug: 'Journalistprogrammet'
+        tandg: 'Mobila applikationer och nätverkstjänster för Android'
+        tnätg: 'Nätverksdrift '
+        tweug: 'Webbutveckling'
+        sbjug: 'Bildjournalistprogrammet'
+      back: 'Tillbaka'
+      year: 'År %{year}'
+    choose_competence:
+      title: 'Kompetens'
+      heading: 'Vilken kompetens vill du bidra med?'
+      competences:
+        it: 'Programmering'
+        gd: 'Design / kommunikation'
+        economics: 'Affärsutveckling'
+        journalism: 'Journalistik'
+    choose_team:
+      title: 'Lag'
+      heading: 'Välj ett lag'
+      assign_automatically: 'Vi kan välja ett lag åt dig'
+      choose_my_team: 'Välj lag åt mig'
+      or_choose_myself: 'Eller så kan du välja ett lag själv. Vi behöver %{competence} i dessa lag:'
+      spots_left:
+        zero: 'fullt'
+        one: 'En plats kvar'
+        other: '%{count} platser kvar'
+      competences:
+        it: 'Programmerare'
+        gd: 'designers och kommunikatörer'
+        economics: 'Affärsutvecklare'
+        journalism: 'Journalister'
+      other_teams: 'Övriga lag'
+      switch_expertise: 'Byt kompetens'
+      pick_another_team: 'Välj ett annat lag åt mig'
+    automatic_selection:
+      title: 'E-postadress'
+    fill_email:
+      title: 'E-postadress'
+      heading: 'Nästan klar! Nu behövs bara din e-postadress.'
+      no_spam: '(Inget spam, vi lovar)'
+      your_team: 'Du är nu med i lag'
+      type_email: 'Skriv in din e-postadress'
+      send_application: 'Skicka anmälan'
+      placeholder: 'username@student.miun.se'
+    confirmation:
+      title: 'Bekräftelse'
+    receipt:
+      title: 'Bekräftelse'
+      heading: 'Du är anmäld till lag'
+      gather_team: 'Kontakta ditt lag och spåna idéer inför Midhack'
+      tip_friends: 'Psst! Glöm inte att tipsa dina vänner att gå med i lag %{team}.'
+      add_to_calendar: 'Lägg till i kalendern'
+      read_more: 'Mer information om eventet'
+      drop_out_question: 'Fått förhinder?'
+      drop_out_action: 'Avanmäl dig från Midhack'
+      competences:
+        it: 'Programmerare'
+        gd: 'Designer / kommunikatör'
+        economics: 'Affärsutvecklare'
+        journalism: 'Journalist'
+    why:
+      title: 'Information'
+      heading: 'Mer info om Midhack'
+      text_1: 'Midhack anordnas av MittMedia och MIUN Innovation, i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
+      text_2: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
+      subtitle_1: 'Bra att veta'
+      text_3: 'Ni får tillgång till hela MittMedias artikeldatabas samt har möjlighet att använda API:er från opendata.se. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
+      title_place: 'plats'
+      place: 'Mittuniversitetet, Sundsvall'
+      title_price: 'prispengar'
+      price: '10 000 kr'
+      title_date: 'datum'
+      date: '14 - 15 November'
+      title_spots_left: 'platser kvar'
+      subtitle_2: 'Program'
+      text_4: 'Programmet för helgen kommer att publiceras här inom kort.'
+      tease: 'Är du sugen på att delta?'
+      primary_action: 'Anmäl dig till Midhack'
+      secondary_action: 'Tillbaka'
+    unregistered:
+      title: 'Avanmälan genomförd'
+      tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+    quit:
+      title: 'Avanmälan'
+      heading: 'Är du säker på att du vill avanmäla dig från Midhack?'
+      text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får isåfall göra en ny anmälan.'
+      drop_out_action: 'Avanmäl mig'
+      text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
+    reserve_fill_email:
+      title: 'E-postadress'
+      heading: 'Tyvärr finns det inga platser kvar i det här laget just nu.'
+      text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig.'
+      no_spam: '(Inget spam, vi lovar)'
+      type_email: 'Skriv in din e-postadress'
+      send_application: 'Skicka anmälan'
+      placeholder: 'username@student.miun.se'
+    unregistered:
+      title: 'Bekräftelse avanmälan'
+      heading: 'Avanmälan genomförd'
+      text: 'Vi hoppas att du kan hacka med oss någon annan gång!'
+      new_registration: 'Gör en ny anmälan'
+      tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
+  admin:
+    styles: 'Style guide'
+  new_member_email:
+    heading: 'har anmält sig till lag'
+  confirmation_email:
+  waitlist_confirmation_email:

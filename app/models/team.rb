@@ -4,7 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  color      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -82,7 +81,7 @@ class Team < ActiveRecord::Base
     MAX_NUM_MEMBERS - humen.length
   end
 
-  def competence_spots_left(incoming_competence)
+  def self.competence_spots_left(incoming_competence)
     counter = 0
     humen.select(&:signed_up?).each do |member|
       competence = member.competence

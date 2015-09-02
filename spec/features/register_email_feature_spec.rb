@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'the signup process - email -', type: :feature do
   before(:each) do
-    @human = FactoryGirl.create(:unregistered_competent_educated_member)
-    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
+    DatabaseCleaner.clean_with(:truncation)
+    @human = create_human :unregistered_competent_educated_member
   end
 
   describe 'The visitor visits the fill_email_path' do
@@ -19,6 +19,14 @@ describe 'the signup process - email -', type: :feature do
       expect(current_path).to eq(receipt_path)
     end
   end
+describe 'The visitor is going to provide the email address' do
+  it 'leaves the field blank' do
+    visit fill_email_path
+    fill_in 'email', with: ' '
+    click_button 'submit_button'
+    expect(page).to have_text 'Woops you forgot your email address'
+  end
+end
 end
 describe 'The visitor visits the fill_email_path without education' do
     it 'is redirected to the first page' do
@@ -26,14 +34,5 @@ describe 'The visitor visits the fill_email_path without education' do
       expect(page).to have_css('#choose_education')
     end
 end
-describe 'The visitor is going to provide the email address' do
-  it 'leaves the field blank' do
-    @human = FactoryGirl.create(:competent_educated_member)
-    page.driver.browser.set_cookie("uuid=#{@human.uuid}")
-    visit fill_email_path
-    fill_in 'email', with: ' '
-    click_button 'submit_button'
-    expect(page).to have_text 'Woops you forgot your email address'
-  end
-end
+
 

@@ -3,7 +3,7 @@
 <h1 class="center_text"><%= t('.heading') %></h1>
 <% @courses.each do |course| %>
   <button class="course btn_selectable full_width" data-id="<%= course.id %>" >
-    <span class="course__heading"><%= t(".studies.#{course.code.to_s}") %></span> <br> <small class="uppercase"><%= course.code %></small>
+    <span class="course__heading"><%= t(".studies.#{course.code.to_s}") %></span>
   </button>
   <div class="year hidden" id="course_years<%= course.id %>">
     <% course.max_years.times do |year| %>

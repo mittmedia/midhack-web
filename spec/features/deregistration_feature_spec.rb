@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'the deregistration process', type: :feature do
   before :each do
-    @human = FactoryGirl.create :member
-    page.driver.browser.set_cookie "uuid=#{@human.uuid}"
+    DatabaseCleaner.clean_with(:truncation)
+    @human = create_human :member
   end
 
   describe 'The visitor visits the receipt_path' do
@@ -20,7 +20,7 @@ describe 'the deregistration process', type: :feature do
 
   describe 'The visitor visits the quit_path' do
     it 'without uuid included and get redirected to root_path' do
-      page.driver.browser.set_cookie "uuid=nil"
+      clear_human
       visit quit_path
       expect(current_path).to eq root_path
     end
@@ -30,7 +30,7 @@ describe 'the deregistration process', type: :feature do
     end
     it 'clicks the quit_btn and deregisters' do
       visit quit_path uuid: @human.uuid
-      click_link 'quit_btn'
+      expect { click_link 'quit_btn' }.to change { ActionMailer::Base.deliveries.count }.by(1)
       expect(current_path).to eq unregistered_path
     end
   end

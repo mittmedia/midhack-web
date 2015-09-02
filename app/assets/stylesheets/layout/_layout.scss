@@ -32,10 +32,52 @@ body {
 }
 
 .container {
-  padding: 50px 20px;
+  padding: 50px 20px 200px 20px;
   margin: 0 auto;
   max-width: 500px;
 }
+
+footer {
+  background: $black;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  margin-top: -160px;
+  .top {
+    padding: 20px 0 0 0;
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+
+.footer_inner {
+  width: 100%;
+  text-align: center
+}
+
+.list_of_logos{
+    padding: 0px;
+    margin: 0;
+    li {
+      display: inline-block;
+      width: 150px;
+      margin: 0 10px 10px 10px;
+    }
+    .mittmedia{
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      background-image: image-url('mittmedia_logo.svg');
+      background-size: 80%;
+    }
+    .miun{
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      background-image: image-url('miun_logo.svg');
+      background-size: 100%;
+    }
+  }
 
 @media (min-width: 520px) {
   padding: 60px 0;

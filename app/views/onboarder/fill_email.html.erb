@@ -5,6 +5,20 @@
       <%= label_tag(:email, t('.heading')) %>
     </h1>
     <%= label_tag(:email, t('.no_spam'), class: 'no_spam center_text') %>
+
+    <p><strong class="notice center_text">
+      <%= t('.your_team') %>
+      <%= @human.team.name %>
+    </strong></p>
+
+    <% if session[:automatic_selection] == true %>
+      <p>
+          <%= t('.your_team') %>
+          <%= @human.team.name %>
+      </p>
+    <% end %>
+
+
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
