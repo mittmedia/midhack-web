@@ -5,7 +5,6 @@
       <%= label_tag(:email, t(".heading")) %>
     </h1>
     <p><%= t(".text_waitinglist") %> <%= link_to t(".go_back"), choose_competence_path, class: 'with_underline' %>.</p>
-    <%= label_tag(:email, t(".no_spam"), class: 'no_spam center_text') %>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>

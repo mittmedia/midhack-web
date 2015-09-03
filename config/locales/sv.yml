@@ -36,7 +36,7 @@ sv:
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'
-      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmar hackathon för journalister, grafiker, datavetare och ingenjörer. '
+      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmar hackathon för journalister, bildjournalister, informatörer, grafiker, datavetare och ingenjörer.'
       text_2: 'Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på MittMedia.'
       tease: 'Är du sugen?'
       primary_action: 'Ja, anmäl mig till Midhack'
@@ -66,8 +66,8 @@ sv:
       competences:
         it: 'Programmering'
         gd: 'Design / kommunikation'
-        economics: 'Affärsutveckling'
-        journalism: 'Journalistik'
+        economics: 'Affärsutveckling / analys'
+        journalism: 'Journalistik / bildjournalistik'
     choose_team:
       title: 'Lag'
       heading: 'Välj ett lag'
@@ -116,7 +116,7 @@ sv:
     why:
       title: 'Information'
       heading: 'Mer info om Midhack'
-      text_1: 'Midhack anordnas av MittMedia och MIUN Innovation, i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
+      text_1: 'Midhack anordnas av MittMedia och MIUN, i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
       text_2: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
       subtitle_1: 'Bra att veta'
       text_3: 'Ni får tillgång till hela MittMedias artikeldatabas samt har möjlighet att använda API:er från opendata.se. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'

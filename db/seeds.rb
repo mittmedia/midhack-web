@@ -58,11 +58,11 @@ Course.create({
   points: 180,
   name: 'Bildjournalistprogrammet'
 })
-Course.create({
-  code: 'tgdkg',
-  points: 180,
-  name: 'Grafisk design och kommunikation'
-})
+# Course.create({
+#   code: 'tgdkg',
+#   points: 180,
+#   name: 'Grafisk design och kommunikation'
+# })
 Course.create({
   code: 'tgdog',
   points: 180,
