@@ -69,6 +69,6 @@ group :development, :test do
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
   gem 'annotate'
-
+  gem 'i18n-tasks', '~> 0.8.6'
 end
 
