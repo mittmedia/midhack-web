@@ -1,17 +1,10 @@
-// input[type="submit"] {
-//   background: none;
-//   color: $primary;
-//   border: 1px solid $primary;
-//   padding: 0 30px;
-//   @include border_radius();
-//   &:hover {
-//     background: $primary;
-//     color: $white;
-//   }
-// }
+
 .labeled_input {
   position: relative;
-  margin-bottom: 40px;
+  height: 82px;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .labeled_input__input {
@@ -33,6 +26,25 @@ _:-ms-lang(x),
 _:-ms-fullscreen,
 .labeled_input__input {
   padding: 10px 10px;
+}
+.ie {
+  .labeled_input__input {
+    padding-bottom: 14px;
+  }
+  .labeled_input__label {
+    top: 0;
+  }
+}
+[data-ie10='T'] {
+  .labeled_input__input {
+    padding-bottom: 14px;
+  }
+  .labeled_input__label {
+    top: 0;
+  }
+  .labeled_input__label--show {
+    top: 38px;
+  }
 }
 
 .labeled_input__label {
@@ -65,6 +77,7 @@ _:-ms-fullscreen,
     color: $text_black;
   }
 }
+
 
 .labeled_input__label--show {
   top: 42px;
