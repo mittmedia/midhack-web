@@ -52,6 +52,9 @@ class OnboarderController < ApplicationController
   def index
   end
 
+  def policy
+  end
+
   def what
     @signed_up = @human.signed_up?
   end

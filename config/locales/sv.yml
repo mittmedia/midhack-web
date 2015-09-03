@@ -33,6 +33,15 @@ sv:
       title: 'Välkommen'
       leadin: 'Tillsammans utvecklar vi framtidens journalistik baserat på öppen data'
       action: 'Vad är Midhack?'
+      cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
+      read_more: 'Läs mer om vår datalagringspolicy.'
+    policy:
+      title: 'Datalagringsolicy'
+      heading: 'Datalagringspolicy'
+      text_1: 'Midhack.se använder så kallade sessionskakor för att systemet ska kunna hålla koll på vad du gör, exempelvis så du inte får samma välkomstmail två gånger.'
+      text_2: 'Midhack.se använder också persistenta kakor för att se till att du identifieras som samma person mellan dina besök.'
+      text_3: 'Midhack.se använder inte kakor för att spåra dig som användare eller presentera reklam. Vi säljer inte heller vidare några av dina personuppgifter till tredje part eller tillgängliggör dem inom bolagen MIUN eller MittMedia.'
+      text_4: 'Genom att använda Midhack.se så godkänner du vårt användande av kakor samt att vi, i enlighet med pul, lagrar din e-postadress tillsammans med din studieprofil och valt lag så att vi kan se till så att anmälningssystemet fungerar.'
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'

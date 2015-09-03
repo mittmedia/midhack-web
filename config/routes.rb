@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #0
   root 'onboarder#index'
   get 'signup', to: redirect('/choose_education')
-
+  #0.1
+  get 'policy', to: 'onboarder#policy', as: 'policy'
   #1
   get 'what', to: 'onboarder#what', as: 'what'
   #2
