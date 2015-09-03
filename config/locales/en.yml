@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  footer:
+    text: 'A collaboration between'
   app:
     name: Midhack
   validation:
@@ -166,5 +168,13 @@ en:
       text: 'We hope you will come hack with us another time instead!'
       new_registration: 'New registration'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
+    reservation_receipt:
+      title: 'Waiting List'
+      heading: 'You have signed up to the waiting list'
+      contact: 'We will contact you on the following address:'
+      when: 'if there is a vacancy.'
+      tip_friends: 'Hey! Don’t forget to tell your friends to join team %{team}.'
+      drop_out_question: 'Got something coming up?'
+      drop_out_action: 'Unregister from the Midhack event'
   admin:
     styles: 'Style guide'

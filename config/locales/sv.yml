@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 sv:
+  footer:
+    text: 'Ett samarbete mellan'
   app:
     name: Midhack
   validation:
@@ -170,14 +172,9 @@ sv:
       title: 'Väntelista'
       heading: 'Du är uppskriven på väntelistan'
       contact: 'Vi kontaktar dig på följande adress:'
-      when: 'när det öppnas upp en plats'
+      when: 'om det blir en plats ledig.'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
       drop_out_question: 'Fått förhinder?'
       drop_out_action: 'Avanmäl dig från Midhack'
-
   admin:
     styles: 'Style guide'
-  new_member_email:
-    heading: 'har anmält sig till lag'
-  confirmation_email:
-  waitlist_confirmation_email:
