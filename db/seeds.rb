@@ -80,6 +80,18 @@ Course.create({
   name: 'Webbutveckling'
 })
 
+Course.create({
+  code: 'tinsg',
+  points: 180,
+  name: 'Informatik med inriktning systemutveckling'
+})
+
+Course.create({
+  code: 'tpvag',
+  points: 180,
+  name: 'Programvaruteknik'
+})
+
 Competence.create({
   name: "it",
   max_count: 4

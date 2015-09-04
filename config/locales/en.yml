@@ -67,6 +67,9 @@ en:
         tnätg: 'Network operation'
         tweug: 'Web development'
         sbjug: 'Photojournalism'
+        tinsg: 'Informatics with focus on systems development'
+        tpvag: 'Software engineering'
+
       back: 'Go back'
       year: 'Year %{year}'
     choose_competence:
