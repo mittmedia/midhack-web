@@ -75,6 +75,7 @@ sv:
         sbjug: 'Bildjournalistprogrammet'
         tinsg: 'Informatik med inriktning systemutveckling'
         tpvag: 'Programvaruteknik'
+      back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:
       title: 'Kompetens'

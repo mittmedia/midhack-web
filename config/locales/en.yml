@@ -75,6 +75,7 @@ en:
         sbjug: 'Photojournalism'
         tinsg: 'Informatics with focus on systems development'
         tpvag: 'Software engineering'
+      back: 'Go back'
       year: 'Year %{year}'
     choose_competence:
       title: 'Expertise'
