@@ -1,0 +1,24 @@
+#why_header,
+#what_header,
+#receipt_header {
+  width: 100%;
+  height: 150px;
+  background: $primary;
+  padding: 20px;
+  .logo {
+    background: image-url('midhacklogo.svg');
+    max-width: 200px;
+    height:100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+  }
+}
+
+#choose_education_header,
+#choose_competence_header,
+#choose_team_header{
+
+}
+
