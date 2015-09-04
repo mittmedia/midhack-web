@@ -69,6 +69,9 @@ sv:
         tnätg: 'Nätverksdrift '
         tweug: 'Webbutveckling'
         sbjug: 'Bildjournalistprogrammet'
+        tinsg: 'Informatik med inriktning systemutveckling'
+        tpvag: 'Programvaruteknik'
+
       back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:
