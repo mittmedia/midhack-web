@@ -33,7 +33,7 @@ module ShareHelper
   end
 
   def link_to_twitter(options = {class: ''})
-    @tweet = 'Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! http://www.midhack.se #Midhack #hackaton #MIUN #MittMedia'
+    @tweet = 'Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! #Midhack #hackaton #MIUN #MittMedia http://www.midhack.se'
     @URI = "https://twitter.com/intent/tweet?text=#{URI.escape(@tweet)}"
     html_attrs = {
       title: "#{@action_prefix} Twitter",
