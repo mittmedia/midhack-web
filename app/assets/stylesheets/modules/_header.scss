@@ -14,7 +14,24 @@
     background-position: center;
     margin: 0 auto;
   }
+
+  @media screen and (max-device-width: 320px){
+      height: 65px;
+      padding: 10px;
+    .logo {
+      background: image-url('Midhack_icon.svg');
+      max-width: 200px;
+      height:45px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+    }
+  }
 }
+
+//Vänd på det så att telefon är före dator
+
 
 #choose_education_header,
 #choose_competence_header,
