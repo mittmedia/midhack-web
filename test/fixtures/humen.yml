@@ -2,16 +2,18 @@
 #
 # Table name: humen
 #
-#  id            :integer          not null, primary key
-#  name          :string
-#  email         :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  uuid          :string
-#  team_id       :integer
-#  study_year    :integer
-#  course_id     :integer
-#  competence_id :integer
+#  id                 :integer          not null, primary key
+#  name               :string
+#  email              :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  uuid               :string
+#  team_id            :integer
+#  study_year         :integer
+#  course_id          :integer
+#  competence_id      :integer
+#  signed_up          :boolean          default("false")
+#  welcome_email_sent :boolean          default("false")
 #
 # Indexes
 #
