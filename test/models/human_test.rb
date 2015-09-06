@@ -2,24 +2,29 @@
 #
 # Table name: humen
 #
-#  id                 :integer          not null, primary key
-#  name               :string
-#  email              :string
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  uuid               :string
-#  team_id            :integer
-#  study_year         :integer
-#  course_id          :integer
-#  competence_id      :integer
-#  signed_up          :boolean          default("false")
-#  welcome_email_sent :boolean          default("false")
+#  id                      :integer          not null, primary key
+#  name                    :string
+#  email                   :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  uuid                    :string
+#  team_id                 :integer
+#  study_year              :integer
+#  course_id               :integer
+#  competence_id           :integer
+#  signed_up               :boolean          default("false")
+#  welcome_email_sent      :boolean          default("false")
+#  email_confirmed         :boolean          default("false")
+#  email_confirmation_hash :text
+#  confirm_email_expire_at :datetime
 #
 # Indexes
 #
 #  index_humen_on_competence_id  (competence_id)
 #  index_humen_on_course_id      (course_id)
+#  index_humen_on_signed_up      (signed_up)
 #  index_humen_on_team_id        (team_id)
+#  index_humen_on_uuid           (uuid)
 #
 
 require 'test_helper'

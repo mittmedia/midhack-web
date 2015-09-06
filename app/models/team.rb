@@ -13,6 +13,8 @@ class Team < ActiveRecord::Base
   has_many :members, -> { where signed_up: true }, class_name: "Human"
 	validates :name, allow_blank: false, presence: true, uniqueness: true
 
+	validates :name, allow_blank: false, presence: true, uniqueness: true
+
   MAXMEMBERS = {
     economics: 2,
     gd: 2,

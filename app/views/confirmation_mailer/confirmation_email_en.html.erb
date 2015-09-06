@@ -9,21 +9,23 @@
       <!-- <img src="http://localhost:3000/mailresources/logo.png"
         width="300" height="157" alt="Midhack 2015" title="Midhack 2015" /> -->
       <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Hi! You are accepted to Midhack in team
+        Hi! You have now joined team
         <span style="border-bottom: 1px solid #00A6CC;"><%= @team_name %></span>
       </h1>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Welcome to Midhack at Mittuniversitetet in Sundsvall during 14th and
-        15th of November. The exact place and other information will be sent
-        continuously to your e-mail adress. See you!
-        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>
+        Welcome to Midhack at Mittuniversitetet in Sundsvall during 14th and 15th of November.
+        The exact place and other information will published on <a href="http://www.midhack.se" 
+         style="color: #00A6CC; text-decoration: none; font-weight: 100;">Midhack.se</a> and sent 
+        continuously to your e-mail adress.
       </p>
-      <a href="<%= @url %>" style="display: block; margin: 1.2em 0;">
-        <%= image_tag asset_path 'mailresources/checkteam_sv.png', width: '240', height: '54', alt: 'Check out your team', title: 'check out your team' %>
-        <!-- <img src="http://localhost:3000/mailresources/checkteam_en.png"
-          width="240" height="54" alt="Check out your team"
-          title="Check out your team" /> -->
-
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        To make sure that you are who you say you are, please confirm your email adress by clicking the
+        link below. Otherwise your signup will be deleted at
+        <%= @confirm_email_expire_at.in_time_zone.strftime("%H:%I on %Y-%m-%d")  %>
+      </p>
+      <a href="<%= @confirm_email_url %>" style="display: block; margin: 1.2em 0;">
+        <%= image_tag asset_path 'mailresources/verify_email_sv.png', width: '240', height: '54',
+          alt: 'Verify your email.', title: 'Verify your email.' %>
       </a>
       <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         Got something coming up? <br/>
@@ -32,3 +34,4 @@
     </center>
   </body>
 </html>
+

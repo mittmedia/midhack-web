@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'reservation_receipt', to: 'onboarder#reservation_receipt', as: 'reservation_receipt'
   #6
   post 'confirmation', to: 'onboarder#confirmation', as: 'confirmation'
+  get 'confirm_email/:uuid/:digest', to: 'onboarder#confirm_email', as: 'confirm_email'
   #7
   get 'receipt(/:uuid)', to: 'onboarder#receipt', as: 'receipt'
 
