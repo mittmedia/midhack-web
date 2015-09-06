@@ -25,5 +25,50 @@
 require 'rails_helper'
 
 RSpec.describe Human, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'email' do
+		it 'should not be able to contain example.com domain' do
+      expect(Human.create(email: 'test@example.com').persisted?).to eq(false)
+		end
+		it 'should not be able to contain example.net domain' do
+      expect(Human.create(email: 'test@example.net').persisted?).to eq(false)
+		end
+		it 'should not be able to contain example.org domain' do
+      expect(Human.create(email: 'test@example.org').persisted?).to eq(false)
+		end
+
+		it 'should be able to contain example.org in user part' do
+      expect(Human.create(email: 'example.org@mittmedia.se').persisted?).to eq(true)
+		end
+		it 'should be able to contain example.com in user part' do
+      expect(Human.create(email: 'example.com@mittmedia.se').persisted?).to eq(true)
+		end
+		it 'should be able to contain example.net in user part' do
+      expect(Human.create(email: 'example.net@mittmedia.se').persisted?).to eq(true)
+		end
+		it 'should be able to contain example in user part' do
+      expect(Human.create(email: 'example@mittmedia.se').persisted?).to eq(true)
+		end
+
+		it 'should be persistable with valid email adress' do
+			h = Human.create(email: 'dmu@mittmedia.com')
+      expect(h.persisted?).to eq(true)
+			h.destroy
+		end
+
+		it 'is required to be unique among signed_up human' do
+			h1 = Human.create(email: 'dmu@mittmedia.com', signed_up: true)
+			h2 = Human.create(email: 'dmu@mittmedia.com')
+			expect(h1.persisted?).to eq(true)
+			expect(h2.persisted?).to eq(false)
+		end
+
+		it 'should not limit reregistering if a humen has previously quit' do
+			pending "Fix code to validate this uniqueness constraint as symbolized by this test #{__FILE__}"
+			h1 = Human.create(email: 'dmu@mittmedia.com', signed_up: false)
+			h2 = Human.create(email: 'dmu@mittmedia.com')
+			expect(h1.persisted?).to eq(true)
+			expect(h2.persisted?).to eq(true)
+		end
+
+  end
 end
