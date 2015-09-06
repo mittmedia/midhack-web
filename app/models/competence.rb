@@ -11,6 +11,9 @@
 
 class Competence < ActiveRecord::Base
   has_many :humen
+  validates :name, presence: true, uniqueness: true
+  validates_numericality_of :max_count, greater_than: -1
+
   def singular
     titles[name.to_sym][:singular]
   end
