@@ -11,6 +11,8 @@
 class Team < ActiveRecord::Base
   has_many :humen
 
+	validates :name, allow_blank: false, presence: true, uniqueness: true
+
   MAXMEMBERS = {
     economics: 2,
     gd: 2,
