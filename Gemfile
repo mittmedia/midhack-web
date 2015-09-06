@@ -41,11 +41,15 @@ gem 'autoprefixer-rails'
 # Allow creating default values in code for Active Record Models.
 gem 'attribute-defaults'
 
+
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
+  # To freeze time in tests for email-validation deadline
+  gem 'timecop'
+
   gem 'rspec'
   gem 'rspec-rails', '~> 3.3.3'
   gem 'capybara'

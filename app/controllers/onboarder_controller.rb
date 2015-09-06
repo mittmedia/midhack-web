@@ -1,4 +1,5 @@
 class OnboarderController < ApplicationController
+  include OnboarderHelper
   before_action :set_human
   before_action :valid_education, only: [
     :choose_competence,
@@ -160,7 +161,11 @@ class OnboarderController < ApplicationController
     already_signed_up = @human.signed_up
     return email_not_present('save') unless email_param.present?
     begin
-      if @human.update!(email: email_param, signed_up: true)
+      expiration_time = calculate_expiration_time
+      if @human.update!(email: email_param,
+                        signed_up: true,
+                        confirm_email_expire_at: expiration_time
+                       )
         if already_signed_up
           return redirect_to :receipt
         else
@@ -211,6 +216,7 @@ class OnboarderController < ApplicationController
 
   def confirmation
     inform_other_members_of_new_team_mate
+    @human.update(email_confirmation_hash: @human.generate_email_confirmation_hash)
     ConfirmationMailer.confirmation_email(@human).deliver_later
     redirect_to :receipt
   end
@@ -218,6 +224,16 @@ class OnboarderController < ApplicationController
   def confirm_reservation
     ConfirmationMailer.waitlist_confirmation_email(@human).deliver_later
     redirect_to :reservation_receipt
+  end
+
+  def confirm_email
+    if @human.generate_email_confirmation_hash == digest_param
+      @human.update(email_confirmed: true)
+      flash.now[:notice] = I18n.t('confirmed_email')
+    else
+      flash.now[:notice] = I18n.t('confirmed_email_fail')
+    end
+    redirect_to :receipt
   end
 
   def reservation_receipt
@@ -287,19 +303,20 @@ private
     list
   end
 
+  def get_human(uuid)
+    Human.find_by(uuid: uuid)
+  end
+
   def set_human
-    @uuid = cookies[:uuid]
-    if @uuid.blank?
-      new_human
-    else
-      @human = Human.find_by(uuid: @uuid)
-    end
-    new_human if @human.nil?
+    @human = nil
+    @human = get_human(uuid_param) unless uuid_param.blank?
+    @human = get_human(cookies[:uuid]) if @human.blank?
+    cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now } unless @human.blank?
+    new_human if @human.blank?
   end
 
   def new_human
-    @human = Human.new
-    @human.save!
+    @human = Human.create!
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
@@ -390,6 +407,10 @@ private
 
   def uuid_param
     params.permit("uuid")["uuid"]
+  end
+
+  def digest_param
+    params.permit("digest")["digest"]
   end
 
   def force_param

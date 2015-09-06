@@ -1,18 +1,21 @@
-Tja, nu är du anmäld till Midhack i lag <%= @team_name  %>
-========================================<% @team_name.to_s.length.times do %>=<% end %>
+Hej! Du är nu med i lag <%= @team_name  %>
+========================<% @team_name.to_s.length.times do %>=<% end %>
 
-Vi syns på Midhack den 14-15 november på MIUNs campus.
+Välkommen till Midhack, eventet äger rum på Mittuniversitetet i Sundsvall den 14-15 november.
+Fler detaljer gällande plats, tid samt annan information kommer att publiceras på 
+http://www.midhack.se samt skickas ut kontinuerligt till din e-postadress.
 
-Glöm inte att lägga in i kalendern och säga åt dina vänner att gå med i ditt lag.
+För att säkerställa att du är du och att du vill vara med, så vill vi att du bekräftar din
+epost-adress genom att klicka på länken nedan. Annars kommer din platsreservation att tas
+bort <%= @confirm_email_expire_at.in_time_zone.strftime("klockan %H:%I den %Y-%m-%d")  %>.
+<%= @confirm_email_url %>
 
 Kolla din anmälan på länken nedanför så kan du se vilka som är med i ditt lag.
 <%= @url %>
 
-Fått förhinder?
+Fått förhinder? Avanmäl dig från Midhack: 
+<%= @unsubscribe_url %>
 
-Avanmäl dig från Midhack: <%= @unsubscribe_url %>
-
-Vi ser fram emot er kreation.
-
+Vi ses!
 /Midhack Crew
 
