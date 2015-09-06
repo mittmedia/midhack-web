@@ -24,7 +24,7 @@ describe 'The visitor is going to provide the email address' do
     visit fill_email_path
     fill_in 'email', with: ' '
     click_button 'submit_button'
-    expect(page).to have_text 'Woops you forgot your email address'
+    expect(page).to have_text 'Hoppsan, du missade att fylla i din e-postadress'
   end
 end
 end

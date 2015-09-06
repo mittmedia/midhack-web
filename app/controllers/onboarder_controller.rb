@@ -236,7 +236,6 @@ class OnboarderController < ApplicationController
   ############################
   ### DEREGISTRATION ENDPOINTS
   ############################
-
   def quit
     redirect_to root_path unless @human.signed_up?
   end
@@ -256,8 +255,9 @@ class OnboarderController < ApplicationController
 
   def unregistered
   end
+
   ##########################
-  ### FIllED SPOTS ENDPOINTS
+  ### FILLED SPOTS ENDPOINTS
   ##########################
   def event_is_full
     Human.all.select(&:signed_up?).count >= 51

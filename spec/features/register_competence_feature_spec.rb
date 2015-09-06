@@ -15,7 +15,7 @@ describe 'the signup process - competence -', type: :feature do
     end
     it 'and have to choose team after picking a competence' do
       visit choose_competence_path
-      click_link('Programming')
+      click_link('Programmering')
       expect(current_path).to eq(choose_team_path)
     end
   end
