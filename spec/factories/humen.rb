@@ -37,6 +37,7 @@ FactoryGirl.define do
 
     trait :member do
       association :team, factory: :team, strategy: :create
+      signed_up true
     end
 
     trait :email do

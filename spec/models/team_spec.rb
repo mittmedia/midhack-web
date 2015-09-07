@@ -22,4 +22,12 @@ RSpec.describe Team, type: :model do
 			expect(Team.create(name: 'Testteam').persisted?).to eq(false)
 		end
   end
+
+  it 'has humans that are not members' do
+  	team = FactoryGirl.create(:team)
+  	h1 = FactoryGirl.create(:human, team: team)
+  	h2 = FactoryGirl.create(:member, team: team)
+  	expect(team.members).to eq([h2])
+  	expect(team.humen).to eq([h1, h2])
+  end
 end

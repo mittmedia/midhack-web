@@ -10,7 +10,7 @@
 
 class Team < ActiveRecord::Base
   has_many :humen
-
+  has_many :members, -> { where signed_up: true }, class_name: "Human"
 	validates :name, allow_blank: false, presence: true, uniqueness: true
 
   MAXMEMBERS = {
@@ -41,7 +41,7 @@ class Team < ActiveRecord::Base
   end
 
   def self.sorted_teams(competence, study_year)
-    all_teams = Team.all.includes(:humen)
+    all_teams = Team.preload(:members)
     all_teams = all_teams.sort do |x, y|
       x.rank(competence, study_year) <=> y.rank(competence, study_year)
     end
