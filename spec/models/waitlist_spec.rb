@@ -20,5 +20,20 @@
 require 'rails_helper'
 
 RSpec.describe Waitlist, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @waitlist = FactoryGirl.create(:waitlist)
+  end
+  describe 'human association' do
+    it 'cannot be nil' do
+      expect(@waitlist.update(human: nil)).to eq(false)
+    end
+    it 'cannot collide with other whitelist entry' do
+      pending "Fix this test."
+      #human = FactoryGirl.create(:educated_human)
+      #expect(@waitlist.update(human: human)).to eq(true)
+      #other_wl_entry = FactoryGirl.create(:waitlist)
+      #expect(other_waitlist.update(human: human)).to eq(true)
+      fail
+    end
+  end
 end

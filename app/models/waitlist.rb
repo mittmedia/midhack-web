@@ -21,4 +21,7 @@ class Waitlist < ActiveRecord::Base
   belongs_to :human
   belongs_to :team
   belongs_to :competence
+
+  validates :human_id, presence: true#, uniqueness: true
+
 end

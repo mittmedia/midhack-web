@@ -19,10 +19,9 @@
 
 FactoryGirl.define do
   factory :waitlist do
-    human nil
-spot_offered "2015-08-26 14:37:51"
-team nil
-competence nil
+    human
+    spot_offered "2015-08-26 14:37:51"
+    team
+    competence
   end
-
 end
