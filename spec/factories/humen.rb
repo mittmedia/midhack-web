@@ -27,16 +27,16 @@ FactoryGirl.define do
     uuid SecureRandom.uuid
 
     trait :educated do
-      association :course, factory: :course, strategy: :build
+      association :course, factory: :course, strategy: :create
       study_year 2
     end
 
     trait :competent do
-      association :competence, factory: :competence, strategy: :build
+      association :competence, factory: :competence, strategy: :create
     end
 
     trait :member do
-      association :team, factory: :team, strategy: :build
+      association :team, factory: :team, strategy: :create
     end
 
     trait :email do

@@ -63,7 +63,6 @@ RSpec.describe Human, type: :model do
     end
 
     it 'should not limit reregistering if a humen has previously quit' do
-      pending "Fix code to validate this uniqueness constraint as symbolized by this test #{__FILE__}"
       h1 = Human.create(email: 'dmu@mittmedia.com', signed_up: false)
       h2 = Human.create(email: 'dmu@mittmedia.com')
       expect(h1.persisted?).to eq(true)
