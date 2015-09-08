@@ -29,10 +29,9 @@ RSpec.describe Waitlist, type: :model do
     end
     it 'cannot collide with other whitelist entry' do
       pending "Fix this test."
-      human = FactoryGirl.create(:educated_human)
-      expect(@waitlist.update(human: human)).to eq(true)
+      human = @waitlist.human
       other_waitlist_entry = FactoryGirl.create(:waitlist)
-      expect(other_waitlist.update(human: human)).to eq(true)
+      expect(other_waitlist.update(human: human)).to eq(false)
       fail
     end
   end
