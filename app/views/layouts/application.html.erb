@@ -42,23 +42,37 @@
 </head>
 
 <body>
-<header id="<%= yield :container_id %>_header"><div class="logo"></div></header>
-<div id="<%= yield :container_id %>" class="main_container <%= yield :container_color %>">
-  <div class="container">
-    <%= yield %>
-  </div>
-</div>
-<footer>
-  <div class="footer_inner">
-    <div class="top"><%= t('footer.text') %></div>
-    <div class="footer_link left">
-      <a href="http://www.mittmedia.se/" class="mittmedia" target="_blank"></a>
+
+    <header id="<%= yield :container_id %>_header" class="header">
+        <div class="header_container">
+            <div class="logo"></div>
+            <div class="progress_bar">
+                <div class="progress_bar_bg"></div>
+                <div class="progress_bar_white"></div>
+                <div class="ring"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="<%= yield :container_id %>" class="main_container <%= yield :container_color %>">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
-    <div class="footer_link right">
-      <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun" target="_blank"></a>
-    </div>
-  </div>
-</footer>
-<img src="<%= asset_url 'social/midhack-fb.jpg' %>" style="position: absolute; left: -10px; top: -10px; width: 10px; height: 10px;"/>
+
+    <footer>
+      <div class="footer_inner">
+        <div class="top"><%= t('footer.text') %></div>
+        <div class="footer_link left">
+          <a href="http://www.mittmedia.se/" class="mittmedia" target="_blank"></a>
+        </div>
+        <div class="footer_link right">
+          <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun" target="_blank"></a>
+        </div>
+      </div>
+    </footer>
+
+    <img src="<%= asset_url 'social/midhack-fb.jpg' %>" style="position: absolute; left: -10px; top: -10px; width: 10px; height: 10px;"/>
+
 </body>
 </html>

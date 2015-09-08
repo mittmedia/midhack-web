@@ -78,6 +78,20 @@ footer {
   }
 }
 
+.header {
+  width: 100%;
+  min-height: 75px;
+  padding: 20px 20px 0px 20px;
+  background: $primary;
+  overflow: hidden;
+
+  .header_container {
+    max-width: 460px;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+
 @media (min-width: 520px) {
   padding: 60px 0;
 }

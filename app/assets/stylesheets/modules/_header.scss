@@ -1,27 +1,26 @@
 #why_header,
 #what_header,
-#receipt_header {
-  width: 100%;
-  height: 150px;
-  background: $primary;
-  padding: 20px;
+#receipt_header,
+#unregistered_header,
+#quit_header {
   .logo {
-    background: image-url('midhacklogo.svg');
+    background: image-url('Midhack_icon.svg');
     max-width: 200px;
-    height:100px;
+    min-width: 40px;
+    height:45px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin: 0 auto;
   }
 
-  @media screen and (max-device-width: 320px){
-      height: 65px;
-      padding: 10px;
+  @media screen and (min-device-width: 321px){
+    height: 150px;
+    padding: 20px;
     .logo {
-      background: image-url('Midhack_icon.svg');
+      background: image-url('midhacklogo.svg');
       max-width: 200px;
-      height:45px;
+      height:100px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -30,12 +29,114 @@
   }
 }
 
-//Vänd på det så att telefon är före dator
-
-
 #choose_education_header,
 #choose_competence_header,
-#choose_team_header{
+#choose_team_header,
+#fill_email_header {
+
+  .progress_bar {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    position: relative;
+
+    .progress_bar_bg {
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.4);
+      width: 100%;
+      position: absolute;
+    }
+    .progress_bar_white {
+      border: 1px solid $white;
+      position: absolute;
+    }
+    .ring {
+      left: -7px;
+      border-radius: 100%;
+      border: 3px solid $white;
+      height: 15px;
+      width: 15px;
+      background: $primary;
+      display: block;
+      float: left;
+      content: " ";
+      position: relative;
+      margin-bottom: 10px;
+      bottom: 6px;
+    }
+  }
+
+  @media screen and (max-device-width: 320px){
+    .header {
+      height: 75px;
+    }
+    .logo {
+      background: image-url('Midhack_icon.svg');
+      min-height: 40px;
+      min-width: 40px;
+      width: 20%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+      float: left;
+    }
+    .progress_bar {
+      width: 75%;
+      float: right;
+      padding-top: 20px;
+    }
+  }
+
+  @media (min-device-width: 321px){
+    .header {
+      height: 150px;
+    }
+    .logo {
+      background: image-url('midhacklogo.svg');
+      max-width: 200px;
+      height:100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+    }
+  }
 
 }
 
+#choose_education_header {
+  .progress_bar_white {
+    width: 20%;
+  }
+  .ring {
+    margin-left: 20%;
+  }
+}
+
+#choose_competence_header {
+  .progress_bar_white {
+    width: 40%;
+  }
+  .ring {
+    margin-left: 40%;
+  }
+}
+
+#choose_team_header {
+  .progress_bar_white {
+    width: 60%;
+  }
+  .ring {
+    margin-left: 60%;
+  }
+}
+
+#fill_email_header {
+  .progress_bar_white {
+    width: 80%;
+  }
+  .ring {
+    margin-left: 80%;
+  }
+}
