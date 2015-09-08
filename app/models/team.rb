@@ -42,8 +42,8 @@ class Team < ActiveRecord::Base
 
   def self.sorted_teams(competence, study_year)
     all_teams = Team.preload(:members)
-    all_teams = all_teams.sort do |x, y|
-      x.rank(competence, study_year) <=> y.rank(competence, study_year)
+    all_teams = all_teams.sort do |team, other_team|
+      team.rank(competence, study_year) <=> other_team.rank(competence, study_year)
     end
     {
       available_teams: Team.available_teams(competence, all_teams),
