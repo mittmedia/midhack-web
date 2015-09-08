@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'general information', type: :feature do
   describe 'The visitor visits the root path' do
-    it 'has a logo' do
+    it 'has two logotypes' do
       visit root_path
       expect(page.all('.logo').count).to eq(2)
     end
