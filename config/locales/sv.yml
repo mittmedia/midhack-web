@@ -71,7 +71,6 @@ sv:
         sbjug: 'Bildjournalistprogrammet'
         tinsg: 'Informatik med inriktning systemutveckling'
         tpvag: 'Programvaruteknik'
-
       back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:
@@ -152,7 +151,7 @@ sv:
     quit:
       title: 'Avanmälan'
       heading: 'Är du säker på att du vill avanmäla dig från Midhack?'
-      text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får isåfall göra en ny anmälan.'
+      text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får i sådana fall göra en ny anmälan.'
       drop_out_action: 'Avanmäl mig'
       text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
     reserve_fill_email:
