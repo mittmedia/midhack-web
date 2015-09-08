@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904112235) do
+ActiveRecord::Schema.define(version: 20150907215020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,20 +36,23 @@ ActiveRecord::Schema.define(version: 20150904112235) do
   create_table "humen", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "uuid"
     t.integer  "team_id"
     t.integer  "study_year"
     t.integer  "course_id"
     t.integer  "competence_id"
-    t.boolean  "signed_up",          default: false
-    t.boolean  "welcome_email_sent", default: false
+    t.boolean  "signed_up",               default: false
+    t.boolean  "welcome_email_sent",      default: false
+    t.text     "email_confirmation_hash"
   end
 
   add_index "humen", ["competence_id"], name: "index_humen_on_competence_id", using: :btree
   add_index "humen", ["course_id"], name: "index_humen_on_course_id", using: :btree
+  add_index "humen", ["signed_up"], name: "index_humen_on_signed_up", using: :btree
   add_index "humen", ["team_id"], name: "index_humen_on_team_id", using: :btree
+  add_index "humen", ["uuid"], name: "index_humen_on_uuid", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"

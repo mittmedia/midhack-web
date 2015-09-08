@@ -4,7 +4,7 @@ describe 'general information', type: :feature do
   describe 'The visitor visits the root path' do
     it 'has a logo' do
       visit root_path
-      expect(page.all('.logo').count).to eq(1)
+      expect(page.all('.logo').count).to eq(2)
     end
 
     it 'has a button to the what page' do
