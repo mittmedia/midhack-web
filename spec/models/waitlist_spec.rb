@@ -23,16 +23,19 @@ RSpec.describe Waitlist, type: :model do
   before(:each) do
     @waitlist = FactoryGirl.create(:waitlist)
   end
+
   describe 'human association' do
     it 'cannot be nil' do
       expect(@waitlist.update(human: nil)).to eq(false)
     end
+
     it 'cannot collide with other whitelist entry' do
-      pending "Fix this test."
       human = @waitlist.human
-      other_waitlist_entry = FactoryGirl.create(:waitlist)
-      expect(other_waitlist.update(human: human)).to eq(false)
-      fail
+      other_waitlist_entry = FactoryGirl.create(
+        :waitlist,
+        team: FactoryGirl.create(:unique_team),
+        competence: FactoryGirl.create(:unique_competence))
+      expect(other_waitlist_entry.update(human: human)).to eq(false)
     end
   end
 end

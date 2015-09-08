@@ -19,7 +19,7 @@ RSpec.describe Competence, type: :model do
   describe 'name' do
     it 'should be unique to be allowed to persist' do
       expect(@competence.update(name: 'economic')).to eq(true)
-      other_competence = FactoryGirl.create :other_competence
+      other_competence = FactoryGirl.create :unique_competence
       expect(other_competence.update(name: 'economic')).to eq(false)
     end
     it 'should be be filled to be allowed to persist' do

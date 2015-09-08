@@ -23,7 +23,15 @@
 #
 
 FactoryGirl.define do
+
+  to_create do |instance|
+    unless instance.save
+      raise "Invalid record: " + instance.errors.full_messages.join(", ")
+    end
+  end
+
   factory :human do
+    sequence(:id)
     uuid SecureRandom.uuid
 
     trait :educated do

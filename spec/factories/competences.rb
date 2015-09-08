@@ -13,9 +13,8 @@ FactoryGirl.define do
   factory :competence do
     name 'it'
     max_count 2
-  end
-  factory :other_competence, class: Competence do
-    name 'gd'
-    max_count 2
+    factory :unique_competence do
+      sequence(:name) { |n| "testcompetence#{n}" }
+    end
   end
 end
