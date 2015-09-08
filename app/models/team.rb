@@ -85,7 +85,7 @@ class Team < ActiveRecord::Base
 
   def self.competence_spots_left(incoming_competence)
     counter = 0
-    humen.select(&:signed_up?).each do |member|
+    humen.select(&:signed_up).each do |member|
       competence = member.competence
       counter += 1 if competence == incoming_competence
     end

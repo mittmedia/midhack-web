@@ -48,8 +48,4 @@ class Human < ActiveRecord::Base
   belongs_to :course
   belongs_to :team
   belongs_to :competence
-
-  def signed_up?
-    !course.blank? && !team.blank? && !competence.blank? && !email.blank?
-  end
 end

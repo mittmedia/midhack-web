@@ -56,16 +56,16 @@ class OnboarderController < ApplicationController
   end
 
   def what
-    @signed_up = @human.signed_up?
+    @signed_up = @human.signed_up
   end
 
   def why
     @nr_spots_left = total_nr_of_spots_left
-    @signed_up = @human.signed_up?
+    @signed_up = @human.signed_up
   end
 
   def total_nr_of_spots_left
-    spots_taken = Human.all.select(&:signed_up?).count
+    spots_taken = Human.all.select(&:signed_up).count
     Rails.configuration.midhack_total_nr_spots - spots_taken
   end
 
@@ -155,10 +155,10 @@ class OnboarderController < ApplicationController
   end
 
   def save_email
-    already_signed_up = @human.signed_up?
+    already_signed_up = @human.signed_up
     return email_not_present('save') unless email_param.present?
     begin
-      if @human.update!(email: email_param)
+      if @human.update!(email: email_param, signed_up: true)
         if already_signed_up
           return redirect_to :receipt
         else
@@ -189,15 +189,11 @@ class OnboarderController < ApplicationController
   end
 
   def save_reservation_email
-    already_signed_up = @human.signed_up?
+    already_signed_up = @human.signed_up
     return email_not_present('reserve') unless email_param.present?
-    puts @human.update(email: email_param)
     if @human.update(email: email_param)
-      if already_signed_up
-        return redirect_to :reservation_receipt
-      else
-        return confirm_reservation
-      end
+      unregister_human if already_signed_up
+      return confirm_reservation
     end
     message = ''
     @human.errors.messages.first.second.each do |m|
@@ -227,7 +223,7 @@ class OnboarderController < ApplicationController
   end
 
   def receipt
-    humen = @human.team.humen.select(&:signed_up?)
+    humen = @human.team.humen.select(&:signed_up)
     @team_member_details = team_member_details(humen)
     @team_name = @human.team.name
     render
@@ -237,20 +233,26 @@ class OnboarderController < ApplicationController
   ### DEREGISTRATION ENDPOINTS
   ############################
   def quit
-    redirect_to root_path unless @human.signed_up?
+    redirect_to root_path unless @human.signed_up
   end
 
   def quitting
     team = @human.team
+    return redirect_to :unregistered if unregister_human
+    redirect_to :back
+  end
+
+  def unregister_human
+    team = @human.team
     if team.present?
-      if @human.update team: nil
+      if @human.update(signed_up: false)
         inform_other_members_of_lost_team_mate(team)
         mail = ConfirmationMailer.deregistration_confirmation_email @human
         mail.deliver_later
-        return redirect_to :unregistered if @human.save
+        return true
       end
     end
-    redirect_to :back
+    false
   end
 
   def unregistered
@@ -260,11 +262,11 @@ class OnboarderController < ApplicationController
   ### FILLED SPOTS ENDPOINTS
   ##########################
   def event_is_full
-    Human.all.select(&:signed_up?).count >= 51
+    Human.all.select(&:signed_up).count >= 51
   end
 
   def competence_is_full
-    competence_count = @human.competence(&:signed_up?)
+    competence_count = @human.competence(&:signed_up)
     competence_count == 0
   end
 
@@ -299,7 +301,7 @@ private
   end
 
   def inform_other_members_of_new_team_mate
-    humen = @human.team.humen.select(&:signed_up?)
+    humen = @human.team.humen.select(&:signed_up)
     tmd = team_member_details(humen)
     humen.delete(@human) # no need to inform self
     return if humen.blank?
@@ -309,7 +311,7 @@ private
   end
 
   def inform_other_members_of_lost_team_mate(team)
-    humen = team.humen.select(&:signed_up?)
+    humen = team.humen.select(&:signed_up)
     return if humen.blank?
     tmd = team_member_details(humen)
     humen.each do |human|
@@ -336,7 +338,7 @@ private
   end
 
   def valid_signup
-    return redirect_to :fill_email unless @human.signed_up?
+    return redirect_to :fill_email unless @human.signed_up
     true
   end
 
