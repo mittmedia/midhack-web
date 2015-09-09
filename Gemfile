@@ -32,6 +32,9 @@ gem "passenger"
 # Used for i18n of page titles
 gem 'page_title_helper'
 
+# Used to identify the preferred language of the user
+gem 'http_accept_language'
+
 # Autoprefix css
 gem 'autoprefixer-rails'
 

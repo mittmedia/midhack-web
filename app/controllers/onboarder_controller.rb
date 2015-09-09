@@ -45,6 +45,8 @@ class OnboarderController < ApplicationController
   :save_email
   ]
 
+  before_filter :set_locale
+
   #####################
   ### GENERIC ENDPOINTS
   #####################
@@ -271,6 +273,11 @@ class OnboarderController < ApplicationController
   end
 
 private
+
+  def set_locale
+    available = I18n.available_locales
+    I18n.locale = http_accept_language.compatible_language_from(available)
+  end
 
   def team_member_details(humen)
     list = []
