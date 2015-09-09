@@ -2,7 +2,7 @@
 <% container_id('index')%>
 <div class="logo"></div>
 <div class="leadin"><%= t('.leadin') %></div>
-<%= link_to t('.action'), what_path, class: 'btn_primary inline-block', id:'what_button' %>
+<%= link_to t('.action'), what_path, class: 'btn_primary inline-block margin_10px_bottom', id:'what_button' %>
 <br>
 <% if I18n.locale == :en %>
   <%= link_to t('.switch_language'), 'http://www.midhack.se' %>
