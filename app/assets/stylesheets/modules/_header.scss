@@ -1,3 +1,25 @@
+
+#why_header,
+#what_header,
+#receipt_header,
+#unregistered_header,
+#quit_header,
+#choose_education_header,
+#choose_competence_header,
+#choose_team_header,
+#fill_email_header {
+  width: 100%;
+  min-height: 75px;
+  padding: 20px 20px 0px 20px;
+  background: $primary;
+  overflow: hidden;
+  .header_container {
+    max-width: 460px;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+
 #why_header,
 #what_header,
 #receipt_header,
