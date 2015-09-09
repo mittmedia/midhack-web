@@ -45,7 +45,11 @@
 
     <header id="<%= yield :container_id %>_header" class="header">
         <div class="header_container">
-            <div class="logo"></div>
+
+            <%= link_to root_path do %>
+                <div class="logo"></div>
+            <% end %>
+
             <div class="progress_bar">
                 <div class="progress_bar_bg"></div>
                 <div class="progress_bar_white progress_bar_white_animation"></div>
