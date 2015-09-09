@@ -157,14 +157,18 @@ sv:
       text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
     reserve_fill_email:
       title: 'E-postadress'
-      heading: 'Tyvärr finns det inga platser kvar i det här laget just nu.'
+      heading: 'Tyvärr finns det inga %{competence}platser kvar i det här laget just nu.'
       text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig eller'
       go_back: 'gå tillbaka till välj kompetens'
       no_spam: '(Inget spam, vi lovar)'
       type_email: 'Skriv in din e-postadress'
-      send_application: 'Skicka anmälan'
+      send_application: 'Skriv upp mig på väntelistan'
       placeholder: 'username@student.miun.se'
-      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
+      competences:
+        it: 'programmerar'
+        gd: 'design/kommunikations'
+        economics: 'affärsutvecklar'
+        journalism: 'journalist'
     unregistered:
       title: 'Bekräftelse avanmälan'
       heading: 'Avanmälan genomförd'

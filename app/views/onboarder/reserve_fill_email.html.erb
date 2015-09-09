@@ -2,9 +2,9 @@
 <%= container_id('fill_email') %>
   <%= form_tag(save_reservation_email_path) do %>
     <h1 class="center_text">
-      <%= label_tag(:email, t(".heading")) %>
+      <%= label_tag(:email, t('.heading', competence: t(".competences.#{@human.competence.name}"))) %>
     </h1>
-    <p><%= t(".text_waitinglist") %> <%= link_to t(".go_back"), choose_competence_path, class: 'with_underline' %>.</p>
+    <p><%= t('.text_waitinglist') %> <%= link_to t(".go_back"), choose_competence_path, class: 'with_underline' %>.</p>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
