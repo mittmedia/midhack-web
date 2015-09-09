@@ -54,8 +54,8 @@
       left: -7px;
       border-radius: 100%;
       border: 3px solid $white;
-      height: 15px;
-      width: 15px;
+      height: 16px;
+      width: 16px;
       background: $primary;
       display: block;
       float: left;
@@ -101,42 +101,5 @@
       background-position: center;
       margin: 0 auto;
     }
-  }
-
-}
-
-#choose_education_header {
-  .progress_bar_white {
-    width: 20%;
-  }
-  .ring {
-    margin-left: 20%;
-  }
-}
-
-#choose_competence_header {
-  .progress_bar_white {
-    width: 40%;
-  }
-  .ring {
-    margin-left: 40%;
-  }
-}
-
-#choose_team_header {
-  .progress_bar_white {
-    width: 60%;
-  }
-  .ring {
-    margin-left: 60%;
-  }
-}
-
-#fill_email_header {
-  .progress_bar_white {
-    width: 80%;
-  }
-  .ring {
-    margin-left: 80%;
   }
 }

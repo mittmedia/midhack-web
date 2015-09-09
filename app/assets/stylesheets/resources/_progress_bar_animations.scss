@@ -1,0 +1,93 @@
+@mixin animations($animation_name) {
+  -moz-animation-name: $animation_name;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: easing;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-fill-mode: forwards;
+
+  -webkit-animation-name: $animation_name;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: easing;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: $animation_name;
+  animation-iteration-count: 1;
+  animation-timing-function: easing;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin percentage($animation_name1, $animation_name2, $from, $to) {
+  @include keyframes($animation_name1) {
+    0% {
+      margin-left: $from;
+    }
+    100% {
+      margin-left: $to;
+    }
+  }
+  @include keyframes($animation_name2) {
+    0% {
+      width: $from;
+    }
+    100% {
+      width: $to;
+    }
+  }
+}
+
+#choose_education_header {
+  @include percentage(ring_education, progress_bar_white_education, 0%, 20%);
+  .progress_bar_white_animation {
+    @include animations(progress_bar_white_education);
+  }
+  .ring_animation {
+    @include animations(ring_education);
+  }
+}
+
+#choose_competence_header {
+  @include percentage(ring_competence, progress_bar_white_competence, 20%, 40%);
+  .progress_bar_white_animation {
+    @include animations(progress_bar_white_competence);
+  }
+  .ring_animation {
+    @include animations(ring_competence);
+  }
+}
+
+#choose_team_header {
+  @include percentage(ring_team, progress_bar_white_team, 40%, 60%);
+  .progress_bar_white_animation {
+    @include animations(progress_bar_white_team);
+  }
+  .ring_animation {
+    @include animations(ring_team);
+  }
+}
+
+#fill_email_header {
+  @include percentage(ring_email, progress_bar_white_email, 60%, 80%);
+  .progress_bar_white_animation {
+    @include animations(progress_bar_white_email);
+  }
+  .ring_animation {
+    @include animations(ring_email);
+  }
+}
