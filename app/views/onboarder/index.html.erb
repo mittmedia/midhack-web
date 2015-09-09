@@ -4,5 +4,12 @@
 <div class="leadin"><%= t('.leadin') %></div>
 <%= link_to t('.action'), what_path, class: 'btn_primary inline-block', id:'what_button' %>
 <br>
+<% if I18n.locale == :en %>
+  <%= link_to t('.switch_language'), 'http://www.midhack.se' %>
+<% end %>
+<% if I18n.locale == :sv %>
+  <%= link_to t('.switch_language'), 'http://www.en.midhack.se' %>
+<% end %>
+<br>
 <br>
 <p class="policy"><%= t(".cookies_pul")%> <br> <%= link_to t('.read_more'), policy_path  %> </p>

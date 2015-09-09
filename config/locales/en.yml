@@ -35,6 +35,7 @@ en:
       title: 'Welcome'
       leadin: 'Together we will develop the future of journalism based on open source'
       action: 'What is Midhack?'
+      switch_language: 'Byt till svenska'
       cookies_pul: 'Midhack.se is using cookies and persistent storage in accordance to our data storing policy. By using the system you accept our policy in accordance to PUL.'
       read_more: 'Read more about our cookies and data policy.'
     policy:

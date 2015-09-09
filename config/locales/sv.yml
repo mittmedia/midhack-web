@@ -35,6 +35,7 @@ sv:
       title: 'Välkommen'
       leadin: 'Tillsammans utvecklar vi framtidens journalistik baserat på öppen data'
       action: 'Vad är Midhack?'
+      switch_language: 'Switch to English'
       cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
       read_more: 'Läs mer om vår datalagringspolicy.'
     policy:
