@@ -349,7 +349,9 @@ private
     humen.delete(@human) # no need to inform self
     return if humen.blank?
     humen.each do |human|
-      TeamMailer.new_member_email(@human, tmd).deliver_later
+      I18n.with_locale(human.locale) do
+        TeamMailer.new_member_email(human, tmd, @human).deliver_later
+      end
     end
   end
 
@@ -358,7 +360,9 @@ private
     return if humen.blank?
     tmd = team_member_details(humen)
     humen.each do |human|
-      TeamMailer.lost_member_email(human, tmd).deliver_later
+      I18n.with_locale(human.locale) do
+        TeamMailer.lost_member_email(human, tmd, @human).deliver_later
+      end
     end
   end
 
