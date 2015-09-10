@@ -22,8 +22,8 @@
       </p>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         För att säkerställa att du är du och att du vill vara med, så vill vi att du bekräftar din
-        epost-adress genom att klicka på knappen nedan. Annars kommer din platsreservation att tas
-        bort om <%= @confirm_email_expire_at.in_time_zone.strftime("klockan %H:%I den %Y-%m-%d")  %>.
+        e-postadress genom att klicka på knappen nedan. Annars kommer din platsreservation att tas
+        bort <%= @confirm_email_expire_at.in_time_zone.strftime("klockan %H:%I den %Y-%m-%d")  %>.
       </p>
       <a href="<%= @confirm_email_url %>" style="display: block; margin: 1.2em 0;">
         <%= image_tag asset_path 'mailresources/verify_email_sv.png', width: '240', height: '54',

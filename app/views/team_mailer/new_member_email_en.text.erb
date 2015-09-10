@@ -1,0 +1,16 @@
+Tja, du har fått en ny lagkompis i ditt Midhack lag <%= @team_name  %>
+========================================<% @team_name.to_s.length.times do %>=<% end %>
+
+<%= @list_of_emailaddresses_and_competences %>
+
+Remember to book the event in your calendar and tell your friends to join your team.
+
+See you at Midhack on the 14th-15th of November, at the Mid Sweden University campus.
+
+Click the link below for more information.
+<%= @url %>
+
+/Midhack Crew
+
+Got something coming up? Unregister from Midhack by clicking the link below:
+<%= @unsubscribe_url %>

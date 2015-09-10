@@ -1,15 +1,16 @@
-Tja, du har fått en ny lagkompis i ditt Midhack lag <%= @team_name  %>
-========================================<% @team_name.to_s.length.times do %>=<% end %>
+<% title = "#{@new_member.email} har anmält sig till lag #{@team_name}" %>
+<%= title %>
+<% title.length.times do %>=<% end %>
 
 <%= @list_of_emailaddresses_and_competences %>
 
 Vi syns på Midhack den 14-15 november på MIUNs campus.
 
-Glöm inte att lägga in i kalendern och säga åt dina vänner att gå med i ditt lag.
+Glöm inte att lägga in eventet i kalendern och säga åt dina vänner att gå med i ditt lag.
 
-Kolla din anmälan på länken nedanför så kan du se vilka som är med i ditt lag.
+Klicka på länken nedan för mer info.
 <%= @url %>
 
-Vi ser fram emot eran kreation.
+Vi ser fram emot er kreation.
 
 Midhack Crew
