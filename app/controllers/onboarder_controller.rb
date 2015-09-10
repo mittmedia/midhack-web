@@ -157,15 +157,21 @@ class OnboarderController < ApplicationController
   def fill_email
   end
 
+  def reserve_team_spot
+    team = Team.find(team_param)
+    if team.present?
+      @human.update(team: team)
+      redirect_to :reserve_fill_email
+    else
+      redirect_to :choose_team
+    end
+  end
+
   def save_email
     already_signed_up = @human.signed_up
     return email_not_present('save') unless email_param.present?
     begin
-      expiration_time = calculate_expiration_time
-      if @human.update!(email: email_param,
-                        signed_up: true,
-                        confirm_email_expire_at: expiration_time
-                       )
+      if register_email email: email_param, signed_up: true
         if already_signed_up
           return redirect_to :receipt
         else
@@ -184,30 +190,36 @@ class OnboarderController < ApplicationController
     render 'fill_email'
   end
 
-  def reserve_team_spot
-    team = Team.find(team_param)
-    if team.present?
-      @human.update(team: team)
-      redirect_to :reserve_fill_email
-    else
-      redirect_to :choose_team
-    end
-  end
-
   def save_reservation_email
     already_signed_up = @human.signed_up
     return email_not_present('reserve') unless email_param.present?
-    if @human.update(email: email_param)
-      unregister_human if already_signed_up
-      Waitlist.create(team: @human.team, human: @human)
-      return confirm_reservation
+    begin
+      if register_email email: email_param, signed_up: false
+        unregister_human if already_signed_up
+        Waitlist.create(team: @human.team, human: @human)
+        return confirm_reservation
+      end
+    rescue ActiveRecord::RecordInvalid => invalid
+      message = ''
+      invalid.record.errors.messages.first.second.each do |m|
+        message = message  + "#{m}\n"
+      end
+      flash.now[:notice] = message
+      return render 'reserve_fill_email'
     end
-    message = ''
-    @human.errors.messages.first.second.each do |m|
-      message = message  + "#{m}\n"
-    end
-    flash.now[:notice] = message
-    return render 'reserve_fill_email'
+    flash.now[:notice] = I18n.t('validation.check_fields')
+    render 'reserve_fill_email'
+  end
+
+  def register_email(args)
+    expiration_time = calculate_expiration_time
+    confirm_hash = @human.generate_email_confirmation_hash
+    @human.update!(
+        email: args[:email],
+        signed_up: args[:signed_up],
+        confirm_email_expire_at: expiration_time,
+        email_confirmation_hash: confirm_hash
+    )
   end
 
   #################################
@@ -216,7 +228,6 @@ class OnboarderController < ApplicationController
 
   def confirmation
     inform_other_members_of_new_team_mate
-    @human.update(email_confirmation_hash: @human.generate_email_confirmation_hash)
     ConfirmationMailer.confirmation_email(@human).deliver_later
     redirect_to :receipt
   end
