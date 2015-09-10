@@ -31,8 +31,8 @@ RSpec.describe Waitlist, type: :model do
       human = @waitlist.human
       other_waitlist_entry = FactoryGirl.create(
         :waitlist,
-        team: FactoryGirl.create(:unique_team),
-        competence: FactoryGirl.create(:unique_competence))
+        team: FactoryGirl.create(:unique_team)
+      )
       expect(other_waitlist_entry.update(human: human)).to eq(false)
     end
   end

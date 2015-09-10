@@ -20,6 +20,5 @@ FactoryGirl.define do
     human
     spot_offered "2015-08-26 14:37:51"
     team
-    competence
   end
 end
