@@ -17,6 +17,7 @@
 #  email_confirmed         :boolean          default("false")
 #  email_confirmation_hash :text
 #  confirm_email_expire_at :datetime
+#  locale                  :string
 #
 # Indexes
 #

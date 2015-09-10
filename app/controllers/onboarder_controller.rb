@@ -46,7 +46,7 @@ class OnboarderController < ApplicationController
   :save_email
   ]
 
-  before_filter :set_locale
+  before_action :set_locale
 
   #####################
   ### GENERIC ENDPOINTS
@@ -303,13 +303,21 @@ private
 
   def set_locale
     available = I18n.available_locales
-    I18n.locale = http_accept_language.compatible_language_from(available)
+    locale = http_accept_language.compatible_language_from(available)
+    @human.update(locale: locale.to_s) if @human.locale != locale.to_s
+    I18n.locale = locale
   end
 
   def team_member_details(humen)
     list = []
+    default_locale = Rails.configuration.i18n.default_locale
     humen.each do |human|
-      list.push([human.email, human.competence.name])
+      human.locale ||= default_locale
+      list.push({
+        email: human.email,
+        competence: human.competence.name,
+        locale: human.locale
+      })
     end
     list
   end

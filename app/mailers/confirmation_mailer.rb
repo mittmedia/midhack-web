@@ -10,7 +10,10 @@ class ConfirmationMailer < ApplicationMailer
     )
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Registration Confirmation"}')
-    mail(to: human.email, subject: t('.registered'))
+    human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
+    I18n.with_locale(human.locale) do
+      mail(to: human.email, subject: t('.registered'))
+    end
   end
 
   def waitlist_confirmation_email(human)
@@ -19,12 +22,18 @@ class ConfirmationMailer < ApplicationMailer
     @human = human
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Waitlist Confirmation"}')
-    mail(to: human.email, subject: t('.waitinglist'))
+    human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
+    I18n.with_locale(human.locale) do
+      mail(to: human.email, subject: t('.waitinglist'))
+    end
   end
 
   def deregistration_confirmation_email(human)
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Deregistration Confirmation"}')
-    mail(to: human.email, subject: t('.deregistration'))
+    human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
+    I18n.with_locale(human.locale) do
+      mail(to: human.email, subject: t('.deregistration'))
+    end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910073652) do
+ActiveRecord::Schema.define(version: 20150910111302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150910073652) do
     t.boolean  "email_confirmed",         default: false
     t.text     "email_confirmation_hash"
     t.datetime "confirm_email_expire_at"
+    t.string   "locale"
   end
 
   add_index "humen", ["competence_id"], name: "index_humen_on_competence_id", using: :btree

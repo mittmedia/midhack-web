@@ -7,7 +7,9 @@ class TeamMailer < ApplicationMailer
     headers('X-SMTPAPI' => '{"category": "New Team Member"}')
     subject =  t('.subject', member: @new_member.email)
     team_member_details.each do |tmd|
-      mail(to: tmd.first, subject: subject)
+      I18n.with_locale(tmd[:locale]) do
+        mail(to: tmd[:email], subject: subject)
+      end
     end
   end
 
@@ -19,7 +21,9 @@ class TeamMailer < ApplicationMailer
     headers('X-SMTPAPI' => '{"category": "Lost Team Member"}')
     subject = t('.subject', member: @lost_member.email)
     team_member_details.each do |tmd|
-      mail(to: tmd.first, subject: subject)
+      I18n.with_locale(tmd[:locale]) do
+        mail(to: tmd[:email], subject: subject)
+      end
     end
   end
 end

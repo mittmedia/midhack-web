@@ -15,8 +15,8 @@
 <ul class="list_of_team_members">
   <% @team_member_details.each do |teammate| %>
     <li>
-      <a href="mailto:<%= teammate.first %>" class="email"><%= teammate.first %></a>
-      <p class="uppercase competence"><%= t(".competences.#{teammate.second}") %></p>
+      <a href="mailto:<%= teammate[:email] %>" class="email"><%= teammate[:email] %></a>
+      <p class="uppercase competence"><%= t(".competences.#{teammate[:competence]}") %></p>
     </li>
   <% end %>
 </ul>
