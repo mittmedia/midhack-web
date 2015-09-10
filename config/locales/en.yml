@@ -195,5 +195,8 @@ en:
       subject: '%{member} has joined your Midhack team'
     lost_member_email:
       subject: '%{member} has resigned from your Midhack team'
+  email_confirmation_expiration_mailer:
+    time_expired:
+      subject: 'The deadline for confirming your application has expired'
   admin:
     styles: 'Style guide'
