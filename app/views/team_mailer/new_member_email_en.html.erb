@@ -17,8 +17,8 @@
       <ul style="list-style-type: none; margin: 30px 0px; padding: 0px; font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         <% @team_member_details.each do |teammate| %>
           <li style="margin-top: 10px; line-height: 110%;">
-            <a href="mailto:<%= teammate.first %>" style="text-decoration: none; color: #00a6cc;" ><%= teammate.first %></a>
-            <p style="font-size: 11px; text-transform: uppercase; margin-top: 0px;"><%= teammate.second %></p>
+            <a href="mailto:<%= teammate[:email] %>" style="text-decoration: none; color: #00a6cc;" ><%= teammate[:email] %></a>
+            <p style="font-size: 11px; text-transform: uppercase; margin-top: 0px;"><%= teammate[:competence] %></p>
           </li>
         <% end %>
       </ul>
