@@ -183,5 +183,17 @@ sv:
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
       drop_out_question: 'Fått förhinder?'
       drop_out_action: 'Avanmäl dig från Midhack'
+  confirmation_mailer:
+    confirmation_email:
+      registered: 'Registrerad på Midhack'
+    waitlist_confirmation_email:
+      waitinglist: 'Registrerad på Midhacks väntelista'
+    deregistration_confirmation_email:
+      deregistration: 'Avanmäld från Midhack'
+  team_mailer:
+    new_member_email:
+      subject: '%{member} har anslutit sig till ditt Midhack-lag'
+    lost_member_email:
+      subject: '%{member} har gått ur ditt Midhack-lag'
   admin:
     styles: 'Style guide'

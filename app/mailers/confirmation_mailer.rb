@@ -10,7 +10,7 @@ class ConfirmationMailer < ApplicationMailer
     )
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Registration Confirmation"}')
-    mail(to: human.email, subject: 'Registrerad på Midhack')
+    mail(to: human.email, subject: t('.registered'))
   end
 
   def waitlist_confirmation_email(human)
@@ -19,12 +19,12 @@ class ConfirmationMailer < ApplicationMailer
     @human = human
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Waitlist Confirmation"}')
-    mail(to: human.email, subject: 'Registrerad på Midhacks väntelista')
+    mail(to: human.email, subject: t('.waitinglist'))
   end
 
   def deregistration_confirmation_email(human)
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Deregistration Confirmation"}')
-    mail(to: human.email, subject: 'Avanmäld från Midhack')
+    mail(to: human.email, subject: t('.deregistration'))
   end
 end
