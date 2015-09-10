@@ -6,7 +6,9 @@ class TeamMailer < ApplicationMailer
     @unsubscribe_url = quit_url(uuid: @new_member.uuid)
     headers('X-SMTPAPI' => '{"category": "New Team Member"}')
     subject = "#{@new_member.email} har anslutit sig till ditt Midhack-lag"
-    mail(to: @new_member.email, subject: subject)
+    team_member_details.each do |tmd|
+      mail(to: tmd.first, subject: subject)
+    end
   end
 
   def lost_member_email(lost_member, team_member_details)
@@ -16,6 +18,8 @@ class TeamMailer < ApplicationMailer
     @unsubscribe_url = quit_url(uuid: @lost_member.uuid)
     headers('X-SMTPAPI' => '{"category": "New Team Member"}')
     subject = "#{@lost_member.email} har gått ur ditt Midhack-lag"
-    mail(to: @lost_member.email, subject: subject)
+    team_member_details.each do |tmd|
+      mail(to: tmd.first, subject: subject)
+    end
   end
 end

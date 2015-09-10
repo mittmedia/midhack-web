@@ -16,7 +16,7 @@ class ConfirmationMailer < ApplicationMailer
   def waitlist_confirmation_email(human)
     @url = receipt_url(uuid: human.uuid)
     @unsubscribe_url = quit_url(uuid: human.uuid)
-    @team_name = human.team.name
+    @human = human
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Waitlist Confirmation"}')
     mail(to: human.email, subject: 'Registrerad på Midhacks väntelista')

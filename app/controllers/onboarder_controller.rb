@@ -129,7 +129,7 @@ class OnboarderController < ApplicationController
     session[:automatic_selection] = true
     @sorted_teams = Team.sorted_teams(@human.competence, @human.study_year)
     matched_team = @sorted_teams[:available_teams].first
-    return redirect_to :waitinglist if matched_team.blank?
+    return redirect_to :reserve_fill_email if matched_team.blank?
     if @human.update(team: matched_team)
       redirect_to :fill_email
     else
@@ -185,10 +185,9 @@ class OnboarderController < ApplicationController
   end
 
   def reserve_team_spot
-   team = Team.find(team_param)
-   @human = Human.find_by(uuid: @uuid)
-   human= @human
-    if Waitlist.create(team: team) && Waitlist.create(human: human)
+    team = Team.find(team_param)
+    if team.present?
+      @human.update(team: team)
       redirect_to :reserve_fill_email
     else
       redirect_to :choose_team
@@ -200,6 +199,7 @@ class OnboarderController < ApplicationController
     return email_not_present('reserve') unless email_param.present?
     if @human.update(email: email_param)
       unregister_human if already_signed_up
+      Waitlist.create(team: @human.team, human: @human)
       return confirm_reservation
     end
     message = ''
