@@ -12,7 +12,7 @@ class ConfirmationMailer < ApplicationMailer
     headers('X-SMTPAPI' => '{"category": "Registration Confirmation"}')
     human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
     I18n.with_locale(human.locale) do
-      mail(to: human.email, subject: t('.registered'))
+      mail(to: human.email, subject: t('.subject'))
     end
   end
 
@@ -24,7 +24,7 @@ class ConfirmationMailer < ApplicationMailer
     headers('X-SMTPAPI' => '{"category": "Waitlist Confirmation"}')
     human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
     I18n.with_locale(human.locale) do
-      mail(to: human.email, subject: t('.waitinglist'))
+      mail(to: human.email, subject: t('.subject'))
     end
   end
 
@@ -33,7 +33,7 @@ class ConfirmationMailer < ApplicationMailer
     headers('X-SMTPAPI' => '{"category": "Deregistration Confirmation"}')
     human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
     I18n.with_locale(human.locale) do
-      mail(to: human.email, subject: t('.deregistration'))
+      mail(to: human.email, subject: t('.subject'))
     end
   end
 end
