@@ -185,11 +185,11 @@ en:
       drop_out_action: 'Unregister from the Midhack event'
   confirmation_mailer:
     confirmation_email:
-      registered: 'You have signed up to Midhack'
+      subject: 'You have signed up to Midhack'
     waitlist_confirmation_email:
-      waitinglist: 'You have signed up on the waiting list for Midhack'
+      subject: 'You have signed up on the waiting list for Midhack'
     deregistration_confirmation_email:
-      deregistration: 'You have unregistered from Midhack'
+      subject: 'You have unregistered from Midhack'
   team_mailer:
     new_member_email:
       subject: '%{member} has joined your Midhack team'
