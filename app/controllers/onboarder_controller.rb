@@ -191,11 +191,9 @@ class OnboarderController < ApplicationController
   end
 
   def save_reservation_email
-    already_signed_up = @human.signed_up
     return email_not_present('reserve') unless email_param.present?
     begin
       if register_email email: email_param, signed_up: false
-        unregister_human if already_signed_up
         Waitlist.create(team: @human.team, human: @human)
         return confirm_reservation
       end
