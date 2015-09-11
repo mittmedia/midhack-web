@@ -192,6 +192,11 @@ sv:
   team_mailer:
     new_member_email:
       subject: '%{member} har anslutit sig till ditt Midhack-lag'
+      competences:
+        it: 'Programmering'
+        gd: 'Design / kommunikation'
+        economics: 'Affärsutveckling / analys'
+        journalism: 'Journalistik / bildjournalistik'
     lost_member_email:
       subject: '%{member} har gått ur ditt Midhack-lag'
   email_confirmation_expiration_mailer:

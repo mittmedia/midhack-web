@@ -18,7 +18,7 @@
         <% @team_member_details.each do |teammate| %>
           <li style="margin-top: 10px; line-height: 110%;">
             <a href="mailto:<%= teammate[:email] %>" style="text-decoration: none; color: #00a6cc;" ><%= teammate[:email] %></a>
-            <p style="font-size: 11px; text-transform: uppercase; margin-top: 0px;"><%= teammate[:competence] %></p>
+            <p style="font-size: 11px; text-transform: uppercase; margin-top: 0px;"><%= t(".competences.#{teammate[:competence]}") %></p>
           </li>
         <% end %>
       </ul>

@@ -192,6 +192,11 @@ en:
   team_mailer:
     new_member_email:
       subject: '%{member} has joined your Midhack team'
+      competences:
+        it: 'Programming'
+        gd: 'Design / communication'
+        economics: 'Business development / analysis'
+        journalism: 'Journalism / photojournalism'
     lost_member_email:
       subject: '%{member} has resigned from your Midhack team'
   email_confirmation_expiration_mailer:
