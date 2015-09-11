@@ -56,3 +56,17 @@
 .margin_10px_bottom {
   margin-bottom: 10px !important;
 }
+
+.notice {
+  font-weight: 400;
+  text-align: center;
+}
+
+.notice_text {
+  background-color: $white;
+  color: $cancel;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+}

@@ -4,10 +4,11 @@
     <h1 class="center_text">
       <%= label_tag(:email, t('.heading', competence: t(".competences.#{@human.competence.name}"))) %>
     </h1>
-    <p><%= t('.text_waitinglist') %> <%= link_to t(".go_back"), choose_competence_path, class: 'with_underline' %>.</p>
+    <p class="center_text" ><%= t('.text_waitinglist') %></p>
+    <p class="center_text"> <%= link_to t(".go_back"), choose_competence_path, class: 'btn_supplementary inline-block' %></p>
     <% if flash[:notice].present? %>
       <% flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
+      <div class="notice"><p class="notice_text"><%= flash[:notice] %></p></div>
     <% end %>
     <div class="labeled_input">
       <%= label_tag(:email, t(".type_email"), class: 'labeled_input__label') %>
