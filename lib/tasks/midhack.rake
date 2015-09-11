@@ -4,7 +4,7 @@ namespace :midhack do
     expire_time = Rails.configuration.midhack_signup_closed
     Human.where(signed_up: true).where.not(email_confirmed: true).each do |h|
       @h = h
-      if @h.confirm_email_expire_at < expire_time
+      if @h.confirm_email_expire_at > expire_time
         puts "expiring #{@h.email}"
         @h.update(signed_up: false,
                  confirm_email_expire_at: DateTime.parse("2020-01-01 10:00:00 +0100"),
