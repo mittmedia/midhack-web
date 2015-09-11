@@ -288,7 +288,8 @@ class OnboarderController < ApplicationController
   ### FILLED SPOTS ENDPOINTS
   ##########################
   def event_is_full
-    Human.all.select(&:signed_up).count >= 51
+    max_spots = Rails.configuration.midhack_total_nr_spots
+    Human.all.select(&:signed_up).count > max_spots
   end
 
   def competence_is_full
