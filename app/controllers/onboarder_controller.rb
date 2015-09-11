@@ -264,7 +264,6 @@ class OnboarderController < ApplicationController
   end
 
   def quitting
-    team = @human.team
     return redirect_to :unregistered if unregister_human
     redirect_to :back
   end
