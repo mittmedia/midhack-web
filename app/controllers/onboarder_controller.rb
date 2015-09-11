@@ -39,11 +39,11 @@ class OnboarderController < ApplicationController
   ]
 
   before_action :available_competence, only:[
-  :choose_team,
-  :automatic_selection,
-  :save_team,
-  :fill_email,
-  :save_email
+    :choose_team,
+    :automatic_selection,
+    :save_team,
+    :fill_email,
+    :save_email
   ]
 
   before_action :set_locale
@@ -181,7 +181,7 @@ class OnboarderController < ApplicationController
     rescue ActiveRecord::RecordInvalid => invalid
       message = ''
       invalid.record.errors.messages.first.second.each do |m|
-        message = message  + "#{m}\n"
+        message = message + "#{m}\n"
       end
       flash.now[:notice] = message
       return render 'fill_email'
@@ -215,10 +215,10 @@ class OnboarderController < ApplicationController
     expiration_time = calculate_expiration_time
     confirm_hash = @human.generate_email_confirmation_hash
     @human.update!(
-        email: args[:email],
-        signed_up: args[:signed_up],
-        confirm_email_expire_at: expiration_time,
-        email_confirmation_hash: confirm_hash
+      email: args[:email],
+      signed_up: args[:signed_up],
+      confirm_email_expire_at: expiration_time,
+      email_confirmation_hash: confirm_hash
     )
   end
 
