@@ -60,11 +60,13 @@ class OnboarderController < ApplicationController
 
   def what
     @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
   end
 
   def why
     @nr_spots_left = total_nr_of_spots_left
     @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
   end
 
   def total_nr_of_spots_left
@@ -246,7 +248,6 @@ class OnboarderController < ApplicationController
   end
 
   def reservation_receipt
-
   end
 
   def receipt

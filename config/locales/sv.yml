@@ -56,6 +56,7 @@ sv:
       primary_action: 'Ja, anmäl mig till Midhack'
       secondary_action: 'Jag vill läsa mer'
       my_receipt: 'Se mitt team'
+      my_reservation: 'Se min reservation'
       signup_friend: 'Anmäl en vän'
     choose_education:
       title: 'Utbildning'

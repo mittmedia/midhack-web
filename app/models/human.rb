@@ -61,4 +61,8 @@ class Human < ActiveRecord::Base
     sha256 = Digest::SHA256.new
     sha256.hexdigest "#{email}#{created_at}#{uuid}"
   end
+
+  def on_waitlist?
+    Waitlist.where(human_id: id).length > 0
+  end
 end

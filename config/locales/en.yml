@@ -56,6 +56,7 @@ en:
       primary_action: 'Yes, sign me up for Midhack'
       secondary_action: 'I want to read more'
       my_receipt: 'View my team'
+      my_reservation: 'See my reservation'
       signup_friend: 'Sign up a friend'
     choose_education:
       title: 'Education'
