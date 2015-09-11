@@ -30,6 +30,8 @@ sv:
     blacklisted_domain: "Denna e-postadress är inte godkänd, den tillhör en svartlistad domän."
     forgot_email: 'Hoppsan, du missade att fylla i din e-postadress'
     check_fields: 'Något gick fel!'
+    confirmed_email: 'Din e-postadress har bekräftats!'
+    confirmed_email_fail: 'Din e-postadress kunde inte bekräftas, kontrollera gärna att hela länken följde med och inte blev klippt i din e-postklient.'
   onboarder:
     index:
       title: 'Välkommen'
@@ -72,7 +74,6 @@ sv:
         sbjug: 'Bildjournalistprogrammet'
         tinsg: 'Informatik med inriktning systemutveckling'
         tpvag: 'Programvaruteknik'
-      back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:
       title: 'Kompetens'
@@ -105,12 +106,10 @@ sv:
     fill_email:
       title: 'E-postadress'
       heading: 'Nästan klar! Nu behövs bara din e-postadress.'
-      no_spam: '(Inget spam, vi lovar)'
       your_team: 'Du är med i lag %{team}! Nu behövs bara din e-postadress.'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
-      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     confirmation:
       title: 'Bekräftelse'
     receipt:
@@ -160,7 +159,6 @@ sv:
       heading: 'Tyvärr finns det inga %{competence}platser kvar i det här laget just nu.'
       text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig eller'
       go_back: 'gå tillbaka till välj kompetens'
-      no_spam: '(Inget spam, vi lovar)'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skriv upp mig på väntelistan'
       placeholder: 'username@student.miun.se'
@@ -199,4 +197,5 @@ sv:
     time_expired:
       subject: 'Din tidsfrist har löpt ut'
   admin:
-    styles: 'Style guide'
+    styles:
+      title: 'Style guide'

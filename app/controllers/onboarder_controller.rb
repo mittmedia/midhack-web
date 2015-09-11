@@ -240,9 +240,9 @@ class OnboarderController < ApplicationController
   def confirm_email
     if @human.generate_email_confirmation_hash == digest_param
       @human.update(email_confirmed: true)
-      flash.now[:notice] = I18n.t('confirmed_email')
+      flash.now[:notice] = I18n.t('validation.confirmed_email')
     else
-      flash.now[:notice] = I18n.t('confirmed_email_fail')
+      flash.now[:notice] = I18n.t('validation.confirmed_email_fail')
     end
     redirect_to :receipt
   end
