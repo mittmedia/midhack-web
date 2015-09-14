@@ -11,5 +11,8 @@
 FactoryGirl.define do
   factory :team do
     name 'testteam'
+    factory :unique_team do
+      sequence(:name) { |n| "testteam#{n}" }
+    end
   end
 end

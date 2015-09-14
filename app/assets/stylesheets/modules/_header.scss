@@ -1,0 +1,138 @@
+
+#policy_header,
+#what_header,
+#why_header,
+#choose_education_header,
+#choose_competence_header,
+#choose_team_header,
+#fill_email_header,
+#receipt_header,
+#reservation_receipt_header,
+#unregistered_header,
+#quit_header {
+  width: 100%;
+  min-height: 75px;
+  padding: 20px 20px 0px 20px;
+  background: $primary;
+  overflow: hidden;
+  .header_container {
+    max-width: 460px;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+
+//Basic header
+
+#policy_header,
+#what_header,
+#why_header,
+#receipt_header,
+#reservation_receipt_header,
+#unregistered_header,
+#quit_header {
+  .logo {
+    background: image-url('Midhack_icon.svg');
+    max-width: 200px;
+    min-width: 40px;
+    height:45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 601px){
+    height: 150px;
+    padding: 20px;
+    .logo {
+      background: image-url('midhacklogo.svg');
+      max-width: 200px;
+      height:100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+//Header with progressbar
+
+#choose_education_header,
+#choose_competence_header,
+#choose_team_header,
+#fill_email_header {
+
+  .progress_bar {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    position: relative;
+
+    .progress_bar_bg {
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.4);
+      width: 100%;
+      position: absolute;
+    }
+    .progress_bar_white {
+      border: 1px solid $white;
+      position: absolute;
+    }
+    .ring {
+      left: -7px;
+      border-radius: 100%;
+      border: 3px solid $white;
+      height: 16px;
+      width: 16px;
+      background: $primary;
+      display: block;
+      float: left;
+      content: " ";
+      position: relative;
+      margin-bottom: 10px;
+      bottom: 6px;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+    .header {
+      height: 75px;
+    }
+    .logo {
+      background: image-url('Midhack_icon.svg');
+      min-height: 40px;
+      min-width: 40px;
+      width: 20%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      float: left;
+    }
+    .progress_bar {
+      width: 75%;
+      float: right;
+      padding-top: 20px;
+    }
+  }
+
+  @media (min-width: 601px){
+    .header {
+      height: 150px;
+    }
+    .logo {
+      background: image-url('midhacklogo.svg');
+      max-width: 200px;
+      height:100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+    }
+  }
+}

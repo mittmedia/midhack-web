@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 sv:
+  footer:
+    text: 'Ett samarbete mellan'
   app:
     name: Midhack
   validation:
@@ -28,11 +30,14 @@ sv:
     blacklisted_domain: "Denna e-postadress är inte godkänd, den tillhör en svartlistad domän."
     forgot_email: 'Hoppsan, du missade att fylla i din e-postadress'
     check_fields: 'Något gick fel!'
+    confirmed_email: 'Din e-postadress har bekräftats!'
+    confirmed_email_fail: 'Din e-postadress kunde inte bekräftas, kontrollera gärna att hela länken följde med och inte blev klippt i din e-postklient.'
   onboarder:
     index:
       title: 'Välkommen'
       leadin: 'Tillsammans utvecklar vi framtidens journalistik baserat på öppen data'
       action: 'Vad är Midhack?'
+      switch_language: 'Switch to English'
       cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
       read_more: 'Läs mer om vår datalagringspolicy.'
     policy:
@@ -51,6 +56,7 @@ sv:
       primary_action: 'Ja, anmäl mig till Midhack'
       secondary_action: 'Jag vill läsa mer'
       my_receipt: 'Se mitt team'
+      my_reservation: 'Se min reservation'
       signup_friend: 'Anmäl en vän'
     choose_education:
       title: 'Utbildning'
@@ -69,8 +75,6 @@ sv:
         sbjug: 'Bildjournalistprogrammet'
         tinsg: 'Informatik med inriktning systemutveckling'
         tpvag: 'Programvaruteknik'
-
-      back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:
       title: 'Kompetens'
@@ -103,12 +107,10 @@ sv:
     fill_email:
       title: 'E-postadress'
       heading: 'Nästan klar! Nu behövs bara din e-postadress.'
-      no_spam: '(Inget spam, vi lovar)'
       your_team: 'Du är med i lag %{team}! Nu behövs bara din e-postadress.'
       type_email: 'Skriv in din e-postadress'
       send_application: 'Skicka anmälan'
       placeholder: 'username@student.miun.se'
-      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
     confirmation:
       title: 'Bekräftelse'
     receipt:
@@ -150,19 +152,22 @@ sv:
     quit:
       title: 'Avanmälan'
       heading: 'Är du säker på att du vill avanmäla dig från Midhack?'
-      text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får isåfall göra en ny anmälan.'
+      text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får i sådana fall göra en ny anmälan.'
       drop_out_action: 'Avanmäl mig'
       text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
     reserve_fill_email:
       title: 'E-postadress'
-      heading: 'Tyvärr finns det inga platser kvar i det här laget just nu.'
-      text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig eller'
-      go_back: 'gå tillbaka till välj kompetens'
-      no_spam: '(Inget spam, vi lovar)'
+      heading: 'Tyvärr finns det inga %{competence}platser kvar i det här laget just nu.'
+      text_waitinglist: 'Om du vill kan du kan skriva upp dig på väntelistan, så hör vi av oss om det blir en plats ledig eller gå tillbaka och:'
+      go_back: 'Välj en annan kompetens'
       type_email: 'Skriv in din e-postadress'
-      send_application: 'Skicka anmälan'
+      send_application: 'Skriv upp mig på väntelistan'
       placeholder: 'username@student.miun.se'
-      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
+      competences:
+        it: 'programmerar'
+        gd: 'design/kommunikations'
+        economics: 'affärsutvecklar'
+        journalism: 'journalist'
     unregistered:
       title: 'Bekräftelse avanmälan'
       heading: 'Avanmälan genomförd'
@@ -173,14 +178,30 @@ sv:
       title: 'Väntelista'
       heading: 'Du är uppskriven på väntelistan'
       contact: 'Vi kontaktar dig på följande adress:'
-      when: 'när det öppnas upp en plats'
+      when: 'om det blir en plats ledig.'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
       drop_out_question: 'Fått förhinder?'
       drop_out_action: 'Avanmäl dig från Midhack'
-
+  confirmation_mailer:
+    confirmation_email:
+      subject: 'Registrerad på Midhack'
+    waitlist_confirmation_email:
+      subject: 'Registrerad på Midhacks väntelista'
+    deregistration_confirmation_email:
+      subject: 'Avanmäld från Midhack'
+  team_mailer:
+    new_member_email:
+      subject: '%{member} har anslutit sig till ditt Midhack-lag'
+      competences:
+        it: 'Programmering'
+        gd: 'Design / kommunikation'
+        economics: 'Affärsutveckling / analys'
+        journalism: 'Journalistik / bildjournalistik'
+    lost_member_email:
+      subject: '%{member} har gått ur ditt Midhack-lag'
+  email_confirmation_expiration_mailer:
+    time_expired:
+      subject: 'Din tidsfrist har löpt ut'
   admin:
-    styles: 'Style guide'
-  new_member_email:
-    heading: 'har anmält sig till lag'
-  confirmation_email:
-  waitlist_confirmation_email:
+    styles:
+      title: 'Style guide'

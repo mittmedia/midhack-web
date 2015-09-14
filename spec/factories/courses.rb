@@ -20,4 +20,10 @@ FactoryGirl.define do
     points 300
     name 'Civ.ing. datateknik'
   end
+
+  factory :other_course, class: Course do
+    code 'tdtand'
+    points 240
+    name 'Civ.ing. Androidutveckling'
+  end
 end

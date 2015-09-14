@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe 'general information', type: :feature do
   describe 'The visitor visits the root path' do
-    it 'has a logo' do
+    it 'has two logotypes' do
       visit root_path
-      expect(page.all('.logo').count).to eq(1)
+      expect(page.all('.logo').count).to eq(2)
     end
 
     it 'has a button to the what page' do
@@ -27,7 +27,7 @@ describe 'general information', type: :feature do
     scenario 'The visitor visits the what_path from the root_path' do
       visit root_path
       click_link 'what_button'
-      expect(page).to have_text 'What is Midhack?'
+      expect(page).to have_text 'Vad är Midhack?'
     end
   end
 
@@ -40,7 +40,7 @@ describe 'general information', type: :feature do
     scenario 'The visitor visits the choose_education_path from the what_path' do
       visit why_path
       click_link 'signup_button'
-      expect(page).to have_text 'What do you study?'
+      expect(page).to have_text 'Vad pluggar du?'
     end
   end
 end

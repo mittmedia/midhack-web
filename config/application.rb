@@ -14,14 +14,18 @@ module Onboarder
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Europe/Stockholm'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    I18n.available_locales = [:en, :sv]
     config.i18n.default_locale = :sv
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.midhack_total_nr_spots = 50
+    config.midhack_signup_closed = DateTime.strptime("2015-11-14 10:00:00 +0100", "%F %T %z")
+    config.midhack_start_date = DateTime.strptime("2015-11-14 10:00:00 +0100", "%F %T %z")
+    config.midhack_end_date = DateTime.strptime("2015-11-15 15:00:00 +0100", "%F %T %z")
   end
 end

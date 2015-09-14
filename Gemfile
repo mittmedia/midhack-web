@@ -32,17 +32,24 @@ gem "passenger"
 # Used for i18n of page titles
 gem 'page_title_helper'
 
+# Used to identify the preferred language of the user
+gem 'http_accept_language'
+
 # Autoprefix css
 gem 'autoprefixer-rails'
 
 # Allow creating default values in code for Active Record Models.
 gem 'attribute-defaults'
 
+
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
+  # To freeze time in tests for email-validation deadline
+  gem 'timecop'
+
   gem 'rspec'
   gem 'rspec-rails', '~> 3.3.3'
   gem 'capybara'
@@ -69,6 +76,6 @@ group :development, :test do
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
   gem 'annotate'
-
+  gem 'i18n-tasks', '~> 0.8.6'
 end
 

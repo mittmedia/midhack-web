@@ -10,21 +10,31 @@
         width="300" height="157" alt="Midhack 2015" title="Midhack 2015" /> -->
       <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         Hej! Du är nu med i lag
-        <span style="border-bottom: 1px solid #00A6CC;"><%= @team_name %></span>
+        <a href="<%= @url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">
+           <%= @team_name %>
+        </a>
       </h1>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         Välkommen till Midhack, eventet äger rum på Mittuniversitetet i Sundsvall den 14-15 november.
-        Fler detaljer gällande plats, tid samt annan information kommer att publiceras på <a href="http://www.midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Midhack.se</a> samt skickas ut kontinuerligt till din e-postadress.
-        Vi ses!
-        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">/Midhack Crew</a>
+        Fler detaljer gällande plats, tid samt annan information kommer att publiceras på <a
+          href="http://www.midhack.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">Midhack.se</a> samt skickas ut kontinuerligt till din e-postadress.
       </p>
-      <a href="<%= @url %>" style="display: block; margin: 1.2em 0;">
-        <%= image_tag asset_path 'mailresources/checkteam_en.png', width: '240', height: '54', alt: 'Check out your team', title: 'check out your team' %>
-        <!-- <img src="http://localhost:3000/mailresources/checkteam_en.png"
-          width="240" height="54" alt="Check out your team"
-          title="Check out your team" /> -->
-
-      </a>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        För att säkerställa att du är du och att du vill vara med, så vill vi att du bekräftar din
+        e-postadress genom att klicka på knappen nedan. Annars kommer din platsreservation att tas
+        bort <%= @confirm_email_expire_at.in_time_zone.strftime("klockan %H:%I den %Y-%m-%d")  %>.
+      </p>
+      <a href="<%= @confirm_email_url %>" style="display: block; margin: 1.2em 0;">
+        <%= image_tag asset_path 'mailresources/verify_email_sv.png', width: '240', height: '54',
+          alt: 'Verifiera din epost.', title: 'Verifiera din epost.' %>
+        </a>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Vi ses!
+        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">/Midhack Crew
+        </a>
+      </p>
       <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
         Fått förhinder? <br/>
         <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Avanmäl dig från Midhack</a>

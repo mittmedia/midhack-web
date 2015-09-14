@@ -17,6 +17,9 @@
 class Course < ActiveRecord::Base
   has_many :humen
   default_scope { order("#{table_name}.name ASC") }
+  validates_numericality_of :points, greater_than: 0
+  validates :name, presence: true, uniqueness: true
+  validates :code, presence: true, uniqueness: true
 
   def self.valid_education? (course_code, year)
     course = Course.find_by(code: course_code)

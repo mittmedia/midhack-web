@@ -14,7 +14,7 @@ describe 'the signup process - course -', type: :feature do
     end
     it 'and has to choose competence after picking a course and study year' do
       visit choose_education_path
-      click_link('Year 1')
+      click_link('År 1')
       expect(current_path).to eq(choose_competence_path)
     end
   end

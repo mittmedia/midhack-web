@@ -1,4 +1,5 @@
 class OnboarderController < ApplicationController
+  include OnboarderHelper
   before_action :set_human
   before_action :valid_education, only: [
     :choose_competence,
@@ -38,12 +39,14 @@ class OnboarderController < ApplicationController
   ]
 
   before_action :available_competence, only:[
-  :choose_team,
-  :automatic_selection,
-  :save_team,
-  :fill_email,
-  :save_email
+    :choose_team,
+    :automatic_selection,
+    :save_team,
+    :fill_email,
+    :save_email
   ]
+
+  before_action :set_locale
 
   #####################
   ### GENERIC ENDPOINTS
@@ -56,16 +59,18 @@ class OnboarderController < ApplicationController
   end
 
   def what
-    @signed_up = @human.signed_up?
+    @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
   end
 
   def why
     @nr_spots_left = total_nr_of_spots_left
-    @signed_up = @human.signed_up?
+    @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
   end
 
   def total_nr_of_spots_left
-    spots_taken = Human.all.select(&:signed_up?).count
+    spots_taken = Human.all.select(&:signed_up).count
     Rails.configuration.midhack_total_nr_spots - spots_taken
   end
 
@@ -126,7 +131,7 @@ class OnboarderController < ApplicationController
     session[:automatic_selection] = true
     @sorted_teams = Team.sorted_teams(@human.competence, @human.study_year)
     matched_team = @sorted_teams[:available_teams].first
-    return redirect_to :waitinglist if matched_team.blank?
+    return redirect_to :reserve_fill_email if matched_team.blank?
     if @human.update(team: matched_team)
       redirect_to :fill_email
     else
@@ -154,11 +159,21 @@ class OnboarderController < ApplicationController
   def fill_email
   end
 
+  def reserve_team_spot
+    team = Team.find(team_param)
+    if team.present?
+      @human.update(team: team)
+      redirect_to :reserve_fill_email
+    else
+      redirect_to :choose_team
+    end
+  end
+
   def save_email
-    already_signed_up = @human.signed_up?
+    already_signed_up = @human.signed_up
     return email_not_present('save') unless email_param.present?
     begin
-      if @human.update!(email: email_param)
+      if register_email email: email_param, signed_up: true
         if already_signed_up
           return redirect_to :receipt
         else
@@ -168,7 +183,7 @@ class OnboarderController < ApplicationController
     rescue ActiveRecord::RecordInvalid => invalid
       message = ''
       invalid.record.errors.messages.first.second.each do |m|
-        message = message  + "#{m}\n"
+        message = message + "#{m}\n"
       end
       flash.now[:notice] = message
       return render 'fill_email'
@@ -177,34 +192,34 @@ class OnboarderController < ApplicationController
     render 'fill_email'
   end
 
-  def reserve_team_spot
-   team = Team.find(team_param)
-   @human = Human.find_by(uuid: @uuid)
-   human= @human
-    if Waitlist.create(team: team) && Waitlist.create(human: human)
-      redirect_to :reserve_fill_email
-    else
-      redirect_to :choose_team
-    end
-  end
-
   def save_reservation_email
-    already_signed_up = @human.signed_up?
     return email_not_present('reserve') unless email_param.present?
-    puts @human.update(email: email_param)
-    if @human.update(email: email_param)
-      if already_signed_up
-        return redirect_to :reservation_receipt
-      else
+    begin
+      if register_email email: email_param, signed_up: false
+        Waitlist.create(team: @human.team, human: @human)
         return confirm_reservation
       end
+    rescue ActiveRecord::RecordInvalid => invalid
+      message = ''
+      invalid.record.errors.messages.first.second.each do |m|
+        message = message  + "#{m}\n"
+      end
+      flash.now[:notice] = message
+      return render 'reserve_fill_email'
     end
-    message = ''
-    @human.errors.messages.first.second.each do |m|
-      message = message  + "#{m}\n"
-    end
-    flash.now[:notice] = message
-    return render 'reserve_fill_email'
+    flash.now[:notice] = I18n.t('validation.check_fields')
+    render 'reserve_fill_email'
+  end
+
+  def register_email(args)
+    expiration_time = calculate_expiration_time
+    confirm_hash = @human.generate_email_confirmation_hash
+    @human.update!(
+      email: args[:email],
+      signed_up: args[:signed_up],
+      confirm_email_expire_at: expiration_time,
+      email_confirmation_hash: confirm_hash
+    )
   end
 
   #################################
@@ -222,12 +237,21 @@ class OnboarderController < ApplicationController
     redirect_to :reservation_receipt
   end
 
-  def reservation_receipt
+  def confirm_email
+    if @human.generate_email_confirmation_hash == digest_param
+      @human.update(email_confirmed: true)
+      flash.now[:notice] = I18n.t('validation.confirmed_email')
+    else
+      flash.now[:notice] = I18n.t('validation.confirmed_email_fail')
+    end
+    redirect_to :receipt
+  end
 
+  def reservation_receipt
   end
 
   def receipt
-    humen = @human.team.humen.select(&:signed_up?)
+    humen = @human.team.humen.select(&:signed_up)
     @team_member_details = team_member_details(humen)
     @team_name = @human.team.name
     render
@@ -236,61 +260,81 @@ class OnboarderController < ApplicationController
   ############################
   ### DEREGISTRATION ENDPOINTS
   ############################
-
   def quit
-    redirect_to root_path unless @human.signed_up?
+    redirect_to root_path unless @human.signed_up
   end
 
   def quitting
+    return redirect_to :unregistered if unregister_human
+    redirect_to :back
+  end
+
+  def unregister_human
     team = @human.team
     if team.present?
-      if @human.update team: nil
+      if @human.update(signed_up: false)
         inform_other_members_of_lost_team_mate(team)
         mail = ConfirmationMailer.deregistration_confirmation_email @human
         mail.deliver_later
-        return redirect_to :unregistered if @human.save
+        return true
       end
     end
-    redirect_to :back
+    false
   end
 
   def unregistered
   end
+
   ##########################
-  ### FIllED SPOTS ENDPOINTS
+  ### FILLED SPOTS ENDPOINTS
   ##########################
   def event_is_full
-    Human.all.select(&:signed_up?).count >= 51
+    max_spots = Rails.configuration.midhack_total_nr_spots
+    Human.all.select(&:signed_up).count > max_spots
   end
 
   def competence_is_full
-    competence_count = @human.competence(&:signed_up?)
+    competence_count = @human.competence(&:signed_up)
     competence_count == 0
   end
 
 private
 
+  def set_locale
+    available = I18n.available_locales
+    locale = http_accept_language.compatible_language_from(available)
+    @human.update(locale: locale.to_s) if @human.locale != locale.to_s
+    I18n.locale = locale
+  end
+
   def team_member_details(humen)
     list = []
+    default_locale = Rails.configuration.i18n.default_locale
     humen.each do |human|
-      list.push([human.email, human.competence.name])
+      human.locale ||= default_locale
+      list.push({
+        email: human.email,
+        competence: human.competence.name,
+        locale: human.locale
+      })
     end
     list
   end
 
+  def get_human(uuid)
+    Human.find_by(uuid: uuid)
+  end
+
   def set_human
-    @uuid = cookies[:uuid]
-    if @uuid.blank?
-      new_human
-    else
-      @human = Human.find_by(uuid: @uuid)
-    end
-    new_human if @human.nil?
+    @human = nil
+    @human = get_human(uuid_param) unless uuid_param.blank?
+    @human = get_human(cookies[:uuid]) if @human.blank?
+    cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now } unless @human.blank?
+    new_human if @human.blank?
   end
 
   def new_human
-    @human = Human.new
-    @human.save!
+    @human = Human.create!
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
@@ -299,21 +343,25 @@ private
   end
 
   def inform_other_members_of_new_team_mate
-    humen = @human.team.humen.select(&:signed_up?)
+    humen = @human.team.humen.select(&:signed_up)
     tmd = team_member_details(humen)
     humen.delete(@human) # no need to inform self
     return if humen.blank?
     humen.each do |human|
-      TeamMailer.new_member_email(@human, tmd).deliver_later
+      I18n.with_locale(human.locale) do
+        TeamMailer.new_member_email(human, tmd, @human).deliver_later
+      end
     end
   end
 
   def inform_other_members_of_lost_team_mate(team)
-    humen = team.humen.select(&:signed_up?)
+    humen = team.humen.select(&:signed_up)
     return if humen.blank?
     tmd = team_member_details(humen)
     humen.each do |human|
-      TeamMailer.lost_member_email(human, tmd).deliver_later
+      I18n.with_locale(human.locale) do
+        TeamMailer.lost_member_email(human, tmd, @human).deliver_later
+      end
     end
   end
 
@@ -336,7 +384,7 @@ private
   end
 
   def valid_signup
-    return redirect_to :fill_email unless @human.signed_up?
+    return redirect_to :fill_email unless @human.signed_up
     true
   end
 
@@ -381,6 +429,10 @@ private
 
   def uuid_param
     params.permit("uuid")["uuid"]
+  end
+
+  def digest_param
+    params.permit("digest")["digest"]
   end
 
   def force_param

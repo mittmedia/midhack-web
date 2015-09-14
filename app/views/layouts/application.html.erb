@@ -14,16 +14,16 @@
     <meta content="website" property="og:type"/>
     <meta content="Jag har anmält mig till Midhack, gör det du med!" property="og:title"/>
     <meta content="Midhack är ett innovationsevent på MIUN arrangerat i sammarbete med MittMedia. Här möts journalister, ekonomer, designers och utvecklare och skapar morgondagens nyhetsupplevelse." property="og:description"/>
-    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" property="og:image"/>
+    <meta content="<%= asset_url 'social/midhack-fb.jpg' %>" property="og:image"/>
     <meta content="<%= root_url %>" property="og:url"/>
     <meta content="Midhack 2015" property="og:site_name"/>
     <!-- Twitter cards-->
-    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" name="twitter:card"/>
+    <meta content="<%= asset_url 'social/midhack-fb.jpg' %>" name="twitter:card"/>
     <meta content="@midhack2015" name="twitter:site"/>
     <meta content="@midhack2015" name="twitter:creator"/>
     <meta content="Jag har anmält mig till Midhack, gör det du med!" name="twitter:title"/>
     <meta content="Jag har anmält mig till MIUNs innovationsevent Midhack, gör det du också! http://www.midhack.se #Midhack2015 #Midhack #hackaton #MIUN #MittMedia" name="twitter:description"/>
-    <meta content="<%= asset_path 'social/midhack-fb.jpg' %>" name="twitter:image"/>
+    <meta content="<%= asset_url 'social/midhack-fb.jpg' %>" name="twitter:image"/>
 
  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -42,21 +42,42 @@
 </head>
 
 <body>
-<div id="<%= yield :container_id %>" class="main_container <%= yield :container_color %>">
-  <div class="container">
-    <%= yield %>
-  </div>
-</div>
-<footer>
-  <div class="footer_inner">
-    <div class="top">Ett samarbete mellan</div>
-    <div class="footer_link left">
-      <a href="http://www.mittmedia.se/" class="mittmedia" target="_blank"></a>
+
+    <header id="<%= yield :container_id %>_header">
+        <div class="header_container">
+
+            <%= link_to root_path do %>
+                <div class="logo"></div>
+            <% end %>
+
+            <div class="progress_bar">
+                <div class="progress_bar_bg"></div>
+                <div class="progress_bar_white progress_bar_white_animation"></div>
+                <div class="ring ring_animation"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="<%= yield :container_id %>" class="main_container <%= yield :container_color %>">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
-    <div class="footer_link right">
-      <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun" target="_blank"></a>
-    </div>
-  </div>
-</footer>
+
+    <footer>
+      <div class="footer_inner">
+        <div class="top"><%= t('footer.text') %></div>
+        <div class="footer_link left">
+          <a href="http://www.mittmedia.se/" class="mittmedia" target="_blank"></a>
+        </div>
+        <div class="footer_link right">
+          <a href="http://www.miun.se/naringslivosamhalle/foretag-och-organisation/miuninnovation" class="miun" target="_blank"></a>
+        </div>
+      </div>
+    </footer>
+
+    <img src="<%= asset_url 'social/midhack-fb.jpg' %>" style="position: absolute; left: -10px; top: -10px; width: 10px; height: 10px;"/>
+
 </body>
 </html>

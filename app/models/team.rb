@@ -10,6 +10,10 @@
 
 class Team < ActiveRecord::Base
   has_many :humen
+  has_many :members, -> { where signed_up: true }, class_name: "Human"
+	validates :name, allow_blank: false, presence: true, uniqueness: true
+
+	validates :name, allow_blank: false, presence: true, uniqueness: true
 
   MAXMEMBERS = {
     economics: 2,
@@ -39,9 +43,9 @@ class Team < ActiveRecord::Base
   end
 
   def self.sorted_teams(competence, study_year)
-    all_teams = Team.all.includes(:humen)
-    all_teams = all_teams.sort do |x, y|
-      x.rank(competence, study_year) <=> y.rank(competence, study_year)
+    all_teams = Team.preload(:members)
+    all_teams = all_teams.sort do |team, other_team|
+      team.rank(competence, study_year) <=> other_team.rank(competence, study_year)
     end
     {
       available_teams: Team.available_teams(competence, all_teams),
@@ -83,7 +87,7 @@ class Team < ActiveRecord::Base
 
   def self.competence_spots_left(incoming_competence)
     counter = 0
-    humen.select(&:signed_up?).each do |member|
+    humen.select(&:signed_up).each do |member|
       competence = member.competence
       counter += 1 if competence == incoming_competence
     end

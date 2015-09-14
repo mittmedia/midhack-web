@@ -1,6 +1,10 @@
 Tack för att du anmält dig till väntelistan för Midhack
-========================================
-
-Du står med på väntelistan till lag <%= @team_name %>. Vi hör av oss om det blir en plats ledig.
+=======================================================
+<% if @human.team.blank? %>
+  Du står nu med på väntelistan. Vi hör av oss om det blir en plats ledig.
+<% else %>
+  Du står med på väntelistan till lag <%= @human.team.name %>.
+  Vi hör av oss om det blir en plats ledig.
+<% end %>
 
 /Midhack Crew

@@ -20,9 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  footer:
+    text: 'A collaboration between'
   app:
     name: Midhack
   validation:
+    confirmed_email: 'Your email adress has been confirmed!'
+    confirmed_email_fail: 'Your email adress could not be confirmed, please make sure the link was not cut off by your email client.'
     invalid_email: 'Oops! Your email address is not valid, please check it again.'
     unique_email: "You've already signed up. Please use another email when signing up a friend."
     blacklisted_domain: "That email address is not allowed, it's on a blacklisted domain."
@@ -33,6 +37,7 @@ en:
       title: 'Welcome'
       leadin: 'Together we will develop the future of journalism based on open source'
       action: 'What is Midhack?'
+      switch_language: 'Byt till svenska'
       cookies_pul: 'Midhack.se is using cookies and persistent storage in accordance to our data storing policy. By using the system you accept our policy in accordance to PUL.'
       read_more: 'Read more about our cookies and data policy.'
     policy:
@@ -51,6 +56,7 @@ en:
       primary_action: 'Yes, sign me up for Midhack'
       secondary_action: 'I want to read more'
       my_receipt: 'View my team'
+      my_reservation: 'See my reservation'
       signup_friend: 'Sign up a friend'
     choose_education:
       title: 'Education'
@@ -69,8 +75,6 @@ en:
         sbjug: 'Photojournalism'
         tinsg: 'Informatics with focus on systems development'
         tpvag: 'Software engineering'
-
-      back: 'Go back'
       year: 'Year %{year}'
     choose_competence:
       title: 'Expertise'
@@ -103,12 +107,10 @@ en:
     fill_email:
       title: 'E-mail address'
       heading: 'Almost done! All we need now is your e-mail address.'
-      no_spam: '(No spam, promise)'
       your_team: 'You are assigned to team %{team}! All we need now is your e-mail address.'
       type_email: 'Type your e-mail address'
       send_application: 'Send application'
       placeholder: 'username@student.miun.se'
-      pul: 'By clicking ”Send Application” you give us permission to store your personal information according to PUL and to share your e-mail address with your team members.'
     confirmation:
       title: 'Confirmation'
     receipt:
@@ -155,19 +157,51 @@ en:
       text_2: 'Note, you have not unregistered before pressing the button above. If you do not wish to unregister you can just close this webpage.'
     reserve_fill_email:
       title: 'E-mail address'
-      heading: 'Unfortunately there are currently no free spots in this team.'
-      text_waitinglist: 'Sign up to the waiting list, and we will be in touch if there is a vacancy or'
-      go_back: 'go back and pick another competence'
-      no_spam: '(No spam, promise)'
+      heading: 'Unfortunately there are currently no free %{competence} spots in this team.'
+      text_waitinglist: 'Sign up to the waiting list, and we will be in touch if there is a vacancy or go back and:'
+      go_back: 'Pick another competence'
       type_email: 'Type your e-mail address'
-      send_application: 'Send application'
+      send_application: 'Sign up to the waiting list'
       placeholder: 'username@student.miun.se'
-      pul: 'När du klickar på ”Skicka anmälan” godkänner du att vi sparar dina personuppgifter enligt PUL samt delar din epostadress till dina lagmedlemmar.'
+      competences:
+        it: 'programmer'
+        gd: 'designer / communicator'
+        economics: 'business developer'
+        journalism: 'journalist'
     unregistered:
       title: 'Confirmation unregistration'
       heading: 'Unregistration completed'
       text: 'We hope you will come hack with us another time instead!'
       new_registration: 'New registration'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
+    reservation_receipt:
+      title: 'Waiting List'
+      heading: 'You have signed up to the waiting list'
+      contact: 'We will contact you on the following address:'
+      when: 'if there is a vacancy.'
+      tip_friends: 'Hey! Don’t forget to tell your friends to join team %{team}.'
+      drop_out_question: 'Got something coming up?'
+      drop_out_action: 'Unregister from the Midhack event'
+  confirmation_mailer:
+    confirmation_email:
+      subject: 'You have signed up to Midhack'
+    waitlist_confirmation_email:
+      subject: 'You have signed up on the waiting list for Midhack'
+    deregistration_confirmation_email:
+      subject: 'You have unregistered from Midhack'
+  team_mailer:
+    new_member_email:
+      subject: '%{member} has joined your Midhack team'
+      competences:
+        it: 'Programming'
+        gd: 'Design / communication'
+        economics: 'Business development / analysis'
+        journalism: 'Journalism / photojournalism'
+    lost_member_email:
+      subject: '%{member} has resigned from your Midhack team'
+  email_confirmation_expiration_mailer:
+    time_expired:
+      subject: 'The deadline for confirming your application has expired'
   admin:
-    styles: 'Style guide'
+    styles:
+      title: 'Style guide'

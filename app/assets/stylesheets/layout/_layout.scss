@@ -31,10 +31,25 @@ body {
 	}
 }
 
+@mixin screen {
+  @media screen and ( min-resolution: 1dppx ) and ( max-height: 700px ) {
+    @content;
+  }
+  @media screen and ( min-resolution: 2dppx ) and ( max-height: 960px ) {
+    @content;
+  }
+  @media screen and ( min-resolution: 3dppx ) and ( max-height: 1200px ) {
+    @content;
+  }
+}
+
 .container {
   padding: 50px 20px 200px 20px;
   margin: 0 auto;
   max-width: 500px;
+  @include screen {
+    padding-top: 10px;
+  }
 }
 
 footer {

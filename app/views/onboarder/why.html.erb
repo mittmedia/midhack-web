@@ -1,5 +1,6 @@
 <% container_color('black')%>
 <% container_id('why')%>
+
 <h1 class="center_text"><%= t(".heading") %></h1>
 <p><%= t(".text_1") %></p>
 <p><%= t(".text_2") %></p>
@@ -34,7 +35,7 @@
 <p><%= t(".text_4") %></p>
 <br>
 <br>
-<% if !@signed_up %>
+<% if !@signed_up && !@on_waiting_list %>
   <p><%= t(".tease") %></p>
   <%= link_to t(".primary_action"), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
 <% end %>
