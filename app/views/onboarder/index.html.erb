@@ -5,10 +5,10 @@
 <%= link_to t('.action'), what_path, class: 'btn_primary inline-block margin_10px_bottom', id:'what_button' %>
 <br>
 <% if I18n.locale == :en %>
-  <%= link_to t('.switch_language'), 'http://www.midhack.se' %>
+  <%= link_to t('.switch_language'), root_url(locale: 'sv') %>
 <% end %>
 <% if I18n.locale == :sv %>
-  <%= link_to t('.switch_language'), 'http://www.en.midhack.se' %>
+  <%= link_to t('.switch_language'), root_url(locale: 'en') %>
 <% end %>
 <br>
 <br>
