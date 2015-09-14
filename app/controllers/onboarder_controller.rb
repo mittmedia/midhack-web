@@ -1,6 +1,6 @@
 class OnboarderController < ApplicationController
   include OnboarderHelper
-  before_action :set_human
+
   before_action :valid_education, only: [
     :choose_competence,
     :save_competence,
@@ -45,8 +45,6 @@ class OnboarderController < ApplicationController
     :fill_email,
     :save_email
   ]
-
-  before_action :set_locale
 
   #####################
   ### GENERIC ENDPOINTS
@@ -300,13 +298,6 @@ class OnboarderController < ApplicationController
 
 private
 
-  def set_locale
-    available = I18n.available_locales
-    locale = http_accept_language.compatible_language_from(available)
-    @human.update(locale: locale.to_s) if @human.locale != locale.to_s
-    I18n.locale = locale
-  end
-
   def team_member_details(humen)
     list = []
     default_locale = Rails.configuration.i18n.default_locale
@@ -319,23 +310,6 @@ private
       })
     end
     list
-  end
-
-  def get_human(uuid)
-    Human.find_by(uuid: uuid)
-  end
-
-  def set_human
-    @human = nil
-    @human = get_human(uuid_param) unless uuid_param.blank?
-    @human = get_human(cookies[:uuid]) if @human.blank?
-    cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now } unless @human.blank?
-    new_human if @human.blank?
-  end
-
-  def new_human
-    @human = Human.create!
-    cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
   def other_members
