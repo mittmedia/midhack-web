@@ -35,7 +35,7 @@ sv:
   onboarder:
     index:
       title: 'Välkommen'
-      leadin: 'Tillsammans utvecklar vi framtidens journalistik baserat på öppen data'
+      leadin: 'Tillsammans utvecklar vi framtidens journalistik och medieteknik baserat på öppen data'
       action: 'Vad är Midhack?'
       switch_language: 'Switch to English'
       cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
@@ -50,8 +50,8 @@ sv:
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'
-      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmar hackathon för journalister, bildjournalister, informatörer, grafiker, datavetare och ingenjörer.'
-      text_2: 'Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens journalistik. I prispotten finns 10 000kr och en chans till att göra exjobb på MittMedia.'
+      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmars hackathon för journalister, bildjournalister, informatörer, kommunikatörer, grafiker, datavetare och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
+      text_2: 'Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens journalistik och medieteknik. MittMedia och Mittuniversitetet finns på plats som support, och fixar mat och kaffe. I prispotten finns 10 000kr och möjlighet att göra exjobb på MittMedia.'
       tease: 'Är du sugen?'
       primary_action: 'Ja, anmäl mig till Midhack'
       secondary_action: 'Jag vill läsa mer'
