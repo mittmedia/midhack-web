@@ -1,6 +1,6 @@
 # Midhack Web
 
-Signup site for the MIUN and Mittmedia collaboration called Midhack.
+Signup site for the Mid Sweden University and Mittmedia collaboration called Midhack.
 
 
 
@@ -20,5 +20,3 @@ Signup site for the MIUN and Mittmedia collaboration called Midhack.
 
     # Send emails
     export SENDGRID_API_KEY=""
-
-
