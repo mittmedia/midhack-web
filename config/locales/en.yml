@@ -133,7 +133,7 @@ en:
       text_1: 'Midhack is organized by MittMedia and Mid Sweden University, with the aim to stimulate a cooperation that will inspire new ways to consume news.'
       text_2: 'During 24 hours, you and your team are competing against other teams in the quest to win 10 000 kr and a chance to do diploma work for MittMedia. Your team will consist of students with varying area of study and everyone will contribute to the project with their expertise. What your team decides to create is up to the team members. The project goal can be to produce a new service, news material, a communication concept, the beginning of a diploma work or an application etc.'
       subtitle_1: 'Good to know'
-      text_3: 'You will gain access to MittMedias entire article database and can use API:s from opendata.se. Additional data sources might become available and you can also work with data that you yourself have access to. You can either bring your own laptop or you can use the computer rooms at the university. If you and your team would get stuck in some way, there will be journalists, editors, UX developers and software developers available for counseling and guidance.'
+      text_3: 'You will gain access to MittMedias entire article database, the Kan Du Lova? database and can use API:s from opendata.se. Additional data sources might become available and you can also work with data that you yourself have access to. You can either bring your own laptop or you can use the computer rooms at the university. If you and your team would get stuck in some way, there will be journalists, editors, UX developers and software developers available for counseling and guidance.'
       title_place: 'Place'
       place: 'Mid Sweden University, Sundsvall'
       title_price: 'price money'
@@ -154,6 +154,14 @@ en:
       programme_heading_6: Work submittal deadline
       programme_heading_7: Presentation of the work
       programme_heading_8: Ceremony
+      programme_body_1: We will present the "Kan Du Lova?"-data. Then the Midhack crew, judgement criterias, submittal process be presented and what teams have signed up.
+      programme_body_2: Get hacking! You now have 24 hours until presentation.
+      programme_body_3: Coffee and a lunchy sandwich will be provided.
+      programme_body_4: Dinner from Biteline will be provided.
+      programme_body_5: Breakfast will be provided.
+      programme_body_6: Now you have to be done and ready to present your project.
+      programme_body_7: Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.
+      programme_body_8: After the Jury have discussed and we've mingled, the winners will be anounced.
     unregistered:
       title: 'Deregistration completed'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
