@@ -8,7 +8,7 @@ class InformationMailer < ApplicationMailer
   def programme(human)
     @receipt_url = receipt_url(uuid: human.uuid)
     @unsubscribe_url = quit_url(uuid: human.uuid)
-    @programme_url = why_url(uuid: human.uuid)
+    @programme_url = programme_url(uuid: human.uuid, anchor: "programme")
 
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Programme released"}')
