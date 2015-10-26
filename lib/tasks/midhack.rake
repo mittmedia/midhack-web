@@ -15,4 +15,11 @@ namespace :midhack do
       end
     end
   end
+  desc "Notifies participants that the programme for midhack now is released"
+  task programme_released_email: :environment do
+    Human.where(signed_up: true).each do |h|
+      @h = h
+      InformationMailer.programme(@h).deliver_later
+    end
+  end
 end

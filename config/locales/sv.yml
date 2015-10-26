@@ -146,6 +146,14 @@ sv:
       tease: 'Är du sugen på att delta?'
       primary_action: 'Anmäl dig till Midhack'
       secondary_action: 'Tillbaka'
+      programme_heading_1: Välkommen
+      programme_heading_2: Hacket drar igång
+      programme_heading_3: Fika
+      programme_heading_4: Middag
+      programme_heading_5: Frukost
+      programme_heading_6: Arbetet lämnas in
+      programme_heading_7: Presentation av arbetet
+      programme_heading_8: Prisutdelning
     unregistered:
       title: 'Avanmälan genomförd'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
@@ -202,6 +210,9 @@ sv:
   email_confirmation_expiration_mailer:
     time_expired:
       subject: 'Din tidsfrist har löpt ut'
+  information_mailer:
+    programme:
+      subject: '[Midhack] Programmet släppt!'
   admin:
     styles:
       title: 'Style guide'

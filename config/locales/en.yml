@@ -146,6 +146,14 @@ en:
       tease: 'Are you up for it?'
       primary_action: 'Yes, sign me up for Midhack'
       secondary_action: 'Go back'
+      programme_heading_1: Welcome
+      programme_heading_2: The hack kicks off
+      programme_heading_3: Coffee
+      programme_heading_4: Dinner
+      programme_heading_5: Breakfast
+      programme_heading_6: Work submittal deadline
+      programme_heading_7: Presentation of the work
+      programme_heading_8: Ceremony
     unregistered:
       title: 'Deregistration completed'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'
@@ -202,6 +210,9 @@ en:
   email_confirmation_expiration_mailer:
     time_expired:
       subject: 'The deadline for confirming your application has expired'
+  information_mailer:
+    programme:
+      subject: '[Midhack] Programme released!'
   admin:
     styles:
       title: 'Style guide'
