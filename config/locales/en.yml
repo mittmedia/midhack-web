@@ -154,14 +154,14 @@ en:
       programme_heading_6: Work submittal deadline
       programme_heading_7: Presentation of the work
       programme_heading_8: Ceremony
-      programme_body_1: We will present the "Kan Du Lova?"-data. Then the Midhack crew, judgement criterias, submittal process be presented and what teams have signed up.
-      programme_body_2: Get hacking! You now have 24 hours until presentation.
-      programme_body_3: Coffee and a lunchy sandwich will be provided.
-      programme_body_4: Dinner from Biteline will be provided.
-      programme_body_5: Breakfast will be provided.
-      programme_body_6: Now you have to be done and ready to present your project.
-      programme_body_7: Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.
-      programme_body_8: After the Jury have discussed and we've mingled, the winners will be anounced.
+      programme_body_1: 'MittMedia will introduce the data from/for "Kan Du Lova". The Midhack Crew, the assessment criteria and the process for handing in your projects will be presented as well as the submitted teams.'
+      programme_body_2: 'Get hacking! You now have 24 hours until presentation.'
+      programme_body_3: 'Coffee and a hearty sandwich will be provided.'
+      programme_body_4: 'Dinner from Biteline will be provided.'
+      programme_body_5: 'Breakfast will be provided.'
+      programme_body_6: 'You now need to be done and ready to present your projects.'
+      programme_body_7: 'Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.'
+      programme_body_8: 'After the Jury have discussed and we've mingled, the winners will be anounced.'
     unregistered:
       title: 'Deregistration completed'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'

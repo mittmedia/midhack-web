@@ -154,14 +154,14 @@ sv:
       programme_heading_6: Arbetet lämnas in
       programme_heading_7: Presentation av arbetet
       programme_heading_8: Prisutdelning
-      programme_body_1: MittMedia kommer att introducera till "Kan du lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.
-      programme_body_2: Börja hacka! Ni har nu 24 timmar till inlämning.
-      programme_body_3: Kaffe och en mättande smörgås kommer att tillhandahållas.
-      programme_body_4: Middag från Biteline kommer att serveras.
-      programme_body_5: Frukost kommer att tillhandahållas.
-      programme_body_6: Nu måste ni vara klara och redo att presentera ert projekt.
-      programme_body_7: Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.
-      programme_body_8: Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.
+      programme_body_1: 'MittMedia kommer att introducera till "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
+      programme_body_2: 'Börja hacka! Ni har nu 24 timmar till inlämning.'
+      programme_body_3: 'Kaffe och en mättande smörgås kommer att tillhandahållas.'
+      programme_body_4: 'Middag från Biteline kommer att serveras.'
+      programme_body_5: 'Frukost kommer att tillhandahållas.'
+      programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
+      programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
+      programme_body_8: 'Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.'
     unregistered:
       title: 'Avanmälan genomförd'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
