@@ -31,8 +31,56 @@
   </li>
 </ul>
 <br>
+<div class="programme_container">
+<a name="programme"></a>
 <h3><%= t(".subtitle_2") %></h3>
-<p><%= t(".text_4") %></p>
+  <div class="border">
+    <ul class="programme">
+      <li class="left">
+        <small class="uppercase semibold padding_20px_right left_dot">11:00</small>
+        <p class="text_primary_color program_point padding_40px_right"><%= t(".programme_heading_1")%></p>
+        <p class="description padding_40px_right"><%= t(".programme_body_1")%></p>
+      </li>
+      <li class="right">
+        <small class="uppercase semibold padding_20px_left right_dot">12:00</small>
+        <p class="text_primary_color program_point padding_40px_left"><%= t(".programme_heading_2")%></p>
+        <p class="description padding_40px_left"><%= t(".programme_body_2")%></p>
+      </li>
+      <li class="left">
+        <small class="uppercase semibold padding_20px_right left_dot">14:00</small>
+        <p class="text_primary_color program_point padding_40px_right"><%= t(".programme_heading_3")%></p>
+        <p class="description padding_40px_right"><%= t(".programme_body_3")%></p>
+      </li>
+      <li class="right">
+        <small class="uppercase semibold padding_20px_left right_dot">18:00</small>
+        <p class="text_primary_color program_point padding_40px_left"><%= t(".programme_heading_4")%></p>
+        <p class="description padding_40px_left"><%= t(".programme_body_4")%></p>
+      </li>
+      <li class="left">
+        <small class="uppercase semibold padding_20px_right left_dot">06:00-08:00</small>
+        <p class="text_primary_color program_point padding_40px_right"><%= t(".programme_heading_5")%></p>
+        <p class="description padding_40px_right"><%= t(".programme_body_5")%></p>
+      </li>
+      <li class="right">
+        <small class="uppercase semibold padding_20px_left right_dot">12:00</small>
+        <p class="text_primary_color program_point padding_40px_left"><%= t(".programme_heading_6")%></p>
+        <p class="description padding_40px_left"><%= t(".programme_body_6")%></p>
+      </li>
+      <li class="left">
+        <small class="uppercase semibold padding_20px_right left_dot">12:10</small>
+        <p class="text_primary_color program_point padding_40px_right"><%= t(".programme_heading_7")%></p>
+        <p class="description padding_40px_right"><%= t(".programme_body_7")%></p>
+      </li>
+      <li class="right">
+        <small class="uppercase semibold padding_20px_left right_dot">14:00</small>
+        <p class="text_primary_color program_point padding_40px_left"><%= t(".programme_heading_8")%></p>
+        <p class="description padding_40px_left"><%= t(".programme_body_8")%></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
 <br>
 <br>
 <% if !@signed_up && !@on_waiting_list %>

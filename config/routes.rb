@@ -40,6 +40,9 @@ Rails.application.routes.draw do
   get 'unregistered', to: 'onboarder#unregistered', as: 'unregistered'
 
   get 'why', to: 'onboarder#why', as: 'why'
+  get 'programme', to: 'onboarder#why', as: 'programme'
+  get 'program', to: 'onboarder#why', as: 'program'
+  get 'programmet', to: 'onboarder#why', as: 'programmet'
   get 'ical', to: 'onboarder#ical', as: 'ical'
 
   if ENV['RAILS_ENV'] == 'development'

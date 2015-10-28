@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <center style="width: 300px; margin: 0 auto; display: block;">
+    <%= image_tag asset_path 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Now, the programme is finally released!
+      </h1>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        During the autumn, the Midhack Crew have been hard at work, planning &amp; preparing this amazing, creative event!
+      </p>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        The program is regularly updated and can be found in its entirety on
+        <a href="<%= @programme_url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">
+           midhack.se/programme
+        </a>.
+      </p>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Registration for Midhack closes 2015-11-08, so do not forget to tip your fellow students to register A.S.A.P.!
+      </p>
+
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        If you want to see your teammates and start brainstorming ideas, you can check
+        <a href="<%= @receipt_url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">
+           your registration receipt
+        </a>.
+      </p>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Do you have any questions you can <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">email us</a> or  till <a href="mailto:Teresia.Edling@miun.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">Teresia</a>. See you!
+        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">/Midhack Crew
+        </a>
+      </p>
+      <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Unable to attend? <br/>
+        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unsubscribe from Midhack</a>
+      </p>
+    </center>
+  </body>
+</html>

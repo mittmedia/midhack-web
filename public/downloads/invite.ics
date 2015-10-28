@@ -23,7 +23,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Mittmedia
 DMU:MAILTO:dmu@mittmedia.se
 DESCRIPTION;LANGUAGE=sv-SE:När: den 13 november 2015\, 18:00 till den 15 n
  ovember 2015\, 14:00. (GMT+01:00) Amsterdam\, Berlin\, Bern\, Rom\, Stockh
- olm\, Wien\nVar: MIUN\n\n*~*~*~*~*~*~*~*~*~*\n\n\nFör schema & anmälan:
+ olm\, Wien\nVar: Mittuniversitetet\n\n*~*~*~*~*~*~*~*~*~*\n\n\nFör schema & anmälan:
  https://curate.se\nFor time table & registration: https://en.curate.se\n\n
 SUMMARY;LANGUAGE=sv-SE:Curate.se
 DTSTART;TZID=W. Europe Standard Time:20151113T180000
@@ -35,7 +35,7 @@ DTSTAMP:20150401T113421Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
-LOCATION;LANGUAGE=sv-SE:MIUN
+LOCATION;LANGUAGE=sv-SE:Mittuniversitetet
 X-MICROSOFT-CDO-APPT-SEQUENCE:0
 X-MICROSOFT-CDO-OWNERAPPTID:2113145000
 X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE

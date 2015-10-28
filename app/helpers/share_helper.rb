@@ -4,7 +4,7 @@ module ShareHelper
 
     @title = 'Jag har anmält mig till Midhack, gör det du med!'
     @url = root_url
-    @long_description = 'Midhack är ett innovationsevent på MIUN arrangerat i
+    @long_description = 'Midhack är ett innovationsevent på Mittuniversitetet arrangerat i
                         sammarbete med MittMedia. Här möts journalister,
                         ekonomer, designers och utvecklare och skapar
                         morgondagens nyhetsupplevelse.'
@@ -65,7 +65,7 @@ module ShareHelper
 
     @url = 'http://mm-midhack-stage.herokuapp.com'
     @title = 'Jag har anmält mig till Midhack, gör det du med!'
-    @long_description = 'Midhack är ett innovationsevent på MIUN arrangerat i
+    @long_description = 'Midhack är ett innovationsevent på Mittuniversitetet arrangerat i
                     sammarbete med MittMedia. Här möts journalister,
                     ekonomer, designers och utvecklare och skapar
                     morgondagens nyhetsupplevelse.'
