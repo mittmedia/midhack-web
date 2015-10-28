@@ -37,13 +37,13 @@
 
   <script type="text/javascript">
     var doc = document.documentElement;
-    var value = navigator.userAgent.indexOf('MSIE 10.0') !== -1 ? 'T' : 'F';
+    var value = navigator.userAgent.indexOf('MSIE 10.') !== -1 ? 'T' : 'F';
     doc.setAttribute('data-ie10', value);</script>
 </head>
 
 <body>
 
-    <header id="<%= yield :container_id %>_header">
+    <header id="<%= yield :container_id %>_header" class="siteheader">
         <div class="header_container">
 
             <%= link_to root_path do %>
@@ -56,6 +56,20 @@
                 <div class="ring ring_animation"></div>
             </div>
 
+            <nav class="main_menu"><ul>
+                <li><%= link_to t('menu.what'), what_path %></li>
+                <li><%= link_to t('menu.programme'), programme_path %></li>
+                <li><%= link_to t('menu.data'), data_path %></li>
+                <li>
+                    <% if @signed_up %>
+                      <%= link_to t('menu.my_receipt'), receipt_path %><br>
+                    <% elsif @on_waiting_list %>
+                      <%= link_to t('menu.my_reservation'), reservation_receipt_path %><br>
+                    <% else %>
+                      <%= link_to t('menu.register'), choose_education_path %>
+                    <% end %>
+                </li>
+            </ul></nav>
         </div>
     </header>
 

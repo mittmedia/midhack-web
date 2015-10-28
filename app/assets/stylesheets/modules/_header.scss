@@ -1,7 +1,7 @@
-
+#data_header,
+#programme_header,
 #policy_header,
 #what_header,
-#why_header,
 #choose_education_header,
 #choose_competence_header,
 #choose_team_header,
@@ -20,13 +20,14 @@
     margin: 0 auto;
     height: 100%;
   }
+
 }
 
 //Basic header
-
+#data_header,
+#programme_header,
 #policy_header,
 #what_header,
-#why_header,
 #receipt_header,
 #reservation_receipt_header,
 #unregistered_header,
@@ -44,7 +45,7 @@
   }
 
   @media screen and (min-width: 601px){
-    height: 150px;
+    height: 170px;
     padding: 20px;
     .logo {
       background: image-url('midhacklogo.svg');
@@ -56,6 +57,47 @@
       margin: 0 auto;
     }
   }
+  .main_menu {
+    text-align: center;
+    &, ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      display: inline-block;
+      -webkit-padding-start: 0;
+      margin-bottom: 0.5em;
+    }
+    li {
+      font-size: rem-calc(30/2);
+      display: inline-block;
+      a:link,
+      a:hover,
+      a:active,
+      a:visited {
+        display: inline-block;
+        padding: 2px 7px;
+        border-radius: 4px;
+        color: white;
+      }
+      a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    @media screen and (min-width: 601px){
+      margin-top: rem-calc(28/2);
+    }
+  }
+}
+
+
+// Start page should not have header
+
+#index_header {
+  .main_menu {
+    display: none;
+  }
 }
 
 
@@ -65,7 +107,9 @@
 #choose_competence_header,
 #choose_team_header,
 #fill_email_header {
-
+  .main_menu {
+    display: none;
+  }
   .progress_bar {
     max-width: 100%;
     margin: 0 auto;

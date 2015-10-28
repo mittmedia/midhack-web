@@ -24,6 +24,13 @@ sv:
     text: 'Ett samarbete mellan'
   app:
     name: Midhack
+  menu:
+    what: Info
+    programme: Program
+    data: Datakällor
+    register: Anmäl dig!
+    my_receipt: 'Mitt Team'
+    my_reservation: 'Reservationen'
   validation:
     invalid_email: 'Hoppsan! Du har skrivit in en ogiltig e-postadress, försök igen.'
     unique_email: "Du är redan anmäld. Använd en annan e-postadress om du försöker anmäla en vän."
@@ -32,7 +39,7 @@ sv:
     check_fields: 'Något gick fel!'
     confirmed_email: 'Din e-postadress har bekräftats!'
     confirmed_email_fail: 'Din e-postadress kunde inte bekräftas, kontrollera gärna att hela länken följde med och inte blev klippt i din e-postklient.'
-  onboarder:
+  information:
     index:
       title: 'Välkommen'
       leadin: 'Tillsammans utvecklar vi framtidens journalistik och medieteknik baserat på öppen data'
@@ -50,14 +57,52 @@ sv:
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'
-      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmars hackathon för de som studerar till att bli journalister, bildjournalister, informatörer, kommunikatörer, grafiker, systemvetare, datatekniker och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
-      text_2: 'Du och ditt lag tävlar om att ta fram de bästa nya lösningarna för framtidens journalistik och medieteknik. MittMedia och Mittuniversitetet finns på plats som support, och fixar mat och kaffe. I prispotten finns 10 000kr och möjlighet att göra exjobb på MittMedia.'
-      tease: 'Är du sugen?'
-      primary_action: 'Ja, anmäl mig till Midhack'
-      secondary_action: 'Jag vill läsa mer'
+      text_0: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmars hackathon för de som studerar till att bli journalister, bildjournalister, informatörer, kommunikatörer, grafiker, systemvetare, datatekniker och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
+      text_1: 'Midhack anordnas i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
+      text_2: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
+      subtitle_1: 'Bra att veta'
+      text_3: 'Ni får tillgång till hela MittMedias artikeldatabas, Kan Du Lova?-databasen samt har möjlighet att använda API:er från opendata.se. Fler datakällor kan tillkomma och dessutom kan ni arbeta med data som ni själva skaffat tillgång till. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
+      title_place: 'plats'
+      place: 'Mittuniversitetet, Sundsvall'
+      title_price: 'prispengar'
+      price: '10 000 kr'
+      title_date: 'datum'
+      date: '14 - 15 November'
+      title_spots_left: 'platser kvar'
+      tease: 'Är du sugen på att delta?'
+      primary_action: 'Anmäl dig till Midhack'
+      secondary_action: 'Hur ser programmet ut?'
       my_receipt: 'Se mitt team'
       my_reservation: 'Se min reservation'
       signup_friend: 'Anmäl en vän'
+    programme:
+      title: 'Program'
+      heading: 'Program'
+      text: 'Detta är en översiktlig tidsplan över Midhack. Fler detaljer kommer delges på plats.'
+      tease: 'Är du sugen på att delta?'
+      primary_action: 'Anmäl dig till Midhack'
+      secondary_action: 'Hur ser programmet ut?'
+      my_receipt: 'Mitt team'
+      my_reservation: 'Min reservation'
+      signup_friend: 'Anmäl en kompis'
+
+      programme_heading_1: Välkommen
+      programme_heading_2: Hacket drar igång
+      programme_heading_3: Fika
+      programme_heading_4: Middag
+      programme_heading_5: Frukost
+      programme_heading_6: Arbetet lämnas in
+      programme_heading_7: Presentation av arbetet
+      programme_heading_8: Prisutdelning
+      programme_body_1: 'MittMedia kommer att introducera till "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
+      programme_body_2: 'Börja hacka! Ni har nu 24 timmar till inlämning.'
+      programme_body_3: 'Kaffe och en mättande smörgås kommer att tillhandahållas.'
+      programme_body_4: 'Middag från Biteline kommer att serveras.'
+      programme_body_5: 'Frukost kommer att tillhandahållas.'
+      programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
+      programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
+      programme_body_8: 'Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.'
+  onboarder:
     choose_education:
       title: 'Utbildning'
       heading: 'Vad pluggar du?'
@@ -128,41 +173,6 @@ sv:
         gd: 'Designer / kommunikatör'
         economics: 'Affärsutvecklare'
         journalism: 'Journalist'
-    why:
-      title: 'Information'
-      heading: 'Mer info om Midhack'
-      text_1: 'Midhack anordnas av MittMedia och Mittuniversitetet, i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
-      text_2: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
-      subtitle_1: 'Bra att veta'
-      text_3: 'Ni får tillgång till hela MittMedias artikeldatabas, Kan Du Lova?-databasen samt har möjlighet att använda API:er från opendata.se. Fler datakällor kan tillkomma och dessutom kan ni arbeta med data som ni själva skaffat tillgång till. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
-      title_place: 'plats'
-      place: 'Mittuniversitetet, Sundsvall'
-      title_price: 'prispengar'
-      price: '10 000 kr'
-      title_date: 'datum'
-      date: '14 - 15 November'
-      title_spots_left: 'platser kvar'
-      subtitle_2: 'Program'
-      text_4: 'Programmet för helgen kommer att publiceras här innan eventet.'
-      tease: 'Är du sugen på att delta?'
-      primary_action: 'Anmäl dig till Midhack'
-      secondary_action: 'Tillbaka'
-      programme_heading_1: Välkommen
-      programme_heading_2: Hacket drar igång
-      programme_heading_3: Fika
-      programme_heading_4: Middag
-      programme_heading_5: Frukost
-      programme_heading_6: Arbetet lämnas in
-      programme_heading_7: Presentation av arbetet
-      programme_heading_8: Prisutdelning
-      programme_body_1: 'MittMedia kommer att introducera till "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
-      programme_body_2: 'Börja hacka! Ni har nu 24 timmar till inlämning.'
-      programme_body_3: 'Kaffe och en mättande smörgås kommer att tillhandahållas.'
-      programme_body_4: 'Middag från Biteline kommer att serveras.'
-      programme_body_5: 'Frukost kommer att tillhandahållas.'
-      programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
-      programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
-      programme_body_8: 'Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.'
     unregistered:
       title: 'Avanmälan genomförd'
       tip_friends: 'Psst! Glöm inte att tipsa dina vänner om Midhack.'
