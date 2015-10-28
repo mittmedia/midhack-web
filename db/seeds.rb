@@ -133,3 +133,9 @@ literature = DataCategory.create({
   slug: 'literature',
   priority: 5
 })
+
+DataEntry.create([
+  {
+
+  }
+])

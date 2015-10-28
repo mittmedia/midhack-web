@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028224835) do
+ActiveRecord::Schema.define(version: 20151028230925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(version: 20151028224835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "data_entries", force: :cascade do |t|
+    t.string   "url"
+    t.string   "heading"
+    t.text     "summary"
+    t.integer  "priority"
+    t.integer  "data_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "data_entries", ["data_category_id"], name: "index_data_entries_on_data_category_id", using: :btree
 
   create_table "humen", force: :cascade do |t|
     t.string   "name"
@@ -81,6 +93,7 @@ ActiveRecord::Schema.define(version: 20151028224835) do
   add_index "waitlists", ["human_id"], name: "index_waitlists_on_human_id", using: :btree
   add_index "waitlists", ["team_id"], name: "index_waitlists_on_team_id", using: :btree
 
+  add_foreign_key "data_entries", "data_categories"
   add_foreign_key "humen", "competences"
   add_foreign_key "humen", "courses"
   add_foreign_key "humen", "teams"
