@@ -124,7 +124,7 @@ literature = DataCategory.create({
   priority: 3
 })
 
-literature = DataCategory.create({
+articles = DataCategory.create({
   slug: 'articles',
   priority: 4
 })
@@ -672,5 +672,123 @@ DataEntry.create([
     summary: 'Öppna data om Stockholm Stad.',
     priority: 22,
     data_category: sources
+  }
+])
+
+DataEntry.create([
+  {
+    url: 'http://qz.com/189703/the-problem-with-data-journalism/',
+    heading: 'Problem med datajournalistik',
+    summary: 'Quartz-artikel om vissa problem med datajournalistiken av Allison Schrager.',
+    priority: 1,
+    data_category: articles
+  },
+  {
+    url: 'http://blogg.svt.se/pejl/datajournalistik/vi-satte-datajournalistiken-pa-kartan/',
+    heading: 'Summering av SVT Pejl 2010',
+    summary: 'Teamet bakom valpejl bloggar ett retrospektiv av SVT Pejl 2010. Projektet gjorde att de till slut vann Stora Journalistpriset 2010.',
+    priority: 2,
+    data_category: articles
+  },
+  {
+    url: 'http://www.tandfonline.com/doi/pdf/10.1080/1461670X.2014.939852',
+    heading: 'Data Journalism in the US',
+    summary: 'Data Journalism in the United States: Beyond the “usual suspects”. ',
+    priority: 3,
+    data_category: articles
+  },
+  {
+    url: 'http://web.ebscohost.com/ehost/pdfviewer/pdfviewer?sid=038ae802-b0ca-471d-8071-dee84d144509%40sessionmgr198&vid=1&hid=102',
+    heading: 'Data journalism in the UK',
+    summary: 'Data journalism in the UK: a preliminary analysis of form and content. Megan Knight, Journal of Media Practice, 02 January 2015, Vol.16(1), p.55-72',
+    priority: 4,
+    data_category: articles
+  },
+  {
+    url: 'http://www.eipa.eu/files/repository/eipascope/20110912103927_EipascopeSpecialIssue_Art2.pdf ',
+    heading: 'Transparency and Access to Documents in the EU',
+    summary: 'Transparency and Access to Documents in the EU: Ten Years on from the Adoption of Regulation 1049/2001. Författare: Maja Augustyn, Research Assistant, EIPA Maastricht 2010-2011 Cosimo Monda, Senior Lecturer, EIPA Maastricht 2004-present',
+    priority: 5,
+    data_category: articles
+  }
+])
+
+DataEntry.create([
+  {
+    url: 'http://datajournalismhandbook.org/1.0/en/',
+    heading: 'The data journalism Handbook',
+    summary: "Titel: The data journalism Handbook. Författare: (Red) Jonathan Gray, Liliana Bounegru, Lucy Chambers. Utgivare: O'Reilly Media. Utgiven July 2012. Print ISBN: 978-1-4493-3006-4| ISBN 10:1-4493-3006-1. Ebook ISBN:978-1-4493-3001-9| ISBN 10:1-4493-3001-0",
+    priority: 1,
+    data_category: literature
+  },
+  {
+    url: 'http://www.tcij.org/sites/default/files/u4/Data%20Journalism%20Book.pdf',
+    heading: 'Data journalism',
+    summary: "Titel: Data journalism. Författare:  Elena Egawhary and Cynthia O’Murchu. Utgivare: Centre for investigative journalism, CIJ.",
+    priority: 2,
+    data_category: literature
+  },
+  {
+    url: 'http://regex.bastardsbook.com/',
+    heading: 'The Bastards Book of Regular Expressions',
+    summary: "Finding patterns in everyday text. Handbok om regular expressions. Författare: Dan Nguyen",
+    priority: 3,
+    data_category: literature
+  },
+  {
+    url: 'http://webbutik.skl.se/sv/artiklar/allmanna-handlingar.html',
+    heading: 'Allmänna handlingar hos kommunala och landstingskommunala företag',
+    summary: "Titel: Allmänna handlingar hos kommunala och landstingskommunala företag (12 sidor). Upplaga: 2011. Webbadress: http://skl.se. Kommentar: Utgiven av SKL, Utgivare: Sveriges kommuner och landsting samt Riksarkivet ",
+    priority: 4,
+    data_category: literature
+  },
+  {
+    url: 'http://www.government.se/sb/d/108/a/139017',
+    heading: 'Allmänna handlingar i elektronisk form',
+    summary: "Titel: Allmänna handlingar i elektronisk form - offentlighet och integritet. Upplaga: SOU 2010:4 ",
+    priority: 5,
+    data_category: literature
+  },
+  {
+    url: 'http://www.regeringen.se/content/1/c6/23/50/91/e812fd5e.pdf',
+    heading: 'Betänkande av PSI-utredningen',
+    summary: "Titel: Betänkande av PSI-utredningen: SOU 2014:10 Ett steg vidare – nya regler och åtgärder för att främja vidareutnyttjande av handlingar. Upplaga: Senaste upplagan. Kommentar: ",
+    priority: 6,
+    data_category: literature
+  },
+  {
+    url: 'http://www.nordicom.gu.se/sites/default/files/kapitel-pdf/nygren_et_al.pdf',
+    heading: 'Datajournalistik, ett växande område',
+    summary: "Nordicom, Gunnar Nygren, Ester Appelgren & Helge Hüttenrauch",
+    priority: 7,
+    data_category: literature
+  },
+  {
+    url: 'http://www.tandfonline.com/doi/pdf/10.1080/21670811.2014.884344',
+    heading: 'Data Journalism in Sweden.',
+    summary: "Introducing new methods and genres of journalism into “old” organizations. Författare: Ester Appelgrena & Gunnar Nygren",
+    priority: 8,
+    data_category: literature
+  },
+  {
+    url: 'http://www.riksdagen.se/sv/Dokument-Lagar/Lagar/Svenskforfattningssamling/_sfs-1949-105/#K2',
+    heading: 'Allmänna handlingars offentlighet',
+    summary: "Om allmänna handlingar i Tryckfrihetsförordningen: 2 kap 3§.",
+    priority: 9,
+    data_category: literature
+  },
+  {
+    url: 'http://www.regeringen.se/sb/d/19838/a/257001',
+    heading: 'Myndighetsdatalagen',
+    summary: "Titel: Myndighetsdatalag, slutbetänkande. Upplaga: SOU 2015:39. Utgiven: 8 april 2015. Typ: Statens offentliga utredningar (SOU). Avsändare: Justitiedepartementet.",
+    priority: 10,
+    data_category: literature
+  },
+  {
+    url: 'http://eur-lex.europa.eu/legal-content/SV/TXT/PDF/?uri=CELEX:32001R1049&from=EN',
+    heading: 'Europaparlamentets och Rådets Förordning',
+    summary: "Titel: EUROPAPARLAMENTETS OCH RÅDETS FÖRORDNING (EG) nr 1049/2001 av den 30 maj 2001 om allmänhetens tillgång till Europaparlamentets, rådets och kommissionens handlingar.",
+    priority: 11,
+    data_category: literature
   }
 ])
