@@ -142,7 +142,7 @@ tools = DataCategory.create({
 DataEntry.create([
   {
     url: 'http://www.kandulova.se/',
-    heading: 'Kandulova',
+    heading: 'Kan Du Lova?',
     summary: 'Mittmedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiken inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.',
     priority: -1,
     data_category: examples

@@ -101,6 +101,18 @@ sv:
       programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
       programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
       programme_body_8: 'Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.'
+    data:
+      title: 'Datakällor'
+      heading: 'Datakällor, Resurser & Verktyg'
+      text_1: 'Nedan följer en sammanställning av bra datakällor, artiklar, litteratur, verktyg och guider för att bidra i arbetet med datajournalistik.'
+      text_2: 'Klicka på en rubrik för att expandera.'
+      headings:
+        examples: 'Exempel'
+        tutorials: 'Guider'
+        literature: 'Kursliteratur'
+        articles: 'Artiklar'
+        sources: 'API:er & data-källor'
+        tools: 'Dataverktyg'
   onboarder:
     choose_education:
       title: 'Utbildning'

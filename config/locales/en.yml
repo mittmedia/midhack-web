@@ -101,6 +101,18 @@ en:
       programme_body_6: 'You now need to be done and ready to present your projects.'
       programme_body_7: 'Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.'
       programme_body_8: After the Jury have discussed and we've mingled, the winners will be anounced.
+    data:
+      title: 'Data Sources'
+      heading: 'Data Sources, Resources & Tools'
+      text_1: 'Below you will find a collection (unfortunately only available in Swedish) of really good data sources, articles, literature, tools and tutorials to help you in the field of data journalism.'
+      text_2: 'Click a heading to expand.'
+      headings:
+        examples: 'Examples'
+        tutorials: 'Tutorials'
+        literature: 'Course Literature'
+        articles: 'Articles'
+        sources: 'API and Data-sources'
+        tools: 'Data Tools'
   onboarder:
     choose_education:
       title: 'Education'

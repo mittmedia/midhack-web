@@ -6,6 +6,10 @@ class InformationController < ApplicationController
   end
 
   def data
+    @nr_spots_left = total_nr_of_spots_left
+    @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
+    @data_categories = DataCategory.all.includes(:data_entry)
   end
 
   def programme

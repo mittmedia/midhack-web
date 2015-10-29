@@ -10,4 +10,5 @@
 #
 
 class DataCategory < ActiveRecord::Base
+  has_many :data_entry
 end

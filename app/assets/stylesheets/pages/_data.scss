@@ -1,0 +1,28 @@
+#data {
+  .upArrow,
+  .downArrow {
+    margin-left: rem-calc(10/2);
+    font-size: rem-calc(28/2);
+  }
+  .data_section {
+    border-bottom: 2px solid white;
+    padding-bottom: rem-calc(20/2);
+    margin-bottom: rem-calc(50/2);
+  }
+  .data_section_header {
+    text-align: left;
+    margin-top: rem-calc(20/2);
+    margin-bottom: rem-calc(10/2);
+  }
+  .data_entry {
+    margin-bottom: rem-calc(20/2);
+  }
+  .data_entry_header {
+    line-height: 100%;
+    margin: 0;
+  }
+  .data_entry_summary {
+    margin-top: 0;
+  }
+
+}
