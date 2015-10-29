@@ -119,19 +119,24 @@ tutorials = DataCategory.create({
   priority: 2
 })
 
-tools = DataCategory.create({
-  slug: 'tools',
+literature = DataCategory.create({
+  slug: 'literature',
   priority: 3
+})
+
+literature = DataCategory.create({
+  slug: 'articles',
+  priority: 4
 })
 
 sources = DataCategory.create({
   slug: 'sources',
-  priority: 4
+  priority: 5
 })
 
-literature = DataCategory.create({
-  slug: 'literature',
-  priority: 5
+tools = DataCategory.create({
+  slug: 'tools',
+  priority: 6
 })
 
 DataEntry.create([
