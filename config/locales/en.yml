@@ -24,6 +24,13 @@ en:
     text: 'A collaboration between'
   app:
     name: Midhack
+  menu:
+    what: Info
+    programme: Programme
+    data: Data sources
+    register: Register!
+    my_receipt: 'My Team'
+    my_reservation: 'My Reservation'
   validation:
     confirmed_email: 'Your email adress has been confirmed!'
     confirmed_email_fail: 'Your email adress could not be confirmed, please make sure the link was not cut off by your email client.'
@@ -32,7 +39,7 @@ en:
     blacklisted_domain: "That email address is not allowed, it's on a blacklisted domain."
     forgot_email: 'Woops you forgot your email address'
     check_fields: 'Something went wrong!'
-  onboarder:
+  information:
     index:
       title: 'Welcome'
       leadin: 'Together we will develop the future of journalism and media technology based on open source'
@@ -50,14 +57,63 @@ en:
     what:
       title: 'What is Midhack?'
       heading: 'What is Midhack?'
-      text_1: 'MittMedia together with Mid Sweden University are hosting a 24 hour hackathon on November 14th - 15th for journalists, photojournalists, public relation officers, communications managers, graphic artists, computer scientists and engineers. There are no entry requirements, you do not need to be an expert!'
-      text_2: 'You and your team are competing to develop the best new solutions for the future of journalism and media technology. Representatives from MittMedia and Mid Sweden University will be present during the event, offering support and serving food and coffee. In the price pool is 10 000 SEK and a chance to do diploma work for MittMedia.'
+      text_0: 'MittMedia together with Mid Sweden University are hosting a 24 hour hackathon on November 14th - 15th for journalists, photojournalists, public relation officers, communications managers, graphic artists, computer scientists and engineers. There are no entry requirements, you do not need to be an expert!'
+      text_1: 'Midhack is organized with the aim to stimulate a cooperation that will inspire new ways to consume news.'
+      text_2: 'During 24 hours, you and your team are competing against other teams in the quest to win 10 000 kr and a chance to do diploma work for MittMedia. Your team will consist of students with varying area of study and everyone will contribute to the project with their expertise. What your team decides to create is up to the team members. The project goal can be to produce a new service, news material, a communication concept, the beginning of a diploma work or an application etc.'
+      subtitle_1: 'Good to know'
+      text_3: 'You will gain access to MittMedias entire article database, the Kan Du Lova? database and can use API:s from opendata.se. Additional data sources might become available and you can also work with data that you yourself have access to. You can either bring your own laptop or you can use the computer rooms at the university. If you and your team would get stuck in some way, there will be journalists, editors, UX developers and software developers available for counseling and guidance.'
+      title_place: 'Place'
+      place: 'Mid Sweden University, Sundsvall'
+      title_price: 'price money'
+      price: '10 000 kr'
+      title_date: 'date'
+      date: '14 - 15 November'
+      title_spots_left: 'spots left'
       tease: 'Are you up for it?'
       primary_action: 'Yes, sign me up for Midhack'
-      secondary_action: 'I want to read more'
+      secondary_action: 'Whats the programme like?'
       my_receipt: 'View my team'
       my_reservation: 'See my reservation'
       signup_friend: 'Sign up a friend'
+    programme:
+      title: 'The Programme'
+      heading: 'The Programme'
+      text: 'This is the general outline of how Midhack will proceed. More details will be provided on site.'
+      tease: 'Are you up for it?'
+      primary_action: 'Yes, sign me up for Midhack'
+      secondary_action: 'Whats the programme like?'
+      my_receipt: 'View my team'
+      my_reservation: 'See my reservation'
+      signup_friend: 'Sign up a friend'
+      programme_heading_1: Welcome
+      programme_heading_2: The hack kicks off
+      programme_heading_3: Coffee
+      programme_heading_4: Dinner
+      programme_heading_5: Breakfast
+      programme_heading_6: Work submittal deadline
+      programme_heading_7: Presentation of the work
+      programme_heading_8: Ceremony
+      programme_body_1: 'MittMedia will introduce the data from/for "Kan Du Lova". The Midhack Crew, the assessment criteria and the process for handing in your projects will be presented as well as the submitted teams.'
+      programme_body_2: 'Get hacking! You now have 24 hours until presentation.'
+      programme_body_3: 'Coffee and a hearty sandwich will be provided.'
+      programme_body_4: 'Dinner from Biteline will be provided.'
+      programme_body_5: 'Breakfast will be provided.'
+      programme_body_6: 'You now need to be done and ready to present your projects.'
+      programme_body_7: 'Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.'
+      programme_body_8: After the Jury have discussed and we've mingled, the winners will be anounced.
+    data:
+      title: 'Data Sources'
+      heading: 'Data Sources, Resources & Tools'
+      text_1: 'Below you will find a collection (unfortunately only available in Swedish) of really good data sources, articles, literature, tools and tutorials to help you in the field of data journalism.'
+      text_2: 'Click a heading to expand.'
+      headings:
+        examples: 'Examples'
+        tutorials: 'Tutorials'
+        literature: 'Course Literature'
+        articles: 'Articles'
+        sources: 'API and Data-sources'
+        tools: 'Data Tools'
+  onboarder:
     choose_education:
       title: 'Education'
       heading: 'What do you study?'
@@ -75,6 +131,7 @@ en:
         sbjug: 'Photojournalism'
         tinsg: 'Informatics with focus on systems development'
         tpvag: 'Software engineering'
+      back: 'Go back'
       year: 'Year %{year}'
     choose_competence:
       title: 'Expertise'
@@ -127,41 +184,6 @@ en:
         gd: 'Designer / Communicator'
         economics: 'Business developer'
         journalism: 'Journalist'
-    why:
-      title: 'Information'
-      heading: 'More info about Midhack'
-      text_1: 'Midhack is organized by MittMedia and Mid Sweden University, with the aim to stimulate a cooperation that will inspire new ways to consume news.'
-      text_2: 'During 24 hours, you and your team are competing against other teams in the quest to win 10 000 kr and a chance to do diploma work for MittMedia. Your team will consist of students with varying area of study and everyone will contribute to the project with their expertise. What your team decides to create is up to the team members. The project goal can be to produce a new service, news material, a communication concept, the beginning of a diploma work or an application etc.'
-      subtitle_1: 'Good to know'
-      text_3: 'You will gain access to MittMedias entire article database, the Kan Du Lova? database and can use API:s from opendata.se. Additional data sources might become available and you can also work with data that you yourself have access to. You can either bring your own laptop or you can use the computer rooms at the university. If you and your team would get stuck in some way, there will be journalists, editors, UX developers and software developers available for counseling and guidance.'
-      title_place: 'Place'
-      place: 'Mid Sweden University, Sundsvall'
-      title_price: 'price money'
-      price: '10 000 kr'
-      title_date: 'date'
-      date: '14 - 15 November'
-      title_spots_left: 'spots left'
-      subtitle_2: 'Program'
-      text_4: 'The plan for the weekend will be published here shortly.'
-      tease: 'Are you up for it?'
-      primary_action: 'Yes, sign me up for Midhack'
-      secondary_action: 'Go back'
-      programme_heading_1: Welcome
-      programme_heading_2: The hack kicks off
-      programme_heading_3: Coffee
-      programme_heading_4: Dinner
-      programme_heading_5: Breakfast
-      programme_heading_6: Work submittal deadline
-      programme_heading_7: Presentation of the work
-      programme_heading_8: Ceremony
-      programme_body_1: 'MittMedia will introduce the data from/for "Kan Du Lova". The Midhack Crew, the assessment criteria and the process for handing in your projects will be presented as well as the submitted teams.'
-      programme_body_2: 'Get hacking! You now have 24 hours until presentation.'
-      programme_body_3: 'Coffee and a hearty sandwich will be provided.'
-      programme_body_4: 'Dinner from Biteline will be provided.'
-      programme_body_5: 'Breakfast will be provided.'
-      programme_body_6: 'You now need to be done and ready to present your projects.'
-      programme_body_7: 'Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.'
-      programme_body_8: After the Jury have discussed and we've mingled, the winners will be anounced.
     unregistered:
       title: 'Deregistration completed'
       tip_friends: 'Hey! Don’t forget to tell your friends about Midhack.'

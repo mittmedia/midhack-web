@@ -46,37 +46,6 @@ class OnboarderController < ApplicationController
     :save_email
   ]
 
-  #####################
-  ### GENERIC ENDPOINTS
-  #####################
-
-  def index
-  end
-
-  def policy
-  end
-
-  def what
-    @signed_up = @human.signed_up
-    @on_waiting_list = @human.on_waitlist?
-  end
-
-  def why
-    @nr_spots_left = total_nr_of_spots_left
-    @signed_up = @human.signed_up
-    @on_waiting_list = @human.on_waitlist?
-  end
-
-  def total_nr_of_spots_left
-    spots_taken = Human.all.select(&:signed_up).count
-    Rails.configuration.midhack_total_nr_spots - spots_taken
-  end
-
-  def ical
-    file_path = Rails.root.join('public', 'downloads', 'invite.ics')
-    send_file file_path, type: 'text/x-vCalendar', filename: 'invite.ics'
-  end
-
   #######################
   ### EDUCATION ENDPOINTS
   #######################

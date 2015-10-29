@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  # resources :humen
 
+  #Onboarding:
   #0
-  root 'onboarder#index'
-  get 'signup', to: redirect('/choose_education')
-  #0.1
-  get 'policy', to: 'onboarder#policy', as: 'policy'
+  root 'information#index'
   #1
-  get 'what', to: 'onboarder#what', as: 'what'
+  get 'signup', to: redirect('/choose_education')
   #2
   get 'choose_education', to: 'onboarder#choose_education', as: 'choose_education'
   post 'save_education', to: 'onboarder#save_education', as: 'save_education'
@@ -33,17 +30,20 @@ Rails.application.routes.draw do
 
   post 'save_reservation_email', to: 'onboarder#save_reservation_email', as: 'save_reservation_email'
 
-
   #Unregister, quit => quitting => unregistered
   get 'quit(/:uuid)', to: 'onboarder#quit', as: 'quit'
   post 'quitting(/:uuid)', to: 'onboarder#quitting', as: 'quitting'
   get 'unregistered', to: 'onboarder#unregistered', as: 'unregistered'
 
-  get 'why', to: 'onboarder#why', as: 'why'
-  get 'programme', to: 'onboarder#why', as: 'programme'
-  get 'program', to: 'onboarder#why', as: 'program'
-  get 'programmet', to: 'onboarder#why', as: 'programmet'
-  get 'ical', to: 'onboarder#ical', as: 'ical'
+  #informational routes
+  get 'why', to: redirect('/what')
+  get 'what', to: 'information#what', as: 'what'
+  get 'policy', to: 'information#policy', as: 'policy'
+  get 'data', to: 'information#data', as: 'data'
+  get 'programme', to: 'information#programme', as: 'programme'
+  get 'program', to: 'information#programme', as: 'program'
+  get 'programmet', to: 'information#programme', as: 'programmet'
+  get 'ical', to: 'information#ical', as: 'ical'
 
   if ENV['RAILS_ENV'] == 'development'
     get 'admin', to: 'admin#index', as: 'admin'

@@ -2,7 +2,7 @@ class TeamMailer < ApplicationMailer
   def new_member_email(current_member, team_member_details, new_member)
     @new_member = new_member
     @team_member_details = team_member_details
-    @url = why_url
+    @url = what_url
     @unsubscribe_url = quit_url(uuid: @new_member.uuid)
     headers('X-SMTPAPI' => '{"category": "New Team Member"}')
     subject = t('.subject', member: @new_member.email)
