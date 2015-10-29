@@ -2,10 +2,16 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :set_human
-  before_action :set_locale
+  before_filter :set_human
+  before_filter :set_locale
+  before_filter :setup_vars
 
   private
+
+  def setup_vars
+    @signed_up = @human.signed_up
+    @on_waiting_list = @human.on_waitlist?
+  end
 
   def get_human(uuid)
     Human.find_by(uuid: uuid)
