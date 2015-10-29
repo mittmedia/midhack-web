@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get 'unregistered', to: 'onboarder#unregistered', as: 'unregistered'
 
   #informational routes
+  get 'why', to: redirect('/what')
   get 'what', to: 'information#what', as: 'what'
   get 'policy', to: 'information#policy', as: 'policy'
   get 'data', to: 'information#data', as: 'data'
