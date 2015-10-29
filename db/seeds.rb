@@ -124,9 +124,9 @@ tools = DataCategory.create({
   priority: 3
 })
 
-tools = DataCategory.create({
-  slug: 'tools',
-  priority: 3
+sources = DataCategory.create({
+  slug: 'sources',
+  priority: 4
 })
 
 literature = DataCategory.create({
@@ -251,6 +251,13 @@ DataEntry.create([
 
 DataEntry.create([
   {
+    url: 'https://docs.google.com/document/d/11MsE976669KxEzNfFh25we7LVoc8_DrDIcRQREBzGz4/edit',
+    heading: 'Get started with data journalism',
+    summary: 'Nils Mulvad och Helena Bengtsson har skapat en kortfattad introduktion som kan ses som en kortfattat beskriven red route för datajournalistik.',
+    priority: -1,
+    data_category: tutorials
+  },
+  {
     url: 'http://jplusplus.se/en-faktagranskningsmetod-for-datajournalistik/',
     heading: 'Faktagranskningsmetod — J++',
     summary: 'Metodik för att faktakontrollera datajournalistiska projekt.',
@@ -305,8 +312,16 @@ DataEntry.create([
     summary: 'En tutorial om att visualisera data på en karta av Lotta Homlström.',
     priority: 7,
     data_category: tutorials
+  },
+  {
+    url: 'http://gijn.org/2015/02/25/drilling-down-a-quick-guide-to-free-and-inexpensive-data-tools/',
+    heading: 'En snabbguide till gratis verktyg',
+    summary: 'Nils Mulvad har skrivit ihop en snabbguide till olika bra verktyg att använda inom datajournalistik.',
+    priority: 8,
+    data_category: tutorials
   }
 ])
+
 DataEntry.create([
   {
     url: 'https://support.google.com/fusiontables/answer/2571232',
@@ -395,15 +410,262 @@ DataEntry.create([
   {
     url: 'https://addons.mozilla.org/en-US/firefox/addon/downthemall/',
     heading: 'DownThemAll!',
-    summary: 'Extension till firefox som låter dig välja vilka delar av en hemsida du ska ladda ner',
+    summary: 'Extension till firefox som låter dig välja vilka delar av en hemsida du ska ladda ner.',
     priority: 12,
     data_category: tools
   },
   {
-    url: 'http://heinejoergensen.tumblr.com/post/100494714931/handout-dataskup-2014-dataseminar-i-norge ',
+    url: 'http://heinejoergensen.tumblr.com/post/100494714931/handout-dataskup-2014-dataseminar-i-norge',
     heading: 'Heine Jørgensens sammanställning',
     summary: 'En samling med massor av användbara verktyg.',
     priority: 13,
     data_category: tools
+  },
+  {
+    url: 'http://openrefine.org/download.html',
+    heading: 'Open Refine',
+    summary: 'Ladda ner google refine. Bra verktyg för att städa och strukturera smutsigt data.',
+    priority: 14,
+    data_category: tools
+  },
+  {
+    url: 'http://kb.tableau.com/articles/knowledgebase/addin-reshaping-data-excel',
+    heading: 'Tableau Excel Reshaping Add-in',
+    summary: 'Verktyg för att snygga till excel för export till Tableau (Endast till PC).',
+    priority: 15,
+    data_category: tools
+  },
+  {
+    url: 'https://www.silk.co',
+    heading: 'Silk',
+    summary: 'Nytt visualiseringsprogram som är responsivt för telefoner',
+    priority: 16,
+    data_category: tools
+  },
+  {
+    url: 'http://vis.occrp.org',
+    heading: 'VIS',
+    summary: 'Ett gratisprogram för visualisering av nätverk. Kan exporteras till Iframe, bygger på html5. Open source.',
+    priority: 17,
+    data_category: tools
+  },
+  {
+    url: 'http://graph.tips/',
+    heading: 'Sökmotor för facebook graph',
+    summary: 'Kolla innehåll på låsta Facebooksidor',
+    priority: 18,
+    data_category: tools
+  },
+  {
+    url: 'http://researchclinic.net',
+    heading: 'Research Clinic',
+    summary: 'Paul Myers samling av undersökande journalism, länkar och verktyg. Myers arbetar för BBC.',
+    priority: 19,
+    data_category: tools
+  },
+  {
+    url: 'http://www.jonloomer.com/2013/06/18/facebook-graph-search-business-examples/',
+    heading: 'Facebook Graph Search Tutorial',
+    summary: 'En genomgång av hur man kan kartlägga information om följare av en facebooksida.',
+    priority: 20,
+    data_category: tools
+  },
+  {
+    url: 'https://regex101.com/',
+    heading: 'Regex101.com — Bästa Regex-verktyget',
+    summary: 'Fungerar för pcre(php, perl), javascript och python',
+    priority: 21,
+    data_category: tools
+  },
+  {
+    url: 'http://rubular.com/',
+    heading: 'Rubular.com — Bästa Ruby-regex-verktyget',
+    summary: 'Fungerar för programmeringsspråket Rubys regex-motor',
+    priority: 22,
+    data_category: tools
+  },
+  {
+    url: 'http://www.regexplanet.com/advanced/java/index.html/',
+    heading: 'Regexplanet — Mest heltäckande regex-verktyget',
+    summary: 'Fungerar för Go, Haskell, Java, Javascript, .NET, Perl, PHP, Ruby, TCL, XRegExp. Dock inte bäst fungerande gränssnittet. Använd regex101 eller rubular om du kan.',
+    priority: 22,
+    data_category: tools
+  },
+  {
+    url: 'http://www.regexr.com/',
+    heading: 'Regexr — Alternativt Javascript-regex-verktyg',
+    summary: 'Bättre än regexplanet, men sämre än regex101. Stöder bara Javascript.',
+    priority: 23,
+    data_category: tools
+  },
+  {
+    url: 'https://www.email-format.com',
+    heading: 'Gissa E-postadressen',
+    summary: 'Kan hjälpa till när man behöver gissa en epostadress till en person inom en organisation.',
+    priority: 24,
+    data_category: tools
+  }
+])
+DataEntry.create([
+  {
+    url: 'http://apikatalogen.se/',
+    heading: 'Svenska APIKatalogen',
+    summary: 'Den svenska APIKatalogen med över 300 svenska API:er underhålls av Andreas Krohn, en API-junkie till utvecklare.',
+    priority: 0,
+    data_category: sources
+  },
+  {
+    url: 'http://www.sundsvall.se/psidata',
+    heading: 'PSI-Data Sundsvall',
+    summary: 'Sundsvalls kommuns Öppna data.',
+    priority: 1,
+    data_category: sources
+  },
+  {
+    url: 'http://scb.se/',
+    heading: 'Statistiska centralbyrån',
+    summary: 'Data från svenska myndigheter, tex befolkning, arbetsmarknad.',
+    priority: 2,
+    data_category: sources
+  },
+  {
+    url: 'http://kolada.se',
+    heading: 'Kolada',
+    summary: 'Statistik och data från kommuner och landsting. Mycket data om allt möjligt.',
+    priority: 3,
+    data_category: sources
+  },
+  {
+    url: 'https://open-data.europa.eu/sv/data',
+    heading: 'Open Data Europa',
+    summary: 'EU:s öppna data-samling',
+    priority: 4,
+    data_category: sources
+  },
+  {
+    url: 'https://www.geodata.se/',
+    heading: 'Geodata.se',
+    summary: 'Geografiska data, kartor, olika myndigheters data visualiserat geografiskt.',
+    priority: 5,
+    data_category: sources
+  },
+  {
+    url: 'https://www.openstreetmap.org/#map=5/51.500/-0.100',
+    heading: 'Open streetmap',
+    summary: 'Gratis tillgång till geografiska data i hela världen.',
+    priority: 6,
+    data_category: sources
+  },
+  {
+    url: 'http://bra.se/bra/brott-och-statistik.html',
+    heading: 'BRÅ',
+    summary: 'Brottsförebyggande rådet. Har tonvis med brottsstatistik.',
+    priority: 7,
+    data_category: sources
+  },
+  {
+    url: 'https://www.transportstyrelsen.se/sv/vagtrafik/statistik-och-register/STRADA-informationssystem-for-olyckor-skador/',
+    heading: 'Transportstyrelsen — Strada',
+    summary: 'Data om trafik och trafikolyckor i databasen Strada.',
+    priority: 8,
+    data_category: sources
+  },
+  {
+    url: 'http://data.naturvardsverket.se/',
+    heading: 'Naturvårdsverket',
+    summary: 'Miljödata, utsläpp, vattenkvalitet, mm.',
+    priority: 9,
+    data_category: sources
+  },
+  {
+    url: 'https://www.msb.se/sv/Produkter--tjanster/Oppna-data/',
+    heading: 'MSB',
+    summary: 'Myndigheten för samhällsskydd och beredskap. Om risker, kriser, skyddsrum, olyckor med mera.',
+    priority: 10,
+    data_category: sources
+  },
+  {
+    url: 'http://www.socialstyrelsen.se/statistik/statistikdatabas',
+    heading: 'Socialstyrelsens',
+    summary: 'Socialstyrelsens databaser över vården. Sjukdomar, dödsorsaker, läkemedel mm',
+    priority: 11,
+    data_category: sources
+  },
+  {
+    url: 'http://www.folkhalsomyndigheten.se/amnesomraden/statistik-och-undersokningar/folkhalsodata/',
+    heading: 'Folkhälsodata',
+    summary: 'Från Folkhälsomyndigheten finns det data om folkhälsan.',
+    priority: 12,
+    data_category: sources
+  },
+  {
+    url: 'http://www.svenskhandel.se/varningslistan',
+    heading: 'Varningslistan',
+    summary: 'Svensk handels varningslista på oseriösa företag',
+    priority: 13,
+    data_category: sources
+  },
+  {
+    url: 'http://data.riksdagen.se/',
+    heading: 'Riksdagen',
+    summary: 'Riksdagens öppna data. Voteringar, närvaro, och mycket mycket mer.',
+    priority: 14,
+    data_category: sources
+  },
+  {
+    url: 'http://comtrade.un.org/data/',
+    heading: 'Comtrade - Tulldata',
+    summary: 'Extremt användbar sajt med tulldata från hela världen. Även ett API. Bra för att lära sig scraping med API. Se även: https://docs.google.com/presentation/d/1F5t2JeG_nll9lIBn90nuCt5zyOqoK9gizACPvlDFfTE/edit#slide=id.g2f71b9221_0_0.',
+    priority: 15,
+    data_category: sources
+  },
+  {
+    url: 'http://comtrade.un.org/data/doc/api/',
+    heading: 'Comtrade - Tulldata API',
+    summary: 'API-versionen av ovanstående',
+    priority: 16,
+    data_category: sources
+  },
+  {
+    url: 'http://www.opengov.se/data/',
+    heading: 'Opengov',
+    summary: 'Svensk dataportal med stor mängd öppna myndighetsdata.',
+    priority: 17,
+    data_category: sources
+  },
+  {
+    url: 'https://sites.google.com/site/opendatashoresites/OPEN-DATA/OpenDataSources/week-10',
+    heading: 'Shoresite communications',
+    summary: 'Portal för många olika datakällor från myndigheter.',
+    priority: 18,
+    data_category: sources
+  },
+  {
+    url: 'https://opencorporates.com/',
+    heading: 'open corporates',
+    summary: 'En enorm databas över företag i hela världen. Med över 92 miljoner registrerade företag.',
+    priority: 19,
+    data_category: sources
+  },
+  {
+    url: 'http://e-tjanster.pts.se/internet/api',
+    heading: 'PTS Telefonnummer',
+    summary: 'Post och Telestyrelsens API för att kunna söka vilken operatör som använder ett visst telefonnummer.',
+    priority: 20,
+    data_category: sources
+  },
+  {
+    url: 'http://opendata.opennorth.se/',
+    heading: 'Norrbotten och Västerbotten',
+    summary: 'Öppna data om Norrbotten och Västerbotten.',
+    priority: 21,
+    data_category: sources
+  },
+  {
+    url: 'http://open.stockholm.se/oppna-data',
+    heading: 'Stockholm Stad',
+    summary: 'Öppna data om Stockholm Stad.',
+    priority: 22,
+    data_category: sources
   }
 ])
