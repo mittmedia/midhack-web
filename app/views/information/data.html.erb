@@ -1,4 +1,4 @@
-<% container_color('black')%>
+<% container_color('white')%>
 <% container_id('data')%>
 
 <center><h1><%= t('.heading') %></h1></center>
@@ -13,6 +13,13 @@
     <section class="data_section" style="display: none;">
     <% category.data_entry.each do |data_entry| %>
       <article class="data_entry">
+        <% if data_entry.image_path.present? %>
+          <a href="<%= data_entry.url %>">
+            <img class="data_entry_image"
+              src="<%= asset_path(data_entry.image_path) %>"
+              alt="Identifierande bild för <%= data_entry.heading %>" />
+          </a>
+        <% end %>
         <h4 class="data_entry_header"><%= data_entry.heading %></h4>
         <p class="data_entry_summary">
           <%= data_entry.summary %><br>

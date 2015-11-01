@@ -17,6 +17,12 @@
   .data_entry {
     margin-bottom: rem-calc(20/2);
   }
+  .data_entry_image {
+    display: block;
+    margin: 0.3em auto;
+    margin-top: 3em;
+    width: 100%;
+  }
   .data_entry_header {
     line-height: 100%;
     margin: 0;

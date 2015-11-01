@@ -139,11 +139,13 @@ tools = DataCategory.create({
   priority: 6
 })
 
+
 DataEntry.create([
   {
     url: 'http://www.kandulova.se/',
     heading: 'Kan Du Lova?',
-    summary: 'Mittmedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiken inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.',
+    summary: "Mittmedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiken inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.",
+    image_path: 'sources/kandulova.png',
     priority: -1,
     data_category: examples
   },
@@ -151,6 +153,7 @@ DataEntry.create([
     url: 'https://goo.gl/9OUUJb',
     heading: 'Politiskt spreadsheet',
     summary: 'Pejls alla riksdagskandidater 2014-08-27.',
+    image_path: 'sources/pejl_riksdagskandidater.png',
     priority: 0,
     data_category: examples
   },
@@ -158,6 +161,7 @@ DataEntry.create([
     url: 'https://github.com/LCHansson/Kvartersregeringen',
     heading: 'Kvartersregeringen',
     summary: 'Det här är resultatet av laget Drop Tables arbete under hackathonet Hack for Sweden den 15-16 mars 2014. ”Kvartersregeringen är ett roligt och engagerande sätt att visualisera valdata. I stället för abstrakta procentsatser och pajdiagram fokuserar vi på något som alla kan ta till sig: vilka personer skulle sitta i regeringen om just ditt kvarter fått bestämma” — Love Hansson, Jens Finnäs & Jonathan Hise Kaldma.',
+    image_path: 'sources/kvartersregeringen.png',
     priority: 0,
     data_category: examples
   },
@@ -165,6 +169,7 @@ DataEntry.create([
     url: 'http://china.fathom.info/',
     heading: 'Connected China',
     summary: 'Nyhetsbyrån Reuters fantastiska databas-tjänst om Kina.',
+    image_path: 'sources/china.png',
     priority: 2,
     data_category: examples
   },
@@ -172,6 +177,7 @@ DataEntry.create([
     url: 'http://projects.latimes.com/wardead/',
     heading: 'Californias War Dead',
     summary: 'LA Times kör script på dödsrunor och gör en nyhetstjänst om alla som dör i krig.',
+    image_path: 'sources/cali_war_dead.jpg',
     priority: 3,
     data_category: examples
   },
@@ -179,6 +185,7 @@ DataEntry.create([
     url: 'http://homicide.latimes.com/',
     heading: 'The homicide report',
     summary: 'LA Times kör script på coroners reports (rättsläkarens rapport) som är offentlig handling. Allt omvandlas till databas med geografisk angivelse, mordvapen mm. Dessutom gör ett script en kort notis om varje mord till webben.',
+    image_path: 'sources/la_criminal.jpg',
     priority: 4,
     data_category: examples
   },
@@ -186,6 +193,7 @@ DataEntry.create([
     url: 'http://www.themigrantsfiles.com/',
     heading: 'The migrant files',
     summary: 'Journalister från 15 länder hjälps åt att sammanställa data om flyktingar som dör på väg till tryggheten i Europa. Allt sammanställt i en databas och visualiserat.',
+    image_path: 'sources/fortess_europe.jpg',
     priority: 5,
     data_category: examples
   },
@@ -193,6 +201,7 @@ DataEntry.create([
     url: 'http://journalisterna.mediestudier.se/',
     heading: 'Där bor journalisterna',
     summary: 'Institutet för mediestudier kartlade var svenska journalister bor. Journalism++ skapade en kartbaserad tjänst för detta.',
+    image_path: 'sources/medieinstitutet.png',
     priority: 6,
     data_category: examples
   },
@@ -200,6 +209,7 @@ DataEntry.create([
     url: 'http://dataelixir.com/',
     heading: 'Data Elixir',
     summary: 'Samlar god datajournalistik med massor av exempel.',
+    image_path: 'sources/dataelixir.png',
     priority: 7,
     data_category: examples
   },
@@ -207,6 +217,7 @@ DataEntry.create([
     url: 'http://www.postandcourier.com/tilldeath/partone.html',
     heading: 'Post and Courier — Till death do us part',
     summary: 'Pullizervinnande reportage presenterat på ett väldigt spännande sätt.',
+    image_path: 'sources/post_and_courier.png',
     priority: 8,
     data_category: examples
   },
@@ -214,6 +225,7 @@ DataEntry.create([
     url: 'http://www.icij.org/',
     heading: 'International consortium of investigative journalism',
     summary: 'Fenomenal organisation för cross border collaboration.',
+    image_path: 'sources/icij.png',
     priority: 9,
     data_category: examples
   },
@@ -221,6 +233,7 @@ DataEntry.create([
     url: 'http://www.generatione.eu/',
     heading: 'Generation E',
     summary: 'Crowdsourcat cross border projekt om unga migranter i Europa. Bra exempel till delen om inhämtning av data.',
+    image_path: 'sources/gen_e.png',
     priority: 10,
     data_category: examples
   },
@@ -228,6 +241,7 @@ DataEntry.create([
     url: 'http://projects.icij.org/swiss-account/ ',
     heading: '#swissleaks',
     summary: 'ICIJ #swissleaks visualisering. Läcka från bank avslöjade skattesmitare i hela världen.',
+    image_path: 'sources/swissleaks.png',
     priority: 11,
     data_category: examples
   },
@@ -235,6 +249,7 @@ DataEntry.create([
     url: 'http://geography.oii.ox.ac.uk/',
     heading: 'Information Geographies',
     summary: 'Exempel på geografisk visualisering och mycket mer.',
+    image_path: 'sources/infogeo.jpg',
     priority: 12,
     data_category: examples
   },
@@ -242,6 +257,7 @@ DataEntry.create([
     url: 'http://www.usatoday.com/longform/news/nation/2014/03/11/fugitives-next-door/6262719/',
     heading: 'The ones that get away',
     summary: 'USA Today: Datagräv.',
+    image_path: 'sources/the_one_that_get_away.jpg',
     priority: 13,
     data_category: examples
   },
@@ -249,6 +265,7 @@ DataEntry.create([
     url: 'http://www.lararnasnyheter.se/lararnas-tidning/2015/05/20/lararnas-behorighet-amne-din-kommun',
     heading: 'Lärarbehörighetskartan',
     summary: 'Lärarbehörighet per ämne och kommun markerat på en Sverigekarta. Exempel på kommunvisualisering, open street map.',
+    image_path: 'sources/lararkompetens.jpg',
     priority: 14,
     data_category: examples
   }
