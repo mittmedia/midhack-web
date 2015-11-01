@@ -14,7 +14,7 @@
     <% category.data_entry.each do |data_entry| %>
       <article class="data_entry">
         <% if data_entry.image_path.present? %>
-          <a href="<%= data_entry.url %>">
+          <a href="<%= data_entry.url %>" target="_blank">
             <img class="data_entry_image"
               src="<%= asset_path(data_entry.image_path) %>"
               alt="Identifierande bild för <%= data_entry.heading %>" />
@@ -23,7 +23,7 @@
         <h4 class="data_entry_header"><%= data_entry.heading %></h4>
         <p class="data_entry_summary">
           <%= data_entry.summary %><br>
-          <a href="<%= data_entry.url %>"><%= data_entry.url %></a>
+          <a href="<%= data_entry.url %>" target="_blank"><%= data_entry.url %></a>
         </p>
       </article>
     <% end %>

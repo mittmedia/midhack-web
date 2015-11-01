@@ -1,5 +1,44 @@
 #data_header,
+#kandulova_header,
+#content_service_header {
+  .main_menu li a.menu_data {
+    background-color: $black;
+    &:hover {
+      background-color: lighten($black, 20%);
+    }
+  }
+}
+#programme_header {
+  .main_menu li a.menu_programme {
+    background-color: $black;
+    &:hover {
+      background-color: lighten($black, 20%);
+    }
+  }
+}
+#policy_header,
+#what_header {
+  .main_menu li a.menu_what {
+    background-color: $black;
+    &:hover {
+      background-color: lighten($black, 20%);
+    }
+  }
+}
+
+#receipt_header {
+  .main_menu li a.menu_receipt {
+    background-color: $black;
+    &:hover {
+      background-color: lighten($black, 20%);
+    }
+  }
+}
+
+#data_header,
 #programme_header,
+#kandulova_header,
+#content_service_header,
 #policy_header,
 #what_header,
 #choose_education_header,
@@ -27,6 +66,8 @@
 //Basic header
 #data_header,
 #programme_header,
+#kandulova_header,
+#content_service_header,
 #policy_header,
 #what_header,
 #receipt_header,

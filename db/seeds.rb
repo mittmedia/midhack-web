@@ -6,109 +6,119 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Team.create([
-#   { name: 'The Bulletin' },
-#   { name: 'The Courier' },
-#   { name: 'The Gazette' },
-#   { name: 'The Journal' },
-#   { name: 'The Post' },
-#   { name: 'The Mirror' },
-#   { name: 'The Star' },
-#   { name: 'The Tribune' }
-# ])
+Team.create([
+  { name: 'The Bulletin' },
+  { name: 'The Courier' },
+  { name: 'The Gazette' },
+  { name: 'The Journal' },
+  { name: 'The Post' },
+  { name: 'The Mirror' },
+  { name: 'The Star' },
+  { name: 'The Tribune' }
+])
 
-# Team.create([
-#   { name: 'The Comet' },
-#   { name: 'The Globe' }
-# ])
+Team.create([
+  { name: 'The Comet' },
+  { name: 'The Globe' }
+])
 
-# Course.create({
-#   code: 'tdtea',
-#   points: 300,
-#   name: 'Civ.ing. datateknik'
-# })
-# Course.create({
-#   code: 'tinda',
-#   points: 300,
-#   name: 'Civ.ing. industriell ekonomi'
-# })
-# Course.create({
-#   code: 'tdatg',
-#   points: 180,
-#   name: 'Datateknik'
-# })
-# Course.create({
-#   code: 'tandg',
-#   points: 120,
-#   name: 'Mobila applikationer och nätverkstjänster för Android'
-# })
+Course.create({
+  code: 'tdtea',
+  points: 300,
+  name: 'Civ.ing. datateknik'
+})
+Course.create({
+  code: 'tinda',
+  points: 300,
+  name: 'Civ.ing. industriell ekonomi'
+})
+Course.create({
+  code: 'tdatg',
+  points: 180,
+  name: 'Datateknik'
+})
+Course.create({
+  code: 'tandg',
+  points: 120,
+  name: 'Mobila applikationer och nätverkstjänster för Android'
+})
 
+Course.create({
+  code: 'sinpg',
+  points: 180,
+  name: 'Informations- och PR-programmet'
+})
+Course.create({
+  code: 'sjoug',
+  points: 180,
+  name: 'Journalistprogrammet'
+})
+Course.create({
+  code: 'sbjug',
+  points: 180,
+  name: 'Bildjournalistprogrammet'
+})
 # Course.create({
-#   code: 'sinpg',
-#   points: 180,
-#   name: 'Informations- och PR-programmet'
-# })
-# Course.create({
-#   code: 'sjoug',
-#   points: 180,
-#   name: 'Journalistprogrammet'
-# })
-# Course.create({
-#   code: 'sbjug',
-#   points: 180,
-#   name: 'Bildjournalistprogrammet'
-# })
-# # Course.create({
-# #   code: 'tgdkg',
-# #   points: 180,
-# #   name: 'Grafisk design och kommunikation'
-# # })
-# Course.create({
-#   code: 'tgdog',
+#   code: 'tgdkg',
 #   points: 180,
 #   name: 'Grafisk design och kommunikation'
 # })
+Course.create({
+  code: 'tgdog',
+  points: 180,
+  name: 'Grafisk design och kommunikation'
+})
 
-# Course.create({
-#   code: 'tnätg',
-#   points: 120,
-#   name: 'Nätverksdrift'
-# })
-# Course.create({
-#   code: 'tweug',
-#   points: 120,
-#   name: 'Webbutveckling'
-# })
+Course.create({
+  code: 'tnätg',
+  points: 120,
+  name: 'Nätverksdrift'
+})
+Course.create({
+  code: 'tweug',
+  points: 120,
+  name: 'Webbutveckling'
+})
 
-# Course.create({
-#   code: 'tinsg',
-#   points: 180,
-#   name: 'Informatik med inriktning systemutveckling'
-# })
+Course.create({
+  code: 'tinsg',
+  points: 180,
+  name: 'Informatik med inriktning systemutveckling'
+})
 
-# Course.create({
-#   code: 'tpvag',
-#   points: 180,
-#   name: 'Programvaruteknik'
-# })
+Course.create({
+  code: 'tpvag',
+  points: 180,
+  name: 'Programvaruteknik'
+})
 
-# Competence.create({
-#   name: "it",
-#   max_count: 4
-# })
-# Competence.create({
-#   name: "gd",
-#   max_count: 2
-# })
-# Competence.create({
-#   name: "economics",
-#   max_count: 2
-# })
-# Competence.create({
-#   name: "journalism",
-#   max_count: 2
-# })
+Course.create({
+  code: 'other',
+  points: 300,
+  name: 'Annan utbildning'
+})
 
+Competence.create({
+  name: "it",
+  max_count: 4
+})
+Competence.create({
+  name: "gd",
+  max_count: 2
+})
+Competence.create({
+  name: "economics",
+  max_count: 2
+})
+Competence.create({
+  name: "journalism",
+  max_count: 2
+})
+
+sources = DataCategory.create({
+  slug: 'sources',
+  priority: 0
+})
 examples = DataCategory.create({
   slug: 'examples',
   priority: 1
@@ -128,23 +138,17 @@ articles = DataCategory.create({
   slug: 'articles',
   priority: 4
 })
-
-sources = DataCategory.create({
-  slug: 'sources',
-  priority: 5
-})
-
 tools = DataCategory.create({
   slug: 'tools',
-  priority: 6
+  priority: 5
 })
 
 
 DataEntry.create([
   {
-    url: 'http://www.kandulova.se/',
+    url: '/kandulova',
     heading: 'Kan Du Lova?',
-    summary: "Mittmedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiken inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.",
+    summary: "MittMedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiker inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.",
     image_path: 'sources/kandulova.png',
     priority: -1,
     data_category: examples
@@ -529,6 +533,22 @@ DataEntry.create([
   }
 ])
 DataEntry.create([
+  {
+    url: '/kandulova',
+    heading: 'Kan Du Lova?',
+    summary: 'MittMedia och J++ skapade en tjänst där väljare kunde ställa frågor till politiker inför valet 2014. Datat som genererades användes sedan som underlag för journalistik, och löftena kan utvärderas journalistiskt i efterhand.',
+    image_path: 'sources/kandulova.png',
+    priority: -2,
+    data_category: sources
+  },
+  {
+    url: '/artikeldatabasen',
+    heading: 'MittMedias artikeldatabas',
+    summary: 'Deltagare i Midhack kommer att få tillgång till att slå på alla artiklar inom MittMedias artiklar från digitaliseringens början. Ni kommer få tillgång till en personlig API-nyckel för att göra era slagningar live mot våra system.',
+    image_path: 'sources/alfwar.jpg',
+    priority: -1,
+    data_category: sources
+  },
   {
     url: 'http://apikatalogen.se/',
     heading: 'Svenska APIKatalogen',

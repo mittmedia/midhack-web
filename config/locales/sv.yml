@@ -100,7 +100,18 @@ sv:
       programme_body_5: 'Frukost kommer att tillhandahållas.'
       programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
       programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
-      programme_body_8: 'Efter juryn har konfererat och vi har minglat, kommer vinnarna att koras.'
+      programme_body_8: 'Efter juryn har konfererat och lite mingel, kommer vinnarna att koras.'
+    kandulova:
+      title: '”Kan Du Lova?”-data'
+      heading: 'Snart kommer ”Kan Du Lova?”-datan!'
+      logo: 'Kan Du Lova?'
+      text_1: 'Här kommer ”Kan Du Lova?”-datan snart presenteras, tillsammans med hur du använder den. För att få en uppfattning om strukturen kan du besöka %{overview}. Om du vill kika på frågor och svar i sin naturliga miljö kan du besöka %{kandulovasiten}.'
+      overview: 'dataöversikten'
+      kandulovasiten: '”Kan Du Lova?”-sajten'
+    content_service:
+      title: 'Artikeldatabasen'
+      heading: 'MittMedias artikeldatabas landar här'
+      text_1: 'Inom kort kommer ni ha tillgång till att slå på alla artiklar inom MittMedias artiklar från digitaliseringens början. Ni kommer få tillgång till en personlig API-nyckel för att göra era slagningar live mot våra system.'
     data:
       title: 'Datakällor'
       heading: 'Datakällor, Resurser & Verktyg'
@@ -131,6 +142,7 @@ sv:
         sbjug: 'Bildjournalistprogrammet'
         tinsg: 'Informatik med inriktning systemutveckling'
         tpvag: 'Programvaruteknik'
+        other: 'Annan utbildning'
       back: 'Tillbaka'
       year: 'År %{year}'
     choose_competence:

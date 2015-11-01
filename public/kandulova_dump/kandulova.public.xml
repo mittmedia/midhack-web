@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="kandulova" schema="public" type="PostgreSQL - 9.4.4">
+   <tables>
+      <table name="livefyre_comment_counts" numRows="13605" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('livefyre_comment_counts_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="count" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="commentable_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="commentable_type" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="4" name="last_check" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="5" name="last_change" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="7" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="livefyre_comment_counts_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="commentable" unique="true">
+            <column ascending="true" name="commentable_id"/>
+            <column ascending="true" name="commentable_type"/>
+         </index>
+      </table>
+      <table name="municipalities" numRows="42" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('municipalities_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="municipality_id" foreignKey="municipalities_news_sites_municipality_id_fkey" implied="false" onDeleteCascade="false" table="municipalities_news_sites"/>
+            <child column="municipality_id" foreignKey="municipalities_users_municipality_id_fkey" implied="false" onDeleteCascade="false" table="municipalities_users"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="slug" nullable="false" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="municipalities_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_municipalities_on_name" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+         <index name="index_municipalities_on_slug" unique="true">
+            <column ascending="true" name="slug"/>
+         </index>
+      </table>
+      <table name="municipalities_news_sites" numRows="76" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="news_site_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="municipalities_news_sites_news_site_id_fkey" implied="false" onDeleteCascade="false" table="news_sites"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="municipality_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="municipalities_news_sites_municipality_id_fkey" implied="false" onDeleteCascade="false" table="municipalities"/>
+         </column>
+         <index name="index_municipalities_news_sites_on_municipality_id" unique="false">
+            <column ascending="true" name="municipality_id"/>
+         </index>
+         <index name="index_municipalities_news_sites_on_news_site_id" unique="false">
+            <column ascending="true" name="news_site_id"/>
+         </index>
+      </table>
+      <table name="municipalities_users" numRows="367" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="municipality_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="municipalities_users_municipality_id_fkey" implied="false" onDeleteCascade="false" table="municipalities"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="municipalities_users_user_id_fkey" implied="false" onDeleteCascade="false" table="users"/>
+         </column>
+         <index name="index_municipalities_users_on_municipality_id" unique="false">
+            <column ascending="true" name="municipality_id"/>
+         </index>
+         <index name="index_municipalities_users_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="index_municipalities_users_on_user_id_and_municipality_id" unique="true">
+            <column ascending="true" name="user_id"/>
+            <column ascending="true" name="municipality_id"/>
+         </index>
+      </table>
+      <table name="news_sites" numRows="10" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('news_sites_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="news_site_id" foreignKey="municipalities_news_sites_news_site_id_fkey" implied="false" onDeleteCascade="false" table="municipalities_news_sites"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="site_id" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="news_sites_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_news_sites_on_site_id" unique="true">
+            <column ascending="true" name="site_id"/>
+         </index>
+      </table>
+      <table name="news_sites_users" numRows="17" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('news_sites_users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="news_site_id" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="news_sites_users_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_news_sites_users_on_news_site_id" unique="false">
+            <column ascending="true" name="news_site_id"/>
+         </index>
+         <index name="index_news_sites_users_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="parties" numRows="35" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('parties_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="party_id" foreignKey="responses_party_id_fkey" implied="false" onDeleteCascade="false" table="responses"/>
+            <child column="party_id" foreignKey="party_relation" implied="false" onDeleteCascade="false" table="users"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="color" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="short" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="4" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="5" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="parties_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="pg_stat_statements" numRows="0" remarks="" schema="public" type="VIEW"/>
+      <table name="questions" numRows="2534" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('questions_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="question_id" foreignKey="responses_question_id_fkey" implied="false" onDeleteCascade="false" table="responses"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="user_email" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="user_name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="state" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="question" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="5" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="7" name="municipality_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="8" name="user_location" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="source_base_uri" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="10" name="responses_count" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="promises_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_questions_on_municipality_id" unique="false">
+            <column ascending="true" name="municipality_id"/>
+         </index>
+      </table>
+      <table name="responses" numRows="13515" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('responses_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="2" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="question_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="responses_question_id_fkey" implied="false" onDeleteCascade="false" table="questions"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="promise" nullable="false" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="motivation" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="responder_name" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="responder_title" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="uuid" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="party_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="responses_party_id_fkey" implied="false" onDeleteCascade="false" table="parties"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="responses_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_responses_on_party_id" unique="false">
+            <column ascending="true" name="party_id"/>
+         </index>
+         <index name="index_responses_on_party_id_and_question_id" unique="true">
+            <column ascending="true" name="party_id"/>
+            <column ascending="true" name="question_id"/>
+         </index>
+         <index name="index_responses_on_question_id" unique="false">
+            <column ascending="true" name="question_id"/>
+         </index>
+         <index name="index_responses_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="schema_migrations" numRows="34" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="version" nullable="false" remarks="" size="255" type="varchar"/>
+         <index name="unique_schema_migrations" unique="true">
+            <column ascending="true" name="version"/>
+         </index>
+      </table>
+      <table name="users" numRows="373" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="user_id" foreignKey="municipalities_users_user_id_fkey" implied="false" onDeleteCascade="false" table="municipalities_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="''::character varying" digits="0" id="1" name="email" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="''::character varying" digits="0" id="2" name="encrypted_password" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="reset_password_token" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="4" name="reset_password_sent_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="5" name="remember_created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="6" name="sign_in_count" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="7" name="current_sign_in_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="8" name="last_sign_in_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="9" name="current_sign_in_ip" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="last_sign_in_ip" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="11" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="12" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="13" name="type" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="14" name="name" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="15" name="party_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="party_relation" implied="false" onDeleteCascade="false" table="parties"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="16" name="admin" nullable="false" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="users_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_users_on_email" unique="true">
+            <column ascending="true" name="email"/>
+         </index>
+         <index name="index_users_on_party_id" unique="false">
+            <column ascending="true" name="party_id"/>
+         </index>
+         <index name="index_users_on_reset_password_token" unique="true">
+            <column ascending="true" name="reset_password_token"/>
+         </index>
+      </table>
+   </tables>
+</database>

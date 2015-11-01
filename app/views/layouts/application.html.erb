@@ -57,16 +57,16 @@
             </div>
 
             <nav class="main_menu"><ul>
-                <li><%= link_to t('menu.what'), what_path %></li>
-                <li><%= link_to t('menu.programme'), programme_path %></li>
-                <li><%= link_to t('menu.data'), data_path %></li>
+                <li><%= link_to t('menu.what'), what_path, class: 'menu_what' %></li>
+                <li><%= link_to t('menu.programme'), programme_path, class: 'menu_programme' %></li>
+                <li><%= link_to t('menu.data'), data_path, class: 'menu_data' %></li>
                 <li>
                     <% if @signed_up %>
-                      <%= link_to t('menu.my_receipt'), receipt_path %><br>
+                      <%= link_to t('menu.my_receipt'), receipt_path, class: 'menu_receipt' %><br>
                     <% elsif @on_waiting_list %>
-                      <%= link_to t('menu.my_reservation'), reservation_receipt_path %><br>
+                      <%= link_to t('menu.my_reservation'), reservation_receipt_path, class: 'menu_receipt' %><br>
                     <% else %>
-                      <%= link_to t('menu.register'), choose_education_path %>
+                      <%= link_to t('menu.register'), choose_education_path, class: 'menu_receipt' %>
                     <% end %>
                 </li>
             </ul></nav>
