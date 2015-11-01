@@ -1,0 +1,9 @@
+<% container_color('white')%>
+<% container_id('kandulova')%>
+
+<img src="<%= asset_path('kandulova.png') %>" alt="<%= t('.logo') %>"
+  class="main_image kandulova_logo"/>
+<h1><%= t('.heading') %></h1>
+<% overview = link_to t('.overview'), '/kandulova_dump/overview.html', target: '_blank' %>
+<% site = link_to t('.kandulovasiten'), 'http://www.kandulova.se', target: '_blank' %>
+<p><%= raw t('.text_1', overview: overview, kandulovasiten: site) %></p>

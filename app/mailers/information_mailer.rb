@@ -17,4 +17,19 @@ class InformationMailer < ApplicationMailer
       mail(to: human.email, subject: t('.subject'))
     end
   end
+
+  def data(human)
+    @receipt_url = receipt_url(uuid: human.uuid)
+    @unsubscribe_url = quit_url(uuid: human.uuid)
+    @programme_url = programme_url(uuid: human.uuid, anchor: "programme")
+    @data_url = data_url(uuid: human.uuid)
+    @facebook_url = 'https://www.facebook.com/groups/midhack/'
+
+    # Sendgrid Categorization
+    headers('X-SMTPAPI' => '{"category": "Data released"}')
+    human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
+    I18n.with_locale(human.locale) do
+      mail(to: human.email, subject: t('.subject'))
+    end
+  end
 end

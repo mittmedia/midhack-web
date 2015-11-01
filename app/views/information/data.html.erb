@@ -1,0 +1,31 @@
+<% container_color('white')%>
+<% container_id('data')%>
+
+<center><h1><%= t('.heading') %></h1></center>
+<p><%= t('.text_1') %></p>
+<p><%= t('.text_2') %></p>
+<% @data_categories.each do |category| %>
+    <h2 class="data_section_header">
+      <%= t(".headings.#{category.slug}") %>
+      <span class="downArrow">▼</span>
+      <span class="upArrow" style="display: none;">▲</span>
+    </h2>
+    <section class="data_section" style="display: none;">
+    <% category.data_entry.each do |data_entry| %>
+      <article class="data_entry">
+        <% if data_entry.image_path.present? %>
+          <a href="<%= data_entry.url %>" target="_blank">
+            <img class="data_entry_image"
+              src="<%= asset_path(data_entry.image_path) %>"
+              alt="Identifierande bild för <%= data_entry.heading %>" />
+          </a>
+        <% end %>
+        <h4 class="data_entry_header"><%= data_entry.heading %></h4>
+        <p class="data_entry_summary">
+          <%= data_entry.summary %><br>
+          <a href="<%= data_entry.url %>" target="_blank"><%= data_entry.url %></a>
+        </p>
+      </article>
+    <% end %>
+  </section>
+<% end %>

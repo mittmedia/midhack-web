@@ -6,3 +6,4 @@
 //= require modules/labeled_input.js
 //= require modules/btn_selectable.js
 //= require pages/choose_education.js
+//= require pages/data.js
