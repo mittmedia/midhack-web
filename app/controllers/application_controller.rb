@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
     cookies[:uuid] = { value: @human.uuid, expires: 1.year.from_now }
   end
 
+  def uuid_param
+    params.permit("uuid")["uuid"]
+  end
+
   ############################
   ### LOCALE ENDPOINTS
   ############################
