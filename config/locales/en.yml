@@ -278,6 +278,8 @@ en:
   information_mailer:
     programme:
       subject: '[Midhack] Programme released!'
+    data:
+      subject: '[Midhack] Data Sources for Midhack 2015'
   admin:
     styles:
       title: 'Style guide'
