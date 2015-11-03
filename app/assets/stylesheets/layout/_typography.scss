@@ -30,6 +30,11 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 a {
   @include transition();
   text-decoration: none;
