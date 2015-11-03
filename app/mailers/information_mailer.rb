@@ -24,6 +24,8 @@ class InformationMailer < ApplicationMailer
     @programme_url = programme_url(uuid: human.uuid, anchor: "programme")
     @data_url = data_url(uuid: human.uuid)
     @facebook_url = 'https://www.facebook.com/groups/midhack/'
+    @kandulova_url = kandulova_url(uuid: human.uuid)
+    @overviewnews_url = 'http://overviewnews.com/'
 
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Data released"}')
