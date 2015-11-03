@@ -96,7 +96,6 @@ sv:
         subsubtitle_6: 'Något att rapportera?'
         text_6: 'Om du känner att något av ovanstående inte respekteras på Midhack, kontakta då omgående Teresia Edling, projekthandläggare, på nummer 010-1428304. Eller maila %{email} när som helst under evenemanget. Vi hoppas att alla deltagare kommer att respektera dessa förhållningsregler och att alla kommer att känna sig trygga och ha riktigt roligt under evenemanget.'
         email: 'teresia.edling@miun.se'
-        subject: 'Midhack - Code of Conduct'
         text_7: 'GLHF, happy hacking!'
         text_8: '/Midhack crew'
     programme:
