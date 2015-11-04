@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <database name="kandulova" schema="public" type="PostgreSQL - 9.4.4">
    <tables>
-      <table name="livefyre_comment_counts" numRows="13605" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('livefyre_comment_counts_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
-         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="count" nullable="false" remarks="" size="10" type="int4"/>
-         <column autoUpdated="false" digits="0" id="2" name="commentable_id" nullable="true" remarks="" size="10" type="int4"/>
-         <column autoUpdated="false" digits="0" id="3" name="commentable_type" nullable="true" remarks="" size="255" type="varchar"/>
-         <column autoUpdated="false" digits="6" id="4" name="last_check" nullable="true" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" digits="6" id="5" name="last_change" nullable="true" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" digits="6" id="6" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" digits="6" id="7" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="livefyre_comment_counts_pkey" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-         <index name="commentable" unique="true">
-            <column ascending="true" name="commentable_id"/>
-            <column ascending="true" name="commentable_type"/>
-         </index>
-      </table>
       <table name="municipalities" numRows="42" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('municipalities_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="municipality_id" foreignKey="municipalities_news_sites_municipality_id_fkey" implied="false" onDeleteCascade="false" table="municipalities_news_sites"/>
@@ -172,12 +154,6 @@
          </index>
          <index name="index_responses_on_user_id" unique="false">
             <column ascending="true" name="user_id"/>
-         </index>
-      </table>
-      <table name="schema_migrations" numRows="34" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="false" digits="0" id="0" name="version" nullable="false" remarks="" size="255" type="varchar"/>
-         <index name="unique_schema_migrations" unique="true">
-            <column ascending="true" name="version"/>
          </index>
       </table>
       <table name="users" numRows="373" remarks="" schema="public" type="TABLE">

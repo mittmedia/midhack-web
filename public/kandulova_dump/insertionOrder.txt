@@ -6,6 +6,4 @@ users
 municipalities_news_sites
 municipalities_users
 responses
-livefyre_comment_counts
 news_sites_users
-schema_migrations
