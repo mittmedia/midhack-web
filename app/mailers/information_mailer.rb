@@ -25,7 +25,7 @@ class InformationMailer < ApplicationMailer
     @data_url = data_url(uuid: human.uuid)
     @facebook_url = 'https://www.facebook.com/groups/midhack/'
     @kandulova_url = kandulova_url(uuid: human.uuid)
-    @kandulova_data_url = 'https://mm-midhack-datadump.herokuapp.com/dumps/kandulova.2015-11-04.zip'
+    @kandulova_data_url = Rails.configuration.kandulova_data_url
     @overviewnews_url = 'http://overviewnews.com/'
 
     # Sendgrid Categorization
