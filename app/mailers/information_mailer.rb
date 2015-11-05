@@ -35,4 +35,20 @@ class InformationMailer < ApplicationMailer
       mail(to: human.email, subject: t('.subject'))
     end
   end
+
+  def final_info(human)
+    @unsubscribe_url = quit_url(uuid: human.uuid)
+    @programme_url = programme_url(uuid: human.uuid, anchor: "programme")
+    @facebook_url = 'https://www.facebook.com/groups/midhack/'
+    @special_diet_form_url = 'http://goo.gl/forms/tPrlXkVkGo'
+    @overviewnews_url = 'http://overviewnews.com/'
+    @code_of_conduct_url = what_url(uuid: human.uuid, anchor: "code_of_conduct")
+
+    # Sendgrid Categorization
+    headers('X-SMTPAPI' => '{"category": "Final info"}')
+    human.locale = Rails.configuration.i18n.default_locale if human.locale.blank?
+    I18n.with_locale(human.locale) do
+      mail(to: human.email, subject: t('.subject'))
+    end
+  end
 end

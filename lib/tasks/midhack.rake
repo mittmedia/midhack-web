@@ -35,4 +35,14 @@ namespace :midhack do
       InformationMailer.data(@h).deliver_later
     end
   end
+  desc "Sends out the final information and special food requirements form"
+  task final_info_email: :environment do
+    humans = Human.where(signed_up: true)
+    humans.to_a.push(Human.new(email: 'crew@midhack.se', locale: 'en'))
+    humans.to_a.push(Human.new(email: 'dmu@mittmedia.se', locale: 'sv'))
+    humans.each do |h|
+      @h = h
+      InformationMailer.final_info(@h).deliver_later
+    end
+  end
 end

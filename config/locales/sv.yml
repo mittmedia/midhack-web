@@ -280,6 +280,8 @@ sv:
       subject: '[Midhack] Programmet släppt!'
     data:
       subject: '[Midhack] Datakällor för Midhack 2015!'
+    final_info:
+      subject: '[Midhack] Specialkost och API-nycklar'
   admin:
     styles:
       title: 'Style guide'

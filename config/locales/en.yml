@@ -280,6 +280,8 @@ en:
       subject: '[Midhack] Programme released!'
     data:
       subject: '[Midhack] Data Sources for Midhack 2015'
+    final_info:
+      subject: '[Midhack] Special Diet and API Keys'
   admin:
     styles:
       title: 'Style guide'
