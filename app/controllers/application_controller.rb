@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   def setup_vars
     @signed_up = @human.signed_up
     @on_waiting_list = @human.on_waitlist?
+    @application_date_expired = application_date_expired?
   end
 
   def get_human(uuid)
@@ -32,6 +33,12 @@ class ApplicationController < ActionController::Base
 
   def uuid_param
     params.permit("uuid")["uuid"]
+  end
+
+  def application_date_expired?
+    now = DateTime.now()
+    closing_time = Rails.configuration.midhack_signup_closed
+    now > closing_time
   end
 
   ############################

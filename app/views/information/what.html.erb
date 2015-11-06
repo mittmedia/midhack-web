@@ -36,15 +36,17 @@
 <br>
 <br>
 <br>
-<p><%= t(".interaction.tease") %></p>
-<% if @signed_up %>
-  <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-  <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-<% elsif @on_waiting_list %>
-  <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-  <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-<% else %>
-  <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
+<% unless @application_date_expired %>
+  <p><%= t(".interaction.tease") %></p>
+  <% if @signed_up %>
+    <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
+    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
+  <% elsif @on_waiting_list %>
+    <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
+    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
+  <% else %>
+    <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
+  <% end %>
 <% end %>
 <br>
 <br>
@@ -74,15 +76,17 @@
 <br>
 <br>
 <br>
-<p><%= t(".interaction.tease") %></p>
-<% if @signed_up %>
-  <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-  <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-<% elsif @on_waiting_list %>
-  <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-  <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-<% else %>
-  <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
+<% unless @application_date_expired %>
+  <p><%= t(".interaction.tease") %></p>
+  <% if @signed_up %>
+    <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
+    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
+  <% elsif @on_waiting_list %>
+    <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
+    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
+  <% else %>
+    <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
+  <% end %>
 <% end %>
 <center>
   <%= link_to t(".interaction.secondary_action"), programme_path, class: "btn_supplementary inline-block", id: 'programme_button' %>
