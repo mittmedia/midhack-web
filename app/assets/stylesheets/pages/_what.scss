@@ -1,4 +1,8 @@
 #what {
+  p {
+    margin-top: 0;
+  }
+
   .text_primary_color{
     @include regular_base_font();
     font-size: rem-calc(20);

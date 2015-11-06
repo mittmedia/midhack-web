@@ -1,6 +1,4 @@
-schema_migrations
 news_sites_users
-livefyre_comment_counts
 responses
 municipalities_users
 municipalities_news_sites

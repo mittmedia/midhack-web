@@ -27,5 +27,6 @@ module Onboarder
     config.midhack_signup_closed = DateTime.strptime("2015-11-14 10:00:00 +0100", "%F %T %z")
     config.midhack_start_date = DateTime.strptime("2015-11-14 10:00:00 +0100", "%F %T %z")
     config.midhack_end_date = DateTime.strptime("2015-11-15 15:00:00 +0100", "%F %T %z")
+    config.kandulova_data_url = ENV.fetch("KANDULOVA_DATA_URL")
   end
 end

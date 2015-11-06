@@ -1,35 +1,56 @@
+<% body_style = "font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B; text-align: justify;" %>
+<% image_style = "margin-top: 2em; margin-bottom: 2em; margin: 0 auto;" %>
+<% h1_style = "font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;" %>
+<% h2_style = "font: 20px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #00a6cc;" %>
+<% url_style = "color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;" %>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <center style="width: 300px; margin: 0 auto; display: block;">
-    <%= image_tag asset_path 'mailresources/logo.png', width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
-      <h1 style="font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Now, the programme is finally released!
+    <div style="width: 300px; margin: 0 auto; display: block;">
+    <%= image_tag asset_path('mailresources/logo.png'), width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+      <h1 style="<%= h1_style %>">
+        Data Sources for Midhack 2015
       </h1>
-      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        During the autumn, the Midhack Crew have been hard at work, planning &amp; preparing this amazing, creative event!
+      <p style="<%= body_style %>">During Midhack 2015, you will get the opportunity to work with data from ”Kan du lova?” and Overview News. At <a href="<%= @data_url %>" style="<%= url_style %>">Midhack.se/data</a> you will find a list of API:s, data sources, tools, literature, useful articles and more. You are also welcome to use other data sources and tools in addition to the ones mentioned here. Also, feel free to start investigating interesting data and tools in advance in order to get a head start for the hackathon.</p>
+
+      <h2 style="<%= h2_style %> text-align: left;">
+        Kan du lova?
+      </h2>
+      <a href="<%= @kandulova_url %>"><%= image_tag asset_path('sources/kandulova_resized.png'), width: '300', height: '240', alt: 'Kan Du Lova?', title: 'Kan Du Lova?', style: image_style %></a>
+      <p style="<%= body_style %>">
+        We are happy to announce that you will gain access to the ”Kan du lova?” ("Can you promise?") data, which was collected before the Swedish parliamentary election in 2014. ”Kan du lova?” is a service built by MittMedia and J++ offering the voters a possibility to ask politicians questions before the election. The data which was generated was used as a basis for journalism and the promises made before the election can be analysed, evaluated and compared to what happened afterwards. We believe that this can be a goldmine with exciting and newsworthy data, maybe even some teams will be able to leave Midhack with a real scoop.
       </p>
-      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        The program is regularly updated and can be found in its entirety on
-        <a href="<%= @programme_url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">
-           midhack.se/programme
+      <p style="<%= body_style %>">
+        For more info, please visit
+        <a href="<%= @kandulova_url %>" style="<%= url_style %>">
+           midhack.se/kandulova
         </a>.
-      </p>
-      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Registration for Midhack closes 2015-11-08, so do not forget to tip your fellow students to register A.S.A.P.!
+        You can download the data <a href="<%= @kandulova_data_url %>" style="<%= url_style %>">from here</a> and you are welcome to have a look at it in advance. However, MittMedia and Midhack crew would very much appreciate that you do not forward the data to non Midhack attendees. The information is not confidential but we have not had the chance to explore it yet ourselves.
       </p>
 
-      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        If you want to see your teammates and start brainstorming ideas, you can check
-        <a href="<%= @receipt_url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">
-           your registration receipt
+      <h2 style="<%= h2_style %>">
+        Overview News
+      </h2>
+      <a href="<%= @overviewnews_url %>"><%= image_tag asset_path('sources/overview_news_logo_resized.png'), width: '300', height: '167', alt: 'Overview News', title: 'Overview News', style: image_style %></a>
+      <p style="<%= body_style %>">
+        Overview News are indexing international, national and local news in order to facilitate for journalists and software developers and aims to contribute to more innovation in the news industry. With their API, news data can be integrated into your own systems. The API can also be used to perform advanced searches amongst the indexed articles and allows for sophisticated analyzes. In order to gain access to the Overview News API, an API key is required. These will be sent out to you as soon as the application period for Midhack is over. You will find more info at
+        <a href="<%= @overviewnews_url %>" style="<%= url_style %>">
+           overviewnews.com
         </a>.
       </p>
+
+      <h2 style="<%= h2_style %> text-align: left;">Facebook Group</h2>
+      <p style="<%= body_style %>">Feel free to join the <a href="<%= @facebook_url %>" style="<%= url_style %>">Facebook group</a> where you can get in touch and share ideas with other Midhackers. After the event, images will be shared with the group.</p>
+      <br>
       <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
-        Do you have any questions you can <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">email us</a> or  till <a href="mailto:Teresia.Edling@miun.se" style="color: #00A6CC; text-decoration: none;
+        The registration for Midhack closes 2015-11-08, do not forget to tip your fellow students to register A.S.A.P.!
+      </p>
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        If you've got any questions you can <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">email us</a> or <a href="mailto:Teresia.Edling@miun.se" style="color: #00A6CC; text-decoration: none;
           font-weight: 100;">Teresia</a>. See you!
         <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none;
           font-weight: 100;">/Midhack Crew
@@ -39,6 +60,6 @@
         Unable to attend? <br/>
         <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unsubscribe from Midhack</a>
       </p>
-    </center>
+    </div>
   </body>
 </html>

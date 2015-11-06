@@ -370,10 +370,6 @@ private
     params[:email]
   end
 
-  def uuid_param
-    params.permit("uuid")["uuid"]
-  end
-
   def digest_param
     params.permit("digest")["digest"]
   end

@@ -1,0 +1,77 @@
+<% body_style = "font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B; text-align: justify;" %>
+<% image_style = "margin-top: 2em; margin-bottom: 2em; margin: 0 auto;" %>
+<% h1_style = "font: 25px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;" %>
+<% h2_style = "font: 20px/1.25em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #00a6cc;" %>
+<% url_style = "color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;" %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="width: 300px; margin: 0 auto; display: block;">
+    <%= image_tag asset_path('mailresources/logo.png'), width: '300', height: '157', alt: 'Midhack 2015', title: 'Midhack 2015' %>
+      <h1 style="<%= h1_style %>">
+        Midhack 2015
+      </h1>
+      <p style="<%= body_style %>"> The registration for Midhack 2015 is now closed and here is some useful information for the event.
+
+     <h2 style="<%= h2_style %> text-align: left;">Special diet</h2>
+      <p style="<%= body_style %>">
+        If you have any food allergies or special food preferences, please notify us by filling in <a href="<%= @special_diet_form_url %>" style="<%= url_style %>">this form</a> before November 12th, we would hate to see any of you go hungry during the event.
+      </p>
+
+      <h2 style="<%= h2_style %>">
+         API keys for Overview News
+      </h2>
+      <a href="<%= @overviewnews_url %>"><%= image_tag asset_path('sources/overview_news_logo_resized.png'), width: '300', height: '175', alt: 'Overview News', title: 'Overview News', style: image_style %></a>
+      <p style="<%= body_style %>">
+        API keys
+        <br>
+        You will find more info at <a href="<%= @overviewnews_url %>" style="<%= url_style %>"> overviewnews.com </a>.
+      </p>
+
+      <h2 style="<%= h2_style %>">
+         Short Info
+      </h2>
+
+      <p style="<%= body_style %>">
+        We start at 11:00 on Saturday the 14th of November and will be finished around 15:00 on Sunday, see the programme at <a href="<%= @programme_url %>" style="color: #3C3C3B; text-decoration: none; border-bottom: 1px solid #00A6CC;">midhack.se/programme</a> for more details.
+      </p>
+      <p style="<%= body_style %>">
+        You will have 24 hours to work on something to present to the jury and the other teams (please note that you do not have to deliver something that is complete, the important thing is that you've had fun and learned something).
+      <p style="<%= body_style %>">
+        We will be serving "fika", dinner and breakfast, so you will not have to go hungry during the event.
+      </p>
+       <p style="<%= body_style %>">
+        On Sunday the 15th, there will be an awards ceremony. You are very welcome to invite your class mates, friends, family and other acquaintances for the presentations and the awards ceremony.
+      </p>
+
+      <h2 style="<%= h2_style %> text-align: left;">Code of Conduct</h2>
+      <p style="<%= body_style %>">
+        It is important that everyone feel comfortable and secure at Midhack, therefore we have developed a code of conduct which will apply during the hackathon. These rules can be read at <a href="<%= @code_of_conduct_url %>" style="<%= url_style %>"> midhack.se/what</a>. The gist of this document is that everyone should be nice to each other and share their knowledge in order to create a fun and educative experience for everyone. All kinds of violence, drugs, harassment or discrimination is forbidden and participants who violate these rules will risk being expelled from the event.
+      </p>
+      <p style="<%= body_style %>">
+        Midhack crew will be taking photographs during the event, if you don't want us to publish any pictures of you, please inform someone in Midhack crew or the photographer directly.
+      </p>
+
+      <h2 style="<%= h2_style %> text-align: left;">Facebook Group</h2>
+      <p style="<%= body_style %>">Feel free to join the <a href="<%= @facebook_url %>" style="<%= url_style %>">Facebook group</a> where you can get in touch and share ideas with other Midhackers. After the event, images will be shared with the group.</p>
+      <br>
+
+      <p style="font: 16px/1.5em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        If you've got any questions you can <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none; font-weight: 100;">email us</a> or <a href="mailto:Teresia.Edling@miun.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">Teresia</a>. See you on Saturday!
+          </br>
+        <a href="mailto:crew@midhack.se" style="color: #00A6CC; text-decoration: none;
+          font-weight: 100;">/Midhack Crew
+        </a>
+      </p>
+      <p style="font: 13px/1.35em 'Duplex Sans', Helvetica, Verdana, Arial, sans-serif; color: #3C3C3B;">
+        Unable to attend? <br/>
+        <a href="<%= @unsubscribe_url %>" style="color: #00A6CC; text-decoration: none; font-weight: 100;">Unsubscribe from Midhack</a>
+      </p>
+    </div>
+  </body>
+</html>
