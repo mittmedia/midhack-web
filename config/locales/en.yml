@@ -228,6 +228,10 @@ en:
       text_1: 'If you unregister you will lose your spot in the team and it will instead be offered to the person next in line on our waiting list. There is no way to regret this action once you have pressed the "unregister" button, you will lose your spot and will have to register again if you change your mind.'
       drop_out_action: 'Unregister'
       text_2: 'Note, you have not unregistered before pressing the button above. If you do not wish to unregister you can just close this webpage.'
+    signup_closed:
+      heading: 'The application period to Midhack 2015 has ended'
+      text_1: "The registration is closed, but you are very welcome to contact us at %{email} and we'll find you a spot in one of the teams. Otherwise you are welcome to apply next year."
+      email: 'crew@midhack.se'
     reserve_fill_email:
       title: 'E-mail address'
       heading: 'Unfortunately there are currently no free %{competence} spots in this team.'

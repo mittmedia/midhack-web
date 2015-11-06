@@ -228,6 +228,10 @@ sv:
       text_1: 'Om du avanmäler dig mister du din plats i laget och den tilldelas nästa person enligt vår väntelista. Om du ångrar dig kan du inte återfå din plats och du får i sådana fall göra en ny anmälan.'
       drop_out_action: 'Avanmäl mig'
       text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
+    signup_closed:
+      heading: 'Anmälan till Midhack 2015 är stängd'
+      text_1: 'Sista anmälningsdatum har passerat men hör gärna av dig till oss på %{email} så ser vi till att du kommer med i ett lag ändå. Annars är du varmt välkommen att ansöka nästa år.'
+      email: 'crew@midhack.se'
     reserve_fill_email:
       title: 'E-postadress'
       heading: 'Tyvärr finns det inga %{competence}platser kvar i det här laget just nu.'
