@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   post 'save_reservation_email', to: 'onboarder#save_reservation_email', as: 'save_reservation_email'
 
+  #Application period closed
+  get 'redirect_if_application_date_expired', to: 'onboarder#redirect_if_application_date_expired', as: 'signup_closed'
+
   #Unregister, quit => quitting => unregistered
   get 'quit(/:uuid)', to: 'onboarder#quit', as: 'quit'
   post 'quitting(/:uuid)', to: 'onboarder#quitting', as: 'quitting'
