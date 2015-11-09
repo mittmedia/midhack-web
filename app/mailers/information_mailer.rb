@@ -40,7 +40,8 @@ class InformationMailer < ApplicationMailer
     @unsubscribe_url = quit_url(uuid: human.uuid)
     @programme_url = programme_url(uuid: human.uuid, anchor: "programme")
     @facebook_url = 'https://www.facebook.com/groups/midhack/'
-    @special_diet_form_url = 'http://goo.gl/forms/tPrlXkVkGo'
+
+    @special_diet_form_url = "https://docs.google.com/forms/d/1LvW1MYbeUxFvagMnq_ubY_DqAfQvk3VVg0NQ9bPyd90/viewform?entry.891535146&entry.1541174751=#{human.email}&entry.4128471"
     @overviewnews_url = 'http://overviewnews.com/'
     @code_of_conduct_url = what_url(uuid: human.uuid, anchor: "code_of_conduct")
 
