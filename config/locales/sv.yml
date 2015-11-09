@@ -57,6 +57,8 @@ sv:
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'
+      text_0: 'Sista anmälningsdatum till Midhack 2015 har passerat men hör gärna av dig till oss på %{email} så ser vi till att du kommer med i ett lag ändå. Annars är du varmt välkommen att ansöka nästa år.'
+      email: 'crew@midhack.se'
       text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmars hackathon för de som studerar till att bli journalister, bildjournalister, informatörer, kommunikatörer, grafiker, systemvetare, datatekniker och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
       text_2: 'Midhack anordnas i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
       text_3: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'

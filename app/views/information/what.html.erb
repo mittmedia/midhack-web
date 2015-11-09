@@ -3,6 +3,9 @@
 
 <!-- What is Midhack -->
 <h1 class="center_text"><%= t(".heading") %></h1>
+<% if @application_date_expired %>
+  <p><%= raw t(".text_0", email: mail_to(t(".email"))) %></p>
+<% end %>
 <p><%= t(".text_1") %></p>
 <p><%= t(".text_2") %></p>
 <p><%= t(".text_3") %></p>
