@@ -17,38 +17,44 @@ namespace :midhack do
   end
   desc "Notifies participants that the programme for midhack now is released"
   task programme_released_email: :environment do
-    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true)
-    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true)
+    fake_team = Team.create(name: 'fake_name_for_debug_purpose')
+    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true, team: fake_team)
+    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true, team: fake_team)
     humans = Human.where(signed_up: true)
     humans.each do |h|
       @h = h
       InformationMailer.programme(@h).deliver_later
     end
-    h1.destroy();
-    h2.destroy();
+    h1.destroy
+    h2.destroy
+    fake_team.destroy
   end
   desc "Notifies participants that the data sources for midhack now is released"
   task data_released_email: :environment do
-    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true)
-    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true)
+    fake_team = Team.create(name: 'fake_name_for_debug_purpose')
+    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true, team: fake_team)
+    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true, team: fake_team)
     humans = Human.where(signed_up: true)
     humans.each do |h|
       @h = h
       InformationMailer.data(@h).deliver_later
     end
-    h1.destroy();
-    h2.destroy();
+    h1.destroy
+    h2.destroy
+    fake_team.destroy
   end
   desc "Sends out the final information and special food requirements form"
   task final_info_email: :environment do
-    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true)
-    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true)
+    fake_team = Team.create(name: 'fake_name_for_debug_purpose')
+    h1 = Human.create(email: 'crew@midhack.se', locale: 'en', signed_up: true, team: fake_team)
+    h2 = Human.create(email: 'dmu@mittmedia.se', locale: 'sv', signed_up: true, team: fake_team)
     humans = Human.where(signed_up: true)
     humans.each do |h|
       @h = h
       InformationMailer.final_info(@h).deliver_later
     end
-    h1.destroy();
-    h2.destroy();
+    h1.destroy
+    h2.destroy
+    fake_team.destroy
   end
 end
