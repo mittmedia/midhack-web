@@ -3,7 +3,11 @@ class OnboarderController < ApplicationController
 
   before_action :redirect_if_application_date_expired, except: [
     :receipt,
-    :signup_closed
+    :signup_closed,
+    :quit,
+    :quitting,
+    :unregister_human,
+    :unregistered
   ]
   before_action :valid_education, only: [
     :choose_competence,
