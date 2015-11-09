@@ -19,7 +19,7 @@
 
      <h2 style="<%= h2_style %> text-align: left;">Specialkost</h2>
       <p style="<%= body_style %>">
-        Självklart vill vi att alla ska kunna äta sig mätta under Midhack, har du några matallergier eller matpreferenser meddela oss genom att fylla i <a href="<%= @special_diet_form_url %>" style="<%= url_style %>">det här formuläret</a> senast den 12e november.
+        Självklart vill vi att alla ska kunna äta sig mätta under Midhack, har du några matallergier eller matpreferenser meddela oss genom att fylla i <a href="<%= @special_diet_form_url %>" style="<%= url_style %>">det här formuläret</a> <strong>senast imorgon kväll, den 10e november!</strong>
       </p>
 
       <h2 style="<%= h2_style %>">
@@ -27,7 +27,7 @@
       </h2>
       <a href="<%= @overviewnews_url %>"><%= image_tag asset_path('sources/overview_news_logo_resized.png'), width: '300', height: '175', alt: 'Overview News', title: 'Overview News', style: image_style %></a>
       <p style="<%= body_style %>">
-        API-nycklar
+        Ert lags API-nyckel till Overview News: <%= @overview_api_key %>
         <br>
         Mer info hittar ni på <a href="<%= @overviewnews_url %>" style="<%= url_style %>"> overviewnews.com </a>.
       </p>

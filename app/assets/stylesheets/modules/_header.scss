@@ -48,7 +48,8 @@
 #receipt_header,
 #reservation_receipt_header,
 #unregistered_header,
-#quit_header {
+#quit_header,
+#signup_closed_header {
   width: 100%;
   min-height: 75px;
   padding: 0;
@@ -73,7 +74,8 @@
 #receipt_header,
 #reservation_receipt_header,
 #unregistered_header,
-#quit_header {
+#quit_header,
+#signup_closed_header {
   .logo {
     background: image-url('Midhack_icon.svg');
     max-width: 200px;

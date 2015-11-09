@@ -1,6 +1,10 @@
 class OnboarderController < ApplicationController
   include OnboarderHelper
 
+  before_action :redirect_if_application_date_expired, except: [
+    :receipt,
+    :signup_closed
+  ]
   before_action :valid_education, only: [
     :choose_competence,
     :save_competence,
@@ -263,6 +267,17 @@ class OnboarderController < ApplicationController
   def competence_is_full
     competence_count = @human.competence(&:signed_up)
     competence_count == 0
+  end
+
+  ##########################
+  ### Application closed ###
+  ##########################
+
+  def redirect_if_application_date_expired
+    return redirect_to :signup_closed if application_date_expired?
+  end
+
+  def signup_closed
   end
 
 private
