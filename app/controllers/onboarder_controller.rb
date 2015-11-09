@@ -2,7 +2,8 @@ class OnboarderController < ApplicationController
   include OnboarderHelper
 
   before_action :redirect_if_application_date_expired, except: [
-    :receipt
+    :receipt,
+    :signup_closed
   ]
   before_action :valid_education, only: [
     :choose_competence,
@@ -273,7 +274,10 @@ class OnboarderController < ApplicationController
   ##########################
 
   def redirect_if_application_date_expired
-    return render :signup_closed if application_date_expired?
+    return redirect_to :signup_closed if application_date_expired?
+  end
+
+  def signup_closed
   end
 
 private
@@ -317,12 +321,6 @@ private
         TeamMailer.lost_member_email(human, tmd, @human).deliver_later
       end
     end
-  end
-
-  def application_date_expired?
-    now = DateTime.now()
-    closing_time = Rails.configuration.midhack_signup_closed
-    now > closing_time
   end
 
   def valid_education
