@@ -27,6 +27,7 @@ class InformationMailer < ApplicationMailer
     @kandulova_url = kandulova_url(uuid: human.uuid)
     @kandulova_data_url = Rails.configuration.kandulova_data_url
     @overviewnews_url = 'http://overviewnews.com/'
+    @overview_api_key = human.team.overview_api_key
 
     # Sendgrid Categorization
     headers('X-SMTPAPI' => '{"category": "Data released"}')
