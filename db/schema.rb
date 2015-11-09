@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101003203) do
+ActiveRecord::Schema.define(version: 20151109102824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20151101003203) do
     t.integer  "competence_id"
     t.boolean  "signed_up",               default: false
     t.boolean  "welcome_email_sent",      default: false
-    t.text     "email_confirmation_hash"
     t.boolean  "email_confirmed",         default: false
+    t.text     "email_confirmation_hash"
     t.datetime "confirm_email_expire_at"
     t.string   "locale"
   end
@@ -79,8 +79,9 @@ ActiveRecord::Schema.define(version: 20151101003203) do
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "overview_api_key"
   end
 
   create_table "waitlists", force: :cascade do |t|
