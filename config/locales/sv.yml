@@ -66,7 +66,7 @@ sv:
         subtitle_1: 'Bra att veta'
         text_1: 'Ni får tillgång till hela MittMedias artikeldatabas, Kan Du Lova?-databasen samt har möjlighet att använda API:er från opendata.se. Fler datakällor kan tillkomma och dessutom kan ni arbeta med data som ni själva skaffat tillgång till. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
         title_place: 'plats'
-        place: 'Mittuniversitetet, Sundsvall'
+        place: 'L212, Mittuniversitetet, Sundsvall'
         title_price: 'prispengar'
         price: '10 000 kr'
         title_date: 'datum'
@@ -118,7 +118,7 @@ sv:
       programme_heading_6: Arbetet lämnas in
       programme_heading_7: Presentation av arbetet
       programme_heading_8: Prisutdelning
-      programme_body_1: 'MittMedia kommer att introducera "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
+      programme_body_1: 'I rum L212 kommer MittMedia att introducera "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
       programme_body_2: 'Börja hacka! Ni har nu 24 timmar till inlämning.'
       programme_body_3: 'Kaffe och en mättande smörgås kommer att tillhandahållas.'
       programme_body_4: 'Middag från Biteline kommer att serveras.'
