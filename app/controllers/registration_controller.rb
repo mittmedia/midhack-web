@@ -5,6 +5,7 @@ class RegistrationController < ApplicationController
   end
 
   def signup
+    @url = Rails.configuration.registration_form_url
   end
 
   def signup_closed
