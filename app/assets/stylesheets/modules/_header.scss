@@ -38,18 +38,10 @@
 #data_header,
 #programme_header,
 #kandulova_header,
-#content_service_header,
 #policy_header,
 #what_header,
-#choose_education_header,
-#choose_competence_header,
-#choose_team_header,
-#fill_email_header,
-#receipt_header,
-#reservation_receipt_header,
-#unregistered_header,
-#quit_header,
-#signup_closed_header {
+#signup_closed_header,
+#signup_header {
   width: 100%;
   min-height: 75px;
   padding: 0;
@@ -75,7 +67,8 @@
 #reservation_receipt_header,
 #unregistered_header,
 #quit_header,
-#signup_closed_header {
+#signup_closed_header,
+#signup_header  {
   .logo {
     background: image-url('Midhack_icon.svg');
     max-width: 200px;

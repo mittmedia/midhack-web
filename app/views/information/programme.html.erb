@@ -57,13 +57,5 @@
 <br>
 <% unless @application_date_expired %>
   <p><%= t(".tease") %></p>
-  <% if @signed_up %>
-    <%= link_to t('.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% elsif @on_waiting_list %>
-    <%= link_to t('.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% else %>
-    <%= link_to t('.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
-  <% end %>
+  <%= link_to t('.primary_action'), signup_path, class: 'btn_primary', id:'signup_button' %><br>
 <% end %>

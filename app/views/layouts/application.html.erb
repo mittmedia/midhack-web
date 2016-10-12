@@ -63,20 +63,8 @@
                 <li><%= link_to t('menu.programme'), programme_path, class: 'menu_programme' %></li>
                 <li><%= link_to t('menu.data'), data_path, class: 'menu_data' %></li>
                 <li>
-                    <% if @application_date_expired %>
-                        <% if @signed_up %>
-                          <%= link_to t('menu.my_receipt'), receipt_path, class: 'menu_receipt' %><br>
-                        <% elsif @on_waiting_list %>
-                          <%= link_to t('menu.my_reservation'), reservation_receipt_path, class: 'menu_receipt' %><br>
-                        <% end %>
-                    <% else %>
-                        <% if @signed_up %>
-                          <%= link_to t('menu.my_receipt'), receipt_path, class: 'menu_receipt' %><br>
-                        <% elsif @on_waiting_list %>
-                          <%= link_to t('menu.my_reservation'), reservation_receipt_path, class: 'menu_receipt' %><br>
-                        <% else %>
-                          <%= link_to t('menu.register'), choose_education_path, class: 'menu_receipt' %>
-                        <% end %>
+                    <% unless @application_date_expired %>
+                      <%= link_to t('menu.register'), signup_path, class: 'menu_receipt' %>
                     <% end %>
                 </li>
             </ul></nav>

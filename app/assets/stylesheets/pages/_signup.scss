@@ -1,0 +1,12 @@
+#signup {
+  &.main_container {
+    min-height: auto;
+  }
+  .container {
+    padding: 0;
+    max-width: 100%;;
+  }
+  & + footer {
+    margin-top: auto;
+  }
+}
