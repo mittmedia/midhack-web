@@ -24,9 +24,9 @@ module Onboarder
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.midhack_total_nr_spots = 50
-    config.midhack_signup_closed = DateTime.strptime("2015-11-08 10:00:00 +0100", "%F %T %z")
-    config.midhack_start_date = DateTime.strptime("2015-11-14 10:00:00 +0100", "%F %T %z")
-    config.midhack_end_date = DateTime.strptime("2015-11-15 15:00:00 +0100", "%F %T %z")
+    config.midhack_signup_closed = DateTime.strptime("2016-11-18 10:00:00 +0100", "%F %T %z")
+    config.midhack_start_date = DateTime.strptime("2016-11-19 10:00:00 +0100", "%F %T %z")
+    config.midhack_end_date = DateTime.strptime("2016-11-20 15:00:00 +0100", "%F %T %z")
     config.kandulova_data_url = ENV.fetch("KANDULOVA_DATA_URL")
   end
 end
