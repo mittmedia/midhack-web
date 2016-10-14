@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'what', to: 'information#what', as: 'what'
   get 'policy', to: 'information#policy', as: 'policy'
   get 'data', to: 'information#data', as: 'data'
-  get 'artikeldatabasen', to: 'information#content_service', as: 'content_service'
   get 'kandulova', to: 'information#kandulova', as: 'kandulova'
   get '/kandulova_dump', to: redirect('/kandulova_dump/')
   get 'programme', to: 'information#programme', as: 'programme'

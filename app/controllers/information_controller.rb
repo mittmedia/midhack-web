@@ -12,9 +12,6 @@ class InformationController < ApplicationController
   def kandulova
   end
 
-  def content_service
-  end
-
   def programme
   end
 
