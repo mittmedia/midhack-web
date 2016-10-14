@@ -16,7 +16,7 @@ class InformationController < ApplicationController
   end
 
   def what
-    @nr_spots_left = total_nr_of_spots_left
+    # @nr_spots_left = total_nr_of_spots_left
   end
 
   def total_nr_of_spots_left
