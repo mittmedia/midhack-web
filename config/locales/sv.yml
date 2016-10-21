@@ -127,13 +127,6 @@ sv:
       programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
       programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
       programme_body_8: 'Efter juryn har konfererat och lite mingel, kommer vinnarna att koras.'
-    kandulova:
-      title: '”Kan Du Lova?”-data'
-      heading: 'Snart kommer ”Kan Du Lova?”-datan!'
-      logo: 'Kan Du Lova?'
-      text_1: 'Här kommer ”Kan Du Lova?”-datan snart presenteras, tillsammans med hur du använder den. För att få en uppfattning om strukturen kan du besöka %{overview}. Om du vill kika på frågor och svar i sin naturliga miljö kan du besöka %{kandulovasiten}.'
-      overview: 'dataöversikten'
-      kandulovasiten: '”Kan Du Lova?”-sajten'
     content_service:
       title: 'Artikeldatabasen'
       heading: 'MittMedias artikeldatabas landar här'
@@ -146,7 +139,7 @@ sv:
       headings:
         examples: 'Exempel'
         tutorials: 'Guider'
-        literature: 'Kursliteratur'
+        literature: 'Kurslitteratur'
         articles: 'Artiklar'
         sources: 'API:er & data-källor'
         tools: 'Dataverktyg'

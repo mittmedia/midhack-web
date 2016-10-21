@@ -1,9 +1,0 @@
-news_sites_users
-responses
-municipalities_users
-municipalities_news_sites
-users
-questions
-news_sites
-parties
-municipalities

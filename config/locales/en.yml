@@ -127,13 +127,6 @@ en:
       programme_body_6: 'You now need to be done and ready to present your projects.'
       programme_body_7: 'Get ready by the stage, cause soon your team will present to the Jury, in the mean time, have a snack.'
       programme_body_8: 'After the Jury have discussed and some mingle, the winners will be anounced.'
-    kandulova:
-      title: '”Kan Du Lova?”-data'
-      heading: 'Soon ”Kan Du Lova?” data will be released!'
-      logo: 'Kan Du Lova?'
-      text_1: 'Here we will present the ”Kan Du Lova?” data, how you use it and make it available for download. To get an overview of the data structure, please visit our %{overview}. To get a feeling on what kind of data to expect, please %{kandulovasiten}.'
-      overview: 'data overview page'
-      kandulovasiten: 'visit the ”Kan Du Lova?” website'
     content_service:
       title: 'Article database'
       heading: 'MittMedias article database coming in for landing'

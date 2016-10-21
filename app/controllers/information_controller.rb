@@ -9,9 +9,6 @@ class InformationController < ApplicationController
     @data_categories = DataCategory.all.includes(:data_entry)
   end
 
-  def kandulova
-  end
-
   def programme
   end
 
@@ -22,11 +19,6 @@ class InformationController < ApplicationController
   def total_nr_of_spots_left
     spots_taken = Human.all.select(&:signed_up).count
     Rails.configuration.midhack_total_nr_spots - spots_taken
-  end
-
-  def kandulova_sql
-    file_path = Rails.root.join('public', 'downloads', 'kandulova.dump')
-    send_file file_path, type: 'application/octet-stream', filename: 'kandulova.dump'
   end
 
   private
