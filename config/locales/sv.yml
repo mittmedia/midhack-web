@@ -39,6 +39,11 @@ sv:
     check_fields: 'Något gick fel!'
     confirmed_email: 'Din e-postadress har bekräftats!'
     confirmed_email_fail: 'Din e-postadress kunde inte bekräftas, kontrollera gärna att hela länken följde med och inte blev klippt i din e-postklient.'
+  registration:
+    signup:
+      title: 'Anmäl dig till Midhack 2016!'
+    signup_closed:
+      title: 'Anmälan till Midhack 2016 har stängt!'
   information:
     index:
       title: 'Välkommen'

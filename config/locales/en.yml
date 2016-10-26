@@ -31,6 +31,11 @@ en:
     register: Register!
     my_receipt: 'My Team'
     my_reservation: 'My Reservation'
+  registration:
+    signup:
+      title: 'Sign up for Midhack 2016!'
+    signup_closed:
+      title: 'Sign up for Midhack 2016 is closed!'
   validation:
     confirmed_email: 'Your email adress has been confirmed!'
     confirmed_email_fail: 'Your email adress could not be confirmed, please make sure the link was not cut off by your email client.'
