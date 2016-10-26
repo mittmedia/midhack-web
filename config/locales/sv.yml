@@ -43,6 +43,7 @@ sv:
     index:
       title: 'Välkommen'
       leadin: 'Tillsammans utvecklar vi framtidens journalistik och medieteknik baserat på öppen data'
+      primary_action: 'Jag vill delta i Midhack!'
       action: 'Vad är Midhack?'
       switch_language: 'Switch to English'
       cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
@@ -57,20 +58,20 @@ sv:
     what:
       title: 'Vad är Midhack?'
       heading: 'Vad är Midhack?'
-      text_0: 'Sista anmälningsdatum till Midhack 2015 har passerat men hör gärna av dig till oss på %{email} så ser vi till att du kommer med i ett lag ändå. Annars är du varmt välkommen att ansöka nästa år.'
+      text_0: 'Sista anmälningsdatum till Midhack 2016 har passerat men hör gärna av dig till oss på %{email} så ser vi till att du kommer med i ett lag ändå. Annars är du varmt välkommen att ansöka nästa år.'
       email: 'crew@midhack.se'
-      text_1: 'MittMedia och Mittuniversitetet anordnar den 14-15 november ett 24-timmars hackathon för de som studerar till att bli journalister, bildjournalister, informatörer, kommunikatörer, grafiker, systemvetare, datatekniker och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
-      text_2: 'Midhack anordnas i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter.'
-      text_3: 'Under 24 timmar tävlar du och ditt lag mot andra lag om en prispott på 10 000 kr och en möjlighet att göra exjobb på MittMedia. Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en nyhet, en tjänst, ett koncept för kommunikation, början på ett examensarbete eller en ny app m.m.'
+      text_1: 'MittMedia och Mittuniversitetet anordnar den 19-20 november ett 24-timmars hackathon för de som studerar till att bli journalister, bildjournalister, informatörer, kommunikatörer, grafiker, systemvetare, datatekniker och ingenjörer. Det finns inga förkunskapskrav, du behöver alltså inte vara expert!'
+      text_2: 'Midhack anordnas i syfte att inspirera och motivera samarbete som kan agera grogrund för nya sätt att konsumera nyheter. Under 24 timmar tävlar du och ditt lag mot andra lag om äran och en prispott på 10 000 kr. Midhack är också ett unikt tillfälle att skapa nya kontakter och imponera på MittMedia. Två deltagare i förra årets vinnande lag fick senare jobb på MittMedia som projektledare respektive utvecklare och en tredje Midhack-deltagare gör just nu sitt exjobb där.'
+      text_3: 'Ditt lag kommer att bestå av studenter med olika inriktningar, där alla bidrar med sin kompetens. Vad ni sen skapar i ditt lag är upp till er. Det kan vara en datadriven nyhetsstory, en fungerande tjänst, ett koncept, början på ett examensarbete eller en ny app m.m.'
       good_to_know:
         subtitle_1: 'Bra att veta'
-        text_1: 'Ni får tillgång till hela MittMedias artikeldatabas, Kan Du Lova?-databasen samt har möjlighet att använda API:er från opendata.se. Fler datakällor kan tillkomma och dessutom kan ni arbeta med data som ni själva skaffat tillgång till. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, UX-utvecklare och programmerare från MittMedia tillgängliga och kan guida er framåt.'
+        text_1: 'Ni får använda vilka öppna datakällor ni vill, <a href="/data">här</a> finns flera exempel på datakällor, liksom på <a href="http://www.opendata.se" target="_blank">opendata.se</a>. Fler datakällor kan tillkomma och dessutom kan ni arbeta med data som ni själva skaffat tillgång till. Antingen tar du med dig din egen laptop eller får du möjlighet att sitta i Mittuniversitetets datorsalar. Kör du och ditt lag fast finns alltid journalister, redaktörer, programmerare och UX-kompetens från MittMedia tillgängliga och kan guida er framåt.'
         title_place: 'plats'
-        place: 'L212, Mittuniversitetet, Sundsvall'
+        place: 'Mittuniversitetet, Sundsvall'
         title_price: 'prispengar'
         price: '10 000 kr'
         title_date: 'datum'
-        date: '14 - 15 November'
+        date: '19 - 20 November'
         title_spots_left: 'platser kvar'
       interaction:
         tease: 'Är du sugen på att delta?'
@@ -118,7 +119,7 @@ sv:
       programme_heading_6: Arbetet lämnas in
       programme_heading_7: Presentation av arbetet
       programme_heading_8: Prisutdelning
-      programme_body_1: 'I rum L212 kommer MittMedia att introducera "Kan Du Lova?"-datan. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
+      programme_body_1: 'MittMedia hälsar deltagarna välkomna till Mittuniversitetets campus. Sedan kommer Midhack Crew, bedömningskriterier och inlämningsprocess presenteras samt vilka lag som har anmält sig.'
       programme_body_2: 'Börja hacka! Ni har nu 24 timmar till inlämning.'
       programme_body_3: 'Kaffe och en mättande smörgås kommer att tillhandahållas.'
       programme_body_4: 'Middag från Biteline kommer att serveras.'
@@ -126,13 +127,6 @@ sv:
       programme_body_6: 'Nu måste ni vara klara och redo att presentera ert projekt.'
       programme_body_7: 'Gör er redo vid scenen, snart ska ert team presentera bidraget för juryn, ta ett mellanmål medan du väntar.'
       programme_body_8: 'Efter juryn har konfererat och lite mingel, kommer vinnarna att koras.'
-    kandulova:
-      title: '”Kan Du Lova?”-data'
-      heading: 'Snart kommer ”Kan Du Lova?”-datan!'
-      logo: 'Kan Du Lova?'
-      text_1: 'Här kommer ”Kan Du Lova?”-datan snart presenteras, tillsammans med hur du använder den. För att få en uppfattning om strukturen kan du besöka %{overview}. Om du vill kika på frågor och svar i sin naturliga miljö kan du besöka %{kandulovasiten}.'
-      overview: 'dataöversikten'
-      kandulovasiten: '”Kan Du Lova?”-sajten'
     content_service:
       title: 'Artikeldatabasen'
       heading: 'MittMedias artikeldatabas landar här'
@@ -145,7 +139,7 @@ sv:
       headings:
         examples: 'Exempel'
         tutorials: 'Guider'
-        literature: 'Kursliteratur'
+        literature: 'Kurslitteratur'
         articles: 'Artiklar'
         sources: 'API:er & data-källor'
         tools: 'Dataverktyg'
@@ -231,7 +225,7 @@ sv:
       drop_out_action: 'Avanmäl mig'
       text_2: 'Notera att du inte har avanmält dig förrän du trycker på knappen ovan. Om du inte vill avanmäla dig kan du helt enkelt stänga ner denna sida.'
     signup_closed:
-      heading: 'Anmälan till Midhack 2015 är stängd'
+      heading: 'Anmälan till Midhack 2016 är stängd'
       text_1: 'Sista anmälningsdatum har passerat men hör gärna av dig till oss på %{email} så ser vi till att du kommer med i ett lag ändå. Annars är du varmt välkommen att ansöka nästa år.'
       email: 'crew@midhack.se'
     reserve_fill_email:
@@ -285,7 +279,7 @@ sv:
     programme:
       subject: '[Midhack] Programmet släppt!'
     data:
-      subject: '[Midhack] Datakällor för Midhack 2015!'
+      subject: '[Midhack] Datakällor för Midhack 2016!'
     final_info:
       subject: '[Midhack] Specialkost (senast tisdag kväll!) och API-nycklar'
   admin:

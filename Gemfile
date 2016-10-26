@@ -1,4 +1,4 @@
-ruby '2.2.2'
+ruby '2.3.1'
 
 
 source 'https://rubygems.org'
@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gem 'bundler', '>= 1.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 # Use Postgres as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -78,4 +78,3 @@ group :development, :test do
   gem 'annotate'
   gem 'i18n-tasks', '~> 0.8.6'
 end
-

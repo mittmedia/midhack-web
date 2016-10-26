@@ -12,7 +12,7 @@
 
 <!-- Good to Know -->
 <h3><%= t(".good_to_know.subtitle_1") %></h3>
-<p><%= t(".good_to_know.text_1") %></p>
+<p><%= t(".good_to_know.text_1").html_safe %></p>
 
 <ul class="list_with_info">
   <li>
@@ -30,26 +30,13 @@
     <small class ="uppercase semibold"><%= t(".good_to_know.title_date") %></small>
     <p class="text_primary_color"><%= t(".good_to_know.date") %></p>
   </li>
-  <li>
-    <center><div class="icon spots_left"></div></center>
-    <small class ="uppercase semibold"><%= t(".good_to_know.title_spots_left") %></small>
-    <p class="text_primary_color"><%= @nr_spots_left %></p>
-  </li>
 </ul>
 <br>
 <br>
 <br>
 <% unless @application_date_expired %>
   <p><%= t(".interaction.tease") %></p>
-  <% if @signed_up %>
-    <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% elsif @on_waiting_list %>
-    <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% else %>
-    <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
-  <% end %>
+  <%= link_to t('.interaction.primary_action'), signup_path, class: 'btn_primary', id:'signup_button' %><br>
 <% end %>
 <br>
 <br>
@@ -81,15 +68,7 @@
 <br>
 <% unless @application_date_expired %>
   <p><%= t(".interaction.tease") %></p>
-  <% if @signed_up %>
-    <%= link_to t('.interaction.my_receipt'), receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% elsif @on_waiting_list %>
-    <%= link_to t('.interaction.my_reservation'), reservation_receipt_path, class: 'btn_primary', id:'receipt_button' %><br>
-    <%= link_to t('.interaction.signup_friend'), choose_education_path(force: true), class: 'btn_secondary', id:'new_signup_button' %><br>
-  <% else %>
-    <%= link_to t('.interaction.primary_action'), choose_education_path, class: 'btn_primary', id:'signup_button' %><br>
-  <% end %>
+  <%= link_to t('.interaction.primary_action'), signup_path, class: 'btn_primary', id:'signup_button' %><br>
 <% end %>
 <center>
   <%= link_to t(".interaction.secondary_action"), programme_path, class: "btn_supplementary inline-block", id: 'programme_button' %>
