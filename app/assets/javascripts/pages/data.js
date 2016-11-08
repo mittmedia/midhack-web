@@ -20,5 +20,4 @@ midhack.ready = function() {
   }
 };
 
-$(document).ready(midhack.ready);
 $(document).on('turbolinks:load', midhack.ready);
