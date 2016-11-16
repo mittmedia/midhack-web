@@ -2,7 +2,13 @@
 <% container_id('index')%>
 <div class="logo"></div>
 <div class="leadin"><%= t('.leadin') %></div>
-<%= link_to t('.primary_action'), signup_path, class: 'btn_secondary', id:'signup_button' %><br>
+<% if application_date_expired? %>
+  <h2><%= t('.event_canceled') %></h2>
+  <p><%= t('.event_canceled_text') %></p>
+  <br><br>
+<% else %>
+  <%= link_to t('.primary_action'), signup_path, class: 'btn_secondary', id:'signup_button' %><br>
+<% end %>
 <%= link_to t('.action'), what_path, class: 'btn_primary inline-block margin_10px_bottom', id:'what_button' %>
 <br>
 <% if I18n.locale == :en %>

@@ -6,4 +6,8 @@ module ApplicationHelper
   def container_id(the_id)
     content_for(:container_id, the_id.to_s)
   end
+
+  def application_date_expired?
+    @application_date_expired
+  end
 end

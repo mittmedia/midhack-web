@@ -53,6 +53,8 @@ sv:
       switch_language: 'Switch to English'
       cookies_pul: 'Midhack.se använder kakor och persistent lagring i enlighet med vår datalagringspolicy. Genom att använda systemet godkänner du vår policy i enlighet med PUL.'
       read_more: 'Läs mer om vår datalagringspolicy.'
+      event_canceled: Midhack 2016 inställt
+      event_canceled_text: Vi är ledsna att meddela att 2016 års evenemang tyvärr har blivit inställt på grund av lågt intresse. 
     policy:
       title: 'Datalagringsolicy'
       heading: 'Datalagringspolicy'
