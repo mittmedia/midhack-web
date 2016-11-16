@@ -53,6 +53,8 @@ en:
       switch_language: 'Byt till svenska'
       cookies_pul: 'Midhack.se is using cookies and persistent storage in accordance to our data storing policy. By using the system you accept our policy in accordance to PUL.'
       read_more: 'Read more about our cookies and data policy.'
+      event_canceled: Midhack 2016 canceled
+      event_canceled_text: We regret to tell you that the event of 2016 unfortunately has been canceled due to low interest.
     policy:
       title: 'Data Policy'
       heading: 'Data Policy'
